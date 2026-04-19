@@ -66,7 +66,7 @@ export default function HomePage() {
               >
                 <a
                   href="#projects"
-                  className="group relative px-8 py-4 bg-[#08874a] dark:bg-[#39FF14] text-black rounded-lg font-medium transition-all duration-300 hover:bg-[#0a9d56] dark:hover:bg-[#5EFF35] hover:shadow-[0_0_30px_rgba(57, 255, 20,0.5)] hover:scale-105 inline-block"
+                  className="group relative px-8 py-4 bg-[#08874a] dark:bg-[#39FF14] text-white dark:text-black rounded-lg font-medium transition-all duration-300 hover:bg-[#0a9d56] dark:hover:bg-[#5EFF35] hover:shadow-[0_0_30px_rgba(57, 255, 20,0.5)] hover:scale-105 inline-block"
                 >
                   <span className="relative z-10">View Projects</span>
                   <div className="absolute inset-0 rounded-lg bg-[#0a9d56] dark:bg-[#5EFF35] opacity-0 group-hover:opacity-100 blur-xl transition-opacity duration-300" />
