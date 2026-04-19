@@ -108,7 +108,7 @@ export default function AchievementsSection() {
                     <div className="flex items-start gap-4">
                       <div className="w-2 h-2 rounded-full bg-[#08874a] dark:bg-[#39FF14] mt-2 flex-shrink-0 group-hover:scale-125 transition-transform duration-300" />
                       <div className="flex-1">
-                        <h4 className="font-medium text-white mb-1 group-hover:text-[#08874a] dark:group-hover:text-[#39FF14] transition-colors duration-300">
+                        <h4 className="font-medium text-[var(--foreground)] mb-1 group-hover:text-[#08874a] dark:group-hover:text-[#39FF14] transition-colors duration-300">
                           {award.title}
                         </h4>
                         <p className="text-sm text-[#08874a]/90 dark:text-[#39FF14]/90 mb-1">
