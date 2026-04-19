@@ -80,7 +80,7 @@ export default function AboutSection() {
                     <div className="w-2 h-2 rounded-full bg-[#08874a] dark:bg-[#39FF14] mt-2 flex-shrink-0" />
                     <div>
                       <h4 className="font-medium mb-1">Full-Stack Web Development Certificate</h4>
-                      <p className="text-sm text-[var(--muted-foreground)]">UT Dallas</p>
+                      <p className="text-sm text-[var(--muted-foreground)]">UT Austin</p>
                     </div>
                   </div>
                 </div>
