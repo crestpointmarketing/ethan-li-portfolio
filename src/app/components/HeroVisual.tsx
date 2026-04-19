@@ -1,4 +1,5 @@
 import { useEffect, useRef, useState } from 'react';
+import { Link } from 'react-router';
 import { useTheme } from 'next-themes';
 const φ = (1 + Math.sqrt(5)) / 2;
 const n = 1 / Math.sqrt(1 + φ * φ);
@@ -57,22 +58,25 @@ const CARDS = [
     sub: 'AI Speech Therapy',
     delay: '0s',
     pos: { left: '3%', top: '4%' },
+    href: '/projects/speakwise',
+  },
+  {
+    icon: '🎤',
+    iconBg: 'linear-gradient(145deg,#1a3a6b,#0a1a3a)',
+    title: 'Eelocutionist',
+    sub: 'AI Interview Coach',
+    delay: '0.9s',
+    pos: { left: '1%', top: '49%' },
+    href: '/projects/eelocutionist',
   },
   {
     icon: '📈',
     iconBg: 'linear-gradient(145deg,#0D2A5C,#070F2A)',
     title: 'Zeitgeist',
     sub: 'AI Finance Systems',
-    delay: '0.9s',
-    pos: { left: '1%', top: '49%' },
-  },
-  {
-    icon: '🏆',
-    iconBg: 'linear-gradient(145deg,#7A4A00,#3A2000)',
-    title: 'USACO Gold',
-    sub: 'Competitive Programming',
     delay: '1.8s',
     pos: { right: '3%', bottom: '8%' },
+    href: '/projects/zeitgeist',
   },
 ];
 
@@ -149,8 +153,9 @@ export default function HeroVisual() {
           className="absolute"
           style={{ ...c.pos, animation: `heroFloat 3.2s ease-in-out infinite`, animationDelay: c.delay }}
         >
-          <div
-            className="flex items-center gap-3 rounded-2xl"
+          <Link
+            to={c.href}
+            className="flex items-center gap-3 rounded-2xl cursor-pointer hover:scale-105 transition-transform duration-200"
             style={{
               padding: '12px 16px',
               background: 'rgba(9,9,13,0.92)',
@@ -159,6 +164,7 @@ export default function HeroVisual() {
               WebkitBackdropFilter: 'blur(18px)',
               boxShadow: '0 8px 32px rgba(0,0,0,0.55), inset 0 1px 0 rgba(255,255,255,0.06)',
               minWidth: '195px',
+              textDecoration: 'none',
             }}
           >
             <div
@@ -171,7 +177,7 @@ export default function HeroVisual() {
               <div style={{ color: '#fff', fontWeight: 700, fontSize: '14px', lineHeight: 1.2 }}>{c.title}</div>
               <div style={{ color: 'rgba(255,255,255,0.45)', fontSize: '12px', marginTop: 3 }}>{c.sub}</div>
             </div>
-          </div>
+          </Link>
         </div>
       ))}
 
