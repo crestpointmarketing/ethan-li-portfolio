@@ -12,17 +12,14 @@ export default function Navbar() {
       <div className="max-w-[1440px] mx-auto px-6 lg:px-16">
         <div className="flex items-center justify-between h-20">
 
-          {/* Logo / Name */}
+          {/* Logo */}
           <div className="flex items-center">
-            <Link
-              to="/"
-              className="text-xl tracking-tight hover:text-[#08874a] dark:hover:text-[#39FF14] transition-colors duration-300"
-              style={{
-                fontFamily: "'Inter', sans-serif",
-                fontWeight: 700
-              }}
-            >
-              Ethan Li
+            <Link to="/">
+              <img
+                src="/logo.png"
+                alt="Ethan Li"
+                className="h-10 w-auto dark:invert"
+              />
             </Link>
           </div>
 
