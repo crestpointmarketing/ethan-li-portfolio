@@ -75,7 +75,7 @@ export default function EelocutionistDetail() {
           >
             <iframe
               className="absolute inset-0 w-full h-full"
-              src="https://www.youtube.com/embed/YOUR_VIDEO_ID"
+              src="https://www.youtube.com/embed/BwW6pBthVPc"
               title="Eelocutionist Project Demo"
               allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
               allowFullScreen
