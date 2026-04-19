@@ -1,0 +1,19 @@
+@import url('https://fonts.googleapis.com/css2?family=Sora:wght@400;500;600;700&family=Syne:wght@400;500;600;700;800&family=Inter:wght@300;400;500;600;700&display=swap');
+
+/*
+  TASA Explorer is a commercial font. To use it:
+  1. Purchase and download TASA Explorer font files (.woff, .woff2)
+  2. Place font files in /public/fonts/
+  3. Uncomment and update the @font-face rule below:
+
+  @font-face {
+    font-family: 'TASA Explorer';
+    src: url('/fonts/TASAExplorer-Regular.woff2') format('woff2'),
+         url('/fonts/TASAExplorer-Regular.woff') format('woff');
+    font-weight: 400;
+    font-style: normal;
+    font-display: swap;
+  }
+
+  For now, Syne is used as a fallback with similar geometric characteristics.
+*/
