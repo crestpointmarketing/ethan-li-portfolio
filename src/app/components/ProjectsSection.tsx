@@ -4,7 +4,7 @@ export default function ProjectsSection() {
   const projects = [
     {
       id: 'speakwise',
-      github: 'https://github.com/ethanli',
+      github: 'https://github.com/3than777',
       title: 'SpeakWise: AI-Powered Speech Therapy Platform',
       subtitle: 'HPHS Sci Tech Fair — 1st Place & Jay Ingram Award',
       subtitle2: 'DRSEF — Honorable Mention (Top 4)',
@@ -19,7 +19,7 @@ export default function ProjectsSection() {
     },
     {
       id: 'eelocutionist',
-      github: 'https://github.com/ethanli',
+      github: 'https://github.com/3than777',
       title: 'Eelocutionist — AI Interview Coaching Platform',
       subtitle: 'Internship Project, Deployed Product',
       period: '2024 - 2025',
@@ -33,7 +33,7 @@ export default function ProjectsSection() {
     },
     {
       id: 'zeitgeist',
-      github: 'https://github.com/ethanli',
+      github: 'https://github.com/3than777',
       title: 'Zeitgeist — AI System for Financial Reasoning',
       subtitle: 'Independent Project | Real-Time AI System',
       period: '2024 - 2025',
