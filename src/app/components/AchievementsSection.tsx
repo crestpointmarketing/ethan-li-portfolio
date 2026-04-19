@@ -64,6 +64,31 @@ export default function AchievementsSection() {
           description: 'Advanced competitive programming achievement'
         }
       ]
+    },
+    {
+      category: 'CTY — Johns Hopkins University',
+      awards: [
+        {
+          title: 'Talent Search Qualification',
+          achievement: 'Advanced CTY-Level Verbal · CTY-Level Math · Advanced CTY-Level Math',
+          description: 'Eligible across all three identification levels — gifted program recognition'
+        },
+        {
+          title: 'Diagnosis: Be the Doctor (DDOC)',
+          achievement: 'Successful Completion',
+          description: 'Jan 2024 – Mar 2024'
+        },
+        {
+          title: 'Biotechnology (BIOT)',
+          achievement: 'Successful Completion',
+          description: 'Jun 2024 – Jul 2024'
+        },
+        {
+          title: 'Introduction to Java (IJAQ)',
+          achievement: 'Grade: A−',
+          description: 'Nov 2024 – Mar 2025'
+        }
+      ]
     }
   ];
 
