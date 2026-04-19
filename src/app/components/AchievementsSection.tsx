@@ -85,7 +85,7 @@ export default function AchievementsSection() {
         },
         {
           title: 'Introduction to Java (IJAQ)',
-          achievement: 'Grade: A−',
+          achievement: 'Grade: A',
           description: 'Nov 2024 – Mar 2025'
         }
       ]
