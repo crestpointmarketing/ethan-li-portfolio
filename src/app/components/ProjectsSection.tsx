@@ -133,7 +133,7 @@ export default function ProjectsSection() {
                     href={project.github}
                     target="_blank"
                     rel="noopener noreferrer"
-                    className="px-6 py-2.5 text-sm font-medium text-white/60 rounded-lg border border-white/15 hover:text-white hover:border-white/35 transition-all duration-200"
+                    className="px-6 py-2.5 text-sm font-medium text-[var(--muted-foreground)] rounded-lg border border-[var(--border)] hover:text-[var(--foreground)] hover:border-[var(--foreground)]/30 transition-all duration-200"
                   >
                     GitHub →
                   </a>
