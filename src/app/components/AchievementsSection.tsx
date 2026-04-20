@@ -61,7 +61,7 @@ export default function AchievementsSection() {
         {
           title: 'USACO (USA Computing Olympiad)',
           achievement: 'Gold Division',
-          description: 'Advanced competitive programming achievement'
+          description: 'Promoted from Silver (perfect score) → Gold — top-tier competitive programming'
         }
       ]
     },

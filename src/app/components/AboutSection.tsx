@@ -45,25 +45,34 @@ export default function AboutSection() {
                     </li>
                     <li className="flex items-start gap-3">
                       <span className="text-[#08874a] dark:text-[#39FF14] mt-1">•</span>
-                      <span>Advanced Mathematics & Computational Thinking</span>
+                      <span>AP Calculus BC — Advanced Mathematics</span>
                     </li>
                     <li className="flex items-start gap-3">
                       <span className="text-[#08874a] dark:text-[#39FF14] mt-1">•</span>
-                      <span>Applied Research in Machine Learning</span>
+                      <span>Multivariable Calculus (12th Grade, planned)</span>
+                    </li>
+                    <li className="flex items-start gap-3">
+                      <span className="text-[#08874a] dark:text-[#39FF14] mt-1">•</span>
+                      <span>Latin I – IV (Classical Languages)</span>
                     </li>
                   </ul>
                 </div>
               </div>
             </div>
 
-            {/* Standardized Tests */}
+            {/* Standardized Tests & GPA */}
             <div className="pt-8 border-t border-[var(--border)]">
-              <h4 className="text-lg font-medium mb-4">Standardized Tests</h4>
-              <div className="grid grid-cols-1 gap-6">
+              <h4 className="text-lg font-medium mb-4">Standardized Tests & GPA</h4>
+              <div className="grid grid-cols-2 gap-4">
                 <div className="bg-[var(--card)] rounded-lg p-4 border border-[var(--border)]">
                   <div className="text-3xl font-bold text-[#08874a] dark:text-[#39FF14] mb-1">1540</div>
                   <div className="text-sm text-[var(--muted-foreground)]">SAT</div>
                   <div className="text-xs text-[var(--muted-foreground)]/70 mt-2">EBRW: 750 | Math: 800</div>
+                </div>
+                <div className="bg-[var(--card)] rounded-lg p-4 border border-[var(--border)]">
+                  <div className="text-3xl font-bold text-[#08874a] dark:text-[#39FF14] mb-1">4.459</div>
+                  <div className="text-sm text-[var(--muted-foreground)]">Weighted GPA</div>
+                  <div className="text-xs text-[var(--muted-foreground)]/70 mt-2">Highland Park HS</div>
                 </div>
               </div>
             </div>
@@ -114,6 +123,16 @@ export default function AboutSection() {
                     </div>
                   </div>
                 </div>
+
+                <div className="group hover:bg-[var(--card)] p-4 rounded-lg transition-all duration-300">
+                  <div className="flex items-start gap-4">
+                    <div className="w-2 h-2 rounded-full bg-[#08874a] dark:bg-[#39FF14] mt-2 flex-shrink-0" />
+                    <div>
+                      <h4 className="font-medium mb-1">Prompt Engineering Bootcamp</h4>
+                      <p className="text-sm text-[var(--muted-foreground)]">Udemy</p>
+                    </div>
+                  </div>
+                </div>
               </div>
             </div>
 
@@ -124,7 +143,8 @@ export default function AboutSection() {
                 {[
                   'Python', 'Java', 'JavaScript', 'TypeScript', 'C++',
                   'React', 'Node.js', 'Express.js', 'LLM Systems',
-                  'Speech Processing', 'Docker', 'API Design'
+                  'Speech Processing', 'Docker', 'API Design',
+                  'Dify', 'n8n', 'Prompt Engineering'
                 ].map((skill) => (
                   <span
                     key={skill}
