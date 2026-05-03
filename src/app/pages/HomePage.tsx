@@ -1,6 +1,7 @@
 import { useState, useEffect } from 'react';
 import HeroVisual from '../components/HeroVisual';
 import AboutSection from '../components/AboutSection';
+import ExperienceSection from '../components/ExperienceSection';
 import ProjectsSection from '../components/ProjectsSection';
 import AchievementsSection from '../components/AchievementsSection';
 import ContactSection from '../components/ContactSection';
@@ -133,6 +134,7 @@ export default function HomePage() {
 
       {/* Additional Sections */}
       <AboutSection />
+      <ExperienceSection />
       <ProjectsSection />
       <AchievementsSection />
       <ContactSection />

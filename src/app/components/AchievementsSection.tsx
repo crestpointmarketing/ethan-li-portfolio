@@ -25,7 +25,7 @@ export default function AchievementsSection() {
         },
         {
           title: 'Youth Board of Governors',
-          achievement: 'Member — Computer Science Chapter',
+          achievement: 'President — Computer Science Chapter',
           description: 'Asian Culture and Education Society USA'
         },
         {
