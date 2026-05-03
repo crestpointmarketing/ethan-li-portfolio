@@ -27,6 +27,7 @@ export default function Navbar() {
           <div className="hidden md:flex items-center gap-8">
             {[
               { href: '/#about', label: 'About' },
+              { href: '/#experience', label: 'Experience' },
               { href: '/#projects', label: 'Projects' },
               { href: '/#achievements', label: 'Achievements' },
               { href: '/#contact', label: 'Contact' },
@@ -86,6 +87,13 @@ export default function Navbar() {
                 onClick={() => setMobileMenuOpen(false)}
               >
                 About
+              </a>
+              <a
+                href="/#experience"
+                className="text-sm text-[var(--muted-foreground)] hover:text-[var(--foreground)] transition-colors duration-300 py-2"
+                onClick={() => setMobileMenuOpen(false)}
+              >
+                Experience
               </a>
               <a
                 href="/#projects"
