@@ -1,3 +1,5 @@
+import { Link } from 'react-router';
+
 export default function ExperienceSection() {
   return (
     <section id="experience" className="relative py-24 lg:py-32 border-t border-[var(--border)]">
@@ -33,33 +35,35 @@ export default function ExperienceSection() {
                   className="text-2xl font-semibold mb-1"
                   style={{ fontFamily: "'Inter', sans-serif" }}
                 >
-                  AI Systems Research Intern
+                  AI Systems / AI Infrastructure Intern
                 </h3>
                 <p className="text-[#08874a] dark:text-[#39FF14] font-medium text-lg">OneSource Cloud</p>
                 <p className="text-sm text-[var(--muted-foreground)] mt-1">
-                  AI Data Center &amp; Private AI Service Provider
+                  AI Data Center &amp; Private AI Service Provider · Richardson, TX
                 </p>
               </div>
               <div className="flex flex-col items-start sm:items-end gap-1 flex-shrink-0">
                 <span className="px-3 py-1 text-xs font-medium bg-[#08874a]/10 dark:bg-[#39FF14]/10 text-[#08874a] dark:text-[#39FF14] border border-[#08874a]/20 dark:border-[#39FF14]/20 rounded-full">
                   Internship
                 </span>
-                <span className="text-sm text-[var(--muted-foreground)] mt-1">July – August 2025</span>
+                <span className="text-sm text-[var(--muted-foreground)] mt-1">Summer 2025 – Present</span>
               </div>
             </div>
 
             {/* Subheading */}
             <p className="text-sm font-medium text-[var(--muted-foreground)] uppercase tracking-wider mb-4">
-              LLM Infrastructure &amp; Optimization
+              AI Systems &amp; Infrastructure
             </p>
 
             {/* Responsibilities */}
-            <ul className="space-y-4">
+            <ul className="space-y-4 mb-8">
               {[
-                'Investigated performance characteristics of LLM inference across GPU architectures, focusing on efficiency optimization under real-world constraints.',
-                'Designed experimental frameworks to evaluate trade-offs between model size, latency, and cost in production-like environments.',
-                'Explored system-level considerations for deploying AI models in privacy-constrained settings, including data locality and infrastructure isolation.',
-                'Produced structured analyses and reports informing infrastructure design decisions and model deployment strategies.',
+                'Gained exposure to real-world AI infrastructure environments and learned how large language models are deployed and operated at scale.',
+                'Assisted with internal projects related to AI inference testing, deployment workflows, and system performance observation.',
+                'Learned about practical considerations in production AI systems, including GPU utilization, inference latency, throughput, and deployment efficiency.',
+                'Supported benchmarking and evaluation efforts for different AI models and deployment configurations.',
+                'Explored optimization concepts such as lightweight models, quantization, and efficient inference strategies for real-world deployment scenarios.',
+                'Participated in industry conferences, including GenAI 2025 and Ai4 2025, helping introduce company services and learning about enterprise AI infrastructure trends.',
               ].map((item, i) => (
                 <li key={i} className="flex items-start gap-3 text-[var(--muted-foreground)]">
                   <span className="text-[#08874a] dark:text-[#39FF14] mt-1 flex-shrink-0">▹</span>
@@ -67,6 +71,18 @@ export default function ExperienceSection() {
                 </li>
               ))}
             </ul>
+
+            {/* View Details Button */}
+            <Link
+              to="/experience/onesource-cloud"
+              className="inline-flex items-center gap-2 px-5 py-2.5 bg-[#08874a]/10 dark:bg-[#39FF14]/10 text-[#08874a] dark:text-[#39FF14] border border-[#08874a]/30 dark:border-[#39FF14]/30 rounded-lg text-sm font-medium hover:bg-[#08874a]/20 dark:hover:bg-[#39FF14]/20 hover:border-[#08874a]/60 dark:hover:border-[#39FF14]/60 transition-all duration-300 group"
+            >
+              View Full Experience
+              <svg className="w-4 h-4 transition-transform group-hover:translate-x-0.5 duration-300" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" />
+              </svg>
+            </Link>
+
           </div>
         </div>
 
