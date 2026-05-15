@@ -70,7 +70,7 @@ export default function AboutSection() {
                   <div className="text-xs text-[var(--muted-foreground)]/70 mt-2">EBRW: 750 | Math: 800</div>
                 </div>
                 <div className="bg-[var(--card)] rounded-lg p-4 border border-[var(--border)]">
-                  <div className="text-3xl font-bold text-[#08874a] dark:text-[#39FF14] mb-1">4.459</div>
+                  <div className="text-3xl font-bold text-[#08874a] dark:text-[#39FF14] mb-1">5.52</div>
                   <div className="text-sm text-[var(--muted-foreground)]">Weighted GPA</div>
                   <div className="text-xs text-[var(--muted-foreground)]/70 mt-2">Highland Park HS</div>
                 </div>
