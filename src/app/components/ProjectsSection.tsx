@@ -15,6 +15,12 @@ export default function ProjectsSection() {
         'Introduced a correction coefficient (λ) to control fluency vs. speech naturalness trade-off',
         'Implemented latency-aware architecture and mitigated error propagation across stages',
         'Targeted real-world pediatric speech use, addressing ASR instability and deployment constraints'
+      ],
+      v2: [
+        'Streaming speech processing for lower latency',
+        'Lightweight model optimization for efficient inference',
+        'Improved conversational memory for multi-turn sessions',
+        'More efficient deployment workflows for real-world use',
       ]
     },
     {
@@ -102,13 +108,18 @@ export default function ProjectsSection() {
                 ))}
               </div>
 
-              {/* V2 Update Banner - SpeakWise only */}
-              {index === 0 && (
-                <div className="mt-6 flex items-start gap-3 px-5 py-4 bg-[#08874a]/10 dark:bg-[#39FF14]/10 border border-[#08874a]/25 dark:border-[#39FF14]/25 rounded-xl">
-                  <span className="px-2 py-0.5 text-[10px] font-semibold bg-[#08874a] dark:bg-[#39FF14] text-white dark:text-black rounded-full whitespace-nowrap mt-0.5">V2 In Progress</span>
-                  <p className="text-sm text-[var(--muted-foreground)] leading-relaxed">
-                    Upgrading with streaming speech processing, lightweight model optimization, improved conversational memory, and more efficient inference for real-world deployment.
-                  </p>
+              {/* V2 bullets - SpeakWise only */}
+              {'v2' in project && project.v2 && (
+                <div className="mt-5 pt-5 border-t border-[var(--border)]">
+                  <p className="text-xs font-semibold text-[#08874a] dark:text-[#39FF14] uppercase tracking-wider mb-3">V2 — In Progress</p>
+                  <div className="space-y-3">
+                    {(project.v2 as string[]).map((item, i) => (
+                      <div key={i} className="flex items-start gap-4">
+                        <div className="w-1.5 h-1.5 rounded-full border border-[#08874a] dark:border-[#39FF14] mt-2 flex-shrink-0" />
+                        <p className="text-[var(--muted-foreground)] leading-relaxed">{item}</p>
+                      </div>
+                    ))}
+                  </div>
                 </div>
               )}
 
