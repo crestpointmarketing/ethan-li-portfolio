@@ -416,6 +416,41 @@ export default function SpeakWiseDetail() {
             </div>
           </section>
 
+          {/* SpeakWise V2 */}
+          <section>
+            <h2
+              className="text-3xl mb-6 flex items-center gap-4"
+              style={{ fontFamily: "'Inter', sans-serif", fontWeight: 600 }}
+            >
+              <span className="w-2 h-8 bg-[#08874a] dark:bg-[#39FF14] rounded-full" />
+              What's Next — SpeakWise V2
+            </h2>
+            <div className="bg-gradient-to-br from-[#08874a]/10 dark:from-[#39FF14]/10 to-transparent border border-[#08874a]/30 dark:border-[#39FF14]/30 rounded-xl p-8">
+              <div className="flex items-center gap-3 mb-4">
+                <span className="px-3 py-1 text-xs font-medium bg-[#08874a]/20 dark:bg-[#39FF14]/20 text-[#08874a] dark:text-[#39FF14] border border-[#08874a]/30 dark:border-[#39FF14]/30 rounded-full">
+                  In Progress
+                </span>
+              </div>
+              <p className="text-[var(--foreground)]/90 leading-relaxed mb-6">
+                Currently working on <span className="text-[#08874a] dark:text-[#39FF14] font-medium">SpeakWise V2</span>, focused on improving
+                real-time responsiveness, deployment efficiency, and scalability for AI-powered speech interaction.
+              </p>
+              <ul className="space-y-3">
+                {[
+                  'Streaming speech processing for lower perceived latency',
+                  'Lightweight model development and optimization for efficient inference',
+                  'Improved conversational memory for more coherent multi-turn sessions',
+                  'More efficient inference workflows for practical real-world deployment',
+                ].map((item, i) => (
+                  <li key={i} className="flex items-start gap-3">
+                    <span className="text-[#08874a] dark:text-[#39FF14] mt-1 flex-shrink-0">▹</span>
+                    <span className="text-[var(--foreground)]/90 leading-relaxed">{item}</span>
+                  </li>
+                ))}
+              </ul>
+            </div>
+          </section>
+
         </div>
 
         {/* Bottom Navigation */}
