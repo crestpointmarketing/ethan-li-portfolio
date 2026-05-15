@@ -110,7 +110,7 @@ export default function ProjectsSection() {
 
               {/* V2 bullets - SpeakWise only */}
               {'v2' in project && project.v2 && (
-                <div className="mt-5 pt-5 border-t border-[var(--border)]">
+                <div className="mt-5 px-5 py-4 bg-[#08874a]/10 dark:bg-[#39FF14]/10 border border-[#08874a]/25 dark:border-[#39FF14]/25 rounded-xl">
                   <p className="text-xs font-semibold text-[#08874a] dark:text-[#39FF14] uppercase tracking-wider mb-3">V2 — In Progress</p>
                   <div className="space-y-3">
                     {(project.v2 as string[]).map((item, i) => (
