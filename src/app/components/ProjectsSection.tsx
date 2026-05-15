@@ -9,6 +9,11 @@ export default function ProjectsSection() {
       subtitle: 'HPHS Sci Tech Fair — 1st Place & Jay Ingram Award',
       subtitle2: 'DRSEF — Honorable Mention (Top 4)',
       period: '2024 - 2025',
+      metrics: [
+        { value: '46%', label: 'Fluency Improvement' },
+        { value: '95%+', label: 'Stutter Reduction' },
+        { value: '<300ms', label: 'Real-Time Latency' },
+      ],
       highlights: [
         'Built a multi-stage neural speech repair system achieving 46% fluency improvement and 95%+ stutter reduction',
         'Designed pipeline: Whisper (ASR) → LLM correction → XTTS synthesis with real-time streaming',
@@ -92,6 +97,17 @@ export default function ProjectsSection() {
                 </div>
                 <span className="text-sm text-white/40 whitespace-nowrap">{project.period}</span>
               </div>
+
+              {'metrics' in project && project.metrics && (
+                <div className="flex flex-wrap gap-3 mb-6">
+                  {(project.metrics as { value: string; label: string }[]).map((m) => (
+                    <div key={m.label} className="flex flex-col items-center px-5 py-3 bg-[#08874a]/10 dark:bg-[#39FF14]/10 border border-[#08874a]/20 dark:border-[#39FF14]/20 rounded-xl min-w-[90px]">
+                      <span className="text-2xl font-bold text-[#08874a] dark:text-[#39FF14] leading-none mb-1">{m.value}</span>
+                      <span className="text-xs text-[var(--muted-foreground)] text-center">{m.label}</span>
+                    </div>
+                  ))}
+                </div>
+              )}
 
               <div className="space-y-3">
                 {project.highlights.map((highlight, i) => (
