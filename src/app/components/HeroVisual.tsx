@@ -78,6 +78,15 @@ const CARDS = [
     pos: { right: '3%', bottom: '8%' },
     href: '/projects/zeitgeist',
   },
+  {
+    icon: '📣',
+    iconBg: 'linear-gradient(145deg,#E0507A,#7A1F3D)',
+    title: 'Pomelo Labs',
+    sub: 'AI Marketing Ops',
+    delay: '2.7s',
+    pos: { right: '3%', top: '4%' },
+    href: '/projects/pomelo-labs',
+  },
 ];
 
 export default function HeroVisual() {
