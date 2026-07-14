@@ -50,6 +50,21 @@ function project([x, y, z]: V3, ry: number, rx: number) {
   return { px: (x1 / d) * 44 + 55, py: (y2 / d) * 44 + 50, z: z2 };
 }
 
+// Citrus-slice wheel — matches Pomelo Labs' actual logo mark (a sliced
+// pomelo with radiating segments), rather than a generic megaphone.
+const PomeloIcon = (
+  <svg width="26" height="26" viewBox="0 0 100 100" fill="none">
+    <circle cx="50" cy="50" r="40" stroke="white" strokeWidth="5" />
+    <circle cx="50" cy="50" r="5" fill="white" />
+    <line x1="50" y1="50" x2="50" y2="12" stroke="white" strokeWidth="4" strokeLinecap="round" />
+    <line x1="50" y1="50" x2="80" y2="30" stroke="white" strokeWidth="4" strokeLinecap="round" />
+    <line x1="50" y1="50" x2="80" y2="70" stroke="white" strokeWidth="4" strokeLinecap="round" />
+    <line x1="50" y1="50" x2="50" y2="88" stroke="white" strokeWidth="4" strokeLinecap="round" />
+    <line x1="50" y1="50" x2="20" y2="70" stroke="white" strokeWidth="4" strokeLinecap="round" />
+    <line x1="50" y1="50" x2="20" y2="30" stroke="white" strokeWidth="4" strokeLinecap="round" />
+  </svg>
+);
+
 // Speaking head + sound waves — SpeakWise is a speech-therapy product, not
 // captured by a generic emoji.
 const SpeakWiseIcon = (
@@ -93,8 +108,8 @@ const CARDS = [
     href: '/projects/zeitgeist',
   },
   {
-    icon: '📣',
-    iconBg: 'linear-gradient(145deg,#E0507A,#7A1F3D)',
+    icon: PomeloIcon,
+    iconBg: 'linear-gradient(145deg,#8B5CF6,#4C1D95)',
     title: 'PomeloLabs',
     sub: 'AI Marketing Team',
     delay: '2.7s',
