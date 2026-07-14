@@ -39,9 +39,9 @@ const supabase = createClient(url, serviceRoleKey, { auth: { persistSession: fal
 
 const project = {
   slug: 'pomelo-labs',
-  title: 'Pomelo Labs: AI Marketing Operations Platform',
+  title: 'PomeloLabs',
   subtitles: [
-    'AI Marketing Operations System for B2B Growth',
+    'AI Marketing Team for B2B Growth',
     'From AI search visibility and market research to content production, publishing, and continuous improvement',
   ],
   badges: [
@@ -71,7 +71,7 @@ const project = {
   stats: [
     { value: '4', label: 'AI Marketing Agents' },
     { value: '4', label: 'AI Search Engines Tracked' },
-    { value: 'Multi-Tenant', label: 'Architecture (org-level RLS)', noWrap: true },
+    { value: 'Multi-Tenant', label: 'Architecture (org-level RLS)' },
     { value: '$99+/mo', label: 'Starting Price' },
   ],
   sections: [

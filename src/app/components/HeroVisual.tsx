@@ -50,9 +50,23 @@ function project([x, y, z]: V3, ry: number, rx: number) {
   return { px: (x1 / d) * 44 + 55, py: (y2 / d) * 44 + 50, z: z2 };
 }
 
+// Speaking head + sound waves — SpeakWise is a speech-therapy product, not
+// captured by a generic emoji.
+const SpeakWiseIcon = (
+  <svg width="26" height="26" viewBox="0 0 100 100" fill="none">
+    <path
+      d="M31 14c-11 0-20 10-20 24 0 9 4 16 10 20 2 3 2 8-1 12h11c-3-4-3-9-1-12 9-2 15-10 15-20 0-14-9-24-14-24z"
+      fill="white"
+    />
+    <path d="M56 38a14 14 0 0 1 0 24" stroke="white" strokeWidth="4" strokeLinecap="round" />
+    <path d="M64 30a26 26 0 0 1 0 40" stroke="white" strokeWidth="4" strokeLinecap="round" opacity="0.75" />
+    <path d="M72 22a38 38 0 0 1 0 56" stroke="white" strokeWidth="4" strokeLinecap="round" opacity="0.5" />
+  </svg>
+);
+
 const CARDS = [
   {
-    icon: '⚡',
+    icon: SpeakWiseIcon,
     iconBg: 'linear-gradient(145deg,#C44200,#7A1500)',
     title: 'SpeakWise',
     sub: 'AI Speech Therapy',
@@ -81,8 +95,8 @@ const CARDS = [
   {
     icon: '📣',
     iconBg: 'linear-gradient(145deg,#E0507A,#7A1F3D)',
-    title: 'Pomelo Labs',
-    sub: 'AI Marketing Ops',
+    title: 'PomeloLabs',
+    sub: 'AI Marketing Team',
     delay: '2.7s',
     pos: { right: '3%', top: '4%' },
     href: '/projects/pomelo-labs',
