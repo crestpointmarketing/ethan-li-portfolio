@@ -82,7 +82,7 @@ const CARDS = [
 
 export default function HeroVisual() {
   const { resolvedTheme } = useTheme();
-  const GREEN = resolvedTheme === 'dark' ? '#39FF14' : '#08874a';
+  const GREEN = resolvedTheme === 'dark' ? '#16A34A' : '#08874a';
   const [rot, setRot] = useState(0.5);
   const [mouse, setMouse] = useState({ x: 0, y: 0 });
   const rafRef = useRef<number>(0);
@@ -117,7 +117,7 @@ export default function HeroVisual() {
         className="absolute inset-0 pointer-events-none"
         style={{
           background:
-            'radial-gradient(ellipse 68% 68% at 56% 50%, rgba(57,255,20,0.22) 0%, rgba(57,255,20,0.07) 40%, transparent 65%)',
+            'radial-gradient(ellipse 68% 68% at 56% 50%, rgba(22, 163, 74,0.22) 0%, rgba(22, 163, 74,0.07) 40%, transparent 65%)',
         }}
       />
 
@@ -126,7 +126,7 @@ export default function HeroVisual() {
         viewBox="0 0 100 100"
         preserveAspectRatio="none"
         className="absolute inset-0 w-full h-full pointer-events-none"
-        style={{ filter: 'drop-shadow(0 0 9px rgba(57,255,20,0.7))' }}
+        style={{ filter: 'drop-shadow(0 0 9px rgba(22, 163, 74,0.7))' }}
       >
         {EDGES.map(([a, b], i) => {
           const va = pts[a], vb = pts[b];

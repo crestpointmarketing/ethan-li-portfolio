@@ -1,62 +1,38 @@
+import { useEffect, useState } from 'react';
 import { Link } from 'react-router';
+import type { ProjectCard } from '@shared/projectSchema';
+
+type LoadState =
+  | { status: 'loading' }
+  | { status: 'error' }
+  | { status: 'ready'; projects: ProjectCard[] };
 
 export default function ProjectsSection() {
-  const projects = [
-    {
-      id: 'speakwise',
-      github: 'https://github.com/3than777',
-      title: 'SpeakWise: AI-Powered Speech Therapy Platform',
-      subtitle: 'HPHS Sci Tech Fair — 1st Place & Jay Ingram Award',
-      subtitle2: 'DRSEF — Honorable Mention (Top 4)',
-      period: '2024 - 2025',
-      highlights: [
-        'Built a multi-stage neural speech repair system achieving 46% fluency improvement and 95%+ stutter reduction',
-        'Designed pipeline: Whisper (ASR) → LLM correction → XTTS synthesis with real-time streaming',
-        'Introduced a correction coefficient (λ) to control fluency vs. speech naturalness trade-off',
-        'Implemented latency-aware architecture and mitigated error propagation across stages',
-        'Targeted real-world pediatric speech use, addressing ASR instability and deployment constraints'
-      ],
-      v2: [
-        'Streaming speech processing for lower latency',
-        'Lightweight model optimization for efficient inference',
-        'Improved conversational memory for multi-turn sessions',
-        'More efficient deployment workflows for real-world use',
-      ]
-    },
-    {
-      id: 'eelocutionist',
-      github: 'https://github.com/3than777',
-      title: 'Eelocutionist — AI Interview Coaching Platform',
-      subtitle: 'Internship Project, Deployed Product',
-      period: '2024 - 2025',
-      highlights: [
-        'Built a production-level AI interview system deployed on a live platform, supporting real-time user interactions',
-        'Developed backend using Express.js + LLM evaluation, integrating speech APIs',
-        'Designed multi-format interview engine (behavioral, technical, case-based)',
-        'Implemented performance analytics dashboard with scoring and feedback tracking',
-        'Contributed to a scalable AI system focused on human-AI interaction'
-      ]
-    },
-    {
-      id: 'zeitgeist',
-      github: 'https://github.com/3than777',
-      title: 'Zeitgeist — AI System for Financial Reasoning',
-      subtitle: 'Independent Project | Real-Time AI System',
-      period: '2024 - 2025',
-      highlights: [
-        'Built a real-time AI system for financial reasoning under uncertainty, analyzing options data and market signals',
-        'Designed pipeline integrating Polygon.io APIs with LLM-based interpretation of volatility and Greeks',
-        'Developed backend using FastAPI + Docker for scalable, low-latency deployment',
-        'Implemented continuous data ingestion and inference pipeline for dynamic market conditions',
-        'Explored LLM-based reasoning in structured financial domains'
-      ]
-    }
-  ];
+  const [state, setState] = useState<LoadState>({ status: 'loading' });
+
+  useEffect(() => {
+    let cancelled = false;
+    fetch('/api/projects')
+      .then(async (res) => {
+        if (cancelled) return;
+        if (!res.ok) {
+          setState({ status: 'error' });
+          return;
+        }
+        const data = await res.json();
+        setState({ status: 'ready', projects: data.projects ?? [] });
+      })
+      .catch(() => {
+        if (!cancelled) setState({ status: 'error' });
+      });
+    return () => {
+      cancelled = true;
+    };
+  }, []);
 
   return (
     <section id="projects" className="relative py-24 lg:py-32 bg-[var(--secondary)]">
       <div className="max-w-[1440px] mx-auto px-6 lg:px-16">
-
         {/* Section Header */}
         <div className="mb-16">
           <h2
@@ -66,7 +42,7 @@ export default function ProjectsSection() {
               fontSize: '48px',
               fontWeight: 600,
               lineHeight: 1.1,
-              letterSpacing: '-0.02em'
+              letterSpacing: '-0.02em',
             }}
           >
             Projects
@@ -74,96 +50,133 @@ export default function ProjectsSection() {
           <p className="text-[var(--muted-foreground)] text-lg max-w-2xl">
             Production-level AI systems across speech processing, human-AI interaction, and financial reasoning
           </p>
-          <div className="w-20 h-1 bg-[#08874a] dark:bg-[#39FF14] mt-6" />
+          <div className="w-20 h-1 bg-[#08874a] dark:bg-[#16A34A] mt-6" />
         </div>
 
-        {/* Projects Grid */}
-        <div className="space-y-12">
-          {projects.map((project, index) => (
-            <div
-              key={index}
-              className="group bg-[var(--card)] border border-[var(--border)] rounded-2xl p-8 lg:p-10 hover:border-[#08874a]/30 dark:hover:border-[#39FF14]/30 hover:bg-white/[0.07] transition-all duration-500"
-            >
-              <div className="flex flex-col lg:flex-row lg:items-start lg:justify-between gap-6 mb-6">
-                <div className="flex-1">
-                  <h3 className="text-2xl lg:text-3xl font-bold mb-3 group-hover:text-[#08874a] dark:group-hover:text-[#39FF14] transition-colors duration-300">
-                    {project.title}
-                  </h3>
-                  <div className="space-y-1">
-                    <p className="text-[#08874a] dark:text-[#39FF14] font-medium">{project.subtitle}</p>
-                    {project.subtitle2 && (
-                      <p className="text-[#08874a]/80 dark:text-[#39FF14]/80 text-sm">{project.subtitle2}</p>
+        {state.status === 'loading' && (
+          <p className="text-[var(--muted-foreground)]">Loading projects…</p>
+        )}
+
+        {state.status === 'error' && (
+          <p className="text-[var(--muted-foreground)]">Couldn&apos;t load projects right now — please try again later.</p>
+        )}
+
+        {state.status === 'ready' && state.projects.length === 0 && (
+          <p className="text-[var(--muted-foreground)]">No published projects yet — check back soon.</p>
+        )}
+
+        {state.status === 'ready' && state.projects.length > 0 && (
+          <div className="space-y-12">
+            {state.projects.map((project) => (
+              <div
+                key={project.id}
+                className="group bg-[var(--card)] border border-[var(--border)] rounded-2xl overflow-hidden hover:border-[#08874a]/30 dark:hover:border-[#16A34A]/30 hover:bg-white/[0.07] transition-all duration-500"
+              >
+                {project.posterUrl && (
+                  <img
+                    src={project.posterUrl}
+                    alt={`${project.title} poster`}
+                    className="w-full h-56 object-cover border-b border-[var(--border)]"
+                  />
+                )}
+                <div className="p-8 lg:p-10">
+                <div className="flex flex-col lg:flex-row lg:items-start lg:justify-between gap-6 mb-6">
+                  <div className="flex-1">
+                    <h3 className="text-2xl lg:text-3xl font-bold mb-3 group-hover:text-[#08874a] dark:group-hover:text-[#16A34A] transition-colors duration-300">
+                      {project.title}
+                    </h3>
+                    <div className="space-y-1">
+                      {project.subtitles.map((subtitle, i) => (
+                        <p
+                          key={i}
+                          className={
+                            i === 0
+                              ? 'text-[#08874a] dark:text-[#16A34A] font-medium'
+                              : 'text-[#08874a]/80 dark:text-[#16A34A]/80 text-sm'
+                          }
+                        >
+                          {subtitle}
+                        </p>
+                      ))}
+                    </div>
+                  </div>
+                  {project.period && (
+                    <span className="text-sm text-[var(--muted-foreground)] whitespace-nowrap">{project.period}</span>
+                  )}
+                </div>
+
+                <div className="space-y-3">
+                  {project.cardHighlights.map((highlight, i) => (
+                    <div key={i} className="flex items-start gap-4">
+                      <div className="w-1.5 h-1.5 rounded-full bg-[#08874a] dark:bg-[#16A34A] mt-2 flex-shrink-0" />
+                      <p className="text-[var(--muted-foreground)] leading-relaxed">{highlight}</p>
+                    </div>
+                  ))}
+                </div>
+
+                {project.cardTeaser && (
+                  <div className="mt-5 px-5 py-4 bg-[#08874a]/10 dark:bg-[#16A34A]/10 border border-[#08874a]/25 dark:border-[#16A34A]/25 rounded-xl">
+                    <p className="text-xs font-semibold text-[#08874a] dark:text-[#16A34A] uppercase tracking-wider mb-3">
+                      {project.cardTeaser.label}
+                    </p>
+                    <div className="space-y-3">
+                      {project.cardTeaser.items.map((item, i) => (
+                        <div key={i} className="flex items-start gap-4">
+                          <div className="w-1.5 h-1.5 rounded-full border border-[#08874a] dark:border-[#16A34A] mt-2 flex-shrink-0" />
+                          <p className="text-[var(--muted-foreground)] leading-relaxed">{item}</p>
+                        </div>
+                      ))}
+                    </div>
+                  </div>
+                )}
+
+                {/* Tech tags + Action buttons row */}
+                <div className="mt-6 pt-6 border-t border-white/5 flex flex-wrap items-center justify-between gap-4">
+                  <div className="flex flex-wrap gap-2">
+                    {project.techTags.map((tech) => (
+                      <span
+                        key={tech}
+                        className="px-3 py-1 text-xs bg-[#08874a]/10 dark:bg-[#16A34A]/10 text-[#08874a] dark:text-[#16A34A] rounded-full border border-[#08874a]/20 dark:border-[#16A34A]/20"
+                      >
+                        {tech}
+                      </span>
+                    ))}
+                  </div>
+
+                  <div className="flex items-center gap-3 flex-shrink-0">
+                    <Link
+                      to={`/projects/${project.slug}`}
+                      className="px-6 py-2.5 bg-[#08874a] dark:bg-[#16A34A] text-white text-sm font-semibold rounded-lg hover:bg-[#0a9d56] dark:hover:bg-[#15803D] transition-colors duration-200"
+                    >
+                      View Details
+                    </Link>
+                    {project.paperUrl && (
+                      <a
+                        href={project.paperUrl}
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        className="px-6 py-2.5 text-sm font-semibold text-[#08874a] dark:text-[#16A34A] rounded-lg border border-[#08874a]/30 dark:border-[#16A34A]/30 hover:bg-[#08874a]/10 dark:hover:bg-[#16A34A]/10 transition-all duration-200"
+                      >
+                        Paper &rarr;
+                      </a>
+                    )}
+                    {project.githubUrl && (
+                      <a
+                        href={project.githubUrl}
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        className="px-6 py-2.5 text-sm font-medium text-[var(--muted-foreground)] rounded-lg border border-[var(--border)] hover:text-[var(--foreground)] hover:border-[var(--foreground)]/30 transition-all duration-200"
+                      >
+                        GitHub &rarr;
+                      </a>
                     )}
                   </div>
                 </div>
-                <span className="text-sm text-white/40 whitespace-nowrap">{project.period}</span>
-              </div>
-
-              <div className="space-y-3">
-                {project.highlights.map((highlight, i) => (
-                  <div key={i} className="flex items-start gap-4">
-                    <div className="w-1.5 h-1.5 rounded-full bg-[#08874a] dark:bg-[#39FF14] mt-2 flex-shrink-0" />
-                    <p className="text-[var(--muted-foreground)] leading-relaxed">{highlight}</p>
-                  </div>
-                ))}
-              </div>
-
-              {/* V2 bullets - SpeakWise only */}
-              {'v2' in project && project.v2 && (
-                <div className="mt-5 px-5 py-4 bg-[#08874a]/10 dark:bg-[#39FF14]/10 border border-[#08874a]/25 dark:border-[#39FF14]/25 rounded-xl">
-                  <p className="text-xs font-semibold text-[#08874a] dark:text-[#39FF14] uppercase tracking-wider mb-3">V2 — In Progress</p>
-                  <div className="space-y-3">
-                    {(project.v2 as string[]).map((item, i) => (
-                      <div key={i} className="flex items-start gap-4">
-                        <div className="w-1.5 h-1.5 rounded-full border border-[#08874a] dark:border-[#39FF14] mt-2 flex-shrink-0" />
-                        <p className="text-[var(--muted-foreground)] leading-relaxed">{item}</p>
-                      </div>
-                    ))}
-                  </div>
-                </div>
-              )}
-
-              {/* Tech tags + Action buttons row */}
-              <div className="mt-6 pt-6 border-t border-white/5 flex flex-wrap items-center justify-between gap-4">
-                <div className="flex flex-wrap gap-2">
-                  {index === 0 && ['Python', 'Whisper ASR', 'LLM', 'XTTS', 'Real-Time Streaming'].map((tech) => (
-                    <span key={tech} className="px-3 py-1 text-xs bg-[#08874a]/10 dark:bg-[#39FF14]/10 text-[#08874a] dark:text-[#39FF14] rounded-full border border-[#08874a]/20 dark:border-[#39FF14]/20">
-                      {tech}
-                    </span>
-                  ))}
-                  {index === 1 && ['Express.js', 'LLM', 'Speech APIs', 'Real-Time', 'Production'].map((tech) => (
-                    <span key={tech} className="px-3 py-1 text-xs bg-[#08874a]/10 dark:bg-[#39FF14]/10 text-[#08874a] dark:text-[#39FF14] rounded-full border border-[#08874a]/20 dark:border-[#39FF14]/20">
-                      {tech}
-                    </span>
-                  ))}
-                  {index === 2 && ['FastAPI', 'Docker', 'Polygon.io', 'LLM', 'Financial AI'].map((tech) => (
-                    <span key={tech} className="px-3 py-1 text-xs bg-[#08874a]/10 dark:bg-[#39FF14]/10 text-[#08874a] dark:text-[#39FF14] rounded-full border border-[#08874a]/20 dark:border-[#39FF14]/20">
-                      {tech}
-                    </span>
-                  ))}
-                </div>
-
-                <div className="flex items-center gap-3 flex-shrink-0">
-                  <Link
-                    to={`/projects/${project.id}`}
-                    className="px-6 py-2.5 bg-[#08874a] dark:bg-[#39FF14] text-white dark:text-black text-sm font-semibold rounded-lg hover:bg-[#0a9d56] dark:hover:bg-[#5EFF35] transition-colors duration-200"
-                  >
-                    View Details
-                  </Link>
-                  <a
-                    href={project.github}
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    className="px-6 py-2.5 text-sm font-medium text-[var(--muted-foreground)] rounded-lg border border-[var(--border)] hover:text-[var(--foreground)] hover:border-[var(--foreground)]/30 transition-all duration-200"
-                  >
-                    GitHub →
-                  </a>
                 </div>
               </div>
-            </div>
-          ))}
-        </div>
-
+            ))}
+          </div>
+        )}
       </div>
     </section>
   );

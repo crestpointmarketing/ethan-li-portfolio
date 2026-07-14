@@ -2,9 +2,13 @@ import * as React from "react";
 
 import { cn } from "./utils";
 
-function Input({ className, type, ...props }: React.ComponentProps<"input">) {
-  return (
+// forwardRef so react-hook-form's register() (and anything else needing a
+// DOM ref, e.g. focus-on-error) actually reaches the <input> element —
+// a plain function component here silently drops the ref.
+const Input = React.forwardRef<HTMLInputElement, React.ComponentProps<"input">>(
+  ({ className, type, ...props }, ref) => (
     <input
+      ref={ref}
       type={type}
       data-slot="input"
       className={cn(
@@ -15,7 +19,8 @@ function Input({ className, type, ...props }: React.ComponentProps<"input">) {
       )}
       {...props}
     />
-  );
-}
+  ),
+);
+Input.displayName = "Input";
 
 export { Input };

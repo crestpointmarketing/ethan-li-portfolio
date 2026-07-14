@@ -48,7 +48,7 @@ export default function HomePage() {
                   }}
                 >
                   AI Systems Builder for{' '}
-                  <span className="text-[#08874a] dark:text-[#39FF14]">Real-World Problems</span>
+                  <span className="text-[#08874a] dark:text-[#16A34A]">Real-World Problems</span>
                 </h2>
 
                 {/* Description */}
@@ -67,15 +67,15 @@ export default function HomePage() {
               >
                 <a
                   href="#projects"
-                  className="group relative px-8 py-4 bg-[#08874a] dark:bg-[#39FF14] text-white dark:text-black rounded-lg font-medium transition-all duration-300 hover:bg-[#0a9d56] dark:hover:bg-[#5EFF35] hover:shadow-[0_0_30px_rgba(57, 255, 20,0.5)] hover:scale-105 inline-block"
+                  className="group relative px-8 py-4 bg-[#08874a] dark:bg-[#16A34A] text-white rounded-lg font-medium transition-all duration-300 hover:bg-[#0a9d56] dark:hover:bg-[#15803D] hover:shadow-[0_0_30px_rgba(22, 163, 74,0.5)] hover:scale-105 inline-block"
                 >
                   <span className="relative z-10">View Projects</span>
-                  <div className="absolute inset-0 rounded-lg bg-[#0a9d56] dark:bg-[#5EFF35] opacity-0 group-hover:opacity-100 blur-xl transition-opacity duration-300" />
+                  <div className="absolute inset-0 rounded-lg bg-[#0a9d56] dark:bg-[#15803D] opacity-0 group-hover:opacity-100 blur-xl transition-opacity duration-300" />
                 </a>
 
                 <a
                   href="#contact"
-                  className="px-8 py-4 border border-[var(--border)] text-[var(--foreground)] rounded-lg font-medium transition-all duration-300 hover:border-[#08874a]/50 dark:hover:border-[#39FF14]/50 hover:bg-[var(--foreground)]/5 inline-block"
+                  className="px-8 py-4 border border-[var(--border)] text-[var(--foreground)] rounded-lg font-medium transition-all duration-300 hover:border-[#08874a]/50 dark:hover:border-[#16A34A]/50 hover:bg-[var(--foreground)]/5 inline-block"
                 >
                   Contact Me
                 </a>
@@ -89,17 +89,12 @@ export default function HomePage() {
                 style={{ transitionDelay: '600ms' }}
               >
                 <span className="flex items-center gap-2">
-                  <div className="w-1.5 h-1.5 rounded-full bg-[#08874a] dark:bg-[#39FF14]" />
+                  <div className="w-1.5 h-1.5 rounded-full bg-[#08874a] dark:bg-[#16A34A]" />
                   USACO Gold
                 </span>
                 <span className="text-[var(--muted-foreground)]/50 hidden sm:inline">|</span>
                 <span className="flex items-center gap-2">
-                  <div className="w-1.5 h-1.5 rounded-full bg-[#08874a] dark:bg-[#39FF14]" />
-                  1540 SAT
-                </span>
-                <span className="text-[var(--muted-foreground)]/50 hidden sm:inline">|</span>
-                <span className="flex items-center gap-2">
-                  <div className="w-1.5 h-1.5 rounded-full bg-[#08874a] dark:bg-[#39FF14]" />
+                  <div className="w-1.5 h-1.5 rounded-full bg-[#08874a] dark:bg-[#16A34A]" />
                   AI Systems & Full-Stack
                 </span>
               </div>

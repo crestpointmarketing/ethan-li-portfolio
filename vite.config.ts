@@ -28,6 +28,9 @@ export default defineConfig({
     alias: {
       // Alias @ to the src directory
       '@': path.resolve(__dirname, './src'),
+      // Alias @shared to the shared/ directory (zod schemas used by both
+      // the frontend and the /api serverless functions)
+      '@shared': path.resolve(__dirname, './shared'),
     },
   },
 

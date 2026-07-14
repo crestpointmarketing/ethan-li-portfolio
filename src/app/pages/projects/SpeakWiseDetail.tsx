@@ -8,7 +8,7 @@ export default function SpeakWiseDetail() {
         {/* Back Button */}
         <Link
           to="/"
-          className="inline-flex items-center gap-2 text-[var(--muted-foreground)] hover:text-[#08874a] dark:hover:text-[#39FF14] transition-colors duration-300 mb-12 group"
+          className="inline-flex items-center gap-2 text-[var(--muted-foreground)] hover:text-[#08874a] dark:hover:text-[#16A34A] transition-colors duration-300 mb-12 group"
         >
           <svg className="w-5 h-5 transition-transform group-hover:-translate-x-1 duration-300" fill="none" viewBox="0 0 24 24" stroke="currentColor">
             <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M15 19l-7-7 7-7" />
@@ -19,7 +19,7 @@ export default function SpeakWiseDetail() {
         {/* Project Header */}
         <div className="mb-16">
           <div className="flex flex-wrap items-center gap-4 mb-6">
-            <span className="px-4 py-1.5 bg-[#08874a]/10 dark:bg-[#39FF14]/10 text-[#08874a] dark:text-[#39FF14] text-sm rounded-full border border-[#08874a]/20 dark:border-[#39FF14]/20">
+            <span className="px-4 py-1.5 bg-[#08874a]/10 dark:bg-[#16A34A]/10 text-[#08874a] dark:text-[#16A34A] text-sm rounded-full border border-[#08874a]/20 dark:border-[#16A34A]/20">
               1st Place Award
             </span>
             <span className="px-4 py-1.5 bg-[var(--muted)] text-[var(--muted-foreground)] text-sm rounded-full border border-[var(--border)]">
@@ -38,26 +38,26 @@ export default function SpeakWiseDetail() {
           </h1>
 
           <div className="space-y-2">
-            <p className="text-xl text-[#08874a] dark:text-[#39FF14]">HPHS Sci Tech Fair — 1st Place & Jay Ingram Award</p>
-            <p className="text-lg text-[#08874a]/80 dark:text-[#39FF14]/80">Dallas Regional Science & Engineering Fair (DRSEF) — Honorable Mention (Top 4)</p>
+            <p className="text-xl text-[#08874a] dark:text-[#16A34A]">HPHS Sci Tech Fair — 1st Place & Jay Ingram Award</p>
+            <p className="text-lg text-[#08874a]/80 dark:text-[#16A34A]/80">Dallas Regional Science & Engineering Fair (DRSEF) — Honorable Mention (Top 4)</p>
           </div>
 
           {/* Key Metrics */}
           <div className="grid grid-cols-2 lg:grid-cols-4 gap-6 mt-12">
             <div className="bg-[var(--card)] border border-[var(--border)] rounded-xl p-6">
-              <div className="text-4xl font-bold text-[#08874a] dark:text-[#39FF14] mb-2">46%</div>
+              <div className="text-4xl font-bold text-[#08874a] dark:text-[#16A34A] mb-2">46%</div>
               <div className="text-sm text-[var(--muted-foreground)]">Fluency Improvement</div>
             </div>
             <div className="bg-[var(--card)] border border-[var(--border)] rounded-xl p-6">
-              <div className="text-4xl font-bold text-[#08874a] dark:text-[#39FF14] mb-2">95%+</div>
+              <div className="text-4xl font-bold text-[#08874a] dark:text-[#16A34A] mb-2">95%+</div>
               <div className="text-sm text-[var(--muted-foreground)]">Stutter Reduction</div>
             </div>
             <div className="bg-[var(--card)] border border-[var(--border)] rounded-xl p-6">
-              <div className="text-4xl font-bold text-[#08874a] dark:text-[#39FF14] mb-2">Real-time</div>
+              <div className="text-4xl font-bold text-[#08874a] dark:text-[#16A34A] mb-2">Real-time</div>
               <div className="text-sm text-[var(--muted-foreground)]">Streaming Pipeline</div>
             </div>
             <div className="bg-[var(--card)] border border-[var(--border)] rounded-xl p-6">
-              <div className="text-4xl font-bold text-[#08874a] dark:text-[#39FF14] mb-2 whitespace-nowrap">Multi-stage</div>
+              <div className="text-4xl font-bold text-[#08874a] dark:text-[#16A34A] mb-2 whitespace-nowrap">Multi-stage</div>
               <div className="text-sm text-[var(--muted-foreground)]">Neural Architecture</div>
             </div>
           </div>
@@ -69,7 +69,7 @@ export default function SpeakWiseDetail() {
             className="text-3xl mb-6 flex items-center gap-4"
             style={{ fontFamily: "'Inter', sans-serif", fontWeight: 600 }}
           >
-            <span className="w-2 h-8 bg-[#08874a] dark:bg-[#39FF14] rounded-full" />
+            <span className="w-2 h-8 bg-[#08874a] dark:bg-[#16A34A] rounded-full" />
             Project Demo
           </h2>
           <div
@@ -98,7 +98,7 @@ export default function SpeakWiseDetail() {
                 fontWeight: 600
               }}
             >
-              <span className="w-2 h-8 bg-[#08874a] dark:bg-[#39FF14] rounded-full" />
+              <span className="w-2 h-8 bg-[#08874a] dark:bg-[#16A34A] rounded-full" />
               Motivation & Societal Need
             </h2>
             <div className="bg-[var(--card)] border border-[var(--border)] rounded-xl p-8 space-y-4">
@@ -115,7 +115,7 @@ export default function SpeakWiseDetail() {
                 of intervention—placing treatment out of reach for millions.
               </p>
               <p className="text-[var(--foreground)]/90 leading-relaxed">
-                <span className="text-[#08874a] dark:text-[#39FF14] font-medium">SpeakWise addresses this gap</span> by creating a scalable,
+                <span className="text-[#08874a] dark:text-[#16A34A] font-medium">SpeakWise addresses this gap</span> by creating a scalable,
                 AI-powered speech therapy platform that delivers personalized, real-time corrective feedback accessible
                 to anyone with an internet connection. Our system specifically targets pediatric speech therapy
                 applications, where early intervention is critical for long-term outcomes.
@@ -132,18 +132,18 @@ export default function SpeakWiseDetail() {
                 fontWeight: 600
               }}
             >
-              <span className="w-2 h-8 bg-[#08874a] dark:bg-[#39FF14] rounded-full" />
+              <span className="w-2 h-8 bg-[#08874a] dark:bg-[#16A34A] rounded-full" />
               Core Innovation & Technical Approach
             </h2>
             <div className="space-y-6">
               <div className="bg-[var(--card)] border border-[var(--border)] rounded-xl p-8">
-                <h3 className="text-xl font-semibold text-[#08874a] dark:text-[#39FF14] mb-4">Multi-Stage Neural Pipeline</h3>
+                <h3 className="text-xl font-semibold text-[#08874a] dark:text-[#16A34A] mb-4">Multi-Stage Neural Pipeline</h3>
                 <p className="text-[var(--foreground)]/90 leading-relaxed mb-4">
                   SpeakWise implements a novel three-stage neural pipeline architecture:
                 </p>
                 <div className="space-y-4">
                   <div className="flex items-start gap-4">
-                    <div className="w-8 h-8 rounded-full bg-[#08874a]/20 dark:bg-[#39FF14]/20 flex items-center justify-center flex-shrink-0 text-[#08874a] dark:text-[#39FF14] font-bold text-sm">
+                    <div className="w-8 h-8 rounded-full bg-[#08874a]/20 dark:bg-[#16A34A]/20 flex items-center justify-center flex-shrink-0 text-[#08874a] dark:text-[#16A34A] font-bold text-sm">
                       1
                     </div>
                     <div>
@@ -155,7 +155,7 @@ export default function SpeakWiseDetail() {
                     </div>
                   </div>
                   <div className="flex items-start gap-4">
-                    <div className="w-8 h-8 rounded-full bg-[#08874a]/20 dark:bg-[#39FF14]/20 flex items-center justify-center flex-shrink-0 text-[#08874a] dark:text-[#39FF14] font-bold text-sm">
+                    <div className="w-8 h-8 rounded-full bg-[#08874a]/20 dark:bg-[#16A34A]/20 flex items-center justify-center flex-shrink-0 text-[#08874a] dark:text-[#16A34A] font-bold text-sm">
                       2
                     </div>
                     <div>
@@ -167,7 +167,7 @@ export default function SpeakWiseDetail() {
                     </div>
                   </div>
                   <div className="flex items-start gap-4">
-                    <div className="w-8 h-8 rounded-full bg-[#08874a]/20 dark:bg-[#39FF14]/20 flex items-center justify-center flex-shrink-0 text-[#08874a] dark:text-[#39FF14] font-bold text-sm">
+                    <div className="w-8 h-8 rounded-full bg-[#08874a]/20 dark:bg-[#16A34A]/20 flex items-center justify-center flex-shrink-0 text-[#08874a] dark:text-[#16A34A] font-bold text-sm">
                       3
                     </div>
                     <div>
@@ -182,9 +182,9 @@ export default function SpeakWiseDetail() {
               </div>
 
               <div className="bg-[var(--card)] border border-[var(--border)] rounded-xl p-8">
-                <h3 className="text-xl font-semibold text-[#08874a] dark:text-[#39FF14] mb-4">Novel Correction Coefficient (λ)</h3>
+                <h3 className="text-xl font-semibold text-[#08874a] dark:text-[#16A34A] mb-4">Novel Correction Coefficient (λ)</h3>
                 <p className="text-[var(--foreground)]/90 leading-relaxed">
-                  A key innovation is the introduction of a <span className="text-[#08874a] dark:text-[#39FF14] font-medium">tunable correction
+                  A key innovation is the introduction of a <span className="text-[#08874a] dark:text-[#16A34A] font-medium">tunable correction
                   coefficient (λ)</span> that balances fluency improvement against naturalness preservation. This parameter
                   allows therapists to customize intervention intensity based on individual patient needs—aggressive
                   correction for severe cases, or subtle guidance for mild disfluencies.
@@ -192,7 +192,7 @@ export default function SpeakWiseDetail() {
               </div>
 
               <div className="bg-[var(--card)] border border-[var(--border)] rounded-xl p-8">
-                <h3 className="text-xl font-semibold text-[#08874a] dark:text-[#39FF14] mb-4">Latency-Aware Architecture</h3>
+                <h3 className="text-xl font-semibold text-[#08874a] dark:text-[#16A34A] mb-4">Latency-Aware Architecture</h3>
                 <p className="text-[var(--foreground)]/90 leading-relaxed">
                   The system implements advanced streaming protocols and latency mitigation techniques to deliver
                   corrections within 200-300ms—fast enough to provide meaningful real-time feedback without disrupting
@@ -212,17 +212,17 @@ export default function SpeakWiseDetail() {
                 fontWeight: 600
               }}
             >
-              <span className="w-2 h-8 bg-[#08874a] dark:bg-[#39FF14] rounded-full" />
+              <span className="w-2 h-8 bg-[#08874a] dark:bg-[#16A34A] rounded-full" />
               Interdisciplinary Linguistics Component
             </h2>
             <div className="bg-[var(--card)] border border-[var(--border)] rounded-xl p-8 space-y-4">
               <p className="text-[var(--foreground)]/90 leading-relaxed">
-                SpeakWise is grounded in <span className="text-[#08874a] dark:text-[#39FF14] font-medium">phonological and pragmatic linguistic
+                SpeakWise is grounded in <span className="text-[#08874a] dark:text-[#16A34A] font-medium">phonological and pragmatic linguistic
                 theory</span>, specifically:
               </p>
               <ul className="space-y-3">
                 <li className="flex items-start gap-3">
-                  <div className="w-1.5 h-1.5 rounded-full bg-[#08874a] dark:bg-[#39FF14] mt-2 flex-shrink-0" />
+                  <div className="w-1.5 h-1.5 rounded-full bg-[#08874a] dark:bg-[#16A34A] mt-2 flex-shrink-0" />
                   <div>
                     <span className="font-medium">Phoneme-Level Analysis:</span>
                     <span className="text-[var(--muted-foreground)]"> The system identifies repetitions, prolongations, and blocks at the
@@ -230,7 +230,7 @@ export default function SpeakWiseDetail() {
                   </div>
                 </li>
                 <li className="flex items-start gap-3">
-                  <div className="w-1.5 h-1.5 rounded-full bg-[#08874a] dark:bg-[#39FF14] mt-2 flex-shrink-0" />
+                  <div className="w-1.5 h-1.5 rounded-full bg-[#08874a] dark:bg-[#16A34A] mt-2 flex-shrink-0" />
                   <div>
                     <span className="font-medium">Prosodic Preservation:</span>
                     <span className="text-[var(--muted-foreground)]"> Corrections maintain natural prosody (intonation, rhythm, stress)
@@ -238,7 +238,7 @@ export default function SpeakWiseDetail() {
                   </div>
                 </li>
                 <li className="flex items-start gap-3">
-                  <div className="w-1.5 h-1.5 rounded-full bg-[#08874a] dark:bg-[#39FF14] mt-2 flex-shrink-0" />
+                  <div className="w-1.5 h-1.5 rounded-full bg-[#08874a] dark:bg-[#16A34A] mt-2 flex-shrink-0" />
                   <div>
                     <span className="font-medium">Pragmatic Context Awareness:</span>
                     <span className="text-[var(--muted-foreground)]"> The LLM correction stage considers conversational context and
@@ -262,12 +262,12 @@ export default function SpeakWiseDetail() {
                 fontWeight: 600
               }}
             >
-              <span className="w-2 h-8 bg-[#08874a] dark:bg-[#39FF14] rounded-full" />
+              <span className="w-2 h-8 bg-[#08874a] dark:bg-[#16A34A] rounded-full" />
               Technical Development & Market Value
             </h2>
             <div className="space-y-6">
               <div className="bg-[var(--card)] border border-[var(--border)] rounded-xl p-8">
-                <h3 className="text-xl font-semibold text-[#08874a] dark:text-[#39FF14] mb-4">Tech Stack & Infrastructure</h3>
+                <h3 className="text-xl font-semibold text-[#08874a] dark:text-[#16A34A] mb-4">Tech Stack & Infrastructure</h3>
                 <div className="grid grid-cols-2 gap-4">
                   <div>
                     <h4 className="font-medium mb-2 text-sm text-[var(--muted-foreground)]">AI/ML</h4>
@@ -289,29 +289,29 @@ export default function SpeakWiseDetail() {
               </div>
 
               <div className="bg-[var(--card)] border border-[var(--border)] rounded-xl p-8">
-                <h3 className="text-xl font-semibold text-[#08874a] dark:text-[#39FF14] mb-4">Market Opportunity</h3>
+                <h3 className="text-xl font-semibold text-[#08874a] dark:text-[#16A34A] mb-4">Market Opportunity</h3>
                 <p className="text-[var(--foreground)]/90 leading-relaxed mb-4">
-                  The global speech therapy market is projected to reach <span className="text-[#08874a] dark:text-[#39FF14] font-medium">$8.2
+                  The global speech therapy market is projected to reach <span className="text-[#08874a] dark:text-[#16A34A] font-medium">$8.2
                   billion by 2028</span>, growing at 7.4% CAGR. Key market drivers include:
                 </p>
                 <ul className="space-y-2">
                   <li className="flex items-start gap-3">
-                    <div className="w-1.5 h-1.5 rounded-full bg-[#08874a] dark:bg-[#39FF14] mt-2 flex-shrink-0" />
+                    <div className="w-1.5 h-1.5 rounded-full bg-[#08874a] dark:bg-[#16A34A] mt-2 flex-shrink-0" />
                     <span className="text-[var(--muted-foreground)]">Rising prevalence of speech disorders in children (estimated 5-10% of school-age population)</span>
                   </li>
                   <li className="flex items-start gap-3">
-                    <div className="w-1.5 h-1.5 rounded-full bg-[#08874a] dark:bg-[#39FF14] mt-2 flex-shrink-0" />
+                    <div className="w-1.5 h-1.5 rounded-full bg-[#08874a] dark:bg-[#16A34A] mt-2 flex-shrink-0" />
                     <span className="text-[var(--muted-foreground)]">Growing telehealth adoption accelerated by COVID-19</span>
                   </li>
                   <li className="flex items-start gap-3">
-                    <div className="w-1.5 h-1.5 rounded-full bg-[#08874a] dark:bg-[#39FF14] mt-2 flex-shrink-0" />
+                    <div className="w-1.5 h-1.5 rounded-full bg-[#08874a] dark:bg-[#16A34A] mt-2 flex-shrink-0" />
                     <span className="text-[var(--muted-foreground)]">Shortage of licensed speech-language pathologists (estimated 19% shortage in U.S. by 2028)</span>
                   </li>
                 </ul>
               </div>
 
               <div className="bg-[var(--card)] border border-[var(--border)] rounded-xl p-8">
-                <h3 className="text-xl font-semibold text-[#08874a] dark:text-[#39FF14] mb-4">Deployment Considerations</h3>
+                <h3 className="text-xl font-semibold text-[#08874a] dark:text-[#16A34A] mb-4">Deployment Considerations</h3>
                 <p className="text-[var(--foreground)]/90 leading-relaxed">
                   Real-world deployment for pediatric speech therapy requires addressing ASR instability with child voices,
                   ensuring HIPAA compliance for patient data, optimizing for low-bandwidth connections in underserved
@@ -330,15 +330,15 @@ export default function SpeakWiseDetail() {
                 fontWeight: 600
               }}
             >
-              <span className="w-2 h-8 bg-[#08874a] dark:bg-[#39FF14] rounded-full" />
+              <span className="w-2 h-8 bg-[#08874a] dark:bg-[#16A34A] rounded-full" />
               Expected Outcomes & Scholarly Contribution
             </h2>
             <div className="space-y-6">
               <div className="bg-[var(--card)] border border-[var(--border)] rounded-xl p-8">
-                <h3 className="text-xl font-semibold text-[#08874a] dark:text-[#39FF14] mb-4">Clinical Impact</h3>
+                <h3 className="text-xl font-semibold text-[#08874a] dark:text-[#16A34A] mb-4">Clinical Impact</h3>
                 <ul className="space-y-3">
                   <li className="flex items-start gap-3">
-                    <div className="w-1.5 h-1.5 rounded-full bg-[#08874a] dark:bg-[#39FF14] mt-2 flex-shrink-0" />
+                    <div className="w-1.5 h-1.5 rounded-full bg-[#08874a] dark:bg-[#16A34A] mt-2 flex-shrink-0" />
                     <div>
                       <span className="font-medium">Accessibility:</span>
                       <span className="text-[var(--muted-foreground)]"> Reduce cost barriers to speech therapy, making intervention
@@ -346,7 +346,7 @@ export default function SpeakWiseDetail() {
                     </div>
                   </li>
                   <li className="flex items-start gap-3">
-                    <div className="w-1.5 h-1.5 rounded-full bg-[#08874a] dark:bg-[#39FF14] mt-2 flex-shrink-0" />
+                    <div className="w-1.5 h-1.5 rounded-full bg-[#08874a] dark:bg-[#16A34A] mt-2 flex-shrink-0" />
                     <div>
                       <span className="font-medium">Scalability:</span>
                       <span className="text-[var(--muted-foreground)]"> Enable thousands of users to receive concurrent therapy sessions
@@ -354,7 +354,7 @@ export default function SpeakWiseDetail() {
                     </div>
                   </li>
                   <li className="flex items-start gap-3">
-                    <div className="w-1.5 h-1.5 rounded-full bg-[#08874a] dark:bg-[#39FF14] mt-2 flex-shrink-0" />
+                    <div className="w-1.5 h-1.5 rounded-full bg-[#08874a] dark:bg-[#16A34A] mt-2 flex-shrink-0" />
                     <div>
                       <span className="font-medium">Early Intervention:</span>
                       <span className="text-[var(--muted-foreground)]"> Facilitate earlier detection and treatment of speech disorders
@@ -365,13 +365,13 @@ export default function SpeakWiseDetail() {
               </div>
 
               <div className="bg-[var(--card)] border border-[var(--border)] rounded-xl p-8">
-                <h3 className="text-xl font-semibold text-[#08874a] dark:text-[#39FF14] mb-4">Academic Contributions</h3>
+                <h3 className="text-xl font-semibold text-[#08874a] dark:text-[#16A34A] mb-4">Academic Contributions</h3>
                 <p className="text-[var(--foreground)]/90 leading-relaxed mb-4">
                   This project contributes to multiple research domains:
                 </p>
                 <ul className="space-y-3">
                   <li className="flex items-start gap-3">
-                    <div className="w-1.5 h-1.5 rounded-full bg-[#08874a] dark:bg-[#39FF14] mt-2 flex-shrink-0" />
+                    <div className="w-1.5 h-1.5 rounded-full bg-[#08874a] dark:bg-[#16A34A] mt-2 flex-shrink-0" />
                     <div>
                       <span className="font-medium">Human-Computer Interaction:</span>
                       <span className="text-[var(--muted-foreground)]"> Novel approaches to real-time corrective feedback in assistive
@@ -379,7 +379,7 @@ export default function SpeakWiseDetail() {
                     </div>
                   </li>
                   <li className="flex items-start gap-3">
-                    <div className="w-1.5 h-1.5 rounded-full bg-[#08874a] dark:bg-[#39FF14] mt-2 flex-shrink-0" />
+                    <div className="w-1.5 h-1.5 rounded-full bg-[#08874a] dark:bg-[#16A34A] mt-2 flex-shrink-0" />
                     <div>
                       <span className="font-medium">Speech Processing:</span>
                       <span className="text-[var(--muted-foreground)]"> Handling disfluent speech patterns in ASR systems and developing
@@ -387,7 +387,7 @@ export default function SpeakWiseDetail() {
                     </div>
                   </li>
                   <li className="flex items-start gap-3">
-                    <div className="w-1.5 h-1.5 rounded-full bg-[#08874a] dark:bg-[#39FF14] mt-2 flex-shrink-0" />
+                    <div className="w-1.5 h-1.5 rounded-full bg-[#08874a] dark:bg-[#16A34A] mt-2 flex-shrink-0" />
                     <div>
                       <span className="font-medium">Applied Linguistics:</span>
                       <span className="text-[var(--muted-foreground)]"> Integration of phonological and pragmatic theory into AI system
@@ -395,7 +395,7 @@ export default function SpeakWiseDetail() {
                     </div>
                   </li>
                   <li className="flex items-start gap-3">
-                    <div className="w-1.5 h-1.5 rounded-full bg-[#08874a] dark:bg-[#39FF14] mt-2 flex-shrink-0" />
+                    <div className="w-1.5 h-1.5 rounded-full bg-[#08874a] dark:bg-[#16A34A] mt-2 flex-shrink-0" />
                     <div>
                       <span className="font-medium">Healthcare AI:</span>
                       <span className="text-[var(--muted-foreground)]"> Ethical deployment of AI in pediatric healthcare contexts</span>
@@ -404,11 +404,11 @@ export default function SpeakWiseDetail() {
                 </ul>
               </div>
 
-              <div className="bg-gradient-to-br from-[#08874a]/10 dark:from-[#39FF14]/10 to-transparent border border-[#08874a]/30 dark:border-[#39FF14]/30 rounded-xl p-8">
-                <h3 className="text-xl font-semibold text-[#08874a] dark:text-[#39FF14] mb-4">Recognition & Validation</h3>
+              <div className="bg-gradient-to-br from-[#08874a]/10 dark:from-[#16A34A]/10 to-transparent border border-[#08874a]/30 dark:border-[#16A34A]/30 rounded-xl p-8">
+                <h3 className="text-xl font-semibold text-[#08874a] dark:text-[#16A34A] mb-4">Recognition & Validation</h3>
                 <p className="text-[var(--foreground)]/90 leading-relaxed">
-                  SpeakWise received <span className="text-[#08874a] dark:text-[#39FF14] font-medium">1st place and the Jay Ingram Award</span> at
-                  the Highland Park High School SciTech Fair, and achieved <span className="text-[#08874a] dark:text-[#39FF14] font-medium">Honorable
+                  SpeakWise received <span className="text-[#08874a] dark:text-[#16A34A] font-medium">1st place and the Jay Ingram Award</span> at
+                  the Highland Park High School SciTech Fair, and achieved <span className="text-[#08874a] dark:text-[#16A34A] font-medium">Honorable
                   Mention (Top 4)</span> at the Dallas Regional Science & Engineering Fair (DRSEF), validating both its
                   technical rigor and societal impact potential.
                 </p>
@@ -422,17 +422,17 @@ export default function SpeakWiseDetail() {
               className="text-3xl mb-6 flex items-center gap-4"
               style={{ fontFamily: "'Inter', sans-serif", fontWeight: 600 }}
             >
-              <span className="w-2 h-8 bg-[#08874a] dark:bg-[#39FF14] rounded-full" />
+              <span className="w-2 h-8 bg-[#08874a] dark:bg-[#16A34A] rounded-full" />
               What's Next — SpeakWise V2
             </h2>
-            <div className="bg-gradient-to-br from-[#08874a]/10 dark:from-[#39FF14]/10 to-transparent border border-[#08874a]/30 dark:border-[#39FF14]/30 rounded-xl p-8">
+            <div className="bg-gradient-to-br from-[#08874a]/10 dark:from-[#16A34A]/10 to-transparent border border-[#08874a]/30 dark:border-[#16A34A]/30 rounded-xl p-8">
               <div className="flex items-center gap-3 mb-4">
-                <span className="px-3 py-1 text-xs font-medium bg-[#08874a]/20 dark:bg-[#39FF14]/20 text-[#08874a] dark:text-[#39FF14] border border-[#08874a]/30 dark:border-[#39FF14]/30 rounded-full">
+                <span className="px-3 py-1 text-xs font-medium bg-[#08874a]/20 dark:bg-[#16A34A]/20 text-[#08874a] dark:text-[#16A34A] border border-[#08874a]/30 dark:border-[#16A34A]/30 rounded-full">
                   In Progress
                 </span>
               </div>
               <p className="text-[var(--foreground)]/90 leading-relaxed mb-6">
-                Currently working on <span className="text-[#08874a] dark:text-[#39FF14] font-medium">SpeakWise V2</span>, focused on improving
+                Currently working on <span className="text-[#08874a] dark:text-[#16A34A] font-medium">SpeakWise V2</span>, focused on improving
                 real-time responsiveness, deployment efficiency, and scalability for AI-powered speech interaction.
               </p>
               <ul className="space-y-3">
@@ -443,7 +443,7 @@ export default function SpeakWiseDetail() {
                   'More efficient inference workflows for practical real-world deployment',
                 ].map((item, i) => (
                   <li key={i} className="flex items-start gap-3">
-                    <span className="text-[#08874a] dark:text-[#39FF14] mt-1 flex-shrink-0">▹</span>
+                    <span className="text-[#08874a] dark:text-[#16A34A] mt-1 flex-shrink-0">▹</span>
                     <span className="text-[var(--foreground)]/90 leading-relaxed">{item}</span>
                   </li>
                 ))}
@@ -457,7 +457,7 @@ export default function SpeakWiseDetail() {
         <div className="mt-16 pt-8 border-t border-[var(--border)] flex justify-between items-center">
           <Link
             to="/"
-            className="inline-flex items-center gap-2 text-[var(--muted-foreground)] hover:text-[#08874a] dark:hover:text-[#39FF14] transition-colors duration-300 group"
+            className="inline-flex items-center gap-2 text-[var(--muted-foreground)] hover:text-[#08874a] dark:hover:text-[#16A34A] transition-colors duration-300 group"
           >
             <svg className="w-5 h-5 transition-transform group-hover:-translate-x-1 duration-300" fill="none" viewBox="0 0 24 24" stroke="currentColor">
               <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M15 19l-7-7 7-7" />
@@ -467,7 +467,7 @@ export default function SpeakWiseDetail() {
 
           <Link
             to="/projects/eelocutionist"
-            className="inline-flex items-center gap-2 text-[var(--muted-foreground)] hover:text-[#08874a] dark:hover:text-[#39FF14] transition-colors duration-300 group"
+            className="inline-flex items-center gap-2 text-[var(--muted-foreground)] hover:text-[#08874a] dark:hover:text-[#16A34A] transition-colors duration-300 group"
           >
             Next Project
             <svg className="w-5 h-5 transition-transform group-hover:translate-x-1 duration-300" fill="none" viewBox="0 0 24 24" stroke="currentColor">

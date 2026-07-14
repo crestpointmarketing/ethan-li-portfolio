@@ -21,7 +21,7 @@ export function ThemeToggle() {
   return (
     <button
       onClick={() => setTheme(isDark ? "light" : "dark")}
-      className="relative w-10 h-10 rounded-full bg-[var(--foreground)]/5 border border-[var(--border)] hover:border-[#08874a]/50 dark:hover:border-[#39FF14]/50 transition-all duration-300 flex items-center justify-center group overflow-hidden"
+      className="relative w-10 h-10 rounded-full bg-[var(--foreground)]/5 border border-[var(--border)] hover:border-[#08874a]/50 dark:hover:border-[#16A34A]/50 transition-all duration-300 flex items-center justify-center group overflow-hidden"
       aria-label={`Switch to ${isDark ? "light" : "dark"} mode`}
     >
       {/* Sun Icon (shows in light mode) */}
@@ -63,7 +63,7 @@ export function ThemeToggle() {
       </svg>
 
       {/* Hover glow effect */}
-      <div className="absolute inset-0 rounded-full bg-[#08874a] dark:bg-[#39FF14] opacity-0 group-hover:opacity-10 transition-opacity duration-300" />
+      <div className="absolute inset-0 rounded-full bg-[#08874a] dark:bg-[#16A34A] opacity-0 group-hover:opacity-10 transition-opacity duration-300" />
     </button>
   );
 }
