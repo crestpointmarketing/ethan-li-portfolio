@@ -65,24 +65,34 @@ const PomeloIcon = (
   </svg>
 );
 
-// Speaking head + sound waves — SpeakWise is a speech-therapy product, not
-// captured by a generic emoji.
+// Speaking head + sound waves, matching the reference logo Ethan supplied:
+// indigo head silhouette, a small "network node" mark on the forehead, a
+// teal mouth, and sound-wave arcs shading from teal to blue.
 const SpeakWiseIcon = (
-  <svg width="26" height="26" viewBox="0 0 100 100" fill="none">
+  <svg width="30" height="30" viewBox="0 0 100 100" fill="none">
     <path
-      d="M31 14c-11 0-20 10-20 24 0 9 4 16 10 20 2 3 2 8-1 12h11c-3-4-3-9-1-12 9-2 15-10 15-20 0-14-9-24-14-24z"
-      fill="white"
+      d="M35 8c-17 0-30 14-30 32 0 12 6 22 15 27 3 2 4 6 3 10-1 3-3 6-3 9 0 3 2 5 5 5h4c3 0 5-2 6-5l2-7c1-3 3-5 6-6 13-4 22-16 22-32 0-18-13-33-30-33z"
+      fill="#2E3192"
     />
-    <path d="M56 38a14 14 0 0 1 0 24" stroke="white" strokeWidth="4" strokeLinecap="round" />
-    <path d="M64 30a26 26 0 0 1 0 40" stroke="white" strokeWidth="4" strokeLinecap="round" opacity="0.75" />
-    <path d="M72 22a38 38 0 0 1 0 56" stroke="white" strokeWidth="4" strokeLinecap="round" opacity="0.5" />
+    {/* forehead network mark */}
+    <circle cx="27" cy="30" r="3.5" fill="#9AA3F0" />
+    <circle cx="19" cy="42" r="3.5" fill="#9AA3F0" />
+    <circle cx="25" cy="53" r="3.5" fill="#9AA3F0" />
+    <path d="M27 30 19 42 25 53" stroke="#9AA3F0" strokeWidth="2.5" strokeLinecap="round" fill="none" />
+    {/* mouth */}
+    <path d="M33 62q11 2 2 12-5-5-2-12z" fill="#16B8A6" />
+    {/* sound waves, teal -> blue */}
+    <path d="M52 55a13 13 0 0 0 0-20" stroke="#16B8A6" strokeWidth="6" strokeLinecap="round" />
+    <path d="M62 62a26 26 0 0 0 0-34" stroke="#1CA8C2" strokeWidth="6" strokeLinecap="round" />
+    <path d="M72 69a39 39 0 0 0 0-48" stroke="#249FE0" strokeWidth="6" strokeLinecap="round" />
+    <path d="M84 76a54 54 0 0 0 0-62" stroke="#2E93F0" strokeWidth="6" strokeLinecap="round" />
   </svg>
 );
 
 const CARDS = [
   {
     icon: SpeakWiseIcon,
-    iconBg: 'linear-gradient(145deg,#C44200,#7A1500)',
+    iconBg: 'linear-gradient(145deg,#F2F4FF,#E4E9FF)',
     title: 'SpeakWise',
     sub: 'AI Speech Therapy',
     delay: '0s',
