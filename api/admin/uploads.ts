@@ -12,10 +12,14 @@ const uploadRequestSchema = z.object({
   contentType: z.string().min(1),
 });
 
+// Deliberately excludes image/svg+xml: SVGs can embed <script>, and the
+// content-type here is client-declared with no server-side byte inspection
+// (the PUT goes straight browser -> Supabase Storage), so an SVG would be a
+// stored-XSS vector if its public URL were ever loaded directly.
 const ALLOWED_CONTENT_TYPES: Record<'poster' | 'paper' | 'moment', RegExp> = {
-  poster: /^image\//,
+  poster: /^image\/(png|jpe?g|gif|webp|avif)$/,
   paper: /^application\/pdf$/,
-  moment: /^image\//,
+  moment: /^image\/(png|jpe?g|gif|webp|avif)$/,
 };
 
 function sanitizeFileName(name: string): string {

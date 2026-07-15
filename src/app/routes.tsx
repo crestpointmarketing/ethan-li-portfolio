@@ -22,8 +22,7 @@ export const router = createBrowserRouter([
     children: [
       { index: true, Component: HomePage },
       // Generic, CMS-driven project route — replaces the old per-project
-      // static pages (SpeakWiseDetail.tsx etc., kept in the repo but no
-      // longer routed to, pending a final visual-parity check post-seed).
+      // static pages (visual parity confirmed, originals deleted).
       { path: "projects/:slug", Component: ProjectDetail },
       { path: "experience/:slug", Component: ExperienceDetail },
       { path: "*", Component: NotFound },

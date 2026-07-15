@@ -1,4 +1,4 @@
-import { useState } from 'react';
+import { useEffect, useState } from 'react';
 import { Link, useLocation } from 'react-router';
 import { ThemeToggle } from './ThemeToggle';
 import { AnimatedLogo } from './AnimatedLogo';
@@ -7,6 +7,22 @@ export default function Navbar() {
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
   const location = useLocation();
   const isHomePage = location.pathname === '/';
+
+  // The Moments section hides itself on the public site when nothing is
+  // published — the nav link needs to match, or it's a dead link to nowhere.
+  const [hasMoments, setHasMoments] = useState(false);
+  useEffect(() => {
+    let cancelled = false;
+    fetch('/api/moments')
+      .then((res) => (res.ok ? res.json() : null))
+      .then((data) => {
+        if (!cancelled && data?.moments?.length > 0) setHasMoments(true);
+      })
+      .catch(() => {});
+    return () => {
+      cancelled = true;
+    };
+  }, []);
 
   return (
     <nav className="fixed top-0 left-0 right-0 z-50 bg-[var(--background)]/80 backdrop-blur-xl border-b border-[var(--border)] transition-colors duration-300">
@@ -27,7 +43,7 @@ export default function Navbar() {
               { href: '/#experience', label: 'Experience' },
               { href: '/#projects', label: 'Projects' },
               { href: '/#achievements', label: 'Achievements' },
-              { href: '/#moments', label: 'Moments' },
+              ...(hasMoments ? [{ href: '/#moments', label: 'Moments' }] : []),
               { href: '/#contact', label: 'Contact' },
             ].map(({ href, label }) => (
               <a
@@ -107,13 +123,15 @@ export default function Navbar() {
               >
                 Achievements
               </a>
-              <a
-                href="/#moments"
-                className="text-sm font-semibold text-[var(--muted-foreground)] hover:text-[var(--foreground)] transition-colors duration-300 py-2"
-                onClick={() => setMobileMenuOpen(false)}
-              >
-                Moments
-              </a>
+              {hasMoments && (
+                <a
+                  href="/#moments"
+                  className="text-sm font-semibold text-[var(--muted-foreground)] hover:text-[var(--foreground)] transition-colors duration-300 py-2"
+                  onClick={() => setMobileMenuOpen(false)}
+                >
+                  Moments
+                </a>
+              )}
               <a
                 href="/#contact"
                 className="text-sm font-semibold text-[var(--muted-foreground)] hover:text-[var(--foreground)] transition-colors duration-300 py-2"

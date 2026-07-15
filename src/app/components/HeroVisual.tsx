@@ -82,11 +82,11 @@ const CARDS = [
   {
     icon: '🎤',
     iconBg: 'linear-gradient(145deg,#1a3a6b,#0a1a3a)',
-    title: 'Eelocutionist',
+    title: 'Elocutionist',
     sub: 'AI Interview Coach',
     delay: '0.9s',
     pos: { left: '1%', top: '49%' },
-    href: '/projects/eelocutionist',
+    href: '/projects/elocutionist',
   },
   {
     icon: '📈',
