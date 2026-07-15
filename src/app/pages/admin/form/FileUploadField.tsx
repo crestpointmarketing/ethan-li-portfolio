@@ -70,7 +70,13 @@ export function FileUploadField({
               className="text-sm text-[var(--muted-foreground)]"
             />
             {field.value && (
-              <Button type="button" variant="ghost" size="sm" onClick={() => field.onChange(null)}>
+              <Button
+                type="button"
+                variant="ghost"
+                size="sm"
+                className="text-[var(--destructive)] hover:bg-[var(--destructive)]/10 hover:text-[var(--destructive)]"
+                onClick={() => field.onChange(null)}
+              >
                 Remove
               </Button>
             )}

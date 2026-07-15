@@ -25,7 +25,13 @@ export function StatsField({ control, register }: { control: Control<any>; regis
                 </label>
               )}
             />
-            <Button type="button" variant="ghost" size="sm" onClick={() => remove(index)}>
+            <Button
+              type="button"
+              variant="ghost"
+              size="sm"
+              className="text-[var(--destructive)] hover:bg-[var(--destructive)]/10 hover:text-[var(--destructive)]"
+              onClick={() => remove(index)}
+            >
               Remove
             </Button>
           </div>

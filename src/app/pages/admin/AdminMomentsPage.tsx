@@ -136,7 +136,13 @@ export default function AdminMomentsPage() {
                   &#9660;
                 </button>
               </div>
-              <Button type="button" variant="ghost" size="sm" onClick={() => remove(i)}>
+              <Button
+                type="button"
+                variant="ghost"
+                size="sm"
+                className="text-[var(--destructive)] hover:bg-[var(--destructive)]/10 hover:text-[var(--destructive)]"
+                onClick={() => remove(i)}
+              >
                 Remove moment
               </Button>
             </div>

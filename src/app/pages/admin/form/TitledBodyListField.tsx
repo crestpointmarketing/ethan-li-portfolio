@@ -26,7 +26,13 @@ export function TitledBodyListField({
           <div key={field.id} className="border border-[var(--border)] rounded-lg p-3 space-y-2">
             <Input placeholder="Title" {...register(`${name}.${index}.title` as const)} />
             <Textarea rows={2} placeholder="Body" {...register(`${name}.${index}.body` as const)} />
-            <Button type="button" variant="ghost" size="sm" onClick={() => remove(index)}>
+            <Button
+              type="button"
+              variant="ghost"
+              size="sm"
+              className="text-[var(--destructive)] hover:bg-[var(--destructive)]/10 hover:text-[var(--destructive)]"
+              onClick={() => remove(index)}
+            >
               Remove
             </Button>
           </div>

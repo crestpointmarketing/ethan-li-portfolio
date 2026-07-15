@@ -75,7 +75,13 @@ export function BlockEditor({
             </Select>
           )}
         />
-        <Button type="button" variant="ghost" size="sm" onClick={onRemove}>
+        <Button
+          type="button"
+          variant="ghost"
+          size="sm"
+          className="text-[var(--destructive)] hover:bg-[var(--destructive)]/10 hover:text-[var(--destructive)]"
+          onClick={onRemove}
+        >
           Remove block
         </Button>
       </div>
@@ -142,7 +148,13 @@ function LabeledBulletsRows({ control, register, name }: { control: Control<any>
         <div key={field.id} className="flex items-start gap-2">
           <Input className="w-40" placeholder="Label (optional)" {...register(`${name}.items.${i}.label` as const)} />
           <Textarea rows={2} className="flex-1" placeholder="Body" {...register(`${name}.items.${i}.body` as const)} />
-          <Button type="button" variant="ghost" size="sm" onClick={() => remove(i)}>
+          <Button
+            type="button"
+            variant="ghost"
+            size="sm"
+            className="text-[var(--destructive)] hover:bg-[var(--destructive)]/10 hover:text-[var(--destructive)]"
+            onClick={() => remove(i)}
+          >
             Remove
           </Button>
         </div>
@@ -166,7 +178,13 @@ function StepsRows({ control, register, name }: { control: Control<any>; registe
             <Input placeholder="Step title" {...register(`${name}.items.${i}.title` as const)} />
             <Textarea rows={2} placeholder="Step description" {...register(`${name}.items.${i}.body` as const)} />
           </div>
-          <Button type="button" variant="ghost" size="sm" onClick={() => remove(i)}>
+          <Button
+            type="button"
+            variant="ghost"
+            size="sm"
+            className="text-[var(--destructive)] hover:bg-[var(--destructive)]/10 hover:text-[var(--destructive)]"
+            onClick={() => remove(i)}
+          >
             Remove
           </Button>
         </div>
@@ -192,7 +210,13 @@ function MiniCardsRows({ control, register, name }: { control: Control<any>; reg
         <div key={field.id} className="flex items-start gap-2">
           <Input className="w-48" placeholder="Card title" {...register(`${name}.items.${i}.title` as const)} />
           <Textarea rows={2} className="flex-1" placeholder="Card body" {...register(`${name}.items.${i}.body` as const)} />
-          <Button type="button" variant="ghost" size="sm" onClick={() => remove(i)}>
+          <Button
+            type="button"
+            variant="ghost"
+            size="sm"
+            className="text-[var(--destructive)] hover:bg-[var(--destructive)]/10 hover:text-[var(--destructive)]"
+            onClick={() => remove(i)}
+          >
             Remove
           </Button>
         </div>
@@ -213,7 +237,13 @@ function TechColumnsRows({ control, register, name }: { control: Control<any>; r
         <div key={field.id} className="border border-[var(--border)] rounded-lg p-3 space-y-2">
           <div className="flex items-center gap-2">
             <Input className="flex-1" placeholder="Column heading (e.g. AI/ML)" {...register(`${name}.columns.${i}.heading` as const)} />
-            <Button type="button" variant="ghost" size="sm" onClick={() => remove(i)}>
+            <Button
+              type="button"
+              variant="ghost"
+              size="sm"
+              className="text-[var(--destructive)] hover:bg-[var(--destructive)]/10 hover:text-[var(--destructive)]"
+              onClick={() => remove(i)}
+            >
               Remove column
             </Button>
           </div>

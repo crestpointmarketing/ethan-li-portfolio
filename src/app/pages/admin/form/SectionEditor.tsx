@@ -26,7 +26,13 @@ export function SectionEditor({
           <Label className="text-xs">Section heading</Label>
           <Input placeholder="e.g. Core Innovation & Technical Approach" {...register(`${name}.heading` as const)} />
         </div>
-        <Button type="button" variant="ghost" size="sm" onClick={onRemove} className="mt-5">
+        <Button
+          type="button"
+          variant="ghost"
+          size="sm"
+          className="mt-5 text-[var(--destructive)] hover:bg-[var(--destructive)]/10 hover:text-[var(--destructive)]"
+          onClick={onRemove}
+        >
           Remove section
         </Button>
       </div>

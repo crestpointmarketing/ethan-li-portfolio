@@ -35,7 +35,13 @@ function AwardsField({ control, register, name }: { control: Control<any>; regis
           </div>
           <div className="flex gap-2">
             <Textarea rows={1} placeholder="Description" {...register(`${name}.awards.${i}.description` as const)} />
-            <Button type="button" variant="ghost" size="sm" onClick={() => remove(i)}>
+            <Button
+              type="button"
+              variant="ghost"
+              size="sm"
+              className="text-[var(--destructive)] hover:bg-[var(--destructive)]/10 hover:text-[var(--destructive)]"
+              onClick={() => remove(i)}
+            >
               Remove
             </Button>
           </div>
@@ -166,7 +172,13 @@ export default function AdminAchievementsPage() {
             <div key={field.id} className="border border-[var(--border)] rounded-xl p-4 space-y-3">
               <div className="flex items-center gap-2">
                 <Input className="flex-1" placeholder="Category name" {...register(`categories.${i}.category` as const)} />
-                <Button type="button" variant="ghost" size="sm" onClick={() => remove(i)}>
+                <Button
+                  type="button"
+                  variant="ghost"
+                  size="sm"
+                  className="text-[var(--destructive)] hover:bg-[var(--destructive)]/10 hover:text-[var(--destructive)]"
+                  onClick={() => remove(i)}
+                >
                   Remove category
                 </Button>
               </div>
