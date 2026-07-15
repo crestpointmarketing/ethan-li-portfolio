@@ -107,6 +107,7 @@ export const awardSchema = z.object({
   title: z.string().min(1),
   achievement: z.string().min(1),
   description: z.string().min(1),
+  date: z.string().min(1).nullable().optional(),
 });
 
 export const achievementCategoryBaseSchema = z.object({
@@ -126,3 +127,20 @@ export const achievementsMetaSchema = z.object({
   stats: z.array(statItemSchema).default([]),
 });
 export type AchievementsMeta = z.infer<typeof achievementsMetaSchema>;
+
+// ---- Moments ----
+
+export const momentBaseSchema = z.object({
+  imageUrl: z.string().min(1),
+  caption: z.string().min(1),
+  tag: z.string().min(1).nullable().optional(),
+  momentDate: z.string().min(1).nullable().optional(),
+  orderIndex: z.number().int().default(0),
+  published: z.boolean().default(false),
+});
+export type MomentInput = z.infer<typeof momentBaseSchema>;
+
+export const momentSchema = momentBaseSchema.extend({
+  id: z.string().uuid(),
+});
+export type Moment = z.infer<typeof momentSchema>;

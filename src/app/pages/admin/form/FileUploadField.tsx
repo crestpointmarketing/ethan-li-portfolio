@@ -4,7 +4,7 @@ import { Label } from '../../../components/ui/label';
 import { Button } from '../../../components/ui/button';
 import { uploadFile, AdminApiError } from '../../../lib/adminApi';
 
-/** Poster-image or research-paper-PDF uploader, bound to a `string | null` form field holding the public URL. */
+/** Image or research-paper-PDF uploader, bound to a `string | null` form field holding the public URL. */
 export function FileUploadField({
   control,
   name,
@@ -15,7 +15,7 @@ export function FileUploadField({
   control: Control<any>;
   name: string;
   label: string;
-  kind: 'poster' | 'paper';
+  kind: 'poster' | 'paper' | 'moment';
   accept: string;
 }) {
   const [uploading, setUploading] = useState(false);
@@ -29,7 +29,7 @@ export function FileUploadField({
         <div className="space-y-2">
           <Label>{label}</Label>
 
-          {field.value && kind === 'poster' && (
+          {field.value && kind !== 'paper' && (
             <img
               src={field.value}
               alt=""

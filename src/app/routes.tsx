@@ -13,6 +13,7 @@ import AdminContactForm from "./pages/admin/AdminContactForm";
 import AdminExperienceList from "./pages/admin/AdminExperienceList";
 import AdminExperienceForm from "./pages/admin/AdminExperienceForm";
 import AdminAchievementsPage from "./pages/admin/AdminAchievementsPage";
+import AdminMomentsPage from "./pages/admin/AdminMomentsPage";
 
 export const router = createBrowserRouter([
   {
@@ -42,6 +43,7 @@ export const router = createBrowserRouter([
       { path: "experience/new", Component: AdminExperienceForm },
       { path: "experience/:id/edit", Component: AdminExperienceForm },
       { path: "achievements", Component: AdminAchievementsPage },
+      { path: "moments", Component: AdminMomentsPage },
     ],
   },
 ]);

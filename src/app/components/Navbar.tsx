@@ -1,6 +1,7 @@
 import { useState } from 'react';
 import { Link, useLocation } from 'react-router';
 import { ThemeToggle } from './ThemeToggle';
+import { AnimatedLogo } from './AnimatedLogo';
 
 export default function Navbar() {
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
@@ -14,12 +15,8 @@ export default function Navbar() {
 
           {/* Logo */}
           <div className="flex items-center">
-            <Link to="/">
-              <img
-                src="/logo.png"
-                alt="Ethan Li"
-                className="h-10 w-auto dark:invert"
-              />
+            <Link to="/" aria-label="Ethan Li">
+              <AnimatedLogo />
             </Link>
           </div>
 
@@ -30,12 +27,13 @@ export default function Navbar() {
               { href: '/#experience', label: 'Experience' },
               { href: '/#projects', label: 'Projects' },
               { href: '/#achievements', label: 'Achievements' },
+              { href: '/#moments', label: 'Moments' },
               { href: '/#contact', label: 'Contact' },
             ].map(({ href, label }) => (
               <a
                 key={href}
                 href={href}
-                className="text-[var(--muted-foreground)] hover:text-[var(--foreground)] transition-colors duration-300 relative group"
+                className="font-semibold text-[var(--muted-foreground)] hover:text-[var(--foreground)] transition-colors duration-300 relative group"
                 style={{ fontSize: '18px', lineHeight: 1.2, whiteSpace: 'nowrap' }}
               >
                 {label}
@@ -83,35 +81,42 @@ export default function Navbar() {
             <div className="flex flex-col gap-4">
               <a
                 href="/#about"
-                className="text-sm text-[var(--muted-foreground)] hover:text-[var(--foreground)] transition-colors duration-300 py-2"
+                className="text-sm font-semibold text-[var(--muted-foreground)] hover:text-[var(--foreground)] transition-colors duration-300 py-2"
                 onClick={() => setMobileMenuOpen(false)}
               >
                 About
               </a>
               <a
                 href="/#experience"
-                className="text-sm text-[var(--muted-foreground)] hover:text-[var(--foreground)] transition-colors duration-300 py-2"
+                className="text-sm font-semibold text-[var(--muted-foreground)] hover:text-[var(--foreground)] transition-colors duration-300 py-2"
                 onClick={() => setMobileMenuOpen(false)}
               >
                 Experience
               </a>
               <a
                 href="/#projects"
-                className="text-sm text-[var(--muted-foreground)] hover:text-[var(--foreground)] transition-colors duration-300 py-2"
+                className="text-sm font-semibold text-[var(--muted-foreground)] hover:text-[var(--foreground)] transition-colors duration-300 py-2"
                 onClick={() => setMobileMenuOpen(false)}
               >
                 Projects
               </a>
               <a
                 href="/#achievements"
-                className="text-sm text-[var(--muted-foreground)] hover:text-[var(--foreground)] transition-colors duration-300 py-2"
+                className="text-sm font-semibold text-[var(--muted-foreground)] hover:text-[var(--foreground)] transition-colors duration-300 py-2"
                 onClick={() => setMobileMenuOpen(false)}
               >
                 Achievements
               </a>
               <a
+                href="/#moments"
+                className="text-sm font-semibold text-[var(--muted-foreground)] hover:text-[var(--foreground)] transition-colors duration-300 py-2"
+                onClick={() => setMobileMenuOpen(false)}
+              >
+                Moments
+              </a>
+              <a
                 href="/#contact"
-                className="text-sm text-[var(--muted-foreground)] hover:text-[var(--foreground)] transition-colors duration-300 py-2"
+                className="text-sm font-semibold text-[var(--muted-foreground)] hover:text-[var(--foreground)] transition-colors duration-300 py-2"
                 onClick={() => setMobileMenuOpen(false)}
               >
                 Contact

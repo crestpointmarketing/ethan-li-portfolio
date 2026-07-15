@@ -76,9 +76,16 @@ export default function AchievementsSection() {
                         <div className="flex items-start gap-4">
                           <div className="w-2 h-2 rounded-full bg-[#08874a] dark:bg-[#16A34A] mt-2 flex-shrink-0 group-hover:scale-125 transition-transform duration-300" />
                           <div className="flex-1">
-                            <h4 className="font-medium text-[var(--foreground)] mb-1 group-hover:text-[#08874a] dark:group-hover:text-[#16A34A] transition-colors duration-300">
-                              {award.title}
-                            </h4>
+                            <div className="flex items-start justify-between gap-4">
+                              <h4 className="font-medium text-[var(--foreground)] mb-1 group-hover:text-[#08874a] dark:group-hover:text-[#16A34A] transition-colors duration-300">
+                                {award.title}
+                              </h4>
+                              {award.date && (
+                                <span className="text-xs text-[var(--muted-foreground)] whitespace-nowrap mt-0.5">
+                                  {award.date}
+                                </span>
+                              )}
+                            </div>
                             <p className="text-sm text-[#08874a]/90 dark:text-[#16A34A]/90 mb-1">{award.achievement}</p>
                             <p className="text-sm text-[var(--muted-foreground)]">{award.description}</p>
                           </div>

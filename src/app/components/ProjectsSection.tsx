@@ -72,13 +72,6 @@ export default function ProjectsSection() {
                 key={project.id}
                 className="group bg-[var(--card)] border border-[var(--border)] rounded-2xl overflow-hidden hover:border-[#08874a]/30 dark:hover:border-[#16A34A]/30 hover:bg-white/[0.07] transition-all duration-500"
               >
-                {project.posterUrl && (
-                  <img
-                    src={project.posterUrl}
-                    alt={`${project.title} poster`}
-                    className="w-full h-56 object-cover border-b border-[var(--border)]"
-                  />
-                )}
                 <div className="p-8 lg:p-10">
                 <div className="flex flex-col lg:flex-row lg:items-start lg:justify-between gap-6 mb-6">
                   <div className="flex-1">

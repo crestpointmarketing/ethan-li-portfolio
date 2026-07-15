@@ -7,14 +7,15 @@ import { supabase } from '../_lib/supabase.js';
 const BUCKET = 'project-assets';
 
 const uploadRequestSchema = z.object({
-  kind: z.enum(['poster', 'paper']),
+  kind: z.enum(['poster', 'paper', 'moment']),
   fileName: z.string().min(1),
   contentType: z.string().min(1),
 });
 
-const ALLOWED_CONTENT_TYPES: Record<'poster' | 'paper', RegExp> = {
+const ALLOWED_CONTENT_TYPES: Record<'poster' | 'paper' | 'moment', RegExp> = {
   poster: /^image\//,
   paper: /^application\/pdf$/,
+  moment: /^image\//,
 };
 
 function sanitizeFileName(name: string): string {
@@ -44,7 +45,7 @@ export default async function handler(req: VercelRequest, res: VercelResponse) {
 
   if (!ALLOWED_CONTENT_TYPES[kind].test(contentType)) {
     return res.status(400).json({
-      error: kind === 'poster' ? 'Poster must be an image file' : 'Paper must be a PDF file',
+      error: kind === 'paper' ? 'Paper must be a PDF file' : 'File must be an image',
     });
   }
 

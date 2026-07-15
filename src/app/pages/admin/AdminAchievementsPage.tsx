@@ -17,7 +17,7 @@ import { Label } from '../../components/ui/label';
 import { Button } from '../../components/ui/button';
 import { KeyValueListField } from './form/KeyValueListField';
 
-type FormCategory = { id?: string; category: string; orderIndex: number; awards: { title: string; achievement: string; description: string }[] };
+type FormCategory = { id?: string; category: string; orderIndex: number; awards: { title: string; achievement: string; description: string; date: string }[] };
 type FormValues = AchievementsMeta & { categories: FormCategory[] };
 
 const EMPTY: FormValues = { subtitle: '', stats: [], categories: [] };
@@ -25,11 +25,14 @@ const EMPTY: FormValues = { subtitle: '', stats: [], categories: [] };
 function AwardsField({ control, register, name }: { control: Control<any>; register: UseFormRegister<any>; name: string }) {
   const { fields, append, remove } = useFieldArray({ control, name: `${name}.awards` });
   return (
-    <div className="space-y-2 pl-4 border-l-2 border-[var(--border)]">
+    <div className="space-y-3 pl-4 border-l-2 border-[var(--border)]">
       {fields.map((field, i) => (
-        <div key={field.id} className="grid grid-cols-3 gap-2 items-start">
-          <Input placeholder="Title" {...register(`${name}.awards.${i}.title` as const)} />
-          <Input placeholder="Achievement (1st Place, Gold, ...)" {...register(`${name}.awards.${i}.achievement` as const)} />
+        <div key={field.id} className="space-y-2 pb-2 border-b border-[var(--border)] last:border-0 last:pb-0">
+          <div className="grid grid-cols-4 gap-2">
+            <Input className="col-span-2" placeholder="Title" {...register(`${name}.awards.${i}.title` as const)} />
+            <Input placeholder="Achievement (1st Place, Gold, ...)" {...register(`${name}.awards.${i}.achievement` as const)} />
+            <Input placeholder="Date (e.g. Spring 2025)" {...register(`${name}.awards.${i}.date` as const)} />
+          </div>
           <div className="flex gap-2">
             <Textarea rows={1} placeholder="Description" {...register(`${name}.awards.${i}.description` as const)} />
             <Button type="button" variant="ghost" size="sm" onClick={() => remove(i)}>
@@ -42,7 +45,7 @@ function AwardsField({ control, register, name }: { control: Control<any>; regis
         type="button"
         variant="outline"
         size="sm"
-        onClick={() => append({ title: '', achievement: '', description: '' })}
+        onClick={() => append({ title: '', achievement: '', description: '', date: '' })}
       >
         Add award
       </Button>
@@ -73,7 +76,7 @@ export default function AdminAchievementsPage() {
             id: c.id,
             category: c.category,
             orderIndex: c.orderIndex,
-            awards: c.awards,
+            awards: c.awards.map((a) => ({ ...a, date: a.date ?? '' })),
           })),
         });
         setLoading(false);
@@ -105,7 +108,12 @@ export default function AdminAchievementsPage() {
           category: cat.category.trim(),
           orderIndex: index,
           awards: cat.awards
-            .map((a) => ({ title: a.title.trim(), achievement: a.achievement.trim(), description: a.description.trim() }))
+            .map((a) => ({
+              title: a.title.trim(),
+              achievement: a.achievement.trim(),
+              description: a.description.trim(),
+              date: a.date.trim() || null,
+            }))
             .filter((a) => a.title && a.achievement && a.description),
         };
         if (cat.id) {

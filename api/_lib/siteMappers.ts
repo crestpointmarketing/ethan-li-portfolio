@@ -1,4 +1,12 @@
-import type { Experience, ExperienceCard, ExperienceInput, AchievementCategory, AchievementCategoryInput } from '../../shared/siteContentSchema.js';
+import type {
+  Experience,
+  ExperienceCard,
+  ExperienceInput,
+  AchievementCategory,
+  AchievementCategoryInput,
+  Moment,
+  MomentInput,
+} from '../../shared/siteContentSchema.js';
 
 export type ExperienceRow = {
   id: string;
@@ -98,5 +106,38 @@ export function achievementCategoryInputToRow(input: AchievementCategoryInput) {
     category: input.category,
     order_index: input.orderIndex,
     awards: input.awards,
+  };
+}
+
+export type MomentRow = {
+  id: string;
+  image_url: string;
+  caption: string;
+  tag: string | null;
+  moment_date: string | null;
+  order_index: number;
+  published: boolean;
+};
+
+export function momentRowToMoment(row: MomentRow): Moment {
+  return {
+    id: row.id,
+    imageUrl: row.image_url,
+    caption: row.caption,
+    tag: row.tag,
+    momentDate: row.moment_date,
+    orderIndex: row.order_index,
+    published: row.published,
+  };
+}
+
+export function momentInputToRow(input: MomentInput) {
+  return {
+    image_url: input.imageUrl,
+    caption: input.caption,
+    tag: input.tag ?? null,
+    moment_date: input.momentDate ?? null,
+    order_index: input.orderIndex,
+    published: input.published,
   };
 }

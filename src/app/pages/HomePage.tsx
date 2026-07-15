@@ -4,6 +4,7 @@ import AboutSection from '../components/AboutSection';
 import ExperienceSection from '../components/ExperienceSection';
 import ProjectsSection from '../components/ProjectsSection';
 import AchievementsSection from '../components/AchievementsSection';
+import MomentsSection from '../components/MomentsSection';
 import ContactSection from '../components/ContactSection';
 
 export default function HomePage() {
@@ -132,6 +133,7 @@ export default function HomePage() {
       <ExperienceSection />
       <ProjectsSection />
       <AchievementsSection />
+      <MomentsSection />
       <ContactSection />
     </>
   );

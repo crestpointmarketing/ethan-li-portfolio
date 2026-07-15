@@ -7,6 +7,8 @@ import type {
   AchievementCategory,
   AchievementCategoryInput,
   AchievementsMeta,
+  Moment,
+  MomentInput,
 } from '@shared/siteContentSchema';
 
 export class AdminApiError extends Error {
@@ -89,7 +91,7 @@ export function reorderProjects(ids: string[]) {
  * URL — it never passes through our own API, and the service role key
  * never reaches the client.
  */
-export async function uploadFile(kind: 'poster' | 'paper', file: File): Promise<string> {
+export async function uploadFile(kind: 'poster' | 'paper' | 'moment', file: File): Promise<string> {
   const prep = await request<{ signedUrl: string; token: string; path: string; publicUrl: string }>(
     '/api/admin/uploads',
     {
@@ -213,4 +215,26 @@ export function updateAchievementsMeta(input: AchievementsMeta) {
     method: 'PUT',
     body: JSON.stringify(input),
   });
+}
+
+// ---- Moments ----
+
+export function listMoments() {
+  return request<{ moments: Moment[] }>('/api/admin/moments');
+}
+
+export function createMoment(input: MomentInput) {
+  return request<{ moment: Moment }>('/api/admin/moments', { method: 'POST', body: JSON.stringify(input) });
+}
+
+export function updateMoment(id: string, input: MomentInput) {
+  return request<{ moment: Moment }>(`/api/admin/moments/${id}`, { method: 'PUT', body: JSON.stringify(input) });
+}
+
+export function deleteMoment(id: string) {
+  return request<{ ok: true }>(`/api/admin/moments/${id}`, { method: 'DELETE' });
+}
+
+export function reorderMoments(ids: string[]) {
+  return request<{ ok: true }>('/api/admin/moments/reorder', { method: 'POST', body: JSON.stringify({ ids }) });
 }

@@ -54,6 +54,7 @@ export default function AdminLayout() {
                 { to: '/admin/about', label: 'About' },
                 { to: '/admin/experience', label: 'Experience' },
                 { to: '/admin/achievements', label: 'Achievements' },
+                { to: '/admin/moments', label: 'Moments' },
                 { to: '/admin/contact', label: 'Contact' },
               ].map((item) => (
                 <Link
