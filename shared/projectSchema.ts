@@ -119,6 +119,14 @@ export const techColumnsBlockSchema = blockBaseSchema.extend({
     .min(1),
 });
 
+export const comparisonTableBlockSchema = blockBaseSchema.extend({
+  type: z.literal('comparison_table'),
+  // First column is the row-label column; remaining columns are the things
+  // being compared. Each row's cells are aligned to `columns` by index.
+  columns: z.array(z.string().min(1)).min(2),
+  rows: z.array(z.array(z.string()).min(1)).min(1),
+});
+
 export const nextStepsBlockSchema = blockBaseSchema.extend({
   type: z.literal('next_steps'),
   variant: z.enum(['flat', 'gradient']).default('gradient'),
@@ -133,6 +141,7 @@ export const blockSchema = z.discriminatedUnion('type', [
   stepsBlockSchema,
   miniCardsBlockSchema,
   techColumnsBlockSchema,
+  comparisonTableBlockSchema,
   nextStepsBlockSchema,
 ]);
 export type Block = z.infer<typeof blockSchema>;

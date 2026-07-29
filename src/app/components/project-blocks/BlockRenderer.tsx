@@ -5,6 +5,7 @@ import { LabeledBulletsBlock } from './LabeledBulletsBlock';
 import { StepsBlock } from './StepsBlock';
 import { MiniCardsBlock } from './MiniCardsBlock';
 import { TechColumnsBlock } from './TechColumnsBlock';
+import { ComparisonTableBlock } from './ComparisonTableBlock';
 import { NextStepsBlock } from './NextStepsBlock';
 
 /**
@@ -37,6 +38,8 @@ export function BlockRenderer({ block }: { block: unknown }) {
       return <MiniCardsBlock block={parsed.data} />;
     case 'tech_columns':
       return <TechColumnsBlock block={parsed.data} />;
+    case 'comparison_table':
+      return <ComparisonTableBlock block={parsed.data} />;
     case 'next_steps':
       return <NextStepsBlock block={parsed.data} />;
     default:

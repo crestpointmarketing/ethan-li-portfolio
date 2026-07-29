@@ -15,6 +15,7 @@ const BLOCK_TYPES: { value: BlockType; label: string }[] = [
   { value: 'steps', label: 'Numbered/lettered steps' },
   { value: 'mini_cards', label: '2-column mini cards' },
   { value: 'tech_columns', label: 'Tech stack columns' },
+  { value: 'comparison_table', label: 'Comparison table' },
   { value: 'next_steps', label: '"What\'s next" callout' },
 ];
 
@@ -32,6 +33,8 @@ function defaultsForType(type: BlockType) {
       return { type, variant: 'flat', items: [{ title: '', body: '' }] };
     case 'tech_columns':
       return { type, variant: 'flat', columns: [{ heading: '', items: [''] }] };
+    case 'comparison_table':
+      return { type, variant: 'flat', columns: ['Dimension', 'Option A', 'Option B'], rows: [['', '', '']] };
     case 'next_steps':
       return { type, variant: 'gradient', statusLabel: 'In Progress', items: [''] };
   }
@@ -126,6 +129,7 @@ export function BlockEditor({
       {type === 'steps' && <StepsRows control={control} register={register} name={name} />}
       {type === 'mini_cards' && <MiniCardsRows control={control} register={register} name={name} />}
       {type === 'tech_columns' && <TechColumnsRows control={control} register={register} name={name} />}
+      {type === 'comparison_table' && <ComparisonTableRows control={control} name={name} />}
       {type === 'next_steps' && (
         <>
           <div className="space-y-1">
@@ -253,6 +257,42 @@ function TechColumnsRows({ control, register, name }: { control: Control<any>; r
       <Button type="button" variant="outline" size="sm" onClick={() => append({ heading: '', items: [''] })}>
         Add column
       </Button>
+    </div>
+  );
+}
+
+function ComparisonTableRows({ control, name }: { control: Control<any>; name: string }) {
+  return (
+    <div className="space-y-3">
+      <LineListField
+        control={control}
+        name={`${name}.columns`}
+        label="Column headers (one per line; the first is the row-label column)"
+        rows={4}
+      />
+      <Controller
+        control={control}
+        name={`${name}.rows`}
+        render={({ field }) => {
+          const text = Array.isArray(field.value)
+            ? field.value.map((row: unknown) => (Array.isArray(row) ? row.join(' | ') : '')).join('\n')
+            : '';
+          return (
+            <div className="space-y-1">
+              <Label className="text-xs">Rows (one row per line; separate cells with &quot; | &quot;)</Label>
+              <Textarea
+                rows={12}
+                value={text}
+                onChange={(e) =>
+                  field.onChange(
+                    e.target.value.split('\n').map((line) => line.split(' | ').map((c) => c.trim())),
+                  )
+                }
+              />
+            </div>
+          );
+        }}
+      />
     </div>
   );
 }
