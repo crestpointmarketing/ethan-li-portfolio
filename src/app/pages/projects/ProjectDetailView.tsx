@@ -127,6 +127,18 @@ export function ProjectDetailView({
                   allowFullScreen
                 />
               </div>
+            ) : project.video.type === 'file' ? (
+              <div className="relative w-full rounded-2xl overflow-hidden border border-[var(--border)] bg-black" style={{ paddingTop: '56.25%' }}>
+                <video
+                  className="absolute inset-0 w-full h-full"
+                  src={project.video.src}
+                  title={project.video.title}
+                  poster={project.video.posterUrl}
+                  controls
+                  playsInline
+                  preload="metadata"
+                />
+              </div>
             ) : (
               <div
                 className="relative w-full rounded-2xl overflow-hidden border border-[var(--border)] bg-[var(--card)]"

@@ -64,9 +64,9 @@ const project = {
   orderIndex: 3,
   published: true,
   video: {
-    type: 'placeholder',
-    message: 'Product walkthrough coming soon',
-    subMessage: 'Live workspace demo available at pomelolabs.ai',
+    type: 'file',
+    src: 'https://szshmccgvzjyrvefhlsz.supabase.co/storage/v1/object/public/project-assets/videos/pomelo-labs-product-tour.mp4',
+    title: 'Pomelo Labs Product Tour',
   },
   stats: [
     { value: '4', label: 'AI Marketing Agents' },

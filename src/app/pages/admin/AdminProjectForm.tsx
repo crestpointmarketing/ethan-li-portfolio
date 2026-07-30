@@ -213,6 +213,7 @@ export default function AdminProjectForm() {
             onValueChange={(value) => {
               if (value === 'none') form.setValue('video', null);
               else if (value === 'embed') form.setValue('video', { type: 'embed', src: '', title: '' });
+              else if (value === 'file') form.setValue('video', { type: 'file', src: '', title: '' });
               else form.setValue('video', { type: 'placeholder', message: '', subMessage: '' });
             }}
           >
@@ -222,6 +223,7 @@ export default function AdminProjectForm() {
             <SelectContent>
               <SelectItem value="none">No video</SelectItem>
               <SelectItem value="embed">YouTube embed</SelectItem>
+              <SelectItem value="file">Hosted file (mp4)</SelectItem>
               <SelectItem value="placeholder">"Coming soon" placeholder</SelectItem>
             </SelectContent>
           </Select>
@@ -229,6 +231,12 @@ export default function AdminProjectForm() {
           {video?.type === 'embed' && (
             <div className="grid grid-cols-2 gap-3 mt-2">
               <Input placeholder="https://www.youtube.com/embed/VIDEO_ID" {...register('video.src' as const)} />
+              <Input placeholder="Video title" {...register('video.title' as const)} />
+            </div>
+          )}
+          {video?.type === 'file' && (
+            <div className="grid grid-cols-2 gap-3 mt-2">
+              <Input placeholder="https://…/video.mp4" {...register('video.src' as const)} />
               <Input placeholder="Video title" {...register('video.title' as const)} />
             </div>
           )}

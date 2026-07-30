@@ -33,6 +33,14 @@ export const videoSchema = z.discriminatedUnion('type', [
     src: z.string().min(1),
     title: z.string().min(1),
   }),
+  // A self-hosted video file (e.g. an mp4 in Supabase Storage) rendered with a
+  // native <video> player, as opposed to an iframe `embed` (YouTube/Vimeo/etc.).
+  z.object({
+    type: z.literal('file'),
+    src: z.string().min(1),
+    title: z.string().min(1),
+    posterUrl: z.string().url().optional(),
+  }),
   z.object({
     type: z.literal('placeholder'),
     message: z.string().min(1),
