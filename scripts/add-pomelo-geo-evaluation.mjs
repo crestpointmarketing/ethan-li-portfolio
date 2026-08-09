@@ -52,7 +52,23 @@ const blocks = [
     type: 'prose',
     variant: 'flat',
     paragraphs: [
-      'Pomelo Labs’ GEO evaluation is a product direction in its own right — a rigorous way to measure how a brand actually shows up in AI search. **The evaluation methodology and model framework have been filed as a U.S. provisional patent.** Its design has evolved across three generations, from simply detecting visibility to a proprietary model that scores answer quality the way a real user would judge it.',
+      'Pomelo Labs’ GEO evaluation is a product direction in its own right — a **patent-pending multi-model GEO evaluation system** that reduces prompt and model bias through repeated sampling, evidence-based scoring, confidence measurement, and auditable cross-platform analysis. **The evaluation methodology and model framework have been filed as a U.S. provisional patent** — *System and Method for Statistical Measurement, Scoring, and Predictive Optimization of Entity Visibility in Generative Artificial-Intelligence Search Engines* (U.S. Provisional Application No. 64/119,527, filed July 26, 2026; first named inventor: Ethan Li). Its design has evolved across three generations, from simply detecting visibility to a proprietary model that scores answer quality the way a real user would judge it.',
+    ],
+  },
+  {
+    type: 'labeled_bullets',
+    variant: 'gradient',
+    title: 'U.S. Provisional Patent Filing',
+    density: 'loose',
+    items: [
+      {
+        label: 'Title',
+        body: 'System and Method for Statistical Measurement, Scoring, and Predictive Optimization of Entity Visibility in Generative Artificial-Intelligence Search Engines',
+      },
+      { label: 'Application Number', body: '64/119,527' },
+      { label: 'Patent Center Number', body: '79336791' },
+      { label: 'Filing / Receipt Date', body: 'July 26, 2026' },
+      { label: 'First Named Inventor', body: 'Ethan Li' },
     ],
   },
   {

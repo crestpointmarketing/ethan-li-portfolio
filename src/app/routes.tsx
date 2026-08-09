@@ -4,6 +4,7 @@ import AdminLayout from "./components/AdminLayout";
 import HomePage from "./pages/HomePage";
 import ProjectDetail from "./pages/projects/ProjectDetail";
 import ExperienceDetail from "./pages/experience/ExperienceDetail";
+import Patent from "./pages/Patent";
 import NotFound from "./pages/NotFound";
 import AdminLogin from "./pages/admin/AdminLogin";
 import AdminDashboard from "./pages/admin/AdminDashboard";
@@ -25,6 +26,7 @@ export const router = createBrowserRouter([
       // static pages (visual parity confirmed, originals deleted).
       { path: "projects/:slug", Component: ProjectDetail },
       { path: "experience/:slug", Component: ExperienceDetail },
+      { path: "patent", Component: Patent },
       { path: "*", Component: NotFound },
     ],
   },

@@ -56,6 +56,14 @@ export default function Navbar() {
                 <span className="absolute -bottom-1 left-0 w-0 h-px bg-[#08874a] dark:bg-[#16A34A] group-hover:w-full transition-all duration-300" />
               </a>
             ))}
+            <Link
+              to="/patent"
+              className="font-semibold text-[var(--muted-foreground)] hover:text-[var(--foreground)] transition-colors duration-300 relative group"
+              style={{ fontSize: '18px', lineHeight: 1.2, whiteSpace: 'nowrap' }}
+            >
+              Patent
+              <span className="absolute -bottom-1 left-0 w-0 h-px bg-[#08874a] dark:bg-[#16A34A] group-hover:w-full transition-all duration-300" />
+            </Link>
           </div>
 
           {/* CTA Button & Theme Toggle */}
@@ -132,6 +140,13 @@ export default function Navbar() {
                   Moments
                 </a>
               )}
+              <Link
+                to="/patent"
+                className="text-sm font-semibold text-[var(--muted-foreground)] hover:text-[var(--foreground)] transition-colors duration-300 py-2"
+                onClick={() => setMobileMenuOpen(false)}
+              >
+                Patent
+              </Link>
               <a
                 href="/#contact"
                 className="text-sm font-semibold text-[var(--muted-foreground)] hover:text-[var(--foreground)] transition-colors duration-300 py-2"
