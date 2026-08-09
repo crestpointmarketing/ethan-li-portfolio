@@ -51,7 +51,7 @@ const project = {
   period: '2026 - Now',
   cardHighlights: [
     'Built an AI marketing operations system for B2B SMBs — four specialized agents (SEO Lead, Content Writer, Social Manager, Growth Analyst) collaborating on a shared brand context',
-    'Pioneered a GEO (Generative Engine Optimization) execution loop: measuring brand visibility across ChatGPT, Claude, Gemini, and Perplexity, then auto-generating content to close visibility gaps',
+    'Pioneered a **patent-pending** multi-model GEO (Generative Engine Optimization) evaluation loop — reducing prompt and model bias via repeated sampling, evidence-based scoring, and confidence measurement across ChatGPT, Claude, Gemini, and Perplexity, then auto-generating content to close visibility gaps',
     'Designed a full closed-loop workflow — Context → Observe → Reason → Execute → Govern → Measure — connecting research, content production, approval, and publishing',
     'Implemented multi-tenant architecture with Supabase Row-Level Security, role-based access control, and audit-logged publishing across LinkedIn, X, Webflow, and WordPress',
     'Shipped a tiered SaaS business model (Starter/Growth/Concierge/Enterprise) on Stripe billing, backed by full CI — lint, TypeScript, unit/API/integration tests, and Playwright E2E regression',

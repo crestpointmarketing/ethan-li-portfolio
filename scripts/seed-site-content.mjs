@@ -86,7 +86,7 @@ const experience = {
   companyTagline: 'AI Data Center & Private AI Service Provider',
   role: 'AI Systems / AI Infrastructure Intern',
   badgeText: 'Internship',
-  period: 'Summer 2025 – Present',
+  period: 'Jun 2025 – Aug 2025',
   location: 'Richardson, TX',
   orderIndex: 0,
   published: true,

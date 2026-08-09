@@ -43,7 +43,7 @@ const experience = {
     'Hands-on power electronics, embedded communication hardware, and renewable-energy systems lab at The University of Texas at Austin',
   role: 'Power Electronics Lab Researcher',
   badgeText: 'Research Lab',
-  period: 'July 2025',
+  period: 'July 2026',
   location: 'Austin, TX',
   orderIndex: 2,
   published: true,

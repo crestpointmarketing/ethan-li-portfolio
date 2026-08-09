@@ -47,9 +47,9 @@ const project = {
   ],
   badges: [
     { text: 'AI & Robotics Research', variant: 'accent' },
-    { text: '2026', variant: 'neutral' },
+    { text: 'Summer 2026', variant: 'neutral' },
   ],
-  period: '2026',
+  period: 'Summer 2026',
   cardHighlights: [
     'Built a full VLA research pipeline — arm/camera calibration, teleoperated demonstration collection, imitation-learning policy training, and real-robot deployment — on low-cost LeRobot SO-101 leader-follower arms',
     'Collected 75 teleoperated demonstrations across two conditions (50 on a natural tabletop, 25 in a controlled lightbox) to study generalization across lighting and background changes',

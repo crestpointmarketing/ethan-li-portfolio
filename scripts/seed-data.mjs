@@ -1,5 +1,5 @@
 // Plain JS transcription of the 3 existing hand-coded project detail pages
-// (SpeakWiseDetail.tsx, EelocutionistDetail.tsx, ZeitgeistDetail.tsx) into
+// (SpeakWiseDetail.tsx, ElocutionistDetail.tsx, ZeitgeistDetail.tsx) into
 // the CMS schema shape (see shared/projectSchema.ts). Content is copied
 // directly from those files' JSX rather than re-typed into SQL, to avoid
 // transcription/escaping errors.
@@ -16,9 +16,9 @@ export const projects = [
     ],
     badges: [
       { text: '1st Place Award', variant: 'accent' },
-      { text: '2024 - 2025', variant: 'neutral' },
+      { text: '2025 - Now', variant: 'neutral' },
     ],
-    period: '2024 - 2025',
+    period: '2025 - Now',
     cardHighlights: [
       'Built a multi-stage neural speech repair system achieving 46% fluency improvement and 95%+ stutter reduction',
       'Designed pipeline: Whisper (ASR) → LLM correction → XTTS synthesis with real-time streaming',
@@ -254,14 +254,14 @@ export const projects = [
   },
 
   {
-    slug: 'eelocutionist',
-    title: 'Eelocutionist — AI Interview Coaching Platform',
+    slug: 'elocutionist',
+    title: 'Elocutionist — AI Interview Coaching Platform',
     subtitles: ['Internship Project | Real-Time Human-AI Interaction System'],
     badges: [
       { text: 'Production Deployed', variant: 'accent' },
-      { text: '2024 - 2025', variant: 'neutral' },
+      { text: '2025 - 2026', variant: 'neutral' },
     ],
-    period: '2024 - 2025',
+    period: '2025 - 2026',
     cardHighlights: [
       'Built a production-level AI interview system deployed on a live platform, supporting real-time user interactions',
       'Developed backend using Express.js + LLM evaluation, integrating speech APIs',
@@ -274,7 +274,7 @@ export const projects = [
     githubUrl: 'https://github.com/3than777',
     orderIndex: 1,
     published: true,
-    video: { type: 'embed', src: 'https://www.youtube.com/embed/BwW6pBthVPc', title: 'Eelocutionist Project Demo' },
+    video: { type: 'embed', src: 'https://www.youtube.com/embed/BwW6pBthVPc', title: 'Elocutionist Project Demo' },
     stats: [
       { value: 'Live', label: 'Production Platform' },
       { value: 'Real-time', label: 'User Interactions' },
@@ -312,7 +312,7 @@ export const projects = [
             type: 'prose',
             variant: 'flat',
             paragraphs: [
-              '**Eelocutionist democratizes interview preparation** by providing unlimited, personalized, real-time AI-powered coaching accessible to anyone, leveling the playing field for underrepresented job seekers and those without access to expensive career services.',
+              '**Elocutionist democratizes interview preparation** by providing unlimited, personalized, real-time AI-powered coaching accessible to anyone, leveling the playing field for underrepresented job seekers and those without access to expensive career services.',
             ],
           },
         ],
@@ -325,7 +325,7 @@ export const projects = [
             type: 'steps',
             variant: 'flat',
             title: 'AI Interview Engine Architecture',
-            intro: 'Eelocutionist implements a sophisticated multi-format interview engine supporting three core interview types:',
+            intro: 'Elocutionist implements a sophisticated multi-format interview engine supporting three core interview types:',
             items: [
               {
                 marker: 'B',
@@ -375,7 +375,7 @@ export const projects = [
             variant: 'flat',
             density: 'loose',
             intro:
-              'Eelocutionist is fundamentally a **human-AI collaboration system**, where effective interaction design is critical to user learning and comfort:',
+              'Elocutionist is fundamentally a **human-AI collaboration system**, where effective interaction design is critical to user learning and comfort:',
             items: [
               {
                 label: 'Conversational Interface',
@@ -442,7 +442,7 @@ export const projects = [
             type: 'prose',
             variant: 'flat',
             paragraphs: [
-              "Competitive landscape includes platforms like Interviewing.io ($20-30/session) and Pramp (free peer-to-peer), but Eelocutionist's **AI-powered unlimited practice model** offers superior scalability and accessibility.",
+              "Competitive landscape includes platforms like Interviewing.io ($20-30/session) and Pramp (free peer-to-peer), but Elocutionist's **AI-powered unlimited practice model** offers superior scalability and accessibility.",
             ],
           },
           {
@@ -450,7 +450,7 @@ export const projects = [
             variant: 'flat',
             title: 'Production Deployment',
             paragraphs: [
-              'As an **internship project deployed to production**, Eelocutionist supports real users in live interview preparation scenarios. This real-world deployment experience provided invaluable insights into scalability challenges, user experience optimization, and production system monitoring.',
+              'As an **internship project deployed to production**, Elocutionist supports real users in live interview preparation scenarios. This real-world deployment experience provided invaluable insights into scalability challenges, user experience optimization, and production system monitoring.',
             ],
           },
         ],
@@ -505,7 +505,7 @@ export const projects = [
             variant: 'gradient',
             title: 'Real-World Validation',
             paragraphs: [
-              'Deployed as a **live production platform**, Eelocutionist has demonstrated real-world viability and user value. The internship experience provided exposure to product development lifecycle, stakeholder management, and the challenges of building scalable AI systems for human-facing applications.',
+              'Deployed as a **live production platform**, Elocutionist has demonstrated real-world viability and user value. The internship experience provided exposure to product development lifecycle, stakeholder management, and the challenges of building scalable AI systems for human-facing applications.',
             ],
           },
         ],
