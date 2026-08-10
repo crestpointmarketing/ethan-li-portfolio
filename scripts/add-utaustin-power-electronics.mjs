@@ -41,7 +41,7 @@ const experience = {
   company: 'UT Austin Power Electronics & Energy Systems Lab',
   companyTagline:
     'Hands-on power electronics, embedded communication hardware, and renewable-energy systems lab at The University of Texas at Austin',
-  role: 'Power Electronics Lab Researcher',
+  role: 'Power Electronics Lab Participant',
   badgeText: 'Research Lab',
   period: 'July 2026',
   location: 'Austin, TX',
@@ -60,6 +60,7 @@ const experience = {
     { value: 'MPP', label: 'Solar Power Tracking' },
   ],
   overviewParagraphs: [
+    'The lab gave Ethan a foundation in the systems beneath physical intelligence — power conversion, sensing, real-time communication, measurement, and control. He learned that an intelligent decision matters only if the hardware can execute it reliably.',
     'This laboratory experience at UT Austin spanned three connected areas of modern energy and hardware systems: power electronics, embedded industrial communication, and photovoltaic energy conversion. Rather than working from theory alone, each task started from a physical board or schematic and ended at measured, verified behavior on the bench.',
     'The through-line across every station was engineering execution on real hardware — taking a design from soldered components and wiring to an oscilloscope trace, a working data link, or a plotted power curve, and using measurement and debugging to confirm the system actually behaved the way it was supposed to.',
   ],
@@ -116,8 +117,8 @@ const experience = {
     },
   ],
   takeawayParagraphs: [
-    'The lasting lesson from this lab was that hardware and software have to be understood together. A control signal or a display can look completely correct while the underlying physical system is not — and it is measurement, debugging, and testing under real conditions that reveal the difference. Robots, energy systems, and connected products all ultimately depend on power, control, communication, and reliable hardware working as one.',
-    'Working close to the physical layer this way gave me a foundation for engineering execution: reading schematics, building and repairing boards, reasoning about signals on an oscilloscope, and validating that a system truly behaves as intended. It’s the kind of ground-level understanding I want to carry into higher-level work in software, AI, and product — knowing what it takes for the technology underneath to actually be trustworthy.',
+    'After building software systems that worked primarily with language and information, I wanted to understand what happens when computation must produce a reliable physical result. Working with PWM inverters, EtherCAT communication, photovoltaic characterization, and oscilloscope-based fault diagnosis showed me that intelligence alone is not enough. Physical systems also depend on precise measurement, timing, power, communication, and control.',
+    'This experience gave me the hardware foundation to explore how AI can move beyond interpreting information and begin acting safely and reliably in the physical world.',
   ],
 };
 

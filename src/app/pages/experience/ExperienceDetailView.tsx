@@ -2,7 +2,17 @@ import { Link } from 'react-router';
 import type { Experience } from '@shared/siteContentSchema';
 
 /** Pure presentational experience detail page — same split as ProjectDetailView, for the same reason (admin preview reuse). */
+
+// The "highlights" (gradient cards) mean different things per experience —
+// conference recaps for OneSource, engineering insights for the lab — so the
+// section heading is chosen per slug rather than hardcoded to one meaning.
+const HIGHLIGHTS_HEADING: Record<string, string> = {
+  'onesource-cloud': 'Industry Conference Participation',
+};
+const DEFAULT_HIGHLIGHTS_HEADING = 'Engineering Insights';
+
 export function ExperienceDetailView({ experience }: { experience: Experience }) {
+  const highlightsHeading = HIGHLIGHTS_HEADING[experience.slug] ?? DEFAULT_HIGHLIGHTS_HEADING;
   return (
     <div className="min-h-screen pt-20">
       <div className="max-w-[1200px] mx-auto px-6 lg:px-16 py-16">
@@ -123,7 +133,7 @@ export function ExperienceDetailView({ experience }: { experience: Experience })
             <section>
               <h2 className="text-3xl mb-6 flex items-center gap-4" style={{ fontFamily: "'Inter', sans-serif", fontWeight: 600 }}>
                 <span className="w-2 h-8 bg-[#08874a] dark:bg-[#16A34A] rounded-full" />
-                Industry Conference Participation
+                {highlightsHeading}
               </h2>
               <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
                 {experience.highlights.map((h, i) => (
