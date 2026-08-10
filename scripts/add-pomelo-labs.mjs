@@ -43,6 +43,7 @@ const project = {
   subtitles: [
     'AI Marketing Team for B2B Growth',
     'From AI search visibility and market research to content production, publishing, and continuous improvement',
+    'GEO analytics that separate presence from quality — reporting uncertainty instead of hiding it behind a single number',
   ],
   badges: [
     { text: 'Independent Product', variant: 'accent' },

@@ -72,6 +72,14 @@ const blocks = [
     ],
   },
   {
+    type: 'prose',
+    variant: 'flat',
+    title: "A Mention Isn't a Recommendation",
+    paragraphs: [
+      'Pomelo Labs’ GEO evaluation began from a simple observation: a brand can appear in an AI answer and still be losing. The same product might sit at the bottom of a competitor list, be described accurately and favorably, or be named inside an unflattering comparison — yet a presence-only score counts all three the same. So the system separates **presence from quality**: Is the brand central to the answer or buried in a list? Is the context positive, negative, or neutral? Does the model describe the product accurately, or only mention it in passing? A score that can’t tell those apart can’t tell a company what is actually working.',
+    ],
+  },
+  {
     type: 'steps',
     title: 'How the Evaluation Has Evolved',
     variant: 'flat',
@@ -100,6 +108,7 @@ const blocks = [
     paragraphs: [
       'Pomelo’s goal isn’t to please users or manufacture false progress with pretty numbers. It’s to help a company see how it truly performs in AI search: what the main problems are, why they occur, and which concrete, actionable steps can improve them.',
       'Only by honestly surfacing the real problems — and continuously offering credible, executable directions for improvement — does a GEO evaluation product earn long-term value and a genuine competitive moat.',
+      'Generative models are also unstable, so a single response can’t represent a market. Useful measurement depends on repeated observations, varied query types, and comparisons across platforms — and on reporting uncertainty rather than hiding it behind one polished number. Integrity here starts earlier than the data itself: in the definitions and categories that decide what a score is allowed to say.',
     ],
   },
 ];
