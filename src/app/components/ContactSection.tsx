@@ -28,6 +28,9 @@ function SocialIcon({ platform }: { platform: string }) {
 
 export default function ContactSection() {
   const [state, setState] = useState<LoadState>({ status: 'loading' });
+  const [submit, setSubmit] = useState<{ status: 'idle' | 'sending' | 'sent' | 'error'; error?: string }>({
+    status: 'idle',
+  });
 
   useEffect(() => {
     let cancelled = false;
@@ -49,7 +52,7 @@ export default function ContactSection() {
     };
   }, []);
 
-  const handleSubmit = (e: FormEvent<HTMLFormElement>) => {
+  const handleSubmit = async (e: FormEvent<HTMLFormElement>) => {
     e.preventDefault();
     if (state.status !== 'ready') return;
     const form = e.currentTarget;
@@ -57,9 +60,28 @@ export default function ContactSection() {
     const name = String(data.get('name') || '').trim();
     const email = String(data.get('email') || '').trim();
     const message = String(data.get('message') || '').trim();
-    const subject = encodeURIComponent(`Portfolio inquiry from ${name || 'a website visitor'}`);
-    const body = encodeURIComponent(`${message}\n\n— ${name}${email ? ` (${email})` : ''}`);
-    window.location.href = `mailto:${state.contact.email}?subject=${subject}&body=${body}`;
+    if (!name || !email || !message) {
+      setSubmit({ status: 'error', error: 'Please fill in your name, email, and message.' });
+      return;
+    }
+
+    setSubmit({ status: 'sending' });
+    try {
+      const res = await fetch('/api/contact-submit', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({ name, email, message }),
+      });
+      if (!res.ok) {
+        const payload = (await res.json().catch(() => ({}))) as { error?: string };
+        setSubmit({ status: 'error', error: payload.error || 'Something went wrong. Please try again.' });
+        return;
+      }
+      setSubmit({ status: 'sent' });
+      form.reset();
+    } catch {
+      setSubmit({ status: 'error', error: 'Network error — please try again.' });
+    }
   };
 
   if (state.status === 'loading') {
@@ -217,10 +239,20 @@ export default function ContactSection() {
 
               <button
                 type="submit"
-                className="w-full px-8 py-4 bg-[#08874a] dark:bg-[#16A34A] text-black dark:text-white rounded-lg font-medium transition-all duration-300 hover:bg-[#0a9d56] dark:hover:bg-[#15803D] hover:shadow-[0_0_30px_rgba(22, 163, 74,0.5)] hover:scale-[1.02]"
+                disabled={submit.status === 'sending'}
+                className="w-full px-8 py-4 bg-[#08874a] dark:bg-[#16A34A] text-white rounded-lg font-medium transition-all duration-300 hover:bg-[#0a9d56] dark:hover:bg-[#15803D] hover:shadow-[0_0_30px_rgba(22, 163, 74,0.5)] hover:scale-[1.02] disabled:opacity-60 disabled:cursor-not-allowed disabled:hover:scale-100"
               >
-                Send Message
+                {submit.status === 'sending' ? 'Sending…' : 'Send Message'}
               </button>
+
+              {submit.status === 'sent' && (
+                <p className="mt-3 text-sm text-[#08874a] dark:text-[#16A34A]">
+                  Thanks — your message was sent. I&apos;ll get back to you soon.
+                </p>
+              )}
+              {submit.status === 'error' && (
+                <p className="mt-3 text-sm text-red-600 dark:text-red-400">{submit.error}</p>
+              )}
             </form>
           </div>
         </div>
