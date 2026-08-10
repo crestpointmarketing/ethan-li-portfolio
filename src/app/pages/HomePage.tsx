@@ -48,9 +48,14 @@ export default function HomePage() {
                     lineHeight: 1.2
                   }}
                 >
-                  AI Systems Builder for{' '}
-                  <span className="text-[#08874a] dark:text-[#16A34A]">Real-World Problems</span>
+                  Technology-to-Product Builder
                 </h2>
+                <p
+                  className="text-sm sm:text-base md:text-lg lg:text-xl text-[#08874a] dark:text-[#16A34A] font-semibold tracking-wide"
+                  style={{ fontFamily: "'Syne', sans-serif" }}
+                >
+                  AI Systems · Robotics · Full-Stack Engineering
+                </p>
 
                 {/* Description */}
                 <p className="text-base sm:text-lg md:text-xl text-[var(--muted-foreground)] max-w-xl leading-relaxed">
