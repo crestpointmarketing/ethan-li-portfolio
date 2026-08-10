@@ -2,6 +2,7 @@ import { useState, useEffect } from 'react';
 import HeroVisual from '../components/HeroVisual';
 import AboutSection from '../components/AboutSection';
 import ExperienceSection from '../components/ExperienceSection';
+import ThroughlineSection from '../components/ThroughlineSection';
 import ProjectsSection from '../components/ProjectsSection';
 import AchievementsSection from '../components/AchievementsSection';
 import MomentsSection from '../components/MomentsSection';
@@ -136,6 +137,7 @@ export default function HomePage() {
       {/* Additional Sections */}
       <AboutSection />
       <ExperienceSection />
+      <ThroughlineSection />
       <ProjectsSection />
       <AchievementsSection />
       <MomentsSection />
