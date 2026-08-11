@@ -27,7 +27,6 @@ const STAGES: StageData[] = [
     human: 'Helping people express ideas and understand information.',
     projects: [
       { name: 'SpeakWise', purpose: 'AI-powered communication coaching that helps people speak with clarity and confidence.', tag: 'Speech · NLP', to: '/projects/speakwise' },
-      { name: 'Elocutionist', purpose: 'Making speech practice more accessible, structured, and actionable.', tag: 'LLM · Speech APIs', to: '/projects/elocutionist' },
     ],
   },
   {
@@ -37,7 +36,6 @@ const STAGES: StageData[] = [
     human: 'Questioning how AI selects, measures, presents, and omits information.',
     projects: [
       { name: 'Pomelo GEO', purpose: 'Measuring how generative AI systems select, represent, recommend, or omit brands and entities.', tag: 'Multi-LLM · GEO', to: '/projects/pomelo-labs' },
-      { name: 'Zeitgeist', purpose: 'Using AI to discover patterns and meaning across complex information.', tag: 'LLM · Data', to: '/projects/zeitgeist' },
     ],
   },
   {
@@ -47,7 +45,6 @@ const STAGES: StageData[] = [
     human: 'Exploring how intelligent decisions can act reliably in the real world.',
     projects: [
       { name: 'Vision-Language-Action Robotics', purpose: 'Connecting perception and language reasoning to robotic action.', tag: 'Computer Vision · VLA', to: '/projects/vla-robot-manipulation' },
-      { name: 'Power Electronics Lab', purpose: 'Exploring the power, sensing, communication, and control systems beneath reliable physical action.', tag: 'Hardware · Control', to: '/experience/ut-austin-power-electronics' },
     ],
   },
 ];
