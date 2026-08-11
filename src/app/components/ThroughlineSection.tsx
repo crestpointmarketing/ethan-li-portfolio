@@ -2,46 +2,52 @@ import { useEffect, useRef, useState } from 'react';
 import { Link } from 'react-router';
 
 /**
- * "Throughline" — the narrative spine (Information → Intelligence → Physical
- * Action), staged as an animated dark "energy pipeline": a glowing gradient-
- * bordered panel, three pulsing nodes connected by a flowing energy line with a
- * running comet, glassy cards, and scroll-reveal. Echoes the hero's aesthetic.
- * Copy is authored — keep it in sync with the portfolio narrative.
+ * "The Throughline" — a dual-track growth map showing two connected paths through
+ * Ethan's work: a Technical Evolution track and a Human Impact & Intellectual
+ * Growth track, both moving Information → Intelligence → Physical Action, with the
+ * projects for each stage as clickable cards. Immersive dark, editorial, animated
+ * only to convey relationships (scroll-reveal + hover). Copy is authored — keep in
+ * sync with the portfolio narrative. Links point to real project/experience pages.
  */
 
-type Stage = {
-  index: string;
-  title: string;
-  blurb: string;
-  items: { label: string; to: string }[];
+type Project = { name: string; purpose: string; tag: string; to: string };
+type StageData = {
+  n: string;
+  key: string;
+  tech: string;
+  human: string;
+  projects: Project[];
 };
 
-const STAGES: Stage[] = [
+const STAGES: StageData[] = [
   {
-    index: '01',
-    title: 'Human Expression & Information',
-    blurb: 'Helping people communicate, express ideas, and understand information.',
-    items: [
-      { label: 'SpeakWise', to: '/projects/speakwise' },
-      { label: 'Elocutionist', to: '/projects/elocutionist' },
+    n: '01',
+    key: 'Information',
+    tech: 'Web Platforms · NLP · Speech Analysis',
+    human: 'Helping people express ideas and understand information.',
+    projects: [
+      { name: 'SpeakWise', purpose: 'AI-powered communication coaching that helps people speak with clarity and confidence.', tag: 'Speech · NLP', to: '/projects/speakwise' },
+      { name: 'Elocutionist', purpose: 'Making speech practice more accessible, structured, and actionable.', tag: 'LLM · Speech APIs', to: '/projects/elocutionist' },
     ],
   },
   {
-    index: '02',
-    title: 'AI Reasoning & Representation',
-    blurb: 'Investigating how AI interprets, selects, measures, presents, and sometimes omits information.',
-    items: [
-      { label: 'Zeitgeist', to: '/projects/zeitgeist' },
-      { label: 'Pomelo GEO', to: '/projects/pomelo-labs' },
+    n: '02',
+    key: 'Intelligence',
+    tech: 'LLMs · Data Analysis · Measurement · GEO',
+    human: 'Questioning how AI selects, measures, presents, and omits information.',
+    projects: [
+      { name: 'Zeitgeist', purpose: 'Using AI to discover patterns and meaning across complex information.', tag: 'LLM · Data', to: '/projects/zeitgeist' },
+      { name: 'Pomelo GEO', purpose: 'Measuring how generative AI systems select, represent, recommend, or omit brands and entities.', tag: 'Multi-LLM · GEO', to: '/projects/pomelo-labs' },
     ],
   },
   {
-    index: '03',
-    title: 'Intelligence in the Physical World',
-    blurb: 'Exploring how perception and AI reasoning become reliable physical action — and the hardware systems that make it possible.',
-    items: [
-      { label: 'Vision-Language-Action Robotics', to: '/projects/vla-robot-manipulation' },
-      { label: 'Power Electronics Lab', to: '/experience/ut-austin-power-electronics' },
+    n: '03',
+    key: 'Physical Action',
+    tech: 'Computer Vision · VLA · Power & Control Systems',
+    human: 'Exploring how intelligent decisions can act reliably in the real world.',
+    projects: [
+      { name: 'Vision-Language-Action Robotics', purpose: 'Connecting perception and language reasoning to robotic action.', tag: 'Computer Vision · VLA', to: '/projects/vla-robot-manipulation' },
+      { name: 'Power Electronics Lab', purpose: 'Exploring the power, sensing, communication, and control systems beneath reliable physical action.', tag: 'Hardware · Control', to: '/experience/ut-austin-power-electronics' },
     ],
   },
 ];
@@ -67,7 +73,7 @@ function useInView() {
           obs.disconnect();
         }
       },
-      { threshold: 0.12 },
+      { threshold: 0.1 },
     );
     obs.observe(el);
     const t = setTimeout(() => setInView(true), 2500);
@@ -79,175 +85,234 @@ function useInView() {
   return { ref, inView };
 }
 
-function Node({ stage, i }: { stage: Stage; i: number }) {
+function ProjectCard({ p, delay }: { p: Project; delay: number }) {
   return (
-    <div className="tl-col tl-reveal" style={{ transitionDelay: `${140 + i * 160}ms` }}>
-      <div className="tl-orb">
-        <span>{stage.index}</span>
+    <Link to={p.to} className="tl-proj tl-reveal" style={{ transitionDelay: `${delay}ms` }} aria-label={`${p.name} — View project`}>
+      <span className="tl-proj-connector" aria-hidden />
+      <div className="tl-proj-head">
+        <span className="tl-proj-name">{p.name}</span>
+        <svg className="tl-proj-arrow" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" aria-hidden>
+          <path strokeLinecap="round" strokeLinejoin="round" d="M5 12h14M13 6l6 6-6 6" />
+        </svg>
       </div>
-      <div className="tl-card">
-        <h3 className="tl-card-title">{stage.title}</h3>
-        <p className="tl-card-blurb">{stage.blurb}</p>
-        <div className="tl-chips">
-          {stage.items.map((it) => (
-            <Link key={it.to} to={it.to} className="tl-chip">
-              {it.label}
-            </Link>
-          ))}
-        </div>
+      <p className="tl-proj-purpose">{p.purpose}</p>
+      <div className="tl-proj-foot">
+        <span className="tl-proj-tag">{p.tag}</span>
+        <span className="tl-proj-view">View Project</span>
       </div>
-    </div>
+    </Link>
   );
 }
 
 export default function ThroughlineSection() {
   const { ref, inView } = useInView();
   return (
-    <section id="throughline" className="relative py-24 lg:py-32 border-t border-white/5 overflow-hidden">
-      <div
-        className="absolute inset-0 pointer-events-none"
-        style={{
-          background:
-            'radial-gradient(ellipse 65% 60% at 50% 60%, rgba(22,163,74,0.14) 0%, rgba(22,163,74,0.04) 45%, transparent 72%)',
-        }}
-      />
-
-      <div ref={ref} className={`max-w-[1440px] mx-auto px-6 lg:px-16 relative ${inView ? 'tl-in' : ''}`}>
-        {/* Header */}
-        <div className="mb-10">
-          <p className="tl-reveal tl-kicker text-xs sm:text-sm font-semibold tracking-widest uppercase mb-3">
-            Information → Intelligence → Physical Action
-          </p>
-          <h2
-            className="tl-reveal mb-4"
-            style={{ fontFamily: "'Sora', sans-serif", fontSize: '48px', fontWeight: 600, lineHeight: 1.1, letterSpacing: '-0.02em', transitionDelay: '60ms' }}
-          >
-            Throughline
+    <section id="throughline" className="relative border-t border-white/5">
+      <div className="max-w-[1440px] mx-auto px-6 lg:px-16 py-24 lg:py-32">
+        <div ref={ref} className={`tl-shell ${inView ? 'tl-in' : ''}`}>
+          {/* Header */}
+          <p className="tl-reveal tl-eyebrow">The Throughline</p>
+          <h2 className="tl-reveal tl-title" style={{ transitionDelay: '60ms' }}>
+            From Information to Intelligence to Action
           </h2>
-          <p className="tl-reveal text-[var(--muted-foreground)] text-lg max-w-3xl leading-relaxed" style={{ transitionDelay: '120ms' }}>
-            My work follows a continuous path: from helping people express and understand information, to examining how
-            AI selects and represents it, to exploring how intelligent decisions can be executed reliably in the physical
-            world — connected throughout by a commitment to integrity and reliability.
+          <p className="tl-reveal tl-sub" style={{ transitionDelay: '120ms' }}>
+            My work follows two connected paths: building increasingly capable systems, and asking increasingly
+            difficult questions about how those systems affect people.
           </p>
-        </div>
 
-        {/* Energy-pipeline panel */}
-        <div className="tl-panel tl-reveal" style={{ transitionDelay: '180ms' }}>
-          <div className="tl-panel-inner">
-            <div className="tl-pipe">
-              {/* Flowing energy line (desktop) */}
-              <div className="tl-track" aria-hidden>
-                <span className="tl-comet2" />
-              </div>
-              <div className="tl-nodes">
+          {/* ===== Desktop / tablet: dual-track map ===== */}
+          <div className="tl-map">
+            {/* Stage headers */}
+            <div className="tl-grid tl-headers" aria-hidden>
+              {STAGES.map((s) => (
+                <div key={s.n} className="tl-head tl-reveal">
+                  <span className="tl-head-num">{s.n}</span>
+                  <span className="tl-head-key">{s.key}</span>
+                </div>
+              ))}
+            </div>
+
+            {/* Technical track */}
+            <div className="tl-track">
+              <div className="tl-track-label tl-tech">Technical Evolution</div>
+              <div className="tl-grid tl-lane">
+                <span className="tl-line tl-line-tech" aria-hidden />
                 {STAGES.map((s, i) => (
-                  <Node key={s.index} stage={s} i={i} />
+                  <div key={s.n} className="tl-cell tl-reveal" style={{ transitionDelay: `${180 + i * 90}ms` }}>
+                    <span className="tl-node tl-node-tech" aria-hidden />
+                    <span className="tl-cell-text">{s.tech}</span>
+                  </div>
                 ))}
               </div>
             </div>
+
+            {/* Human track */}
+            <div className="tl-track">
+              <div className="tl-track-label tl-human">Human Impact &amp; Intellectual Growth</div>
+              <div className="tl-grid tl-lane">
+                <span className="tl-line tl-line-human" aria-hidden />
+                {STAGES.map((s, i) => (
+                  <div key={s.n} className="tl-cell tl-reveal" style={{ transitionDelay: `${260 + i * 90}ms` }}>
+                    <span className="tl-node tl-node-human" aria-hidden />
+                    <span className="tl-cell-text">{s.human}</span>
+                  </div>
+                ))}
+              </div>
+            </div>
+
+            {/* Project cards */}
+            <div className="tl-grid tl-cardsgrid">
+              {STAGES.map((s, si) => (
+                <div key={s.n} className="tl-stackcol">
+                  <span className="tl-bignum" aria-hidden>{s.n}</span>
+                  {s.projects.map((p, pi) => (
+                    <ProjectCard key={p.to} p={p} delay={360 + si * 80 + pi * 80} />
+                  ))}
+                </div>
+              ))}
+            </div>
+          </div>
+
+          {/* ===== Mobile: vertical growth timeline ===== */}
+          <div className="tl-mobile">
+            {STAGES.map((s) => (
+              <div key={s.n} className="tl-mstage tl-reveal">
+                <div className="tl-mhead">
+                  <span className="tl-mnum">{s.n}</span>
+                  <span className="tl-mkey">{s.key}</span>
+                </div>
+                <div className="tl-mrow">
+                  <span className="tl-mdot tl-node-tech" aria-hidden />
+                  <div>
+                    <span className="tl-mlabel tl-tech">Technical</span>
+                    <p className="tl-mtext">{s.tech}</p>
+                  </div>
+                </div>
+                <div className="tl-mrow">
+                  <span className="tl-mdot tl-node-human" aria-hidden />
+                  <div>
+                    <span className="tl-mlabel tl-human">Human Impact</span>
+                    <p className="tl-mtext">{s.human}</p>
+                  </div>
+                </div>
+                <div className="tl-mcards">
+                  {s.projects.map((p) => (
+                    <ProjectCard key={p.to} p={p} delay={0} />
+                  ))}
+                </div>
+              </div>
+            ))}
           </div>
         </div>
-
-        {/* Recurring questions */}
-        <p className="tl-reveal mt-10 text-[var(--foreground)]/85 max-w-3xl leading-relaxed" style={{ transitionDelay: '260ms' }}>
-          Across each stage, I return to the same questions: Does this output genuinely help someone? Does the metric
-          represent what it claims to measure? Can an intelligent decision be translated into dependable action?
-        </p>
       </div>
 
       <style>{`
-        @property --tl-angle { syntax: '<angle>'; initial-value: 0deg; inherits: false; }
+        #throughline {
+          --tech-a: #16A34A; --tech-b: #22d3ee;
+          --human-a: #8B5CF6; --human-b: #e0b155;
+          background:
+            radial-gradient(60% 55% at 18% 8%, rgba(22,163,74,0.14), transparent 60%),
+            radial-gradient(55% 55% at 85% 6%, rgba(139,92,246,0.14), transparent 62%),
+            linear-gradient(180deg, #07090c 0%, #06070a 100%);
+          color: #e9edf1;
+        }
 
-        .tl-reveal { opacity: 0; transform: translateY(22px); transition: opacity .8s cubic-bezier(.2,.7,.2,1), transform .8s cubic-bezier(.2,.7,.2,1); }
+        .tl-reveal { opacity: 0; transform: translateY(20px); transition: opacity .7s cubic-bezier(.2,.7,.2,1), transform .7s cubic-bezier(.2,.7,.2,1); }
         .tl-in .tl-reveal { opacity: 1; transform: none; }
 
-        .tl-kicker {
-          background: linear-gradient(90deg, #0a7d4f, #34d17f, #0a7d4f);
-          background-size: 200% auto; -webkit-background-clip: text; background-clip: text; color: transparent;
-          animation: tlShimmer 4.5s linear infinite;
+        .tl-eyebrow {
+          font-size: 12px; font-weight: 700; letter-spacing: 3px; text-transform: uppercase;
+          color: #7cf0ad; margin-bottom: 14px;
         }
-        @keyframes tlShimmer { to { background-position: 200% center; } }
+        .tl-title { font-family: 'Sora', sans-serif; font-weight: 600; letter-spacing: -0.02em;
+          font-size: clamp(30px, 5vw, 52px); line-height: 1.05; color: #fff; margin: 0 0 16px; max-width: 900px; }
+        .tl-sub { color: rgba(233,237,241,0.6); font-size: clamp(15px, 1.6vw, 18px); line-height: 1.6; max-width: 620px; margin: 0 0 56px; }
 
-        /* Dark showcase panel with rotating gradient-glow border */
-        .tl-panel {
-          position: relative; border-radius: 28px; padding: 1.5px; overflow: hidden;
-          background:
-            conic-gradient(from var(--tl-angle),
-              rgba(22,163,74,0) 0deg, rgba(22,163,74,0.75) 55deg, rgba(52,211,153,0.15) 110deg,
-              rgba(22,163,74,0) 180deg, rgba(22,163,74,0.6) 260deg, rgba(22,163,74,0) 360deg);
-          animation: tlAngle 9s linear infinite;
-          box-shadow: 0 30px 80px rgba(0,0,0,0.45), 0 0 60px rgba(22,163,74,0.15);
-        }
-        @keyframes tlAngle { to { --tl-angle: 360deg; } }
-        .tl-panel-inner {
-          position: relative; border-radius: 27px; padding: 42px 28px 46px;
-          background: radial-gradient(120% 120% at 50% 0%, #0d1a14 0%, #0a0e12 55%, #08090c 100%);
-          overflow: hidden;
-        }
-        .tl-panel-inner::before {
-          content: ''; position: absolute; inset: 0; pointer-events: none;
-          background: radial-gradient(60% 80% at 50% 40%, rgba(22,163,74,0.16), transparent 70%);
-        }
+        /* Shared 3-column grid so headers, tracks and cards align */
+        .tl-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 24px; }
 
-        .tl-pipe { position: relative; }
-        .tl-nodes { position: relative; z-index: 2; display: flex; flex-direction: column; gap: 40px; }
-        @media (min-width: 768px) { .tl-nodes { flex-direction: row; gap: 20px; } }
-        .tl-col { flex: 1; display: flex; flex-direction: column; align-items: center; text-align: center; }
+        .tl-map { display: none; }
+        @media (min-width: 768px) { .tl-map { display: block; } .tl-mobile { display: none; } }
 
-        /* Flowing energy line — connects the three orbs on desktop */
-        .tl-track {
-          display: none; position: absolute; z-index: 1; top: 30px; left: 16.6%; right: 16.6%; height: 3px; border-radius: 3px;
-          background: linear-gradient(90deg, rgba(22,163,74,0.15), rgba(22,163,74,0.6), rgba(22,163,74,0.15));
-          box-shadow: 0 0 14px rgba(22,163,74,0.5);
-        }
-        @media (min-width: 768px) { .tl-track { display: block; } }
-        .tl-track::before {
-          content: ''; position: absolute; inset: 0; border-radius: 3px;
-          background-image: repeating-linear-gradient(90deg, rgba(255,255,255,0.7) 0 5px, transparent 5px 16px);
-          background-size: 32px 100%; opacity: .45; animation: tlMarch 1.1s linear infinite;
-        }
-        @keyframes tlMarch { to { background-position: 32px 0; } }
-        .tl-comet2 {
-          position: absolute; top: 50%; left: 0; width: 12px; height: 12px; margin-top: -6px; border-radius: 50%;
-          background: #eafff3; box-shadow: 0 0 18px 5px rgba(22,163,74,0.95); animation: tlRun 3.2s ease-in-out infinite;
-        }
-        @keyframes tlRun { 0% { left: 0; opacity: 0; } 8% { opacity: 1; } 90% { opacity: 1; } 100% { left: 100%; opacity: 0; } }
+        /* Stage headers */
+        .tl-headers { margin-bottom: 10px; }
+        .tl-head { display: flex; align-items: baseline; gap: 12px; }
+        .tl-head-num { font-family: 'Sora', sans-serif; font-weight: 700; font-size: 15px;
+          color: transparent; -webkit-text-stroke: 1px rgba(255,255,255,0.35); }
+        .tl-head-key { font-size: 13px; font-weight: 700; letter-spacing: 2px; text-transform: uppercase; color: rgba(255,255,255,0.82); }
 
-        /* Glowing numbered node */
-        .tl-orb {
-          position: relative; z-index: 2; width: 60px; height: 60px; border-radius: 18px;
-          display: flex; align-items: center; justify-content: center; font-weight: 800; font-size: 17px; color: #fff;
-          background: linear-gradient(150deg, #22c55e, #0a5c34);
-          box-shadow: 0 0 0 6px rgba(22,163,74,0.10), 0 8px 26px rgba(22,163,74,0.55);
-        }
-        .tl-orb::after {
-          content: ''; position: absolute; inset: -7px; border-radius: 22px; border: 1px solid rgba(52,211,153,0.5);
-          animation: tlHalo 2.6s ease-in-out infinite;
-        }
-        @keyframes tlHalo { 0%,100% { opacity: .25; transform: scale(1); } 50% { opacity: .85; transform: scale(1.14); } }
+        /* Tracks */
+        .tl-track { margin-bottom: 30px; }
+        .tl-track-label { font-size: 11px; font-weight: 700; letter-spacing: 2.5px; text-transform: uppercase; margin-bottom: 16px; }
+        .tl-tech { color: var(--tech-a); }
+        .tl-human { color: var(--human-a); }
 
-        /* Glassy stage card */
-        .tl-card {
-          margin-top: 20px; width: 100%; max-width: 340px; padding: 18px 18px 20px; border-radius: 18px;
+        .tl-lane { position: relative; align-items: start; }
+        .tl-line { position: absolute; top: 7px; left: calc(16.66% ); right: calc(16.66%); height: 2px; border-radius: 2px;
+          transform: scaleX(0); transform-origin: left center; transition: transform 1s cubic-bezier(.2,.7,.2,1) .2s; }
+        .tl-in .tl-line { transform: scaleX(1); }
+        .tl-line-tech { background: linear-gradient(90deg, var(--tech-a), var(--tech-b)); box-shadow: 0 0 12px rgba(34,211,238,0.5); }
+        .tl-line-human { background: linear-gradient(90deg, var(--human-a), var(--human-b)); box-shadow: 0 0 12px rgba(139,92,246,0.5); }
+
+        .tl-cell { position: relative; display: flex; flex-direction: column; align-items: center; text-align: center; padding-top: 0; }
+        .tl-node { width: 16px; height: 16px; border-radius: 50%; margin-bottom: 14px; position: relative; z-index: 1; }
+        .tl-node-tech { background: radial-gradient(circle at 35% 35%, #d6fff0, var(--tech-a)); box-shadow: 0 0 0 5px rgba(22,163,74,0.14), 0 0 16px rgba(34,211,238,0.7); }
+        .tl-node-human { background: radial-gradient(circle at 35% 35%, #efe6ff, var(--human-a)); box-shadow: 0 0 0 5px rgba(139,92,246,0.14), 0 0 16px rgba(139,92,246,0.7); }
+        .tl-cell-text { font-size: 13.5px; line-height: 1.55; color: rgba(233,237,241,0.72); max-width: 260px; }
+
+        /* Project card columns */
+        .tl-cardsgrid { margin-top: 26px; align-items: start; }
+        .tl-stackcol { position: relative; display: flex; flex-direction: column; gap: 16px; padding-top: 8px; }
+        .tl-bignum { position: absolute; top: -46px; right: 4px; font-family: 'Sora', sans-serif; font-weight: 800;
+          font-size: 92px; line-height: 1; color: rgba(255,255,255,0.04); pointer-events: none; z-index: 0; }
+
+        /* Project card */
+        .tl-proj {
+          position: relative; display: block; text-decoration: none; border-radius: 16px; padding: 18px 18px 16px;
           background: rgba(255,255,255,0.035); border: 1px solid rgba(255,255,255,0.09);
-          backdrop-filter: blur(10px); -webkit-backdrop-filter: blur(10px);
-          box-shadow: 0 12px 34px rgba(0,0,0,0.4);
-          transition: transform .28s ease, border-color .28s ease, box-shadow .28s ease;
+          box-shadow: 0 10px 30px rgba(0,0,0,0.35); z-index: 1;
+          transition: transform .25s ease, border-color .25s ease, box-shadow .25s ease, background .25s ease;
         }
-        .tl-card:hover { transform: translateY(-6px); border-color: rgba(22,163,74,0.55); box-shadow: 0 20px 48px rgba(22,163,74,0.28); }
-        .tl-card-title { color: #fff; font-weight: 600; font-size: 17px; line-height: 1.25; margin-bottom: 8px; }
-        .tl-card-blurb { color: rgba(255,255,255,0.62); font-size: 13.5px; line-height: 1.55; margin-bottom: 14px; }
-        .tl-chips { display: flex; flex-wrap: wrap; gap: 8px; justify-content: center; }
-        .tl-chip {
-          padding: 5px 12px; font-size: 12px; border-radius: 9999px; color: #7cf0ad;
-          background: rgba(22,163,74,0.14); border: 1px solid rgba(22,163,74,0.3);
-          transition: transform .2s ease, background .2s ease, box-shadow .2s ease;
+        .tl-proj-connector { position: absolute; top: -10px; left: 26px; width: 2px; height: 10px; border-radius: 2px;
+          background: linear-gradient(180deg, rgba(255,255,255,0.28), transparent); opacity: .5; transition: opacity .25s ease, box-shadow .25s ease; }
+        .tl-proj:hover, .tl-proj:focus-visible {
+          transform: translateY(-6px); background: rgba(255,255,255,0.06);
+          border-color: rgba(22,163,74,0.5); box-shadow: 0 18px 46px rgba(22,163,74,0.22);
+          outline: none;
         }
-        .tl-chip:hover { transform: translateY(-2px); background: rgba(22,163,74,0.26); box-shadow: 0 0 16px rgba(22,163,74,0.5); }
+        .tl-proj:focus-visible { border-color: #34d17f; box-shadow: 0 0 0 3px rgba(52,209,127,0.5), 0 18px 46px rgba(22,163,74,0.22); }
+        .tl-proj:hover .tl-proj-connector, .tl-proj:focus-visible .tl-proj-connector { opacity: 1; box-shadow: 0 0 10px rgba(52,209,127,0.8); background: linear-gradient(180deg, #34d17f, transparent); }
+        .tl-proj-head { display: flex; align-items: center; justify-content: space-between; gap: 10px; margin-bottom: 8px; }
+        .tl-proj-name { color: #fff; font-weight: 600; font-size: 15.5px; line-height: 1.25; }
+        .tl-proj-arrow { color: #7cf0ad; flex-shrink: 0; transition: transform .25s ease; }
+        .tl-proj:hover .tl-proj-arrow, .tl-proj:focus-visible .tl-proj-arrow { transform: translateX(4px); }
+        .tl-proj-purpose { color: rgba(233,237,241,0.6); font-size: 13px; line-height: 1.55; margin: 0 0 14px; }
+        .tl-proj-foot { display: flex; align-items: center; justify-content: space-between; gap: 10px; }
+        .tl-proj-tag { font-size: 11px; letter-spacing: .5px; color: rgba(233,237,241,0.5); }
+        .tl-proj-view { font-size: 11px; font-weight: 700; letter-spacing: 1px; text-transform: uppercase; color: #7cf0ad; }
+
+        /* ===== Mobile vertical timeline ===== */
+        .tl-mobile { display: block; position: relative; padding-left: 22px; }
+        @media (min-width: 768px) { .tl-mobile { display: none; } }
+        .tl-mobile::before { content: ''; position: absolute; left: 5px; top: 6px; bottom: 6px; width: 2px; border-radius: 2px;
+          background: linear-gradient(180deg, var(--tech-a), var(--human-a), var(--human-b)); opacity: .5; }
+        .tl-mstage { position: relative; margin-bottom: 40px; }
+        .tl-mhead { display: flex; align-items: baseline; gap: 10px; margin: 0 0 14px -22px; padding-left: 22px; }
+        .tl-mhead::before { content: ''; position: absolute; left: 0; width: 12px; height: 12px; border-radius: 50%; margin-top: 4px;
+          background: #fff; box-shadow: 0 0 12px rgba(22,163,74,0.7); }
+        .tl-mnum { font-family: 'Sora', sans-serif; font-weight: 800; font-size: 15px; color: transparent; -webkit-text-stroke: 1px rgba(255,255,255,0.4); }
+        .tl-mkey { font-size: 13px; font-weight: 700; letter-spacing: 2px; text-transform: uppercase; color: #fff; }
+        .tl-mrow { display: flex; gap: 10px; margin-bottom: 12px; align-items: flex-start; }
+        .tl-mdot { flex-shrink: 0; width: 12px; height: 12px; border-radius: 50%; margin-top: 4px; }
+        .tl-mlabel { display: block; font-size: 10.5px; font-weight: 700; letter-spacing: 1.5px; text-transform: uppercase; margin-bottom: 2px; }
+        .tl-mtext { color: rgba(233,237,241,0.68); font-size: 13.5px; line-height: 1.5; margin: 0; }
+        .tl-mcards { display: flex; flex-direction: column; gap: 14px; margin-top: 16px; }
+        .tl-mcards .tl-proj { min-height: 44px; }
 
         @media (prefers-reduced-motion: reduce) {
           .tl-reveal { opacity: 1; transform: none; transition: none; }
-          .tl-panel, .tl-kicker, .tl-comet2, .tl-track::before, .tl-orb::after { animation: none; }
+          .tl-line { transform: scaleX(1); transition: none; }
+          .tl-proj, .tl-proj-arrow { transition: none; }
         }
       `}</style>
     </section>
