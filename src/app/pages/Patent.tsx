@@ -20,7 +20,7 @@ const FIELDS: { label: string; value: string }[] = [
   { label: 'Application Number', value: PATENT.applicationNumber },
   { label: 'Patent Center Number', value: PATENT.patentCenterNumber },
   { label: 'Filing / Receipt Date', value: PATENT.filingDate },
-  { label: 'First Named Inventor', value: PATENT.inventor },
+  { label: 'Sole Inventor', value: PATENT.inventor },
 ];
 
 export default function Patent() {
