@@ -7,14 +7,20 @@ function ScrollToTop() {
   const { pathname, hash } = useLocation();
   useEffect(() => {
     if (hash) {
-      // Wait for the page to render, then scroll to the anchor
-      setTimeout(() => {
+      // Sections load async, so retry until the target exists (or give up).
+      let tries = 0;
+      const tick = () => {
         const el = document.querySelector(hash);
-        if (el) el.scrollIntoView({ behavior: 'smooth' });
-      }, 80);
-    } else {
-      window.scrollTo(0, 0);
+        if (el) {
+          el.scrollIntoView({ behavior: 'smooth' });
+          return;
+        }
+        if (tries++ < 40) setTimeout(tick, 100);
+      };
+      const t = setTimeout(tick, 80);
+      return () => clearTimeout(t);
     }
+    window.scrollTo(0, 0);
   }, [pathname, hash]);
   return null;
 }

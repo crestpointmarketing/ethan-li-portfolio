@@ -24,6 +24,28 @@ export default function Navbar() {
     };
   }, []);
 
+  // In-page hash links ("/#contact", etc.) don't reliably scroll on the SPA —
+  // a plain anchor updates the URL hash but the page never moves. Handle them
+  // explicitly: on the homepage, smooth-scroll to the section; on other pages,
+  // let the link navigate home (RootLayout scrolls once the section mounts).
+  useEffect(() => {
+    const onClick = (e: globalThis.MouseEvent) => {
+      const link = (e.target as HTMLElement | null)?.closest('a[href^="/#"]') as HTMLAnchorElement | null;
+      if (!link) return;
+      setMobileMenuOpen(false);
+      if (location.pathname !== '/') return; // let it navigate to "/#id"
+      const id = (link.getAttribute('href') || '').split('#')[1];
+      const el = id ? document.getElementById(id) : null;
+      if (el) {
+        e.preventDefault();
+        el.scrollIntoView({ behavior: 'smooth' });
+        window.history.replaceState(null, '', `/#${id}`);
+      }
+    };
+    document.addEventListener('click', onClick);
+    return () => document.removeEventListener('click', onClick);
+  }, [location.pathname]);
+
   return (
     <nav className="fixed top-0 left-0 right-0 z-50 bg-[var(--background)]/80 backdrop-blur-xl border-b border-[var(--border)] transition-colors duration-300">
       <div className="max-w-[1440px] mx-auto px-6 lg:px-16">
