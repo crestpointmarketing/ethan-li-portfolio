@@ -5,9 +5,9 @@ import { Link } from 'react-router';
  * "The Throughline" — a dual-track growth map showing two connected paths through
  * Ethan's work: a Technical Evolution track and a Human Impact & Intellectual
  * Growth track, both moving Information → Intelligence → Physical Action, with the
- * projects for each stage as clickable cards. Immersive dark, editorial, animated
- * only to convey relationships (scroll-reveal + hover). Copy is authored — keep in
- * sync with the portfolio narrative. Links point to real project/experience pages.
+ * projects for each stage as clickable cards. Editorial, theme-aware (light/dark),
+ * animated only to convey relationships (scroll-reveal + hover). Copy is authored —
+ * keep in sync with the portfolio narrative. Links point to real pages.
  */
 
 type Project = { name: string; purpose: string; tag: string; to: string };
@@ -36,8 +36,8 @@ const STAGES: StageData[] = [
     tech: 'LLMs · Data Analysis · Measurement · GEO',
     human: 'Questioning how AI selects, measures, presents, and omits information.',
     projects: [
-      { name: 'Zeitgeist', purpose: 'Using AI to discover patterns and meaning across complex information.', tag: 'LLM · Data', to: '/projects/zeitgeist' },
       { name: 'Pomelo GEO', purpose: 'Measuring how generative AI systems select, represent, recommend, or omit brands and entities.', tag: 'Multi-LLM · GEO', to: '/projects/pomelo-labs' },
+      { name: 'Zeitgeist', purpose: 'Using AI to discover patterns and meaning across complex information.', tag: 'LLM · Data', to: '/projects/zeitgeist' },
     ],
   },
   {
@@ -107,10 +107,9 @@ function ProjectCard({ p, delay }: { p: Project; delay: number }) {
 export default function ThroughlineSection() {
   const { ref, inView } = useInView();
   return (
-    <section id="throughline" className="relative border-t border-white/5">
+    <section id="throughline" className="relative border-t border-[var(--border)]">
       <div className="max-w-[1440px] mx-auto px-6 lg:px-16 py-24 lg:py-32">
         <div ref={ref} className={`tl-shell ${inView ? 'tl-in' : ''}`}>
-          {/* Header */}
           <p className="tl-reveal tl-eyebrow">The Throughline</p>
           <h2 className="tl-reveal tl-title" style={{ transitionDelay: '60ms' }}>
             From Information to Intelligence to Action
@@ -122,7 +121,6 @@ export default function ThroughlineSection() {
 
           {/* ===== Desktop / tablet: dual-track map ===== */}
           <div className="tl-map">
-            {/* Stage headers */}
             <div className="tl-grid tl-headers" aria-hidden>
               {STAGES.map((s) => (
                 <div key={s.n} className="tl-head tl-reveal">
@@ -132,7 +130,6 @@ export default function ThroughlineSection() {
               ))}
             </div>
 
-            {/* Technical track */}
             <div className="tl-track">
               <div className="tl-track-label tl-tech">Technical Evolution</div>
               <div className="tl-grid tl-lane">
@@ -146,7 +143,6 @@ export default function ThroughlineSection() {
               </div>
             </div>
 
-            {/* Human track */}
             <div className="tl-track">
               <div className="tl-track-label tl-human">Human Impact &amp; Intellectual Growth</div>
               <div className="tl-grid tl-lane">
@@ -160,7 +156,6 @@ export default function ThroughlineSection() {
               </div>
             </div>
 
-            {/* Project cards */}
             <div className="tl-grid tl-cardsgrid">
               {STAGES.map((s, si) => (
                 <div key={s.n} className="tl-stackcol">
@@ -207,9 +202,38 @@ export default function ThroughlineSection() {
       </div>
 
       <style>{`
+        /* Light (default) theme tokens */
         #throughline {
+          --tech-a: #0a8f4f; --tech-b: #0e8fb0;
+          --human-a: #7c53e6; --human-b: #b9822a;
+          --tl-fg-soft: rgba(20,24,28,0.62);
+          --tl-title: #0d1217;
+          --tl-eyebrow: #0a7d4f;
+          --tl-headkey: rgba(20,24,28,0.85); --tl-headstroke: rgba(0,0,0,0.42);
+          --tl-card-bg: #ffffff; --tl-card-bg-hover: #ffffff;
+          --tl-card-border: rgba(0,0,0,0.10); --tl-card-shadow: 0 10px 30px rgba(0,0,0,0.08);
+          --tl-bignum: rgba(0,0,0,0.055);
+          --tl-view: #0a7d4f; --tl-tag: rgba(20,24,28,0.5);
+          --tl-connector: rgba(0,0,0,0.2);
+          background:
+            radial-gradient(60% 55% at 18% 8%, rgba(22,163,74,0.08), transparent 60%),
+            radial-gradient(55% 55% at 85% 6%, rgba(139,92,246,0.08), transparent 62%),
+            linear-gradient(180deg, #f7f9fa 0%, #f1f4f5 100%);
+          color: #14181c;
+        }
+        /* Dark theme overrides */
+        .dark #throughline {
           --tech-a: #16A34A; --tech-b: #22d3ee;
           --human-a: #8B5CF6; --human-b: #e0b155;
+          --tl-fg-soft: rgba(233,237,241,0.62);
+          --tl-title: #ffffff;
+          --tl-eyebrow: #7cf0ad;
+          --tl-headkey: rgba(255,255,255,0.82); --tl-headstroke: rgba(255,255,255,0.35);
+          --tl-card-bg: rgba(255,255,255,0.035); --tl-card-bg-hover: rgba(255,255,255,0.06);
+          --tl-card-border: rgba(255,255,255,0.09); --tl-card-shadow: 0 10px 30px rgba(0,0,0,0.35);
+          --tl-bignum: rgba(255,255,255,0.045);
+          --tl-view: #7cf0ad; --tl-tag: rgba(233,237,241,0.5);
+          --tl-connector: rgba(255,255,255,0.28);
           background:
             radial-gradient(60% 55% at 18% 8%, rgba(22,163,74,0.14), transparent 60%),
             radial-gradient(55% 55% at 85% 6%, rgba(139,92,246,0.14), transparent 62%),
@@ -220,92 +244,79 @@ export default function ThroughlineSection() {
         .tl-reveal { opacity: 0; transform: translateY(20px); transition: opacity .7s cubic-bezier(.2,.7,.2,1), transform .7s cubic-bezier(.2,.7,.2,1); }
         .tl-in .tl-reveal { opacity: 1; transform: none; }
 
-        .tl-eyebrow {
-          font-size: 12px; font-weight: 700; letter-spacing: 3px; text-transform: uppercase;
-          color: #7cf0ad; margin-bottom: 14px;
-        }
+        .tl-eyebrow { font-size: 12px; font-weight: 700; letter-spacing: 3px; text-transform: uppercase; color: var(--tl-eyebrow); margin-bottom: 14px; }
         .tl-title { font-family: 'Sora', sans-serif; font-weight: 600; letter-spacing: -0.02em;
-          font-size: clamp(30px, 5vw, 52px); line-height: 1.05; color: #fff; margin: 0 0 16px; max-width: 900px; }
-        .tl-sub { color: rgba(233,237,241,0.6); font-size: clamp(15px, 1.6vw, 18px); line-height: 1.6; max-width: 620px; margin: 0 0 56px; }
+          font-size: clamp(30px, 5vw, 52px); line-height: 1.05; color: var(--tl-title); margin: 0 0 16px; max-width: 900px; }
+        .tl-sub { color: var(--tl-fg-soft); font-size: clamp(15px, 1.6vw, 18px); line-height: 1.6; max-width: 620px; margin: 0 0 56px; }
 
-        /* Shared 3-column grid so headers, tracks and cards align */
         .tl-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 24px; }
 
         .tl-map { display: none; }
-        @media (min-width: 768px) { .tl-map { display: block; } .tl-mobile { display: none; } }
+        @media (min-width: 768px) { .tl-map { display: block; } }
 
-        /* Stage headers */
         .tl-headers { margin-bottom: 10px; }
         .tl-head { display: flex; align-items: baseline; gap: 12px; }
-        .tl-head-num { font-family: 'Sora', sans-serif; font-weight: 700; font-size: 15px;
-          color: transparent; -webkit-text-stroke: 1px rgba(255,255,255,0.35); }
-        .tl-head-key { font-size: 13px; font-weight: 700; letter-spacing: 2px; text-transform: uppercase; color: rgba(255,255,255,0.82); }
+        .tl-head-num { font-family: 'Sora', sans-serif; font-weight: 700; font-size: 15px; color: transparent; -webkit-text-stroke: 1px var(--tl-headstroke); }
+        .tl-head-key { font-size: 13px; font-weight: 700; letter-spacing: 2px; text-transform: uppercase; color: var(--tl-headkey); }
 
-        /* Tracks */
         .tl-track { margin-bottom: 30px; }
         .tl-track-label { font-size: 11px; font-weight: 700; letter-spacing: 2.5px; text-transform: uppercase; margin-bottom: 16px; }
         .tl-tech { color: var(--tech-a); }
         .tl-human { color: var(--human-a); }
 
         .tl-lane { position: relative; align-items: start; }
-        .tl-line { position: absolute; top: 7px; left: calc(16.66% ); right: calc(16.66%); height: 2px; border-radius: 2px;
+        .tl-line { position: absolute; top: 7px; left: 16.66%; right: 16.66%; height: 2px; border-radius: 2px;
           transform: scaleX(0); transform-origin: left center; transition: transform 1s cubic-bezier(.2,.7,.2,1) .2s; }
         .tl-in .tl-line { transform: scaleX(1); }
-        .tl-line-tech { background: linear-gradient(90deg, var(--tech-a), var(--tech-b)); box-shadow: 0 0 12px rgba(34,211,238,0.5); }
-        .tl-line-human { background: linear-gradient(90deg, var(--human-a), var(--human-b)); box-shadow: 0 0 12px rgba(139,92,246,0.5); }
+        .tl-line-tech { background: linear-gradient(90deg, var(--tech-a), var(--tech-b)); box-shadow: 0 0 12px color-mix(in srgb, var(--tech-b) 45%, transparent); }
+        .tl-line-human { background: linear-gradient(90deg, var(--human-a), var(--human-b)); box-shadow: 0 0 12px color-mix(in srgb, var(--human-a) 45%, transparent); }
 
-        .tl-cell { position: relative; display: flex; flex-direction: column; align-items: center; text-align: center; padding-top: 0; }
+        .tl-cell { position: relative; display: flex; flex-direction: column; align-items: center; text-align: center; }
         .tl-node { width: 16px; height: 16px; border-radius: 50%; margin-bottom: 14px; position: relative; z-index: 1; }
-        .tl-node-tech { background: radial-gradient(circle at 35% 35%, #d6fff0, var(--tech-a)); box-shadow: 0 0 0 5px rgba(22,163,74,0.14), 0 0 16px rgba(34,211,238,0.7); }
-        .tl-node-human { background: radial-gradient(circle at 35% 35%, #efe6ff, var(--human-a)); box-shadow: 0 0 0 5px rgba(139,92,246,0.14), 0 0 16px rgba(139,92,246,0.7); }
-        .tl-cell-text { font-size: 13.5px; line-height: 1.55; color: rgba(233,237,241,0.72); max-width: 260px; }
+        .tl-node-tech { background: radial-gradient(circle at 35% 35%, #ffffff, var(--tech-a)); box-shadow: 0 0 0 5px color-mix(in srgb, var(--tech-a) 14%, transparent), 0 0 16px color-mix(in srgb, var(--tech-b) 70%, transparent); }
+        .tl-node-human { background: radial-gradient(circle at 35% 35%, #ffffff, var(--human-a)); box-shadow: 0 0 0 5px color-mix(in srgb, var(--human-a) 14%, transparent), 0 0 16px color-mix(in srgb, var(--human-a) 70%, transparent); }
+        .tl-cell-text { font-size: 13.5px; line-height: 1.55; color: var(--tl-fg-soft); max-width: 260px; }
 
-        /* Project card columns */
         .tl-cardsgrid { margin-top: 26px; align-items: start; }
         .tl-stackcol { position: relative; display: flex; flex-direction: column; gap: 16px; padding-top: 8px; }
         .tl-bignum { position: absolute; top: -46px; right: 4px; font-family: 'Sora', sans-serif; font-weight: 800;
-          font-size: 92px; line-height: 1; color: rgba(255,255,255,0.04); pointer-events: none; z-index: 0; }
+          font-size: 92px; line-height: 1; color: var(--tl-bignum); pointer-events: none; z-index: 0; }
 
-        /* Project card */
-        .tl-proj {
-          position: relative; display: block; text-decoration: none; border-radius: 16px; padding: 18px 18px 16px;
-          background: rgba(255,255,255,0.035); border: 1px solid rgba(255,255,255,0.09);
-          box-shadow: 0 10px 30px rgba(0,0,0,0.35); z-index: 1;
-          transition: transform .25s ease, border-color .25s ease, box-shadow .25s ease, background .25s ease;
-        }
+        .tl-proj { position: relative; display: block; text-decoration: none; border-radius: 16px; padding: 18px 18px 16px;
+          background: var(--tl-card-bg); border: 1px solid var(--tl-card-border); box-shadow: var(--tl-card-shadow); z-index: 1;
+          transition: transform .25s ease, border-color .25s ease, box-shadow .25s ease, background .25s ease; }
         .tl-proj-connector { position: absolute; top: -10px; left: 26px; width: 2px; height: 10px; border-radius: 2px;
-          background: linear-gradient(180deg, rgba(255,255,255,0.28), transparent); opacity: .5; transition: opacity .25s ease, box-shadow .25s ease; }
+          background: linear-gradient(180deg, var(--tl-connector), transparent); opacity: .55; transition: opacity .25s ease, box-shadow .25s ease, background .25s ease; }
         .tl-proj:hover, .tl-proj:focus-visible {
-          transform: translateY(-6px); background: rgba(255,255,255,0.06);
-          border-color: rgba(22,163,74,0.5); box-shadow: 0 18px 46px rgba(22,163,74,0.22);
-          outline: none;
-        }
-        .tl-proj:focus-visible { border-color: #34d17f; box-shadow: 0 0 0 3px rgba(52,209,127,0.5), 0 18px 46px rgba(22,163,74,0.22); }
-        .tl-proj:hover .tl-proj-connector, .tl-proj:focus-visible .tl-proj-connector { opacity: 1; box-shadow: 0 0 10px rgba(52,209,127,0.8); background: linear-gradient(180deg, #34d17f, transparent); }
+          transform: translateY(-6px); background: var(--tl-card-bg-hover);
+          border-color: color-mix(in srgb, var(--tech-a) 55%, transparent);
+          box-shadow: 0 18px 46px color-mix(in srgb, var(--tech-a) 22%, transparent); outline: none; }
+        .tl-proj:focus-visible { box-shadow: 0 0 0 3px color-mix(in srgb, var(--tech-a) 55%, transparent), 0 18px 46px color-mix(in srgb, var(--tech-a) 22%, transparent); }
+        .tl-proj:hover .tl-proj-connector, .tl-proj:focus-visible .tl-proj-connector { opacity: 1; background: linear-gradient(180deg, var(--tech-a), transparent); box-shadow: 0 0 10px color-mix(in srgb, var(--tech-a) 70%, transparent); }
         .tl-proj-head { display: flex; align-items: center; justify-content: space-between; gap: 10px; margin-bottom: 8px; }
-        .tl-proj-name { color: #fff; font-weight: 600; font-size: 15.5px; line-height: 1.25; }
-        .tl-proj-arrow { color: #7cf0ad; flex-shrink: 0; transition: transform .25s ease; }
+        .tl-proj-name { color: var(--tl-title); font-weight: 600; font-size: 15.5px; line-height: 1.25; }
+        .tl-proj-arrow { color: var(--tl-view); flex-shrink: 0; transition: transform .25s ease; }
         .tl-proj:hover .tl-proj-arrow, .tl-proj:focus-visible .tl-proj-arrow { transform: translateX(4px); }
-        .tl-proj-purpose { color: rgba(233,237,241,0.6); font-size: 13px; line-height: 1.55; margin: 0 0 14px; }
+        .tl-proj-purpose { color: var(--tl-fg-soft); font-size: 13px; line-height: 1.55; margin: 0 0 14px; }
         .tl-proj-foot { display: flex; align-items: center; justify-content: space-between; gap: 10px; }
-        .tl-proj-tag { font-size: 11px; letter-spacing: .5px; color: rgba(233,237,241,0.5); }
-        .tl-proj-view { font-size: 11px; font-weight: 700; letter-spacing: 1px; text-transform: uppercase; color: #7cf0ad; }
+        .tl-proj-tag { font-size: 11px; letter-spacing: .5px; color: var(--tl-tag); }
+        .tl-proj-view { font-size: 11px; font-weight: 700; letter-spacing: 1px; text-transform: uppercase; color: var(--tl-view); }
 
         /* ===== Mobile vertical timeline ===== */
         .tl-mobile { display: block; position: relative; padding-left: 22px; }
         @media (min-width: 768px) { .tl-mobile { display: none; } }
         .tl-mobile::before { content: ''; position: absolute; left: 5px; top: 6px; bottom: 6px; width: 2px; border-radius: 2px;
-          background: linear-gradient(180deg, var(--tech-a), var(--human-a), var(--human-b)); opacity: .5; }
+          background: linear-gradient(180deg, var(--tech-a), var(--human-a), var(--human-b)); opacity: .55; }
         .tl-mstage { position: relative; margin-bottom: 40px; }
-        .tl-mhead { display: flex; align-items: baseline; gap: 10px; margin: 0 0 14px -22px; padding-left: 22px; }
-        .tl-mhead::before { content: ''; position: absolute; left: 0; width: 12px; height: 12px; border-radius: 50%; margin-top: 4px;
-          background: #fff; box-shadow: 0 0 12px rgba(22,163,74,0.7); }
-        .tl-mnum { font-family: 'Sora', sans-serif; font-weight: 800; font-size: 15px; color: transparent; -webkit-text-stroke: 1px rgba(255,255,255,0.4); }
-        .tl-mkey { font-size: 13px; font-weight: 700; letter-spacing: 2px; text-transform: uppercase; color: #fff; }
+        .tl-mhead { position: relative; display: flex; align-items: baseline; gap: 10px; margin: 0 0 14px -22px; padding-left: 22px; }
+        .tl-mhead::before { content: ''; position: absolute; left: 0; top: 4px; width: 12px; height: 12px; border-radius: 50%;
+          background: var(--tech-a); box-shadow: 0 0 12px color-mix(in srgb, var(--tech-a) 65%, transparent); }
+        .tl-mnum { font-family: 'Sora', sans-serif; font-weight: 800; font-size: 15px; color: transparent; -webkit-text-stroke: 1px var(--tl-headstroke); }
+        .tl-mkey { font-size: 13px; font-weight: 700; letter-spacing: 2px; text-transform: uppercase; color: var(--tl-title); }
         .tl-mrow { display: flex; gap: 10px; margin-bottom: 12px; align-items: flex-start; }
         .tl-mdot { flex-shrink: 0; width: 12px; height: 12px; border-radius: 50%; margin-top: 4px; }
         .tl-mlabel { display: block; font-size: 10.5px; font-weight: 700; letter-spacing: 1.5px; text-transform: uppercase; margin-bottom: 2px; }
-        .tl-mtext { color: rgba(233,237,241,0.68); font-size: 13.5px; line-height: 1.5; margin: 0; }
+        .tl-mtext { color: var(--tl-fg-soft); font-size: 13.5px; line-height: 1.5; margin: 0; }
         .tl-mcards { display: flex; flex-direction: column; gap: 14px; margin-top: 16px; }
         .tl-mcards .tl-proj { min-height: 44px; }
 
