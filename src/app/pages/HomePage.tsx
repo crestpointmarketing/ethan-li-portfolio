@@ -135,9 +135,9 @@ export default function HomePage() {
       </main>
 
       {/* Additional Sections */}
+      <ThroughlineSection />
       <AboutSection />
       <ExperienceSection />
-      <ThroughlineSection />
       <ProjectsSection />
       <AchievementsSection />
       <MomentsSection />
