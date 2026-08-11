@@ -50,7 +50,16 @@ function useInView() {
   const [inView, setInView] = useState(false);
   useEffect(() => {
     const el = ref.current;
-    if (!el) return;
+    if (!el || typeof IntersectionObserver === 'undefined') {
+      setInView(true);
+      return;
+    }
+    // Already on screen at mount (e.g. deep-link to #throughline) → reveal now.
+    const r = el.getBoundingClientRect();
+    if (r.top < window.innerHeight && r.bottom > 0) {
+      setInView(true);
+      return;
+    }
     const obs = new IntersectionObserver(
       ([entry]) => {
         if (entry.isIntersecting) {
@@ -58,10 +67,15 @@ function useInView() {
           obs.disconnect();
         }
       },
-      { threshold: 0.15 },
+      { threshold: 0.12 },
     );
     obs.observe(el);
-    return () => obs.disconnect();
+    // Failsafe: never leave the section stuck hidden if the observer misfires.
+    const t = setTimeout(() => setInView(true), 2500);
+    return () => {
+      obs.disconnect();
+      clearTimeout(t);
+    };
   }, []);
   return { ref, inView };
 }
