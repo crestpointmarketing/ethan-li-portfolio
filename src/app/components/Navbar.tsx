@@ -35,10 +35,16 @@ export default function Navbar() {
       setMobileMenuOpen(false);
       if (location.pathname !== '/') return; // let it navigate to "/#id"
       const id = (link.getAttribute('href') || '').split('#')[1];
-      const el = id ? document.getElementById(id) : null;
-      if (el) {
+      if (!id) return;
+      // "Contact" should land on the form itself, not the section heading.
+      const target =
+        id === 'contact'
+          ? document.querySelector('#contact form') || document.getElementById(id)
+          : document.getElementById(id);
+      if (target) {
         e.preventDefault();
-        el.scrollIntoView({ behavior: 'smooth' });
+        const y = (target as HTMLElement).getBoundingClientRect().top + window.scrollY - 88; // clear fixed navbar
+        window.scrollTo({ top: y, behavior: 'smooth' });
         window.history.replaceState(null, '', `/#${id}`);
       }
     };
