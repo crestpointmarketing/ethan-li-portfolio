@@ -10,7 +10,6 @@ const PATENT = {
   title:
     'System and Method for Statistical Measurement, Scoring, and Predictive Optimization of Entity Visibility in Generative Artificial-Intelligence Search Engines',
   applicationNumber: '64/119,527',
-  patentCenterNumber: '79336791',
   filingDate: 'July 26, 2026',
   inventor: 'Ethan Li',
   status: 'U.S. Provisional Application Filed',
@@ -18,7 +17,6 @@ const PATENT = {
 
 const FIELDS: { label: string; value: string }[] = [
   { label: 'Application Number', value: PATENT.applicationNumber },
-  { label: 'Patent Center Number', value: PATENT.patentCenterNumber },
   { label: 'Filing / Receipt Date', value: PATENT.filingDate },
   { label: 'Sole Inventor', value: PATENT.inventor },
 ];

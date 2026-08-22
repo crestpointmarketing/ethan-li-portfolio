@@ -66,7 +66,7 @@ const blocks = [
         body: 'System and Method for Statistical Measurement, Scoring, and Predictive Optimization of Entity Visibility in Generative Artificial-Intelligence Search Engines',
       },
       { label: 'Application Number', body: '64/119,527' },
-      { label: 'Patent Center Number', body: '79336791' },
+      // Patent Center No. is an internal filing-portal reference — never publish it.
       { label: 'Filing / Receipt Date', body: 'July 26, 2026' },
       { label: 'Sole Inventor', body: 'Ethan Li' },
     ],
