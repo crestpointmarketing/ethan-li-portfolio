@@ -47,7 +47,7 @@ const about = {
   academicFocus: [
     'Computer Science & AI Systems Development',
     'AP Calculus BC — Advanced Mathematics',
-    'Multivariable Calculus (12th Grade, planned)',
+    'Linear Algebra (12th Grade, planned)',
     'Latin I – IV (Classical Languages)',
   ],
   certifications: [

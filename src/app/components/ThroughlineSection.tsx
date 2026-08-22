@@ -25,7 +25,7 @@ const STAGES: StageData[] = [
     n: '02',
     key: 'Intelligence',
     projects: [
-      { name: 'Pomelo GEO', purpose: 'Measuring how generative AI represents — or omits — brands.', to: '/projects/pomelo-labs' },
+      { name: 'PomeloLabs Marketing Platform', purpose: 'An AI marketing team — from research and content to publishing and AI-search visibility.', to: '/projects/pomelo-labs' },
       { name: 'Zeitgeist', purpose: 'Finding patterns and meaning across complex information.', to: '/projects/zeitgeist' },
     ],
   },
