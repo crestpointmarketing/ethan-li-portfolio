@@ -25,7 +25,7 @@ const STAGES: StageData[] = [
     n: '02',
     key: 'Intelligence',
     projects: [
-      { name: 'PomeloLabs Marketing Platform', purpose: 'An AI marketing team — from research and content to publishing and AI-search visibility.', to: '/projects/pomelo-labs' },
+      { name: 'PomeloLabs Marketing Platform', purpose: 'An AI-powered marketing platform that audits SEO and GEO visibility, identifies growth opportunities, creates and automatically publishes optimized content, and automates the entire marketing workflow through AI agent chat.', to: '/projects/pomelo-labs' },
       { name: 'Zeitgeist', purpose: 'Finding patterns and meaning across complex information.', to: '/projects/zeitgeist' },
     ],
   },
