@@ -89,7 +89,7 @@ export default function Navbar() {
               className="font-semibold text-[var(--muted-foreground)] hover:text-[var(--foreground)] transition-colors duration-300 relative group"
               style={{ fontSize: '18px', lineHeight: 1.2, whiteSpace: 'nowrap' }}
             >
-              Patent
+              Patents
               <span className="absolute -bottom-1 left-0 w-0 h-px bg-[#08874a] dark:bg-[#16A34A] group-hover:w-full transition-all duration-300" />
             </Link>
           </div>
@@ -173,7 +173,7 @@ export default function Navbar() {
                 className="text-sm font-semibold text-[var(--muted-foreground)] hover:text-[var(--foreground)] transition-colors duration-300 py-2"
                 onClick={() => setMobileMenuOpen(false)}
               >
-                Patent
+                Patents
               </Link>
               <a
                 href="/#contact"
