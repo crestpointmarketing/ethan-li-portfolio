@@ -143,6 +143,16 @@ export default function ProjectsSection() {
                     >
                       View Details
                     </Link>
+                    {project.websiteUrl && (
+                      <a
+                        href={project.websiteUrl}
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        className="px-6 py-2.5 text-sm font-semibold text-[#08874a] dark:text-[#16A34A] rounded-lg border border-[#08874a]/30 dark:border-[#16A34A]/30 hover:bg-[#08874a]/10 dark:hover:bg-[#16A34A]/10 transition-all duration-200"
+                      >
+                        Live Site &rarr;
+                      </a>
+                    )}
                     {project.paperUrl && (
                       <a
                         href={project.paperUrl}

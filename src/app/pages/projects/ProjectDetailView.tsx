@@ -82,6 +82,20 @@ export function ProjectDetailView({
             </div>
           )}
 
+          {project.websiteUrl && (
+            <a
+              href={project.websiteUrl}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="inline-flex items-center gap-2 mt-6 mr-3 px-6 py-3 bg-[#08874a] dark:bg-[#16A34A] text-white rounded-lg font-medium transition-all duration-300 hover:bg-[#0a9d56] dark:hover:bg-[#15803D]"
+            >
+              <svg className="w-5 h-5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14" />
+              </svg>
+              Visit {project.websiteUrl.replace(/^https?:\/\/(www\.)?/, '').replace(/\/$/, '')}
+            </a>
+          )}
+
           {project.paperUrl && (
             <a
               href={project.paperUrl}

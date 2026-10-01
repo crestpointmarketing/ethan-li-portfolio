@@ -178,6 +178,7 @@ export const projectBaseSchema = z.object({
   githubUrl: z.string().url().nullable().optional().or(z.literal('').transform(() => null)),
   posterUrl: z.string().url().nullable().optional().or(z.literal('').transform(() => null)),
   paperUrl: z.string().url().nullable().optional().or(z.literal('').transform(() => null)),
+  websiteUrl: z.string().url().nullable().optional().or(z.literal('').transform(() => null)),
   orderIndex: z.number().int().default(0),
   published: z.boolean().default(false),
   video: videoSchema.nullable().optional(),
@@ -208,6 +209,7 @@ export const projectCardSchema = z.object({
   githubUrl: z.string().nullable().optional(),
   posterUrl: z.string().nullable().optional(),
   paperUrl: z.string().nullable().optional(),
+  websiteUrl: z.string().nullable().optional(),
 });
 export type ProjectCard = z.infer<typeof projectCardSchema>;
 

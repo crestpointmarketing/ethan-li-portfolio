@@ -16,6 +16,7 @@ export type ProjectRow = {
   github_url: string | null;
   poster_url: string | null;
   paper_url: string | null;
+  website_url?: string | null;
   order_index: number;
   published: boolean;
   video: unknown;
@@ -57,6 +58,7 @@ export function projectRowToProject(row: ProjectRow, sectionRows: SectionRow[]):
     githubUrl: row.github_url,
     posterUrl: row.poster_url,
     paperUrl: row.paper_url,
+    websiteUrl: row.website_url ?? null,
     orderIndex: row.order_index,
     published: row.published,
     video: (row.video as Project['video']) ?? null,
@@ -83,6 +85,7 @@ export function projectRowToCard(row: ProjectRow): ProjectCard {
     githubUrl: row.github_url,
     posterUrl: row.poster_url,
     paperUrl: row.paper_url,
+    websiteUrl: row.website_url ?? null,
   };
 }
 
@@ -100,6 +103,7 @@ export function projectInputToRow(input: ProjectInput) {
     github_url: input.githubUrl ?? null,
     poster_url: input.posterUrl ?? null,
     paper_url: input.paperUrl ?? null,
+    website_url: input.websiteUrl ?? null,
     order_index: input.orderIndex,
     published: input.published,
     video: input.video ?? null,

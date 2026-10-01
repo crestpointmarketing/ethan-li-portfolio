@@ -39,6 +39,7 @@ const EMPTY_PROJECT: ProjectInput = {
   githubUrl: '',
   posterUrl: null,
   paperUrl: null,
+  websiteUrl: '',
   orderIndex: 0,
   published: false,
   video: null,
@@ -98,7 +99,7 @@ export default function AdminProjectForm() {
         setOriginalPublished(project.published);
         // Normalize nullable text fields to '' — these are plain uncontrolled
         // `register()`-bound inputs, which can't take `null` as a value.
-        form.reset({ ...project, period: project.period ?? '', githubUrl: project.githubUrl ?? '' });
+        form.reset({ ...project, period: project.period ?? '', githubUrl: project.githubUrl ?? '', websiteUrl: project.websiteUrl ?? '' });
         setLoading(false);
       })
       .catch((err) => {
@@ -180,6 +181,10 @@ export default function AdminProjectForm() {
           <div className="space-y-2">
             <Label htmlFor="githubUrl">GitHub URL</Label>
             <Input id="githubUrl" placeholder="https://github.com/..." {...register('githubUrl')} />
+          </div>
+          <div className="space-y-2">
+            <Label htmlFor="websiteUrl">Live website URL</Label>
+            <Input id="websiteUrl" placeholder="https://..." {...register('websiteUrl')} />
           </div>
         </div>
 
