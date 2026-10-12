@@ -67,8 +67,9 @@ const PomeloIcon = (
 
 // Ethan's actual reference logo (speaking head + sound waves), served from
 // /public rather than redrawn.
-const SpeakWiseIcon = <img src="/speakwise-icon.png" alt="" width={40} height={40} className="rounded-lg" />;
+const SpeakWiseIcon = <img src="/speakwise-icon.png" alt="" width={36} height={36} className="rounded-lg" />;
 
+// One floating card per project, in the same order as the Projects section.
 const CARDS = [
   {
     icon: SpeakWiseIcon,
@@ -76,7 +77,7 @@ const CARDS = [
     title: 'SpeakWise',
     sub: 'AI Speech Therapy',
     delay: '0s',
-    pos: { left: '3%', top: '4%' },
+    pos: { left: '2%', top: '2%' },
     href: '/projects/speakwise',
   },
   {
@@ -85,7 +86,7 @@ const CARDS = [
     title: 'PomeloLabs',
     sub: 'AI Marketing Platform',
     delay: '0.9s',
-    pos: { right: '3%', top: '4%' },
+    pos: { right: '2%', top: '7%' },
     href: '/projects/pomelo-labs',
   },
   {
@@ -94,8 +95,44 @@ const CARDS = [
     title: 'VLA Robotics',
     sub: 'Vision-Language-Action',
     delay: '1.8s',
-    pos: { left: '28%', bottom: '5%' },
+    pos: { left: '30%', bottom: '1%' },
     href: '/projects/vla-robot-manipulation',
+  },
+  {
+    icon: '🎛️',
+    iconBg: 'linear-gradient(145deg,#e94560,#7a1430)',
+    title: 'Expressive',
+    sub: 'Open-Source Audio Plugin',
+    delay: '0.45s',
+    pos: { left: '0%', top: '32%' },
+    href: '/projects/expressive',
+  },
+  {
+    icon: '🤝',
+    iconBg: 'linear-gradient(145deg,#f59e0b,#92400e)',
+    title: 'ActivityHub',
+    sub: 'Volunteer Hours Platform',
+    delay: '1.35s',
+    pos: { right: '0%', top: '48%' },
+    href: '/projects/activityhub',
+  },
+  {
+    icon: '📈',
+    iconBg: 'linear-gradient(145deg,#2563eb,#1e3a8a)',
+    title: 'Zeitgeist',
+    sub: 'AI Stock Advisor',
+    delay: '2.25s',
+    pos: { left: '2%', bottom: '14%' },
+    href: '/projects/zeitgeist',
+  },
+  {
+    icon: '🎤',
+    iconBg: 'linear-gradient(145deg,#db2777,#831843)',
+    title: 'Elocutionist',
+    sub: 'AI Interview Coach',
+    delay: '2.7s',
+    pos: { right: '2%', bottom: '22%' },
+    href: '/projects/elocutionist',
   },
 ];
 
@@ -176,19 +213,19 @@ export default function HeroVisual() {
             to={c.href}
             className="flex items-center gap-3 rounded-2xl cursor-pointer hover:scale-105 transition-transform duration-200"
             style={{
-              padding: '12px 16px',
+              padding: '10px 14px',
               background: 'rgba(9,9,13,0.92)',
               border: '1px solid rgba(255,255,255,0.09)',
               backdropFilter: 'blur(18px)',
               WebkitBackdropFilter: 'blur(18px)',
               boxShadow: '0 8px 32px rgba(0,0,0,0.55), inset 0 1px 0 rgba(255,255,255,0.06)',
-              minWidth: '195px',
+              minWidth: '180px',
               textDecoration: 'none',
             }}
           >
             <div
               className="flex-shrink-0 flex items-center justify-center rounded-xl text-xl"
-              style={{ width: 48, height: 48, background: c.iconBg }}
+              style={{ width: 42, height: 42, background: c.iconBg }}
             >
               {c.icon}
             </div>

@@ -99,20 +99,13 @@ export default function HomePage() {
                   <div className="w-1.5 h-1.5 rounded-full bg-[#08874a] dark:bg-[#16A34A]" />
                   USACO Gold
                 </span>
-                <span className="text-[var(--muted-foreground)]/50 hidden sm:inline">|</span>
                 <span className="flex items-center gap-2">
                   <div className="w-1.5 h-1.5 rounded-full bg-[#08874a] dark:bg-[#16A34A]" />
                   IEEE BigData 2026 Paper
                 </span>
-                <span className="text-[var(--muted-foreground)]/50 hidden sm:inline">|</span>
                 <span className="flex items-center gap-2">
                   <div className="w-1.5 h-1.5 rounded-full bg-[#08874a] dark:bg-[#16A34A]" />
                   National Merit Semifinalist
-                </span>
-                <span className="text-[var(--muted-foreground)]/50 hidden sm:inline">|</span>
-                <span className="flex items-center gap-2">
-                  <div className="w-1.5 h-1.5 rounded-full bg-[#08874a] dark:bg-[#16A34A]" />
-                  AI Systems & Full-Stack
                 </span>
               </div>
             </div>
