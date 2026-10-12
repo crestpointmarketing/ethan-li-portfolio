@@ -45,12 +45,13 @@ const project = {
     'Event registration, attendance, and verified service hours in one place',
   ],
   badges: [
+    { text: 'Independently Built', variant: 'accent' },
     { text: 'Community Impact', variant: 'accent' },
     { text: '2026 - Now', variant: 'neutral' },
   ],
   period: '2026 - Now',
   card_highlights: [
-    'Built and launched ActivityHub, the platform ACAESUSA uses to run volunteer events and track service hours',
+    'Independently designed, built, and launched ActivityHub from scratch — the platform ACAESUSA uses to run volunteer events and track service hours',
     'Brings event registration, waiting lists, attendance, and service records into one place',
     'Volunteers submit hours with supporting documents; administrators approve them or return them for corrections before they count',
     'Supports multiple organizations, each with its own members and records',
@@ -83,7 +84,7 @@ const sections = [
         variant: 'flat',
         paragraphs: [
           'ACAESUSA is a Dallas–Fort Worth nonprofit promoting Asian-American culture, cultural exchange, and youth leadership. Its volunteer work runs on everyday logistics: organizers need to know who is coming to an event and whether service records are accurate, and volunteers need a clear way to submit their hours, fix missing information, and get a record of their service.',
-          'As President of the Computer Science Chapter, I built **ActivityHub** so both groups could do that in one place instead of across scattered forms and spreadsheets.',
+          'As President of the Computer Science Chapter, I designed and built **ActivityHub** myself, from scratch, so both groups could do that in one place instead of across scattered forms and spreadsheets.',
         ],
       },
     ],
