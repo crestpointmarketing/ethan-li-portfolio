@@ -60,7 +60,7 @@ export default function HomePage() {
 
                 {/* Description */}
                 <p className="text-base sm:text-lg md:text-xl text-[var(--muted-foreground)] max-w-xl leading-relaxed">
-                  Rising senior at Highland Park High School building production-level AI systems
+                  Senior at Highland Park High School building production-level AI systems
                   across speech, finance, and human-AI interaction.
                 </p>
               </div>
@@ -98,6 +98,16 @@ export default function HomePage() {
                 <span className="flex items-center gap-2">
                   <div className="w-1.5 h-1.5 rounded-full bg-[#08874a] dark:bg-[#16A34A]" />
                   USACO Gold
+                </span>
+                <span className="text-[var(--muted-foreground)]/50 hidden sm:inline">|</span>
+                <span className="flex items-center gap-2">
+                  <div className="w-1.5 h-1.5 rounded-full bg-[#08874a] dark:bg-[#16A34A]" />
+                  IEEE BigData 2026 Paper
+                </span>
+                <span className="text-[var(--muted-foreground)]/50 hidden sm:inline">|</span>
+                <span className="flex items-center gap-2">
+                  <div className="w-1.5 h-1.5 rounded-full bg-[#08874a] dark:bg-[#16A34A]" />
+                  National Merit Semifinalist
                 </span>
                 <span className="text-[var(--muted-foreground)]/50 hidden sm:inline">|</span>
                 <span className="flex items-center gap-2">

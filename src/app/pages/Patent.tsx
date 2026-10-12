@@ -39,7 +39,7 @@ const PATENTS: PatentRecord[] = [
       'System and Method for Statistical Measurement, Scoring, and Predictive Optimization of Entity Visibility in Generative Artificial-Intelligence Search Engines',
     fields: [
       { label: 'Application Number', value: '64/119,527' },
-      { label: 'Filing / Receipt Date', value: 'July 26, 2026' },
+      { label: 'Filing / Receipt Date', value: 'July 27, 2026' },
       { label: 'Sole Inventor', value: 'Ethan Li' },
     ],
     status: 'U.S. Provisional Application Filed',

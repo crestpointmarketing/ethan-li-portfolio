@@ -34,7 +34,7 @@ const STAGES: StageData[] = [
     key: 'Physical Action',
     projects: [
       { name: 'Vision-Language-Action Robotics', purpose: 'Turning perception and language reasoning into robotic action.', to: '/projects/vla-robot-manipulation' },
-      { name: 'Power Electronics Lab', purpose: 'The power, sensing, and control systems beneath reliable action.', to: '/experience/ut-austin-power-electronics' },
+      { name: 'UT Austin SPEC', purpose: 'The power, sensing, and control systems beneath reliable action.', to: '/experience/ut-austin-power-electronics' },
     ],
   },
 ];
