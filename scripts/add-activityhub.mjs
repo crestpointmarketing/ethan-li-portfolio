@@ -66,7 +66,12 @@ const project = {
   paper_url: null,
   order_index: 5,
   published: true,
-  video: null,
+  video: {
+    type: 'file',
+    src: 'https://szshmccgvzjyrvefhlsz.supabase.co/storage/v1/object/public/project-assets/videos/activityhub-product-tour.mp4',
+    title: 'ActivityHub Product Tour',
+    posterUrl: 'https://szshmccgvzjyrvefhlsz.supabase.co/storage/v1/object/public/project-assets/posters/activityhub-product-tour-poster.jpg',
+  },
   stats: [
     { label: 'Hours Confirmation', value: 'Verified' },
     { label: 'Check-in', value: 'QR Code' },
