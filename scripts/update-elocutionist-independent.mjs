@@ -46,7 +46,8 @@ const project = {
   ],
   card_highlights: [
     "Built an AI mock college-interview app that generates questions from each student's own profile and documents",
-    'Transcribes spoken answers with Whisper and returns GPT-4 feedback on content, structure, and delivery',
+    'Students type or speak their answers (with an optional interviewer voice); spoken answers are transcribed with Whisper, and GPT-4 gives category scores and suggestions on content and structure',
+    'Also supports speech and presentation rehearsal, with timed drafts and optional recordings to listen back',
     'Added interactive 3D AI interviewer avatars so practice feels like a real conversation',
     'Recorded sessions for playback, with scoring and analytics to track improvement over time',
     'Full-stack TypeScript: React + Vite frontend, Express backend, MongoDB, deployed on Vercel',
@@ -83,8 +84,8 @@ const sections = [
         title: 'Practice Loop',
         items: [
           { marker: '1', title: 'Profile-Based Questions', body: 'Students add their background — including uploaded PDF, DOCX, or image documents, parsed with text extraction and OCR — and the app generates interview questions tailored to them.' },
-          { marker: '2', title: 'Spoken Answers', body: 'Students answer out loud; audio is transcribed with OpenAI Whisper so feedback reflects what was actually said.' },
-          { marker: '3', title: 'AI Feedback', body: 'GPT-4 evaluates each answer for content, structure, and delivery, and turns the evaluation into concrete suggestions rather than a bare score.' },
+          { marker: '2', title: 'Spoken Answers', body: 'Students read the question or turn on the interviewer voice, then type or record their answer; recordings are transcribed with OpenAI Whisper.' },
+          { marker: '3', title: 'AI Feedback', body: 'GPT-4 scores each answer by category for content and structure — not vocal delivery — and turns the evaluation into concrete suggestions rather than a bare score.' },
           { marker: '4', title: 'Review & Track', body: 'Sessions are recorded for playback, and performance analytics track improvement across practice sessions.' },
         ],
       },
