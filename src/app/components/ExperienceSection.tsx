@@ -1,6 +1,7 @@
 import { useEffect, useState } from 'react';
 import { Link } from 'react-router';
 import type { ExperienceCard } from '@shared/siteContentSchema';
+import { refineExperienceCard } from '../content/experienceEditorial';
 
 type LoadState = { status: 'loading' } | { status: 'error' } | { status: 'ready'; experiences: ExperienceCard[] };
 
@@ -17,7 +18,7 @@ export default function ExperienceSection() {
           return;
         }
         const data = await res.json();
-        setState({ status: 'ready', experiences: data.experiences ?? [] });
+        setState({ status: 'ready', experiences: (data.experiences ?? []).map(refineExperienceCard) });
       })
       .catch(() => {
         if (!cancelled) setState({ status: 'error' });

@@ -15,26 +15,26 @@ type StageData = { n: string; key: string; projects: Project[] };
 const STAGES: StageData[] = [
   {
     n: '01',
-    key: 'Information',
+    key: 'Language',
     projects: [
-      { name: 'SpeakWise', purpose: 'AI communication coaching for clearer, more confident speech.', to: '/projects/speakwise' },
-      { name: 'Elocutionist', purpose: 'Structured, accessible speech and interview practice.', to: '/projects/elocutionist' },
+      { name: 'SpeakWise', purpose: 'What gets lost when AI recognizes child speech? Exploring accurate transcription and disfluency preservation.', to: '/projects/speakwise' },
+      { name: 'Elocutionist', purpose: 'How can model-generated feedback help people practice speaking and interviewing?', to: '/projects/elocutionist' },
     ],
   },
   {
     n: '02',
-    key: 'Intelligence',
+    key: 'Information',
     projects: [
-      { name: 'PomeloLabs', purpose: 'An AI-powered marketing platform that audits SEO and GEO visibility, identifies growth opportunities, creates and automatically publishes optimized content, and automates the entire marketing workflow through AI agent chat.', to: '/projects/pomelo-labs' },
-      { name: 'Zeitgeist', purpose: 'Finding patterns and meaning across complex information.', to: '/projects/zeitgeist' },
+      { name: 'PomeloLabs', purpose: 'How reliably do AI models represent information? Measuring brand visibility in AI answers and designing usable agent workflows.', to: '/projects/pomelo-labs' },
+      { name: 'Zeitgeist', purpose: 'How can complex market information become easier to explore and understand?', to: '/projects/zeitgeist' },
     ],
   },
   {
     n: '03',
-    key: 'Physical Action',
+    key: 'Intelligence',
     projects: [
-      { name: 'Vision-Language-Action Robotics', purpose: 'Turning perception and language reasoning into robotic action.', to: '/projects/vla-robot-manipulation' },
-      { name: 'UT Austin SPEC', purpose: 'The power, sensing, and control systems beneath reliable action.', to: '/experience/ut-austin-power-electronics' },
+      { name: 'Vision-Language-Action Robotics', purpose: 'What happens when a robot encounters an environment different from its training conditions?', to: '/projects/vla-robot-manipulation' },
+      { name: 'UT Austin SPEC', purpose: 'Exploring the power electronics, sensing, and control behind physical systems.', to: '/experience/ut-austin-power-electronics' },
     ],
   },
 ];
@@ -92,13 +92,14 @@ export default function ThroughlineSection() {
     <section id="throughline" className="relative border-t border-[var(--border)]">
       <div className="max-w-[1200px] mx-auto px-6 lg:px-16 py-24 lg:py-32">
         <div ref={ref} className={`tl-shell ${inView ? 'tl-in' : ''}`}>
-          <p className="tl-reveal tl-eyebrow">The Throughline</p>
+          <p className="tl-reveal tl-eyebrow">Questions I'm Exploring</p>
           <h2 className="tl-reveal tl-title" style={{ transitionDelay: '50ms' }}>
-            From Information to Intelligence to Action
+            Language, Information, and Intelligence
           </h2>
           <p className="tl-reveal tl-sub" style={{ transitionDelay: '100ms' }}>
-            I build systems that move from understanding human expression, to reasoning over information, to acting
-            reliably in the physical world.
+            From studying Latin I–V to exploring speech recognition, I’m curious about how people communicate
+            and how machines interpret language. I also investigate how information becomes understanding and
+            what makes intelligent systems reliable beyond a demo.
           </p>
 
           <div className="tl-map">
@@ -158,7 +159,9 @@ export default function ThroughlineSection() {
 
         .tl-map { position: relative; }
         .tl-grid { display: grid; grid-template-columns: 1fr; gap: 48px; }
-        @media (min-width: 768px) { .tl-grid { grid-template-columns: repeat(3, 1fr); gap: 40px; } }
+        @media (min-width: 768px) {
+          .tl-grid { grid-template-columns: repeat(3, 1fr); column-gap: 40px; row-gap: 0; }
+        }
 
         /* Single horizontal progression line (desktop) */
         .tl-hair { display: none; }
@@ -171,6 +174,9 @@ export default function ThroughlineSection() {
         }
 
         .tl-col { display: flex; flex-direction: column; }
+        @media (min-width: 768px) {
+          .tl-col { display: grid; grid-template-rows: subgrid; grid-row: span 3; }
+        }
         .tl-stagehead { display: flex; flex-direction: column; align-items: flex-start; margin-bottom: 26px; }
         .tl-dot { width: 13px; height: 13px; border-radius: 50%; background: var(--accent); position: relative; z-index: 1; }
         .tl-labels { display: flex; align-items: baseline; gap: 10px; margin-top: 16px; }

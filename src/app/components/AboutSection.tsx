@@ -16,7 +16,16 @@ export default function AboutSection() {
           return;
         }
         const data = await res.json();
-        setState({ status: 'ready', about: data.about });
+        setState({
+          status: 'ready',
+          about: {
+            ...data.about,
+            academicFocus: [
+              'Latin I–V — Classical Languages: language structure and classical texts',
+              ...(data.about.academicFocus ?? []).filter((item: string) => !/\blatin\b/i.test(item)),
+            ],
+          },
+        });
       })
       .catch(() => {
         if (!cancelled) setState({ status: 'error' });

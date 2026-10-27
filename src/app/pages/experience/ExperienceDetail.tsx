@@ -3,6 +3,7 @@ import { useParams } from 'react-router';
 import type { Experience } from '@shared/siteContentSchema';
 import { ExperienceDetailView } from './ExperienceDetailView';
 import NotFound from '../NotFound';
+import { refineExperienceCopy } from '../../content/experienceEditorial';
 
 type LoadState = { status: 'loading' } | { status: 'error' } | { status: 'not-found' } | { status: 'ready'; experience: Experience };
 
@@ -27,7 +28,7 @@ export default function ExperienceDetail() {
           return;
         }
         const data = await res.json();
-        setState({ status: 'ready', experience: data.experience });
+        setState({ status: 'ready', experience: refineExperienceCopy(data.experience) });
       })
       .catch(() => {
         if (!cancelled) setState({ status: 'error' });

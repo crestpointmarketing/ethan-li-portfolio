@@ -49,19 +49,19 @@ export default function HomePage() {
                     lineHeight: 1.2
                   }}
                 >
-                  Technology-to-Product Builder
+                  Exploring Language, Information, and Intelligent Systems.
                 </h2>
                 <p
                   className="text-sm sm:text-base md:text-lg lg:text-xl text-[#08874a] dark:text-[#16A34A] font-semibold tracking-wide"
                   style={{ fontFamily: "'Syne', sans-serif" }}
                 >
-                  AI Systems · Robotics · Full-Stack Engineering
+                  Student Researcher · Developer · Builder
                 </p>
 
                 {/* Description */}
                 <p className="text-base sm:text-lg md:text-xl text-[var(--muted-foreground)] max-w-xl leading-relaxed">
-                  Senior at Highland Park High School building production-level AI systems
-                  across speech, finance, and human-AI interaction.
+                  I'm Ethan, a high school student curious about how people communicate,
+                  how information becomes understanding, and how intelligent systems interact with the world.
                 </p>
               </div>
 
@@ -76,7 +76,7 @@ export default function HomePage() {
                   href="#projects"
                   className="group relative px-8 py-4 bg-[#08874a] dark:bg-[#16A34A] text-white rounded-lg font-medium transition-all duration-300 hover:bg-[#0a9d56] dark:hover:bg-[#15803D] hover:shadow-[0_0_30px_rgba(22, 163, 74,0.5)] hover:scale-105 inline-block"
                 >
-                  <span className="relative z-10">View Projects</span>
+                  <span className="relative z-10">Explore My Work</span>
                   <div className="absolute inset-0 rounded-lg bg-[#0a9d56] dark:bg-[#15803D] opacity-0 group-hover:opacity-100 blur-xl transition-opacity duration-300" />
                 </a>
 
@@ -84,7 +84,7 @@ export default function HomePage() {
                   href="#contact"
                   className="px-8 py-4 border border-[var(--border)] text-[var(--foreground)] rounded-lg font-medium transition-all duration-300 hover:border-[#08874a]/50 dark:hover:border-[#16A34A]/50 hover:bg-[var(--foreground)]/5 inline-block"
                 >
-                  Contact Me
+                  Let's Connect
                 </a>
               </div>
 
@@ -101,7 +101,7 @@ export default function HomePage() {
                 </span>
                 <span className="flex items-center gap-2">
                   <div className="w-1.5 h-1.5 rounded-full bg-[#08874a] dark:bg-[#16A34A]" />
-                  IEEE BigData 2026 Paper
+                  IEEE BigData 2026 — Paper Accepted
                 </span>
                 <span className="flex items-center gap-2">
                   <div className="w-1.5 h-1.5 rounded-full bg-[#08874a] dark:bg-[#16A34A]" />

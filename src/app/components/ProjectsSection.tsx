@@ -1,6 +1,7 @@
 import { useEffect, useState } from 'react';
 import { Link } from 'react-router';
 import type { ProjectCard } from '@shared/projectSchema';
+import { homepageProjectCopy } from '../content/homepageCopy';
 
 type LoadState =
   | { status: 'loading' }
@@ -20,7 +21,7 @@ export default function ProjectsSection() {
           return;
         }
         const data = await res.json();
-        setState({ status: 'ready', projects: data.projects ?? [] });
+        setState({ status: 'ready', projects: (data.projects ?? []).map((project: ProjectCard) => ({ ...project, ...homepageProjectCopy[project.slug] })) });
       })
       .catch(() => {
         if (!cancelled) setState({ status: 'error' });
@@ -48,7 +49,7 @@ export default function ProjectsSection() {
             Projects
           </h2>
           <p className="text-[var(--muted-foreground)] text-lg max-w-2xl">
-            Production-level AI systems across speech processing, human-AI interaction, and financial reasoning
+            Exploring language, information, and intelligent systems through speech research, AI tools, robotics, and music software
           </p>
           <div className="w-20 h-1 bg-[#08874a] dark:bg-[#16A34A] mt-6" />
         </div>

@@ -14,5 +14,7 @@ export default async function handler(req: VercelRequest, res: VercelResponse) {
   }
   if (!data) return res.status(404).json({ error: 'Not found' });
 
-  return res.status(200).json({ contact: data.data });
+  // Phone is private content, including when present in older CMS records.
+  const { phone: _privatePhone, ...publicContact } = data.data;
+  return res.status(200).json({ contact: publicContact });
 }

@@ -3,6 +3,7 @@ import { useParams } from 'react-router';
 import type { Project, ProjectRef } from '@shared/projectSchema';
 import { ProjectDetailView } from './ProjectDetailView';
 import NotFound from '../NotFound';
+import { refineProjectCopy, refineProjectReference } from '../../content/projectEditorial';
 
 type LoadState =
   | { status: 'loading' }
@@ -31,7 +32,12 @@ export default function ProjectDetail() {
           return;
         }
         const data = await res.json();
-        setState({ status: 'ready', project: data.project, prev: data.prev, next: data.next });
+        setState({
+          status: 'ready',
+          project: refineProjectCopy(data.project),
+          prev: refineProjectReference(data.prev),
+          next: refineProjectReference(data.next),
+        });
       })
       .catch(() => {
         if (!cancelled) setState({ status: 'error' });

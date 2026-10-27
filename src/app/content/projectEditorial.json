@@ -1,0 +1,1425 @@
+{
+  "speakwise": {
+    "title": "SpeakWise — Listening More Carefully to Children’s Speech",
+    "subtitles": [
+      "Building a speech recognizer that keeps the details of what a child says",
+      "Speech recognition · Language · Independent research"
+    ],
+    "sections": {
+      "Motivation & Societal Need": {
+        "heading": "Why I Started SpeakWise",
+        "blocks": {
+          "0": {
+            "paragraphs": [
+              "SpeakWise started with people close to me. A friend and my younger brother had both faced speech difficulties since childhood. Seeing how those experiences affected their willingness to speak made me want to build something that could help.",
+              "My first idea was to make their speech sound smoother. I connected speech recognition, text correction, and voice synthesis, then showed them the prototype. Their reactions made me realize I had spent more time deciding what to change than asking what they wanted.",
+              "That changed the direction of the project. I began paying more attention to keeping the speaker’s own voice and giving them control over edits. It also led me to an earlier problem: a recognizer can leave out repetitions and fillers before anyone gets to decide whether to keep them.",
+              "My current research looks at recognizing children’s speech more accurately while preserving those details. SpeakWise remains a research project; any use as a therapy tool would need separate clinical testing."
+            ]
+          }
+        }
+      },
+      "Core Innovation & Technical Approach": {
+        "heading": "The First Prototype",
+        "blocks": {
+          "0": {
+            "title": "Prototype: Recognition → Editing → Synthesis",
+            "intro": "The early prototype explored how information changes across a three-stage pipeline:",
+            "items": [
+              {
+                "title": "Recognize the input",
+                "body": "Whisper produces an initial transcript. Recognition errors and omitted disfluencies can carry into later stages; its output is not a perfect record.",
+                "marker": "1"
+              },
+              {
+                "title": "Control the edit",
+                "body": "An LLM proposes a more fluent rendering. The original transcript and the proposed revision serve different purposes: a fluent rewrite is not evidence of what was spoken.",
+                "marker": "2"
+              },
+              {
+                "title": "Render the revision",
+                "body": "XTTS synthesizes the edited text for comparison. A convincing voice does not establish that a revision preserved the speaker’s meaning.",
+                "marker": "3"
+              }
+            ]
+          },
+          "1": {
+            "paragraphs": [
+              "After getting feedback on the early prototype, I wanted the speaker to have more say in the result. The correction setting λ lets the amount of editing vary instead of applying the same level to every utterance. I wanted to explore how much a system could change while still leaving the speaker in control."
+            ],
+            "title": "A Control Over How Much Changes"
+          },
+          "2": {
+            "paragraphs": [
+              "A quick response is useful, but speech arrives a little at a time. Waiting longer gives the system more context; responding sooner risks acting on an incomplete sentence. I want to test that trade-off alongside recognition and editing errors."
+            ],
+            "title": "Timing, Context, and Error Propagation"
+          }
+        }
+      },
+      "U.S. Provisional Patent Filing": {
+        "heading": "Provisional Application",
+        "blocks": {
+          "1": {
+            "paragraphs": [
+              "The provisional application describes the speech-repair approach, including control over edits, keeping the original utterance, and synthesizing a revised version. It records the proposed invention; it is not a granted patent or evidence of a medical benefit."
+            ],
+            "title": "Scope and Status"
+          }
+        }
+      },
+      "Interdisciplinary Linguistics Component": {
+        "heading": "What Gets Kept in a Transcript?",
+        "blocks": {
+          "0": {
+            "intro": "The project has led me to think about three questions:",
+            "items": [
+              {
+                "label": "Keeping the details",
+                "body": "A repetition or filler is something we can look for in a transcript. Keeping it gives someone a chance to examine it later."
+              },
+              {
+                "label": "Words and meaning",
+                "body": "An edited sentence may read more smoothly but change the original wording. I keep the transcript and the suggested edit separate."
+              },
+              {
+                "label": "The bigger picture",
+                "body": "Counting word errors cannot tell me everything about whether an edit kept the speaker’s meaning. That still needs context and human judgment."
+              }
+            ]
+          },
+          "1": {
+            "paragraphs": [
+              "What interests me is how a technical choice can change the record of someone’s speech. Keeping a repeated word lets a person examine it later. Removing it takes that choice away. Understanding why the speaker repeated it is a different question."
+            ]
+          }
+        }
+      },
+      "Technical Development & Market Value": {
+        "heading": "Building and Testing the System",
+        "blocks": {
+          "1": {
+            "title": "What a Useful Speech Tool Must Make Visible",
+            "intro": "Producing fluent text is only one part of the problem:",
+            "items": [
+              "Distinguish the recorded utterance, the recognizer’s transcript, and any proposed rewrite.",
+              "Make recognition and editing failures inspectable instead of presenting a polished result as ground truth.",
+              "Keep identifiable recordings and child-related data private; public examples require appropriate permission."
+            ]
+          },
+          "2": {
+            "paragraphs": [
+              "The next step is to test how the recognizer works inside the larger application. That means checking speed, privacy, editing quality, and whether users can see and control changes to their speech."
+            ],
+            "title": "Application Boundaries"
+          }
+        }
+      },
+      "Expected Outcomes & Scholarly Contribution": {
+        "heading": "Questions That Came Out of the Prototype",
+        "blocks": {
+          "0": {
+            "title": "Questions Raised by the Prototype",
+            "items": [
+              {
+                "label": "Access",
+                "body": "Could a practice interface be easier to reach and use? Accessibility is a design goal, not a demonstrated treatment outcome."
+              },
+              {
+                "label": "Agency",
+                "body": "Can a person inspect or reject a revision rather than have their speech silently replaced?"
+              },
+              {
+                "label": "Evaluation",
+                "body": "How should transcription quality, editing quality, and usefulness of feedback be evaluated separately?"
+              }
+            ]
+          },
+          "1": {
+            "title": "Connections Across Fields",
+            "intro": "The project brings several kinds of inquiry together:",
+            "items": [
+              {
+                "label": "Speech processing",
+                "body": "Compare recognition errors and retention of surface disfluencies."
+              },
+              {
+                "label": "Language representation",
+                "body": "Separate a verbatim record from an interpretation or edited rendering."
+              },
+              {
+                "label": "Information quality",
+                "body": "Ask what is lost between audio, text, and synthesized output, and make those losses visible."
+              },
+              {
+                "label": "Human-computer interaction",
+                "body": "Treat control over editing and access to the original as interface questions."
+              }
+            ]
+          },
+          "2": {
+            "paragraphs": [
+              "The earlier prototype received school and regional science fair recognition. That was encouraging, and it gave me more reasons to keep testing the parts of the system that still needed work."
+            ],
+            "title": "Recognition and Its Limits"
+          }
+        }
+      },
+      "Phase 2 — Child-Adapted, Disfluency-Preserving ASR": {
+        "heading": "The Speech Recognition Study",
+        "blocks": {
+          "0": {
+            "paragraphs": [
+              "For the recognition study, I adapted wav2vec 2.0 with CTC to children’s speech. I looked at both transcription errors and whether the model kept repetitions and fillers. I tested on speakers kept separate from training so I could see how it handled children it had not learned from.",
+              "The paper was accepted for presentation at the IEEE BigData 2026 High School Symposium, scheduled for December 2026."
+            ]
+          },
+          "1": {
+            "title": "What I Evaluated",
+            "items": [
+              {
+                "label": "Transcription errors",
+                "body": "I used word error rate to count replaced, missing, and added words. It measures transcription mistakes, not how fluently a child speaks."
+              },
+              {
+                "label": "Younger speakers",
+                "body": "I looked at younger speakers separately so an overall average would not hide where the model had more trouble."
+              },
+              {
+                "label": "Preschool adaptation",
+                "body": "I also tried adapting the recognizer to preschool speech. The small test group makes this an early result that needs more testing."
+              },
+              {
+                "label": "Keeping repetitions and fillers",
+                "body": "I checked which marked repetitions and fillers remained in the transcript. The rules for counting them matter when comparing models."
+              },
+              {
+                "label": "Research artifact",
+                "body": "The paper, “SpeakWise: Repair-Ready Child Speech Recognition via Verbatim Evidence Preservation,” describes the study. The full methods are needed to make sense of any reported scores."
+              }
+            ]
+          },
+          "2": {
+            "intro": "I still need to test how the new recognizer works with the editing and voice-synthesis stages.",
+            "items": [
+              "Validate repair against the preserved original transcript and audio.",
+              "Evaluate synthesis fidelity separately from transcription accuracy.",
+              "Measure streaming behavior and latency under specified conditions.",
+              "Test how users inspect and control proposed revisions."
+            ],
+            "statusLabel": "Application Work — Separate Validation"
+          }
+        }
+      },
+      "Reflection": {
+        "heading": "What I Learned",
+        "blocks": {
+          "0": {
+            "paragraphs": [
+              "The hardest lesson came from showing the early version to the people who inspired it. I thought smoother speech would be an obvious improvement. Their reactions made me see that I had not asked enough questions before building it.",
+              "I began to separate what I could change technically from what someone actually wanted changed. Keeping their own voice and choosing how much help to use mattered in ways I had overlooked.",
+              "That lesson also shaped the recognition study. If a model quietly removes a repetition, the speaker no longer gets to decide what happens to it. I want to make the transcript more accurate without assuming that every detail that sounds different is a mistake.",
+              "SpeakWise has taught me to listen before deciding what to build. The coding still interests me, but I now see understanding the person using it as part of the work from the beginning."
+            ]
+          }
+        }
+      }
+    },
+    "stats": [
+      {
+        "value": "ASR",
+        "label": "Child-speech research"
+      },
+      {
+        "value": "CTC",
+        "label": "Recognition approach"
+      },
+      {
+        "value": "Text",
+        "label": "Verbatim evidence"
+      },
+      {
+        "value": "R&D",
+        "label": "Application stage"
+      }
+    ],
+    "badges": [
+      {
+        "text": "Speech Research",
+        "variant": "accent"
+      },
+      {
+        "text": "IEEE BigData 2026 — Accepted",
+        "variant": "accent"
+      },
+      {
+        "text": "2025 - Now",
+        "variant": "neutral"
+      },
+      {
+        "text": "Provisional Filing",
+        "variant": "accent"
+      }
+    ]
+  },
+  "pomelo-labs": {
+    "title": "PomeloLabs — Making Sense of AI Answers",
+    "subtitles": [
+      "A commercial AI marketing platform with active users",
+      "AI search analytics · Marketing workflows · Product development"
+    ],
+    "sections": {
+      "Product Experience & Core User Journey": {
+        "heading": "A Live Product Built for Real Marketing Work",
+        "blocks": {
+          "0": {
+            "paragraphs": [
+              "PomeloLabs is a fully commercial AI marketing platform with active users. It brings together AI-search analytics, brand information, content workflows, and publishing tools to help businesses plan and carry out their marketing work.",
+              "I worked on it with a parent who uses the platform in their marketing agency. They brought the business requirements, marketing knowledge, and product feedback. I handled the technical architecture, development, integrations, testing, and deployment.",
+              "Building for users meant the work continued after a feature first ran. The parts needed to fit together in a live product, from collecting data and generating drafts to permissions, review, and publishing."
+            ]
+          },
+          "1": {
+            "title": "An Information-to-Action Workflow",
+            "items": [
+              {
+                "title": "Establish context",
+                "body": "Organize positioning, audience, goals, and source material before asking a model for recommendations.",
+                "marker": "1"
+              },
+              {
+                "title": "Inspect observations",
+                "body": "Bring visibility results, search data, and planned work together so a person can decide what deserves attention.",
+                "marker": "2"
+              },
+              {
+                "title": "Route a question",
+                "body": "Use agents with different responsibilities while sharing relevant workspace context.",
+                "marker": "3"
+              },
+              {
+                "title": "Trace an opportunity",
+                "body": "Connect an observation to a proposed task or brief; retain supporting context for review.",
+                "marker": "4"
+              },
+              {
+                "title": "Review an action",
+                "body": "Use role permissions and approval steps to separate a generated suggestion from an external publishing action.",
+                "marker": "5"
+              },
+              {
+                "title": "Observe again",
+                "body": "Compare like-for-like conditions rather than treating one response as a stable outcome.",
+                "marker": "6"
+              }
+            ]
+          }
+        }
+      },
+      "Motivation": {
+        "heading": "Why I Wanted to Build It",
+        "blocks": {
+          "0": {
+            "title": "Questions I Wanted the Workflow to Address",
+            "items": [
+              {
+                "label": "Fragmented sources",
+                "body": "Different tools describe different slices of a problem. A combined view needs to preserve their meanings."
+              },
+              {
+                "label": "Limited attention",
+                "body": "Generating more material can increase the user’s burden; the workflow should help identify what merits attention."
+              },
+              {
+                "label": "Missing context",
+                "body": "An answer without the relevant organization, audience, and evidence can sound plausible while being unhelpful."
+              },
+              {
+                "label": "Variable language",
+                "body": "A mention, comparison, and recommendation are distinct contexts and should not be counted as equivalent."
+              },
+              {
+                "label": "Unstable observations",
+                "body": "Models can answer the same question differently. A repeated pattern needs to be distinguished from a single response."
+              }
+            ]
+          },
+          "1": {
+            "paragraphs": [
+              "During development, I pushed back on an early scoring approach that emphasized positive signals. I thought a useful report needed to show where a business was falling short, even when the result was less encouraging.",
+              "A brand being mentioned is only part of the picture. I wanted the evaluation to look at how it was described and give the person reading the report a clearer idea of what to do next."
+            ],
+            "title": "Why Representation Matters"
+          }
+        }
+      },
+      "Core Innovation & Technical Approach": {
+        "heading": "How the Workflow Works",
+        "blocks": {
+          "0": {
+            "title": "A Reviewable Information Loop",
+            "intro": "The workflow connects stored context, observations, proposed actions, and later review:",
+            "items": [
+              {
+                "title": "Context",
+                "body": "Keep organization, audience, evidence, and intended channel associated with the work.",
+                "marker": "1"
+              },
+              {
+                "title": "Observe",
+                "body": "Collect relevant search, website, and AI-answer observations without treating them as interchangeable evidence.",
+                "marker": "2"
+              },
+              {
+                "title": "Interpret",
+                "body": "Have an agent explain an observation within its task boundary and available context.",
+                "marker": "3"
+              },
+              {
+                "title": "Propose",
+                "body": "Turn an interpretation into a task, draft, or recommendation a person can inspect.",
+                "marker": "4"
+              },
+              {
+                "title": "Authorize",
+                "body": "Distinguish suggesting an action from carrying it out through permissions and approval states.",
+                "marker": "5"
+              },
+              {
+                "title": "Revisit",
+                "body": "Record actions and later observations so an earlier recommendation can be questioned.",
+                "marker": "6"
+              }
+            ]
+          },
+          "1": {
+            "title": "My Design Priorities",
+            "items": [
+              {
+                "label": "Quality beyond presence",
+                "body": "Look at how a brand is described, including whether the answer is accurate and relevant to the question."
+              },
+              {
+                "label": "Clear agent boundaries",
+                "body": "Give each agent a clear job and the context it needs. Two agents sharing the same source do not count as two independent checks."
+              },
+              {
+                "label": "Continuity of information",
+                "body": "Keep the background information attached to the task so someone can understand why it was suggested."
+              },
+              {
+                "label": "Human review",
+                "body": "Let a person review work before the system takes an action such as publishing it."
+              }
+            ]
+          },
+          "2": {
+            "paragraphs": [
+              "Different teams use the platform, so keeping their information separate matters. Permissions also determine who can review a draft and who can publish it.",
+              "I learned to test these steps separately. A model can return an answer successfully while the answer itself is still wrong."
+            ],
+            "title": "Reliability Is More Than a Model Score"
+          }
+        }
+      },
+      "GEO Evaluation — Product Evolution & Principles": {
+        "heading": "Looking More Closely at AI Answers",
+        "blocks": {
+          "0": {
+            "paragraphs": [
+              "I started the evaluation work with a simple question: what should count as a useful mention in an AI answer? Asking a model the same question several times showed why one response is not enough to describe a pattern.",
+              "The project record includes a provisional application for the evaluation framework. The method still needs testing against real examples and human review."
+            ]
+          },
+          "2": {
+            "paragraphs": [
+              "A product name near the end of a list is different from a clear, accurate recommendation. I wanted the evaluation to capture those differences instead of counting every mention the same way.",
+              "The categories need to be clear enough for another person to disagree with a score and explain why. That is more useful to me than a number that simply looks precise."
+            ],
+            "title": "A Mention Is Not the Same as a Recommendation"
+          },
+          "3": {
+            "title": "How the Evaluation Question Developed",
+            "items": [
+              {
+                "marker": "V1",
+                "title": "Detect presence",
+                "body": "Establish whether an answer mentions the entity and retains relevant context."
+              },
+              {
+                "marker": "V2",
+                "title": "Examine the surrounding language",
+                "body": "Evaluate relevance, factual description, and recommendation context against explicit criteria and a defined user question."
+              },
+              {
+                "marker": "V3",
+                "title": "Validate the scoring framework",
+                "body": "Compare model judgments with review data and examine when categories fail. This is a development direction, not an established predictive result."
+              }
+            ]
+          },
+          "4": {
+            "paragraphs": [
+              "I want an evaluation to help someone find a problem they can understand. If a score hides an inaccurate description, it is not doing its job.",
+              "The questions we ask and the rules we use to score answers shape the result. I try to keep those choices visible and use consistent conditions when comparing results.",
+              "Repeated tests help show how much answers vary. Explaining why a result changed takes more evidence."
+            ],
+            "title": "Measurement Should Remain Open to Question"
+          }
+        }
+      },
+      "Marketing Domain Knowledge Integration": {
+        "heading": "Keeping the Right Context",
+        "blocks": {
+          "0": {
+            "paragraphs": [
+              "The platform works with many kinds of information: a company’s background, what its audience is searching for, drafts, and publishing records. I learned that each needs a clear place in the workflow so the next step has the right context."
+            ]
+          },
+          "2": {
+            "paragraphs": [
+              "A useful workflow should let someone follow the path from a question to a draft and then to an approved action. Keeping context helps, but people also need a way to update it when it is wrong or out of date."
+            ],
+            "title": "Context Needs Structure and Revision"
+          }
+        }
+      },
+      "Technical Development": {
+        "heading": "Building It and Finding Problems",
+        "blocks": {
+          "1": {
+            "paragraphs": [
+              "My work helps connect AI-answer results to tasks and drafts that people can review. I keep generation, review, and publishing as separate steps so a model response does not automatically become a public action.",
+              "The challenge is carrying the right information between those steps without making the process confusing for the user."
+            ],
+            "title": "What the Implementation Supports"
+          },
+          "2": {
+            "title": "Failures Worth Making Visible",
+            "items": [
+              {
+                "label": "Uncertainty",
+                "body": "An interpretation needs an identifiable basis; fluent language should not authorize publication."
+              },
+              {
+                "label": "External failures",
+                "body": "An unavailable integration or expired credential should produce a recoverable state, not an invented success."
+              },
+              {
+                "label": "Freshness and coverage",
+                "body": "Missing coverage is not the same as evidence of absence."
+              },
+              {
+                "label": "Resource use",
+                "body": "Track sampling and generation so repeated requests remain understandable and controllable."
+              }
+            ]
+          }
+        }
+      },
+      "Outcomes & Reflection": {
+        "heading": "What I Learned",
+        "blocks": {
+          "0": {
+            "title": "What the Workflow Is Designed to Support",
+            "items": [
+              {
+                "label": "Orientation",
+                "body": "Help a user identify relevant context before starting a task."
+              },
+              {
+                "label": "Continuity",
+                "body": "Connect observations, drafts, review, and publication."
+              },
+              {
+                "label": "Organization",
+                "body": "Keep context associated with the work that uses it."
+              },
+              {
+                "label": "Interpretation",
+                "body": "Explain why an observation might matter without presenting that interpretation as proven causation."
+              },
+              {
+                "label": "User control",
+                "body": "Let people inspect and approve work that affects an external audience."
+              }
+            ]
+          },
+          "1": {
+            "title": "What I Learned",
+            "items": [
+              {
+                "label": "Defining the score",
+                "body": "The way I define a category changes what a score tells the user. I need to explain those choices clearly."
+              },
+              {
+                "label": "Passing context between steps",
+                "body": "Passing work between agents also means passing information. I have to check what gets lost along the way."
+              },
+              {
+                "label": "Understanding a change",
+                "body": "A history of actions helps show what happened. Finding out why a result changed takes more work."
+              },
+              {
+                "label": "Checking the summary",
+                "body": "A well-written summary should still let someone check the evidence behind it."
+              }
+            ]
+          },
+          "2": {
+            "paragraphs": [
+              "PomeloLabs is in commercial use, with users working in the platform. That gave the development work a practical purpose: features needed to connect to an existing marketing process, rather than stop at a demo.",
+              "I also had to explain technical decisions to someone approaching the product from the business side. We sometimes disagreed about what a result should show. Working through those differences helped me think about what a customer would actually learn from the report.",
+              "The scoring discussion stayed with me. A number can look reassuring without explaining much. I pushed for reports that show where a business is falling short and what it could work on next.",
+              "Following the work through integration, testing, and deployment gave me experience maintaining a usable product. Having users is an important milestone; measuring the results they get from it is work that continues."
+            ],
+            "title": "What I Learned From a Commercial Product"
+          }
+        }
+      },
+      "What's Already Live": {
+        "heading": "What Works So Far",
+        "blocks": {
+          "1": {
+            "title": "Boundaries to Keep Explicit",
+            "items": [
+              {
+                "label": "API scope",
+                "body": "Separate available read and status-management interfaces from proposed automation."
+              },
+              {
+                "label": "Product scope",
+                "body": "Describe undelivered reporting and agency capabilities as future work."
+              },
+              {
+                "label": "Testing scope",
+                "body": "Use isolated test accounts for integrations and avoid customer data in public demonstrations."
+              },
+              {
+                "label": "Outcome scope",
+                "body": "Broader benefit needs consistent measurement; no causal visibility improvement is claimed here."
+              }
+            ]
+          }
+        }
+      },
+      "What's Next — Pomelo Labs Roadmap": {
+        "heading": "Further Questions",
+        "blocks": {
+          "0": {
+            "intro": "The next questions concern evaluation quality and the handoff between model output and human judgment:",
+            "items": [
+              "Compare scoring categories with reviewer judgments and examine disagreement.",
+              "Keep observations linked to the questions and conditions that produced them.",
+              "Make missing data, stale context, and failed actions clear.",
+              "Measure whether recommendations aid understanding, not only content volume.",
+              "Study which review steps preserve useful control."
+            ],
+            "statusLabel": "Questions for Further Development"
+          }
+        }
+      }
+    },
+    "stats": [
+      {
+        "value": "Live",
+        "label": "Commercial product"
+      },
+      {
+        "value": "Users",
+        "label": "Already in use"
+      },
+      {
+        "value": "GEO",
+        "label": "AI-search analytics"
+      },
+      {
+        "value": "AI",
+        "label": "Marketing workflows"
+      }
+    ],
+    "badges": [
+      {
+        "text": "Live Commercial Product",
+        "variant": "accent"
+      },
+      {
+        "text": "Active Users",
+        "variant": "accent"
+      },
+      {
+        "text": "2026 - Now",
+        "variant": "neutral"
+      }
+    ]
+  },
+  "vla-robot-manipulation": {
+    "title": "VLA Robotics — Testing Robots in New Environments",
+    "subtitles": [
+      "What changes when a robot leaves the setup it trained in?",
+      "Team research · Robotics · Machine learning"
+    ],
+    "sections": {
+      "Motivation & Research Value": {
+        "heading": "Researching Robot Learning at UT Dallas",
+        "blocks": {
+          "0": {
+            "paragraphs": [
+              "I joined the six-week UT Dallas STEM Bridge program and led a team studying vision-language-action models for robotic arms. We worked with graduate mentors and faculty at the Intelligent Robotics and Vision Lab.",
+              "Our work included training and testing policies, preparing a research poster and presentation, and demonstrating the robot live. The project placed third among more than twenty teams. The hardware and experiments were shared team work."
+            ],
+            "title": "My Role in a Collaborative Study"
+          },
+          "1": {
+            "paragraphs": [
+              "The project looked at how a robot uses a camera image and an instruction to choose an action. One example was picking up bread and placing it on a red plate.",
+              "We compared how policies worked in tabletop and lightbox settings, including what happened when the training environment and test environment were different."
+            ]
+          },
+          "2": {
+            "paragraphs": [
+              "A demonstration includes more than the motion we want the robot to learn. It also includes the background and lighting. Changing the scene helped us ask which details the policy was relying on."
+            ],
+            "title": "Why the Data Distribution Matters"
+          }
+        }
+      },
+      "Data Collection & Model Training": {
+        "heading": "Collecting Data and Training the Policy",
+        "blocks": {
+          "0": {
+            "paragraphs": [
+              "We used a leader arm to guide a follower arm and recorded what the camera saw alongside the arm’s actions. We then trained SmolVLA and tested it on the real arm. As team leader, I helped coordinate the steps and keep the experiment moving."
+            ]
+          }
+        }
+      },
+      "Experiments & Results": {
+        "heading": "What We Compared",
+        "blocks": {
+          "0": {
+            "paragraphs": [
+              "The poster compares pretrained π0.5 and SmolVLA policies on VLARePlica tasks. We then used SmolVLA for the tabletop and lightbox experiments. These comparisons describe our particular tasks and test conditions."
+            ]
+          },
+          "1": {
+            "title": "Policy Comparison — Read With the Poster Protocol",
+            "items": [
+              {
+                "label": "π0.5",
+                "body": "The reported comparison favored this policy under the poster’s specific conditions, not across robotics settings generally."
+              },
+              {
+                "label": "SmolVLA",
+                "body": "The team selected this policy for further experiments within available resources. Model choice and environment transfer are separate questions."
+              }
+            ]
+          },
+          "2": {
+            "paragraphs": [
+              "For one task, the robot had to pick up bread and put it on a red plate. We compared policies trained with tabletop demonstrations, lightbox demonstrations, and a mixture of both. The poster gives the trial setup needed to interpret the results."
+            ],
+            "title": "A Fixed Task Under Different Conditions"
+          },
+          "3": {
+            "title": "Cross-Environment Observations",
+            "items": [
+              {
+                "label": "Tabletop → Tabletop",
+                "body": "The poster reports stronger performance when training and execution matched."
+              },
+              {
+                "label": "Tabletop → Lightbox",
+                "body": "Moving to a different scene reduced success in the reported runs."
+              },
+              {
+                "label": "Merged → Tabletop",
+                "body": "Combining demonstrations improved the observed cross-condition behavior."
+              },
+              {
+                "label": "Merged → Lightbox",
+                "body": "Mixed-condition training also improved behavior in the lightbox relative to single-condition transfer."
+              },
+              {
+                "label": "Lightbox → Tabletop",
+                "body": "The reverse transfer exposed a similar sensitivity to scene changes."
+              },
+              {
+                "label": "Lightbox → Lightbox",
+                "body": "Success in a matching environment did not establish robustness outside it."
+              }
+            ]
+          }
+        }
+      },
+      "Key Findings & Contribution": {
+        "heading": "What the Comparison Suggests",
+        "blocks": {
+          "0": {
+            "items": [
+              {
+                "label": "Matching conditions can conceal brittleness",
+                "body": "Doing well in the training setup does not tell us enough about how a policy will do somewhere else."
+              },
+              {
+                "label": "Data diversity is a useful intervention",
+                "body": "Using demonstrations from both conditions helped in our tests. I would want more experiments before drawing a broader conclusion."
+              },
+              {
+                "label": "Other explanations remain possible",
+                "body": "We changed several scene details at once. Further tests could separate the effects of lighting and background."
+              }
+            ]
+          },
+          "1": {
+            "paragraphs": [
+              "As research team leader, I helped coordinate the work from data collection through training and testing. I also worked with the team on the poster, presentation, and live demonstration. The results came from our combined work and the guidance of our mentors."
+            ],
+            "title": "My Contribution and the Team’s Work"
+          }
+        }
+      },
+      "Expected Outcomes & Research Value": {
+        "heading": "Why the Experiment Interested Me",
+        "blocks": {
+          "0": {
+            "items": [
+              {
+                "label": "Representation",
+                "body": "Each demonstration records what the camera sees and how the arm moves. The examples we collect affect what the policy learns."
+              },
+              {
+                "label": "Grounding",
+                "body": "The instruction refers to objects in a real scene. I found it interesting to see how words, images, and actions have to work together."
+              },
+              {
+                "label": "Evaluation",
+                "body": "Showing the test conditions and failures helps another person understand what the result really says."
+              }
+            ]
+          }
+        }
+      },
+      "Reflection": {
+        "heading": "What I Learned",
+        "blocks": {
+          "0": {
+            "paragraphs": [
+              "This was experience working through a research process with a team: collect demonstrations, train a policy, test it, and decide what to try next. I also had to help explain the work in a poster, a presentation, and a live demonstration.",
+              "Our tests showed why it mattered to change the environment instead of judging the policy only where it had trained. The mixed-condition experiments gave us another approach to compare.",
+              "I learned to keep a result tied to the conditions we tested. Working with teammates and mentors also gave me practice explaining an approach, listening to suggestions, and revising it."
+            ]
+          }
+        }
+      }
+    },
+    "stats": [
+      {
+        "value": "RGB",
+        "label": "Scene information"
+      },
+      {
+        "value": "Text",
+        "label": "Task instruction"
+      },
+      {
+        "value": "Act",
+        "label": "Policy output"
+      },
+      {
+        "value": "OOD",
+        "label": "Domain-shift evaluation"
+      }
+    ]
+  },
+  "expressive": {
+    "title": "Expressive — Turning Playing Dynamics Into Stereo Movement",
+    "subtitles": [
+      "An open-source audio plugin I built with C++ and JUCE",
+      "Music · Audio programming · Creative tools"
+    ],
+    "sections": {
+      "Motivation": {
+        "heading": "From Making Music to Making a Plugin",
+        "blocks": {
+          "0": {
+            "paragraphs": [
+              "Expressive grew out of my own music production. I have played piano and clarinet, and this project gave me a way to bring programming into that part of my life. I built an effect that uses MIDI note velocity to move a sound across the stereo field.",
+              "I developed the plugin independently with C++ and JUCE, learning how to make it work inside existing music-production software. I then released the code so other people could try it and change it."
+            ]
+          }
+        }
+      },
+      "How It Works": {
+        "heading": "How It Works",
+        "blocks": {
+          "0": {
+            "title": "Velocity-to-Pan Signal Path",
+            "items": [
+              {
+                "title": "Read the performance input",
+                "body": "A MIDI note-on message includes a velocity value. The plugin maps that value to a position between left and right.",
+                "marker": "1"
+              },
+              {
+                "title": "Smooth the transition",
+                "body": "The sound moves toward the new position over a chosen interval, which helps avoid abrupt jumps and clicks.",
+                "marker": "2"
+              },
+              {
+                "title": "Render the spatial change",
+                "body": "Equal-power panning sets the left and right levels. I also added a choice between working from a mono sum and balancing the existing stereo signal.",
+                "marker": "3"
+              }
+            ]
+          },
+          "1": {
+            "title": "Controls as Choices About the Mapping",
+            "items": [
+              {
+                "title": "Smoothing Time",
+                "body": "How quickly should a change in playing dynamics become a change in stereo position?"
+              },
+              {
+                "title": "Pan Width",
+                "body": "How strongly should velocity affect movement? A narrower range keeps the effect subtler."
+              },
+              {
+                "title": "Pan Curve",
+                "body": "How should velocity differences be distributed across stereo space?"
+              },
+              {
+                "title": "Mono Collapse",
+                "body": "Should the tool reposition a mono sum or preserve more of the existing stereo relationship?"
+              }
+            ]
+          }
+        }
+      },
+      "Release & Adoption": {
+        "heading": "Sharing the Plugin",
+        "blocks": {
+          "1": {
+            "title": "What I Built and Learned",
+            "items": [
+              "I built the VST3 audio effect and its panning controls in C++ with JUCE, then released it as open-source software.",
+              "I learned C++ and how to make a plugin work inside the tools music producers already use. Smoothing, panning, and the controls all affect what a person hears.",
+              "Taking a personal music idea through to a working release gave me practice finishing software that other people could download and try. The standalone build also lets someone test the effect without a DAW."
+            ]
+          }
+        }
+      }
+    },
+    "stats": [
+      {
+        "value": "MIDI",
+        "label": "Performance input"
+      },
+      {
+        "value": "Pan",
+        "label": "Spatial output"
+      },
+      {
+        "value": "VST3 / AU",
+        "label": "Plugin formats"
+      },
+      {
+        "value": "C++",
+        "label": "Implementation"
+      }
+    ]
+  },
+  "activityhub": {
+    "title": "ActivityHub — Keeping Volunteer Records Clear",
+    "subtitles": [
+      "Helping volunteers and organizers keep track of events and service hours",
+      "Independent project · Community software · Information systems"
+    ],
+    "sections": {
+      "Motivation": {
+        "heading": "Building for a Community I Help Lead",
+        "blocks": {
+          "0": {
+            "paragraphs": [
+              "I volunteer with ACAESUSA and serve as president of its Computer Science Chapter, where I also help teach programming. ActivityHub grew out of that work with the organization. I built it to help manage events, volunteer sign-ups, attendance, and service hours.",
+              "I designed and developed the platform myself. Volunteers can submit hours and supporting documents; administrators can approve them or return them for corrections. I wanted both groups to have a clear place to see what needed attention."
+            ]
+          }
+        }
+      },
+      "How It Works": {
+        "heading": "From Signing Up to Confirmed Hours",
+        "blocks": {
+          "0": {
+            "title": "A Record Changes State Through Review",
+            "items": [
+              {
+                "title": "Publish an event",
+                "body": "Administrators provide event details. Generated copy and posters communicate the event; they are not evidence of attendance.",
+                "marker": "1"
+              },
+              {
+                "title": "Register a participant",
+                "body": "Registration and waitlisting express an intention to attend, not completed service.",
+                "marker": "2"
+              },
+              {
+                "title": "Collect a check-in",
+                "body": "QR or event-code check-in supplies an observation for later review.",
+                "marker": "3"
+              },
+              {
+                "title": "Confirm hours",
+                "body": "Administrators review and confirm hours. Repeating the action must not create duplicate credit.",
+                "marker": "4"
+              },
+              {
+                "title": "Produce a record",
+                "body": "Confirmed hours support exports, certificates, and eligibility calculations. Software does not itself confer an official service award.",
+                "marker": "5"
+              }
+            ]
+          },
+          "1": {
+            "title": "Different Users, Different Information Needs",
+            "items": [
+              {
+                "title": "Volunteers",
+                "body": "View registrations and records, submit supporting documents, and understand how to correct a returned submission."
+              },
+              {
+                "title": "Administrators",
+                "body": "Review evidence, confirm hours, and make adjustments with a traceable reason."
+              },
+              {
+                "title": "Multiple Organizations",
+                "body": "Keep membership, roles, and records within the organization authorized to access them."
+              },
+              {
+                "title": "Bilingual & Mobile",
+                "body": "English/Chinese switching and phone access support different language and device contexts; no measured accessibility outcome is claimed."
+              }
+            ]
+          }
+        }
+      },
+      "Technical Design": {
+        "heading": "Keeping Records Accurate and Private",
+        "blocks": {
+          "0": {
+            "title": "Making Records Easier to Trust",
+            "items": [
+              {
+                "label": "Separate events from records",
+                "body": "An organizer can update an event without silently changing someone’s past service record."
+              },
+              {
+                "label": "Avoiding duplicate records",
+                "body": "Repeated clicks or requests should not reserve an extra place or count the same hours twice."
+              },
+              {
+                "label": "Checking permissions",
+                "body": "The database checks who is allowed to read or change each record. Hiding a button alone is not enough."
+              },
+              {
+                "label": "Keeping a history",
+                "body": "A history of changes and the reason for an adjustment help people work out how a record changed."
+              },
+              {
+                "label": "Keeping documents private",
+                "body": "Supporting documents stay private, with links that expire after a short time."
+              }
+            ]
+          }
+        }
+      },
+      "Reflection": {
+        "heading": "What I Learned",
+        "blocks": {
+          "0": {
+            "paragraphs": [
+              "ActivityHub asked me to think about two different sides of the same process. Organizers need to check attendance and records. Volunteers need to submit their hours, fix missing information, and get a record of their service.",
+              "I learned to work through the everyday details, including what happens when a submission is incomplete and how someone can correct it. Those steps matter just as much as getting a sign-up form to work.",
+              "The platform also supports separate organizations, each with its own members and records. Building that helped me practice keeping information organized and making sure the right people could access it."
+            ]
+          }
+        }
+      }
+    },
+    "stats": [
+      {
+        "value": "OK",
+        "label": "Administrator-reviewed hours"
+      },
+      {
+        "value": "QR",
+        "label": "Check-in input"
+      },
+      {
+        "value": "Logs",
+        "label": "Service documentation"
+      },
+      {
+        "value": "Roles",
+        "label": "Access boundaries"
+      }
+    ]
+  },
+  "zeitgeist": {
+    "title": "Zeitgeist — Exploring Market Data With AI",
+    "subtitles": [
+      "Organizing financial data and checking how AI explains it",
+      "Independent prototype · Data · AI explanations"
+    ],
+    "sections": {
+      "Motivation & Societal Need": {
+        "heading": "An Independent Project in Market Data and AI",
+        "blocks": {
+          "0": {
+            "paragraphs": [
+              "Zeitgeist is an independent project combining market data with AI-assisted financial research. I built the data and backend workflow and the layer that turns the inputs into a written summary.",
+              "The application brings together API data, calculated market measures, and model-generated explanations. Those are different kinds of information, and the reader needs to be able to tell them apart."
+            ]
+          },
+          "1": {
+            "items": [
+              {
+                "label": "Uneven access",
+                "body": "Readers have different tools and background knowledge; an interface should not assume expertise."
+              },
+              {
+                "label": "Information overload",
+                "body": "Combining streams is helpful only if their meanings and relevance remain distinguishable."
+              },
+              {
+                "label": "Framing effects",
+                "body": "The wording of a summary can encourage confidence beyond what the data supports."
+              },
+              {
+                "label": "Domain vocabulary",
+                "body": "Terms such as volatility and delta need explanation without losing technical meaning."
+              }
+            ]
+          },
+          "2": {
+            "paragraphs": [
+              "I want readers to be able to tell which statements come from data, which come from calculations, and which are the model’s interpretation. This is a research and educational prototype, not personalized investment advice."
+            ]
+          }
+        }
+      },
+      "Core Innovation & Technical Approach": {
+        "heading": "From Data to a Summary",
+        "blocks": {
+          "0": {
+            "title": "An Information-Processing Pipeline",
+            "intro": "Each stage changes the representation and introduces different failure modes:",
+            "items": [
+              {
+                "title": "Collect observations",
+                "body": "Use market API responses as source data. Timestamps, coverage, and delays depend on the provider and cannot be inferred from a fluent summary.",
+                "marker": "1"
+              },
+              {
+                "title": "Structure the information",
+                "body": "Organize inputs and calculated measures into fields the application and model can interpret.",
+                "marker": "2"
+              },
+              {
+                "title": "Generate an explanation",
+                "body": "Use an LLM to describe the supplied information. Claims need checking against inputs; a stated probability is not a calibrated confidence estimate.",
+                "marker": "3"
+              },
+              {
+                "title": "Present a research summary",
+                "body": "Return an explanation for inspection, keeping educational interpretation separate from a recommendation to trade.",
+                "marker": "4"
+              }
+            ]
+          },
+          "1": {
+            "paragraphs": [
+              "An AI model can sound careful without knowing how reliable its answer is. I try to keep that difference clear. A useful summary should say when information is missing and avoid giving a made-up sense of certainty."
+            ],
+            "title": "Uncertainty Without Invented Precision"
+          },
+          "3": {
+            "paragraphs": [
+              "New data gives the model different material to work with, but it can still explain that material badly. I need to check both how fresh the inputs are and whether the summary matches them."
+            ],
+            "title": "Fresh Inputs Do Not Guarantee Better Reasoning"
+          }
+        }
+      },
+      "Financial Domain Knowledge Integration": {
+        "heading": "Learning the Domain",
+        "blocks": {
+          "0": {
+            "intro": "These concepts provide vocabulary and structure, not proof of validated financial reasoning:",
+            "items": [
+              {
+                "label": "Pricing concepts",
+                "body": "Distinguish an observed price from an estimate produced under a model’s assumptions."
+              },
+              {
+                "label": "Sensitivity measures",
+                "body": "Delta, gamma, theta, and vega describe different quantities, not interchangeable indicators of risk."
+              },
+              {
+                "label": "Market context",
+                "body": "Spread, liquidity, and timing affect interpretation."
+              },
+              {
+                "label": "Risk descriptions",
+                "body": "A qualitative risk explanation is separate from a tested portfolio-risk model."
+              }
+            ]
+          },
+          "1": {
+            "paragraphs": [
+              "Using a technical term correctly matters more than simply including it. I want a reader to be able to connect an explanation back to the number or calculation it describes."
+            ]
+          }
+        }
+      },
+      "Technical Development & Market Value": {
+        "heading": "What the Prototype Can Show",
+        "blocks": {
+          "1": {
+            "title": "Information-Quality Checks",
+            "intro": "Evaluation should examine the transformation from data to explanation:",
+            "items": [
+              "Check whether descriptions match the values actually supplied.",
+              "Identify unsupported causal claims, forecasts, and omitted limitations.",
+              "Separate missing or delayed data from a genuine absence of activity.",
+              "Test comprehensibility without implying guaranteed outcomes."
+            ]
+          },
+          "2": {
+            "title": "What the Prototype Does Not Establish",
+            "intro": "A working backend does not validate investment performance:",
+            "items": [
+              {
+                "label": "Scope",
+                "body": "Research and education, not individualized investment recommendations."
+              },
+              {
+                "label": "Timeliness",
+                "body": "API connectivity does not guarantee live coverage or uninterrupted access."
+              },
+              {
+                "label": "Validation",
+                "body": "No profitable strategy, calibrated forecast, or reliable prediction is established here."
+              },
+              {
+                "label": "User judgment",
+                "body": "Generated explanations can be wrong and should not authorize automated trades."
+              }
+            ]
+          }
+        }
+      },
+      "Expected Outcomes & Scholarly Contribution": {
+        "heading": "What I Wanted to Learn",
+        "blocks": {
+          "0": {
+            "title": "Design Goals, Not Proven Financial Outcomes",
+            "items": [
+              {
+                "label": "Comprehensibility",
+                "body": "Make unfamiliar measures easier to explore without replacing definitions with oversimplified claims."
+              },
+              {
+                "label": "Transparency",
+                "body": "Distinguish a source observation from a model’s interpretation."
+              },
+              {
+                "label": "Critical reading",
+                "body": "Help readers question a summary rather than treat fluency as proof."
+              }
+            ]
+          },
+          "1": {
+            "title": "Questions for Further Evaluation",
+            "intro": "The prototype motivates these questions rather than conclusively answering them:",
+            "items": [
+              {
+                "label": "Checking the numbers",
+                "body": "Does the summary describe the numbers I actually gave the model?"
+              },
+              {
+                "label": "Checking the wording",
+                "body": "Does the wording make the result sound more certain than the evidence allows?"
+              },
+              {
+                "label": "Tracing a sentence to its source",
+                "body": "Can a reader check which data or calculation a sentence came from?"
+              },
+              {
+                "label": "Making it understandable",
+                "body": "Can I explain a difficult idea clearly while keeping the important assumptions visible?"
+              }
+            ]
+          },
+          "2": {
+            "paragraphs": [
+              "I built the data-ingestion and application workflow myself. That let me test the whole path from an API response to a summary. Checking the accuracy of those summaries is a separate part of the work."
+            ],
+            "title": "My Contribution and Its Limits"
+          }
+        }
+      },
+      "Reflection": {
+        "heading": "What I Learned",
+        "blocks": {
+          "0": {
+            "paragraphs": [
+              "Zeitgeist gave me practice building a pipeline from external data to an AI-generated explanation. My work included data ingestion, the FastAPI backend, and the model integration.",
+              "Each step has different things to check: whether data arrived, whether a calculation used the right inputs, and whether the explanation matches those inputs. Getting the request to finish does not answer all three questions.",
+              "The project is for research and education. I have not established that its summaries predict market movements or support an investment strategy."
+            ]
+          }
+        }
+      }
+    },
+    "stats": [
+      {
+        "value": "Data",
+        "label": "Market observations"
+      },
+      {
+        "value": "LLM",
+        "label": "Explanation layer"
+      },
+      {
+        "value": "API",
+        "label": "FastAPI backend"
+      },
+      {
+        "value": "R&D",
+        "label": "Educational prototype"
+      }
+    ],
+    "badges": [
+      {
+        "text": "Independent Developer",
+        "variant": "accent"
+      },
+      {
+        "text": "2025 - Now",
+        "variant": "neutral"
+      }
+    ]
+  },
+  "elocutionist": {
+    "title": "Elocutionist — A Place to Practice Speaking",
+    "subtitles": [
+      "Interview practice with AI questions and feedback",
+      "Independent project · Communication · Human-AI interaction"
+    ],
+    "sections": {
+      "Motivation": {
+        "heading": "An Independent Interview-Practice Project",
+        "blocks": {
+          "0": {
+            "paragraphs": [
+              "Elocutionist is an independent app I built for interview practice. It lets a user add background information, answer questions by typing or speaking, and review AI-generated feedback.",
+              "My work included the application, document processing, speech transcription, and feedback system. It was separate from the interview module I worked on with a team at DreamCollege.ai."
+            ]
+          }
+        }
+      },
+      "How It Works": {
+        "heading": "The Practice Loop",
+        "blocks": {
+          "0": {
+            "title": "A Communication Practice Loop",
+            "items": [
+              {
+                "title": "Establish context",
+                "body": "Use a student-provided background and extracted document text to tailor questions. Extraction can be incomplete, so questions need review.",
+                "marker": "1"
+              },
+              {
+                "title": "Capture a response",
+                "body": "Users type or record an answer for Whisper transcription. Text represents the response; it is not a complete record of delivery.",
+                "marker": "2"
+              },
+              {
+                "title": "Generate feedback",
+                "body": "The model evaluates answer content and structure. It does not establish vocal quality, intent, or an official admissions judgment.",
+                "marker": "3"
+              },
+              {
+                "title": "Review and practice again",
+                "body": "Playback and history support self-review. A changed model score is not independently measured communication improvement.",
+                "marker": "4"
+              }
+            ]
+          },
+          "1": {
+            "paragraphs": [
+              "I added interactive 3D interviewer avatars, drawing inspiration from Proxona. They give users another way to practice alongside the text and voice features. I have not established whether the avatars make practice more effective."
+            ],
+            "title": "The Interviewer as an Interface Experiment"
+          }
+        }
+      },
+      "Human-AI Interaction Design": {
+        "heading": "Helping the Speaker Stay in Control",
+        "blocks": {
+          "0": {
+            "items": [
+              {
+                "label": "The speaker’s own words",
+                "body": "Give users room to answer in their own words before offering suggestions."
+              },
+              {
+                "label": "Relevant questions",
+                "body": "Use the background they provide to ask relevant questions, while allowing for mistakes in reading the documents."
+              },
+              {
+                "label": "Specific suggestions",
+                "body": "Explain which part of an answer could be clearer so the speaker can decide whether the suggestion fits."
+              },
+              {
+                "label": "Looking back at an answer",
+                "body": "Let users revisit their responses and recordings. Treat the AI score as one piece of feedback."
+              }
+            ]
+          }
+        }
+      },
+      "Reflection": {
+        "heading": "What I Learned",
+        "blocks": {
+          "0": {
+            "paragraphs": [
+              "Building Elocutionist gave me practice connecting several parts of an application: reading background documents, generating questions, transcribing an answer, and returning feedback. A problem in an early step can affect what comes after it.",
+              "I worked on turning the model’s response into suggestions about the answer’s content and structure. The transcript gives the model words to work with, but it does not capture every part of how someone speaks.",
+              "This was independent development. DreamCollege gave me a different setting, where I had to connect my work to other developers’ work and to an existing product. The two projects gave me practice with both ways of building software."
+            ]
+          }
+        }
+      }
+    },
+    "stats": [
+      {
+        "value": "Text",
+        "label": "Content and structure feedback"
+      },
+      {
+        "value": "3D",
+        "label": "Interviewer interface"
+      },
+      {
+        "value": "ASR",
+        "label": "Speech-to-text input"
+      },
+      {
+        "value": "LLM",
+        "label": "Model-generated suggestions"
+      }
+    ]
+  }
+}
