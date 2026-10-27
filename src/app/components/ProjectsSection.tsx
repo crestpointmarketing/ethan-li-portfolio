@@ -2,6 +2,7 @@ import { useEffect, useState } from 'react';
 import { Link } from 'react-router';
 import type { ProjectCard } from '@shared/projectSchema';
 import { homepageProjectCopy } from '../content/homepageCopy';
+import { loadPublicContent } from '../lib/publicContent';
 
 type LoadState =
   | { status: 'loading' }
@@ -12,22 +13,17 @@ export default function ProjectsSection() {
   const [state, setState] = useState<LoadState>({ status: 'loading' });
 
   useEffect(() => {
-    let cancelled = false;
-    fetch('/api/projects')
-      .then(async (res) => {
-        if (cancelled) return;
-        if (!res.ok) {
-          setState({ status: 'error' });
-          return;
-        }
-        const data = await res.json();
+    const controller = new AbortController();
+    loadPublicContent<{ projects: ProjectCard[] }>('/api/projects', controller.signal)
+      .then((data) => {
+        if (controller.signal.aborted) return;
         setState({ status: 'ready', projects: (data.projects ?? []).map((project: ProjectCard) => ({ ...project, ...homepageProjectCopy[project.slug] })) });
       })
       .catch(() => {
-        if (!cancelled) setState({ status: 'error' });
+        if (!controller.signal.aborted) setState({ status: 'error' });
       });
     return () => {
-      cancelled = true;
+      controller.abort();
     };
   }, []);
 
