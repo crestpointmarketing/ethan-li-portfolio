@@ -265,7 +265,7 @@
   "pomelo-labs": {
     "title": "PomeloLabs — Making Sense of AI Answers",
     "subtitles": [
-      "A commercial AI marketing platform with active users",
+      "A commercial AI marketing platform used by businesses",
       "AI search analytics · Marketing workflows · Product development"
     ],
     "sections": {
@@ -274,7 +274,7 @@
         "blocks": {
           "0": {
             "paragraphs": [
-              "PomeloLabs is a fully commercial AI marketing platform with active users. It brings together AI-search analytics, brand information, content workflows, and publishing tools to help businesses plan and carry out their marketing work.",
+              "PomeloLabs is a live commercial AI marketing platform used by businesses. It brings together AI-search analytics, brand information, content workflows, and publishing tools to help businesses plan and carry out their marketing work.",
               "I worked on it with a parent who uses the platform in their marketing agency. They brought the business requirements, marketing knowledge, and product feedback. I handled the technical architecture, development, integrations, testing, and deployment.",
               "Building for users meant the work continued after a feature first ran. The parts needed to fit together in a live product, from collecting data and generating drafts to permissions, review, and publishing."
             ]
@@ -568,7 +568,7 @@
           },
           "2": {
             "paragraphs": [
-              "PomeloLabs is in commercial use, with users working in the platform. That gave the development work a practical purpose: features needed to connect to an existing marketing process, rather than stop at a demo.",
+              "PomeloLabs is in commercial use by businesses. That gave the development work a practical purpose: features needed to connect to an existing marketing process, rather than stop at a demo.",
               "I also had to explain technical decisions to someone approaching the product from the business side. We sometimes disagreed about what a result should show. Working through those differences helped me think about what a customer would actually learn from the report.",
               "The scoring discussion stayed with me. A number can look reassuring without explaining much. I pushed for reports that show where a business is falling short and what it could work on next.",
               "Following the work through integration, testing, and deployment gave me experience maintaining a usable product. Having users is an important milestone; measuring the results they get from it is work that continues."
@@ -627,7 +627,7 @@
       },
       {
         "value": "Users",
-        "label": "Already in use"
+        "label": "Business users"
       },
       {
         "value": "GEO",
@@ -644,7 +644,7 @@
         "variant": "accent"
       },
       {
-        "text": "Active Users",
+        "text": "Business Users",
         "variant": "accent"
       },
       {

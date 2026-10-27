@@ -20,9 +20,9 @@ export const homepageProjectCopy: Record<string, Partial<ProjectCard>> = {
   },
   'pomelo-labs': {
     title: 'PomeloLabs',
-    subtitles: ['A live commercial AI marketing platform with active users', 'AI · Information Analysis · Intelligent Agents'],
+    subtitles: ['A live commercial AI marketing platform used by businesses', 'AI · Information Analysis · Intelligent Agents'],
     cardHighlights: [
-      'PomeloLabs is a fully commercial AI marketing platform with active users. I worked with a parent who brought business requirements and agency feedback.',
+      'PomeloLabs is a live commercial AI marketing platform used by businesses. I worked with a parent who brought business requirements and agency feedback.',
       'I built the platform’s technical architecture, integrations, and evaluation tools, including workflows that connect results to tasks and drafts.',
       'An early discussion about scoring led me to push for reports that explain problems, rather than emphasize reassuring numbers.',
     ],
