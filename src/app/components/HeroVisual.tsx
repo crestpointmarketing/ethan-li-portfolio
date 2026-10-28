@@ -79,10 +79,10 @@ const CARDS = [
     href: '/projects/pomelo-labs',
   },
   {
-    icon: '🤖',
-    iconBg: 'linear-gradient(145deg,#0e7490,#083344)',
+    icon: productLogo('vla-robotics.svg', 42),
+    iconBg: 'transparent',
     title: 'VLA Robotics',
-    sub: 'Vision-Language-Action',
+    sub: 'Robot Arm · Vision + Language',
     delay: '1.8s',
     pos: { left: '30%', bottom: '1%' },
     href: '/projects/vla-robot-manipulation',
