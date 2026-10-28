@@ -1,0 +1,14 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64" fill="none">
+  <title>Expressive</title>
+  <defs>
+    <linearGradient id="expressive-bg" x1="8" y1="3" x2="57" y2="64" gradientUnits="userSpaceOnUse">
+      <stop stop-color="#E94560"/>
+      <stop offset="1" stop-color="#7A1430"/>
+    </linearGradient>
+  </defs>
+  <rect width="64" height="64" rx="17" fill="url(#expressive-bg)"/>
+  <path d="M13 28v8m7-15v22" stroke="white" stroke-width="3.5" stroke-linecap="round" opacity=".65"/>
+  <path d="M32 40V19l17-4v21M32 26l17-4" stroke="white" stroke-width="3.5" stroke-linecap="round" stroke-linejoin="round"/>
+  <ellipse cx="27.5" cy="42" rx="6.5" ry="5" fill="white" transform="rotate(-18 27.5 42)"/>
+  <ellipse cx="44.5" cy="38" rx="6.5" ry="5" fill="white" transform="rotate(-18 44.5 38)"/>
+</svg>

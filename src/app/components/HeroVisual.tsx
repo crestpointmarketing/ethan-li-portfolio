@@ -88,8 +88,8 @@ const CARDS = [
     href: '/projects/vla-robot-manipulation',
   },
   {
-    icon: '🎛️',
-    iconBg: 'linear-gradient(145deg,#e94560,#7a1430)',
+    icon: productLogo('expressive.svg', 42),
+    iconBg: 'transparent',
     title: 'Expressive',
     sub: 'Open-Source Audio Plugin',
     delay: '0.45s',
