@@ -658,9 +658,9 @@
     ]
   },
   "vla-robot-manipulation": {
-    "title": "VLA Robotics — Testing Robots in New Environments",
+    "title": "VLA Robotics — Learning Robot Manipulation with Vision-Language-Action Models",
     "subtitles": [
-      "What changes when a robot leaves the setup it trained in?",
+      "Training and evaluating robot manipulation policies across tabletop and lightbox environments",
       "Team research · Robotics · Machine learning"
     ],
     "sections": {

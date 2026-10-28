@@ -28,8 +28,8 @@ export const homepageProjectCopy: Record<string, Partial<ProjectCard>> = {
     ],
   },
   'vla-robot-manipulation': {
-    title: 'VLA Robotics — Testing Robots in New Environments',
-    subtitles: ['What happens when the surroundings change?', 'Robotics · Machine Learning · Research'],
+    title: 'VLA Robotics — Learning Robot Manipulation with Vision-Language-Action Models',
+    subtitles: ['Studying how robot manipulation policies generalize across environments', 'Robotics · Machine Learning · Research'],
     cardHighlights: [
       'At UT Dallas STEM Bridge, I led a team researching vision-language-action models for robotic arms with graduate mentors and faculty.',
       'We compared how policies behaved on a tabletop and in a lightbox, including when we trained them with data from both.',
