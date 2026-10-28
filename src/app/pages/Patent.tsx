@@ -25,12 +25,12 @@ const PATENTS: PatentRecord[] = [
     fields: [
       { label: 'Application Number', value: '64/139,376' },
       { label: 'Filing / Receipt Date', value: 'August 23, 2026' },
-      { label: 'Inventor', value: 'Ethan Li' },
+      { label: 'First-named Inventor', value: 'Ethan Li' },
     ],
     status: 'U.S. Provisional Application Filed',
     coversHeading: 'What It Covers',
     covers:
-      'The filing covers SpeakWise’s core speech-repair approach: controllable correction of disfluent speech — including the tunable correction coefficient that balances fluency against naturalness — combined with evidence-preserving processing that keeps the speaker’s original utterance intact alongside the repaired output, and identity-preserving synthesis that renders the corrected speech in the speaker’s own voice.',
+      'I designed SpeakWise to let a speaker choose how much their speech changes. The filing covers adjustable correction, keeping the original utterance alongside the suggested edit, and synthesizing the revision in the speaker’s own voice.',
     projectTo: '/projects/speakwise',
     projectLabel: 'View the SpeakWise project',
   },
@@ -40,12 +40,12 @@ const PATENTS: PatentRecord[] = [
     fields: [
       { label: 'Application Number', value: '64/119,527' },
       { label: 'Filing / Receipt Date', value: 'July 27, 2026' },
-      { label: 'Sole Inventor', value: 'Ethan Li' },
+      { label: 'First-named Inventor', value: 'Ethan Li' },
     ],
     status: 'U.S. Provisional Application Filed',
     coversHeading: 'What It Covers',
     covers:
-      'The filing covers PomeloLabs.ai’s multi-model GEO (Generative Engine Optimization) evaluation system — a methodology and model framework for statistically measuring, scoring, and predictively optimizing how a brand or entity appears in AI-generated search answers. It reduces prompt and model bias through repeated sampling, evidence-based scoring, confidence measurement, and auditable cross-platform analysis.',
+      'I designed a framework for measuring and scoring how a business appears in AI-generated search answers. The filing covers repeated testing across models, checking the evidence behind a score, and using the results to guide improvements. I wanted a business to understand how it was described, beyond simply counting mentions.',
     projectTo: '/projects/pomelo-labs',
     projectLabel: 'View the PomeloLabs.ai project',
   },
@@ -56,10 +56,10 @@ export default function Patent() {
     <main className="min-h-screen pt-28 pb-24 px-6">
       <div className="max-w-3xl mx-auto">
         <h1 className="text-4xl mb-3" style={{ fontFamily: "'Inter', sans-serif", fontWeight: 700 }}>
-          U.S. Provisional Patents
+          U.S. Provisional Patent Applications
         </h1>
         <p className="text-[var(--muted-foreground)] mb-12">
-          Two provisional patent applications filed with the USPTO in 2026.
+          First-named inventor on two U.S. provisional patent applications filed in 2026. Both are patent pending.
         </p>
 
         {PATENTS.map((p) => (

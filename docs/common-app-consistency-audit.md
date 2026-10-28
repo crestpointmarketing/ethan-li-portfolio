@@ -1,3 +1,5 @@
+> Historical audit. The October 28, 2026 full-copy audit in `full-copy-common-app-audit.md` supersedes earlier decisions to omit activity hours, downloads/stars, search clicks, client results, or the Common App team size.
+
 # Common App names roles dates and honors check
 
 Reference: Common App application preview dated October 14, 2026, pages 4–7 and additional information on page 9. The latest website wording approved in this chat remains the authority for descriptive product titles, subscription/business-user wording, and accurate provisional-patent status.

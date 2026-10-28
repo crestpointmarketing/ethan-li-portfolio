@@ -1,4 +1,5 @@
 import type { ProjectCard } from '@shared/projectSchema';
+import { commonAppCommitments } from './commonAppFacts';
 
 // Homepage wording only; CMS links, media, and publication state stay intact.
 export const homepageProjectCopy: Record<string, Partial<ProjectCard>> = {
@@ -8,8 +9,8 @@ export const homepageProjectCopy: Record<string, Partial<ProjectCard>> = {
     period: 'Grades 10–12 · Year-round',
     cardHighlights: [
       'I started SpeakWise because a friend and my younger brother had faced speech difficulties since childhood. Their feedback taught me to ask what they wanted before deciding what to change.',
-      'I adapted wav2vec 2.0 with CTC to children’s speech, checking transcription errors and whether the model kept repetitions and fillers.',
-      'I tested on speakers kept separate from training. I also filed a U.S. provisional patent application for SpeakWise on August 23, 2026.',
+      'I adapted wav2vec 2.0 with CTC using 116.0 hours of audio from 1,738 children. On held-out children, the study reported 21.74% word error rate and 69.1% recall for marked repetitions and fillers.',
+      'I built adjustable speech correction and voice cloning for the first prototype, then focused Phase 2 on keeping what children actually say. I am first-named inventor on the U.S. provisional application filed August 23, 2026.',
     ],
     cardTeaser: {
       label: 'Research Focus',
@@ -24,8 +25,8 @@ export const homepageProjectCopy: Record<string, Partial<ProjectCard>> = {
     subtitles: ['A subscription-based AI marketing platform used by businesses', 'Founder & Lead Developer · GEO Analytics · Patent Pending'],
     period: 'Grades 11–12 · Year-round',
     cardHighlights: [
-      'PomeloLabs.ai is a subscription-based AI marketing platform used by businesses. I worked with a parent who brought business requirements and agency feedback.',
-      'I built the software, connected its services, and developed tools for evaluating AI answers and turning the findings into tasks and drafts.',
+      'I independently developed PomeloLabs.ai, a live subscription-based AI marketing platform with active business users. My mother’s company, CrestPoint Marketing, handles marketing and deployed it at OneSource Cloud.',
+      'For one B2B client, AI discovery rate increased from 21% to 63%, as reported in my October 2026 Common App. I built the tools for measuring brand visibility across AI search engines and turning findings into marketing tasks.',
       'I designed the GEO evaluation framework covered by a U.S. provisional patent application filed on July 27, 2026. I focused on how answers describe a business, not just whether they mention it.',
     ],
   },
@@ -46,7 +47,7 @@ export const homepageProjectCopy: Record<string, Partial<ProjectCard>> = {
     cardHighlights: [
       'Expressive grew out of my own music production. I built a plugin that uses MIDI note velocity to move a sound across the stereo field.',
       'Using C++ and JUCE, I added controls for the mapping, width, and speed of the movement.',
-      'I released the plugin as open source so others could try it and change it. Choosing how each control should work made me think about the musician using it.',
+      'Released as open-source VST3 effects and panning software: 3,400+ downloads from producers and 40+ GitHub stars, reported in October 2026. Building its controls made me think about the musician using them.',
     ],
   },
   activityhub: {
@@ -54,7 +55,7 @@ export const homepageProjectCopy: Record<string, Partial<ProjectCard>> = {
     subtitles: ['Helping volunteers and organizers keep track', 'President of Computer Science Chapter · ACAESUSA · Independent Developer'],
     period: '2026 · ACAESUSA: Grades 9–11',
     cardHighlights: [
-      'As president of ACAESUSA’s Computer Science Chapter, I built ActivityHub for the community I volunteer with and help teach.',
+      'At ACAESUSA, I served as president of the Computer Science Chapter, taught members CS skills, and volunteered at fundraisers and events. I built ActivityHub for this community in 2026.',
       'Organizers review hours before they are confirmed, and volunteers can see which records still need attention.',
       'I worked on preventing duplicate hours, keeping a history of changes, and limiting access to private documents, with a focus on records people can check and correct.',
     ],
@@ -73,9 +74,13 @@ export const homepageProjectCopy: Record<string, Partial<ProjectCard>> = {
     subtitles: ['Exploring stock market data for investment research', 'Founder & Developer · Stock Market & Investment Research'],
     period: 'Grades 11–12 · Year-round',
     cardHighlights: [
-      'I built a prototype that brings stock market data, calculated measures, and AI-written summaries into one place.',
+      'I built a financial research platform with deep-research stock analysis and interactive CFO insight agents for follow-up questions.',
       'I built the data collection, FastAPI backend, and AI integration. I wanted readers to be able to tell a reported number from the model’s explanation of it.',
-      'For research and educational use, not personalized investment advice.',
+      'The site reached 1,000+ clicks in Google Search Console by October 2026. These are search clicks, not user counts. For research and education, not personalized investment advice.',
     ],
   },
 };
+
+for (const [slug, copy] of Object.entries(homepageProjectCopy)) {
+  if (commonAppCommitments[slug]) copy.cardHighlights?.push(commonAppCommitments[slug]);
+}

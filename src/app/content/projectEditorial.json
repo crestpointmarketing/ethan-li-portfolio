@@ -27,19 +27,19 @@
             "intro": "The early prototype explored how information changes across a three-stage pipeline:",
             "items": [
               {
-                "title": "Recognize the input",
-                "body": "Whisper produces an initial transcript. Recognition errors and omitted disfluencies can carry into later stages; its output is not a perfect record.",
-                "marker": "1"
+                "marker": "1",
+                "title": "Transcribe the speech",
+                "body": "Whisper turns audio into text. I keep the input available because a recognizer can miss words, repetitions, or fillers."
               },
               {
-                "title": "Control the edit",
-                "body": "An LLM proposes a more fluent rendering. The original transcript and the proposed revision serve different purposes: a fluent rewrite is not evidence of what was spoken.",
-                "marker": "2"
+                "marker": "2",
+                "title": "Choose how much to edit",
+                "body": "An LLM proposes edits, with a correction setting that adjusts how much changes. The original transcript stays separate from the suggestion."
               },
               {
-                "title": "Render the revision",
-                "body": "XTTS synthesizes the edited text for comparison. A convincing voice does not establish that a revision preserved the speaker’s meaning.",
-                "marker": "3"
+                "marker": "3",
+                "title": "Hear the revised version",
+                "body": "XTTS uses voice cloning to read the edited text in a version of the speaker’s own voice. The aim is to offer help without replacing their voice."
               }
             ]
           },
@@ -65,6 +65,30 @@
               "I filed a U.S. provisional patent application for SpeakWise on August 23, 2026. It covers controllable speech repair, keeping the original utterance, and synthesizing a revised version while preserving the speaker’s voice. The application is patent pending; a provisional filing is not a granted patent."
             ],
             "title": "Scope and Status"
+          },
+          "0": {
+            "type": "labeled_bullets",
+            "items": [
+              {
+                "body": "Systems and Methods for Controllable, Evidence-Preserving Speech Repair with Identity-Preserving Synthesis",
+                "label": "Title"
+              },
+              {
+                "body": "64/139,376",
+                "label": "Application Number"
+              },
+              {
+                "body": "August 23, 2026",
+                "label": "Filing / Receipt Date"
+              },
+              {
+                "body": "Ethan Li",
+                "label": "First-named inventor"
+              }
+            ],
+            "title": "U.S. Provisional Patent Filing",
+            "density": "loose",
+            "variant": "gradient"
           }
         }
       },
@@ -112,6 +136,26 @@
               "The next step is to test how the recognizer works inside the larger application. That means checking speed, privacy, editing quality, and whether users can see and control changes to their speech."
             ],
             "title": "Application Boundaries"
+          },
+          "0": {
+            "columns": [
+              {
+                "heading": "Speech Models",
+                "items": [
+                  "Phase 1: Whisper transcription, LLM editing, XTTS voice synthesis",
+                  "Phase 2: wav2vec 2.0 with CTC",
+                  "Speaker-separated evaluation; word errors and repetition/filler recall"
+                ]
+              },
+              {
+                "heading": "Application",
+                "items": [
+                  "Python backend",
+                  "WebSocket streaming prototype",
+                  "Docker deployment"
+                ]
+              }
+            ]
           }
         }
       },
@@ -161,7 +205,7 @@
             "paragraphs": [
               "SpeakWise received Honorable Mention at the Dallas Regional Science & Engineering Fair and first place at the Highland Park High School SciTech Fair, with a $3,000 award. These recognized the earlier speech-repair prototype."
             ],
-            "title": "Recognition and Its Limits"
+            "title": "Science Fair Recognition"
           }
         }
       },
@@ -170,8 +214,10 @@
         "blocks": {
           "0": {
             "paragraphs": [
-              "For the recognition study, I adapted wav2vec 2.0 with CTC to children’s speech. I looked at both transcription errors and whether the model kept repetitions and fillers. I tested on speakers kept separate from training so I could see how it handled children it had not learned from.",
-              "The paper was accepted for presentation at the IEEE BigData 2026 High School Symposium, scheduled for December 2026."
+              "For Phase 2, I adapted wav2vec 2.0 with CTC to children’s speech. The study used 116.0 hours of training audio from 1,738 children (64,941 utterances), then evaluated 17,306 utterances from 434 children kept separate from training.",
+              "The manuscript reports a 21.74% word error rate and 69.1% recall for marked fillers and immediate whole-word repetitions. Word error rate counts replaced, missing, and added words; recall measures how many of the marked details the transcript kept. Neither score measures a child’s fluency or a therapy outcome.",
+              "I also adapted the recognizer with 3.88 hours of preschool speech from 36 children. On 1,293 paired validation utterances from nine unseen four-year-olds, word error rate fell from 79.31% to 68.95%. Errors remained high, and the small group limits what I can conclude.",
+              "These are results reported in the Phase 2 manuscript summarized in the poster above. My sole-authored paper was accepted for presentation at the IEEE BigData 2026 High School Symposium, scheduled for December 17, 2026, in Phoenix."
             ]
           },
           "1": {
@@ -227,20 +273,20 @@
     },
     "stats": [
       {
-        "value": "ASR",
-        "label": "Child-speech research"
+        "value": "116 h",
+        "label": "Training audio"
       },
       {
-        "value": "CTC",
-        "label": "Recognition approach"
+        "value": "1,738",
+        "label": "Training children"
       },
       {
-        "value": "Text",
-        "label": "Verbatim evidence"
+        "value": "21.74",
+        "label": "Validation word error rate (%)"
       },
       {
-        "value": "R&D",
-        "label": "Application stage"
+        "value": "69.1",
+        "label": "Repetition / filler recall (%)"
       }
     ],
     "badges": [
@@ -275,43 +321,81 @@
         "blocks": {
           "0": {
             "paragraphs": [
-              "PomeloLabs.ai is a subscription-based AI marketing platform used by businesses. It analyzes how brands appear in AI-generated answers and helps teams turn those findings into content, publishing tasks, and marketing improvements.",
-              "I worked on it with a parent who uses the platform in their marketing agency. They brought the business requirements, marketing knowledge, and product feedback. I handled the technical architecture, development, integrations, testing, and deployment.",
-              "Building for users meant the work continued after a feature first ran. The parts needed to fit together in a live product, from collecting data and generating drafts to permissions, review, and publishing."
+              "PomeloLabs.ai is a live commercial AI marketing platform with active business users on subscriptions. I built tools to measure how a brand appears across major AI search engines and help a team decide what content to improve.",
+              "For one B2B client, AI discovery rate increased from 21% to 63%, as reported in my October 2026 Common App. This is a result for that client, not an average across customers or a promise of the same result for another business.",
+              "I developed the software independently, including its architecture, integrations, testing, and deployment. My mother’s company, CrestPoint Marketing, handles marketing and deployed PomeloLabs.ai at OneSource Cloud, an existing CrestPoint client. Her business requirements and agency feedback helped guide the product.",
+              "With a live product, the work continues after a feature first runs. Data collection, drafts, permissions, review, and publishing have to work together for the business using them."
             ]
           },
           "1": {
-            "title": "An Information-to-Action Workflow",
+            "title": "From a Business Question to a Marketing Task",
             "items": [
               {
-                "title": "Establish context",
-                "body": "Organize positioning, audience, goals, and source material before asking a model for recommendations.",
-                "marker": "1"
+                "marker": "1",
+                "title": "Add company information",
+                "body": "Start with the business, audience, goals, and source material."
               },
               {
-                "title": "Inspect observations",
-                "body": "Bring visibility results, search data, and planned work together so a person can decide what deserves attention.",
-                "marker": "2"
+                "marker": "2",
+                "title": "Review the dashboard",
+                "body": "Look at AI-search results, website data, and planned work together."
               },
               {
-                "title": "Route a question",
-                "body": "Use agents with different responsibilities while sharing relevant workspace context.",
-                "marker": "3"
+                "marker": "3",
+                "title": "Ask a question",
+                "body": "Direct a question to an agent with the relevant company background."
               },
               {
-                "title": "Trace an opportunity",
-                "body": "Connect an observation to a proposed task or brief; retain supporting context for review.",
-                "marker": "4"
+                "marker": "4",
+                "title": "Choose a task",
+                "body": "Follow a finding to a proposed task or content brief."
               },
               {
-                "title": "Review an action",
-                "body": "Use role permissions and approval steps to separate a generated suggestion from an external publishing action.",
-                "marker": "5"
+                "marker": "5",
+                "title": "Review the draft",
+                "body": "Edit the work and approve it before it goes to a publishing channel."
               },
               {
-                "title": "Observe again",
-                "body": "Compare like-for-like conditions rather than treating one response as a stable outcome.",
-                "marker": "6"
+                "marker": "6",
+                "title": "Follow the results",
+                "body": "Repeat the checks under comparable conditions to see what changed."
+              }
+            ]
+          },
+          "2": {
+            "title": "Features I Built",
+            "items": [
+              {
+                "title": "Dashboard / Weekly Plan",
+                "body": "Bring AI-search results, traffic, content, and tasks together to help a team choose its weekly priorities."
+              },
+              {
+                "title": "AI Agents / Team Chat",
+                "body": "Four agents share relevant company information and chat history. Users can direct a question to a particular agent."
+              },
+              {
+                "title": "Tasks",
+                "body": "Turn a suggestion into an assigned task with a status and a link to the right brand."
+              },
+              {
+                "title": "Content",
+                "body": "Create drafts and images, edit them, request approval, and queue work for connected publishing channels."
+              },
+              {
+                "title": "Competitors",
+                "body": "Collect competitor website information and track changes for the team to review."
+              },
+              {
+                "title": "Keywords / SEO",
+                "body": "Show search intent, volume, difficulty, cost per click, rankings, and possible landing-page topics."
+              },
+              {
+                "title": "GEO / AI Search Visibility",
+                "body": "Compare how models describe a brand, follow the results over time, and share a report."
+              },
+              {
+                "title": "Settings / Billing / Team",
+                "body": "Manage separate workspaces, team permissions, connected accounts, and Stripe subscriptions."
               }
             ]
           }
@@ -321,27 +405,27 @@
         "heading": "Why I Wanted to Build It",
         "blocks": {
           "0": {
-            "title": "Questions I Wanted the Workflow to Address",
+            "title": "Problems I Worked On",
             "items": [
               {
-                "label": "Fragmented sources",
-                "body": "Different tools describe different slices of a problem. A combined view needs to preserve their meanings."
+                "label": "Scattered information",
+                "body": "Search results, website data, and drafts often sit in different tools. I wanted the relevant information together without losing where it came from."
               },
               {
-                "label": "Limited attention",
-                "body": "Generating more material can increase the user’s burden; the workflow should help identify what merits attention."
+                "label": "Too much to review",
+                "body": "Generating more content does not tell a team which task matters most. The report needs to explain why a task is worth doing."
               },
               {
-                "label": "Missing context",
-                "body": "An answer without the relevant organization, audience, and evidence can sound plausible while being unhelpful."
+                "label": "Missing background",
+                "body": "A useful recommendation needs the company’s audience, goals, and source material."
               },
               {
-                "label": "Variable language",
-                "body": "A mention, comparison, and recommendation are distinct contexts and should not be counted as equivalent."
+                "label": "Different kinds of mentions",
+                "body": "A name in a list, a comparison, and a recommendation say different things about a brand."
               },
               {
-                "label": "Unstable observations",
-                "body": "Models can answer the same question differently. A repeated pattern needs to be distinguished from a single response."
+                "label": "Changing answers",
+                "body": "An AI model can answer the same question differently. I use repeated tests to look for patterns."
               }
             ]
           },
@@ -358,38 +442,38 @@
         "heading": "How the Workflow Works",
         "blocks": {
           "0": {
-            "title": "A Reviewable Information Loop",
-            "intro": "The workflow connects stored context, observations, proposed actions, and later review:",
+            "title": "Keeping the Steps Connected",
+            "intro": "I built the workflow so a team can follow the information from its source to the action it suggests:",
             "items": [
               {
-                "title": "Context",
-                "body": "Keep organization, audience, evidence, and intended channel associated with the work.",
-                "marker": "1"
+                "marker": "1",
+                "title": "Save the background",
+                "body": "Keep the company’s audience, goals, and supporting material with its work."
               },
               {
-                "title": "Observe",
-                "body": "Collect relevant search, website, and AI-answer observations without treating them as interchangeable evidence.",
-                "marker": "2"
+                "marker": "2",
+                "title": "Collect results",
+                "body": "Bring in search data, website information, and AI answers, with their sources."
               },
               {
-                "title": "Interpret",
-                "body": "Have an agent explain an observation within its task boundary and available context.",
-                "marker": "3"
+                "marker": "3",
+                "title": "Explain a finding",
+                "body": "Ask the relevant agent to explain what the result may mean for that company."
               },
               {
-                "title": "Propose",
-                "body": "Turn an interpretation into a task, draft, or recommendation a person can inspect.",
-                "marker": "4"
+                "marker": "4",
+                "title": "Suggest a task",
+                "body": "Create a draft or task that someone can review."
               },
               {
-                "title": "Authorize",
-                "body": "Distinguish suggesting an action from carrying it out through permissions and approval states.",
-                "marker": "5"
+                "marker": "5",
+                "title": "Get approval",
+                "body": "Use permissions and approval steps before publishing."
               },
               {
-                "title": "Revisit",
-                "body": "Record actions and later observations so an earlier recommendation can be questioned.",
-                "marker": "6"
+                "marker": "6",
+                "title": "Check again",
+                "body": "Keep the action history and later results so the team can revisit a decision."
               }
             ]
           },
@@ -402,7 +486,7 @@
               },
               {
                 "label": "Clear agent boundaries",
-                "body": "Give each agent a clear job and the context it needs. Two agents sharing the same source do not count as two independent checks."
+                "body": "Give each agent a specific job and the company information it needs. I still need to check the answer against its source."
               },
               {
                 "label": "Keeping the background attached",
@@ -455,7 +539,7 @@
               {
                 "marker": "V3",
                 "title": "Validate the scoring framework",
-                "body": "Compare model judgments with review data and examine when categories fail. This is a development direction, not an established predictive result."
+                "body": "Compare scores with human review and look at where people and models disagree. This is work I want to develop further."
               }
             ]
           },
@@ -466,6 +550,30 @@
               "Repeated tests help show how much answers vary. Explaining why a result changed takes more evidence."
             ],
             "title": "Measurement Should Remain Open to Question"
+          },
+          "1": {
+            "type": "labeled_bullets",
+            "items": [
+              {
+                "body": "System and Method for Statistical Measurement, Scoring, and Predictive Optimization of Entity Visibility in Generative Artificial-Intelligence Search Engines",
+                "label": "Title"
+              },
+              {
+                "body": "64/119,527",
+                "label": "Application Number"
+              },
+              {
+                "body": "July 27, 2026",
+                "label": "Filing / Receipt Date"
+              },
+              {
+                "body": "Ethan Li",
+                "label": "First-named inventor"
+              }
+            ],
+            "title": "U.S. Provisional Patent Filing",
+            "density": "loose",
+            "variant": "gradient"
           }
         }
       },
@@ -482,6 +590,26 @@
               "A useful workflow should let someone follow the path from a question to a draft and then to an approved action. Keeping context helps, but people also need a way to update it when it is wrong or out of date."
             ],
             "title": "Context Needs Structure and Revision"
+          },
+          "1": {
+            "items": [
+              {
+                "title": "Company Background",
+                "body": "Keep each brand’s audience, products, evidence, and writing preferences together, without mixing information between brands."
+              },
+              {
+                "title": "Search Data",
+                "body": "Keep ordinary search performance and AI-answer results distinct so the team knows what each number measures."
+              },
+              {
+                "title": "Writing for Different Channels",
+                "body": "An article, newsletter, and social post need different structures. Drafts stay separate from approved and published work."
+              },
+              {
+                "title": "Competitor Research",
+                "body": "Connect a change on a competitor’s site to a question the team can investigate, rather than just adding another number to a dashboard."
+              }
+            ]
           }
         }
       },
@@ -569,12 +697,11 @@
           },
           "2": {
             "paragraphs": [
-              "Businesses use PomeloLabs.ai through a subscription. That gave the development work a practical purpose: features needed to connect to an existing marketing process, rather than stop at a demo.",
-              "I also had to explain technical decisions to someone approaching the product from the business side. We sometimes disagreed about what a result should show. Working through those differences helped me think about what a customer would actually learn from the report.",
-              "The scoring discussion stayed with me. A number can look reassuring without explaining much. I wanted someone reading a report to see which answers led to the score, where a description was inaccurate, and what they could work on next.",
-              "Following the work through integration, testing, and deployment gave me experience maintaining a usable product. Having users is an important milestone; measuring the results they get from it is work that continues."
+              "The 21% to 63% AI discovery result for one B2B client gave me a concrete outcome to report. I still need to keep each result tied to the client and the way it was measured.",
+              "Building a subscription product also meant explaining technical decisions to someone approaching it from the business side. We sometimes disagreed about what a report should show. Working through those differences helped me think about what a customer could actually learn from it.",
+              "I learned that defining a score is part of building the product. Someone should be able to see which answers produced the number, find an inaccurate description, and decide what to work on next."
             ],
-            "title": "What I Learned From a Commercial Product"
+            "title": "Building for Paying Business Users"
           }
         }
       },
@@ -582,7 +709,7 @@
         "heading": "What Works So Far",
         "blocks": {
           "1": {
-            "title": "Boundaries to Keep Explicit",
+            "title": "What Still Needs Work",
             "items": [
               {
                 "label": "API scope",
@@ -598,8 +725,18 @@
               },
               {
                 "label": "Outcome scope",
-                "body": "Broader benefit needs consistent measurement; no causal visibility improvement is claimed here."
+                "body": "The 21% to 63% AI discovery result is for one B2B client. I need consistent measurements across more clients before describing a broader pattern."
               }
+            ]
+          },
+          "0": {
+            "title": "Working Product Features",
+            "items": [
+              "Four AI agents, team chat, separate brand workspaces, and assigned tasks.",
+              "Content drafting, images, editing, approval, and a publishing queue.",
+              "Keyword and competitor research, website analytics, and AI-search evaluation.",
+              "Team permissions, private workspace data, usage controls, change logs, and Stripe subscriptions.",
+              "Tests for the application, database permissions, connected-service failures, and desktop/mobile workflows."
             ]
           }
         }
@@ -623,20 +760,20 @@
     },
     "stats": [
       {
-        "value": "Live",
-        "label": "Commercial product"
+        "value": "21%",
+        "label": "One B2B client: before"
       },
       {
-        "value": "Users",
-        "label": "Business users"
+        "value": "63%",
+        "label": "Same client: after"
       },
       {
-        "value": "GEO",
-        "label": "AI-search analytics"
+        "value": "SaaS",
+        "label": "Business subscriptions"
       },
       {
-        "value": "AI",
-        "label": "Marketing workflows"
+        "value": "2026",
+        "label": "Provisional application filed"
       }
     ],
     "badges": [
@@ -817,24 +954,38 @@
             ]
           }
         }
+      },
+      "Current Limitations & Next Steps": {
+        "heading": "Current Limitations & Next Steps",
+        "blocks": {
+          "0": {
+            "statusLabel": "What I Would Test Next",
+            "items": [
+              "Try more tasks, objects, and scenes, with repeated trials for each condition.",
+              "Change lighting and background separately to see which affects the policy.",
+              "Compare training cost, response speed, and task success across policies.",
+              "Test whether more varied demonstrations help the robot handle unfamiliar scenes."
+            ]
+          }
+        }
       }
     },
     "stats": [
       {
-        "value": "RGB",
-        "label": "Scene information"
+        "value": "5",
+        "label": "Team members"
       },
       {
-        "value": "Text",
-        "label": "Task instruction"
+        "value": "6",
+        "label": "Weeks at UT Dallas"
       },
       {
-        "value": "Act",
-        "label": "Policy output"
+        "value": "3rd",
+        "label": "Of 20+ teams"
       },
       {
-        "value": "OOD",
-        "label": "Domain-shift evaluation"
+        "value": "VLA",
+        "label": "Camera + instruction → action"
       }
     ],
     "period": "Summer 2026 · 6 weeks · Grade 12"
@@ -852,7 +1003,8 @@
           "0": {
             "paragraphs": [
               "Expressive grew out of my own music production. I have played piano and clarinet, and this project gave me a way to bring programming into that part of my life. I built an effect that uses MIDI note velocity to move a sound across the stereo field.",
-              "I developed the plugin independently with C++ and JUCE, learning how to make it work inside existing music-production software. I then released the code so other people could try it and change it."
+              "I developed the plugin independently with C++ and JUCE, learning how to make it work inside existing music-production software. I then released the code so other people could try it and change it.",
+              "By my October 2026 Common App, Expressive had reached 3,400+ downloads from producers and 40+ GitHub stars. Downloads and stars describe its reach; they are not counts of active users."
             ]
           }
         }
@@ -907,9 +1059,10 @@
         "heading": "Sharing the Plugin",
         "blocks": {
           "1": {
-            "title": "What I Built and Learned",
+            "title": "Release, Reach, and What I Learned",
             "items": [
               "I built the VST3 audio effect and its panning controls in C++ with JUCE, then released it as open-source software.",
+              "Reported in October 2026: 3,400+ downloads from producers and 40+ GitHub stars.",
               "I learned C++ and how to make a plugin work inside the tools music producers already use. Adjusting the smoothing, panning range, and controls changed what I heard. I had to think about how another musician would choose those settings too.",
               "Taking a personal music idea through to a working release gave me practice finishing software that other people could download and try. The standalone build also lets someone test the effect without a DAW."
             ]
@@ -919,20 +1072,20 @@
     },
     "stats": [
       {
-        "value": "MIDI",
-        "label": "Performance input"
+        "value": "3.4k+",
+        "label": "Downloads reported Oct. 2026"
       },
       {
-        "value": "Pan",
-        "label": "Spatial output"
+        "value": "40+",
+        "label": "GitHub stars reported Oct. 2026"
       },
       {
-        "value": "VST3 / AU",
-        "label": "Plugin formats"
+        "value": "VST3",
+        "label": "Audio effects and panning"
       },
       {
         "value": "C++",
-        "label": "Implementation"
+        "label": "Built with JUCE"
       }
     ],
     "period": "Grades 11–12 · Year-round"
@@ -949,7 +1102,7 @@
         "blocks": {
           "0": {
             "paragraphs": [
-              "I volunteer with ACAESUSA and serve as president of its Computer Science Chapter, where I also help teach programming. ActivityHub grew out of that work with the organization. I built it to help manage events, volunteer sign-ups, attendance, and service hours.",
+              "Through ACAESUSA (Asian Culture and Education Society USA), I volunteered at fundraisers and events, taught computer-science skills to members, and served as president of its Computer Science Chapter. I built ActivityHub in 2026 to help the organization manage events, volunteer registration, attendance, and service hours.",
               "I designed and developed the platform myself. Volunteers can submit hours and supporting documents; administrators can approve them or return them for corrections. I wanted both groups to have a clear place to see what needed attention."
             ]
           }
@@ -959,21 +1112,21 @@
         "heading": "From Signing Up to Confirmed Hours",
         "blocks": {
           "0": {
-            "title": "A Record Changes State Through Review",
+            "title": "From Registration to a Service Record",
             "items": [
               {
                 "title": "Publish an event",
-                "body": "Administrators provide event details. Generated copy and posters communicate the event; they are not evidence of attendance.",
+                "body": "Administrators publish event details and any supporting copy or posters.",
                 "marker": "1"
               },
               {
                 "title": "Register a participant",
-                "body": "Registration and waitlisting express an intention to attend, not completed service.",
+                "body": "Volunteers sign up or join a waitlist. Attendance is recorded separately.",
                 "marker": "2"
               },
               {
                 "title": "Collect a check-in",
-                "body": "QR or event-code check-in supplies an observation for later review.",
+                "body": "Volunteers check in with a QR code or event code so an organizer can review attendance.",
                 "marker": "3"
               },
               {
@@ -983,7 +1136,7 @@
               },
               {
                 "title": "Produce a record",
-                "body": "Confirmed hours support exports, certificates, and eligibility calculations. Software does not itself confer an official service award.",
+                "body": "Approved hours can be exported or included in certificates. Organizers remain responsible for confirming eligibility for service awards.",
                 "marker": "5"
               }
             ]
@@ -1005,7 +1158,7 @@
               },
               {
                 "title": "Bilingual & Mobile",
-                "body": "English/Chinese switching and phone access support different language and device contexts; no measured accessibility outcome is claimed."
+                "body": "Users can switch between English and Chinese and access the platform on a phone."
               }
             ]
           }
@@ -1086,8 +1239,9 @@
         "blocks": {
           "0": {
             "paragraphs": [
-              "Zeitgeist is an independent project combining stock market data with AI-assisted financial research. I built the data and backend workflow and the layer that turns the inputs into a written summary.",
-              "The application brings together API data, calculated market measures, and model-generated explanations. Those are different kinds of information, and the reader needs to be able to tell them apart."
+              "I built Zeitgeist to bring stock-market research into one place: market data, deep-research stock analysis, and interactive CFO insight agents that let a reader ask follow-up financial questions.",
+              "As founder and developer, I built the data collection, FastAPI backend, and AI integration. I wanted readers to be able to tell a reported number from a calculation or the model’s explanation of it.",
+              "By my October 2026 Common App, the site had received 1,000+ clicks in Google Search Console. These are search clicks, not a count of users or a measure of investment performance. The platform is for research and education, not personalized investment advice."
             ]
           },
           "1": {
@@ -1157,6 +1311,14 @@
               "New data gives the model different material to work with, but it can still explain that material badly. I need to check both how fresh the inputs are and whether the summary matches them."
             ],
             "title": "Fresh Inputs Do Not Guarantee Better Reasoning"
+          },
+          "2": {
+            "title": "Building the Backend",
+            "items": [
+              "I used FastAPI to connect data requests, calculations, and AI responses.",
+              "Docker packages the application and its dependencies for deployment.",
+              "Keeping these steps separate helps me track where an incorrect summary began."
+            ]
           }
         }
       },
@@ -1164,7 +1326,7 @@
         "heading": "Learning the Domain",
         "blocks": {
           "0": {
-            "intro": "These concepts provide vocabulary and structure, not proof of validated financial reasoning:",
+            "intro": "Working on the explanations meant learning what the financial terms actually describe:",
             "items": [
               {
                 "label": "Pricing concepts",
@@ -1205,24 +1367,44 @@
             ]
           },
           "2": {
-            "title": "What the Prototype Does Not Establish",
-            "intro": "A working backend does not validate investment performance:",
+            "title": "Checks Before Trusting a Summary",
+            "intro": "A useful explanation should make these details easy to check:",
             "items": [
               {
-                "label": "Scope",
-                "body": "Research and education, not individualized investment recommendations."
+                "label": "Source",
+                "body": "Which market data and time period does it use?"
               },
               {
-                "label": "Timeliness",
-                "body": "API connectivity does not guarantee live coverage or uninterrupted access."
+                "label": "Calculation",
+                "body": "Do the inputs and assumptions match the measure being described?"
               },
               {
-                "label": "Validation",
-                "body": "No profitable strategy, calibrated forecast, or reliable prediction is established here."
+                "label": "Explanation",
+                "body": "Does the model’s wording match the numbers?"
               },
               {
-                "label": "User judgment",
-                "body": "Generated explanations can be wrong and should not authorize automated trades."
+                "label": "Missing information",
+                "body": "Does the summary say when a source is delayed or unavailable?"
+              }
+            ]
+          },
+          "0": {
+            "columns": [
+              {
+                "heading": "Backend & Data",
+                "items": [
+                  "Python / FastAPI",
+                  "Docker",
+                  "Polygon.io market-data API"
+                ]
+              },
+              {
+                "heading": "AI Features",
+                "items": [
+                  "LLM integration",
+                  "Deep-research stock analysis",
+                  "Interactive CFO insight agents"
+                ]
               }
             ]
           }
@@ -1232,7 +1414,7 @@
         "heading": "What I Wanted to Learn",
         "blocks": {
           "0": {
-            "title": "Design Goals, Not Proven Financial Outcomes",
+            "title": "What I Want Readers to Be Able to Do",
             "items": [
               {
                 "label": "Comprehensibility",
@@ -1250,7 +1432,7 @@
           },
           "1": {
             "title": "Questions for Further Evaluation",
-            "intro": "The prototype motivates these questions rather than conclusively answering them:",
+            "intro": "These are questions I use to review the explanations:",
             "items": [
               {
                 "label": "Checking the numbers",
@@ -1272,9 +1454,9 @@
           },
           "2": {
             "paragraphs": [
-              "I built the data-ingestion and application workflow myself. That let me test the whole path from an API response to a summary. Checking the accuracy of those summaries is a separate part of the work."
+              "I built the path from external data to an AI-written explanation, including the backend and interactive CFO insight agents. Reaching 1,000+ Google Search Console clicks by October 2026 showed that people were finding the site through search. It did not tell me whether they understood every explanation; that needs a different kind of evaluation."
             ],
-            "title": "My Contribution and Its Limits"
+            "title": "My Contribution and the Site’s Reach"
           }
         }
       },
@@ -1285,7 +1467,7 @@
             "paragraphs": [
               "Zeitgeist gave me practice building a pipeline from external data to an AI-generated explanation. My work included data ingestion, the FastAPI backend, and the model integration.",
               "Each step has different things to check: whether data arrived, whether a calculation used the right inputs, and whether the explanation matches those inputs. A summary can read well even when one of those steps has gone wrong. I want a reader to be able to check an explanation against the numbers behind it.",
-              "The project is for research and education. I have not established that its summaries predict market movements or support an investment strategy."
+              "The project made me more interested in how people read unfamiliar information. Writing an explanation is easy for a model; helping someone check it against its source is a harder problem I want to keep working on."
             ]
           }
         }
@@ -1293,20 +1475,20 @@
     },
     "stats": [
       {
-        "value": "Data",
-        "label": "Market observations"
+        "value": "1k+",
+        "label": "Google Search Console clicks"
       },
       {
-        "value": "LLM",
-        "label": "Explanation layer"
+        "value": "CFO",
+        "label": "Interactive insight agents"
+      },
+      {
+        "value": "AI",
+        "label": "Deep-research stock analysis"
       },
       {
         "value": "API",
         "label": "FastAPI backend"
-      },
-      {
-        "value": "R&D",
-        "label": "Educational prototype"
       }
     ],
     "badges": [
@@ -1343,35 +1525,35 @@
         "heading": "The Practice Loop",
         "blocks": {
           "0": {
-            "title": "A Communication Practice Loop",
+            "title": "A Practice Session",
             "items": [
               {
-                "title": "Establish context",
-                "body": "Use a student-provided background and extracted document text to tailor questions. Extraction can be incomplete, so questions need review.",
+                "title": "Add background",
+                "body": "The app reads background information and document text to create relevant questions.",
                 "marker": "1"
               },
               {
                 "title": "Capture a response",
-                "body": "Users type or record an answer for Whisper transcription. Text represents the response; it is not a complete record of delivery.",
+                "body": "Users type or record an answer. Whisper turns the recording into text for the feedback step.",
                 "marker": "2"
               },
               {
                 "title": "Generate feedback",
-                "body": "The model evaluates answer content and structure. It does not establish vocal quality, intent, or an official admissions judgment.",
+                "body": "The model returns suggestions about the answer’s content and structure. Users decide which suggestions fit.",
                 "marker": "3"
               },
               {
                 "title": "Review and practice again",
-                "body": "Playback and history support self-review. A changed model score is not independently measured communication improvement.",
+                "body": "Users can play back recordings and revisit earlier answers before trying again.",
                 "marker": "4"
               }
             ]
           },
           "1": {
             "paragraphs": [
-              "I added interactive 3D interviewer avatars, drawing inspiration from Proxona. They give users another way to practice alongside the text and voice features. I have not established whether the avatars make practice more effective."
+              "I added interactive 3D interviewer avatars, drawing inspiration from Proxona, as another way to practice alongside text and voice. I would need user testing to know whether they make practice more effective."
             ],
-            "title": "The Interviewer as an Interface Experiment"
+            "title": "Trying a 3D Interviewer"
           }
         }
       },

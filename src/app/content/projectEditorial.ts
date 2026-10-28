@@ -1,5 +1,6 @@
 import { projectSchema, type Project, type ProjectRef } from '@shared/projectSchema';
 import rawEditorial from './projectEditorial.json';
+import { commonAppCommitments } from './commonAppFacts';
 
 type SectionCopy = {
   heading: string;
@@ -27,7 +28,7 @@ export function refineProjectCopy(project: Project): Project {
         ? { ...badge, text: headerCopy.period }
         : badge,
     ),
-    sections: project.sections.map(section => {
+    sections: project.sections.map((section, sectionIndex) => {
       const revision = sectionCopy[section.heading];
       if (!revision) return section;
       return {
@@ -36,6 +37,9 @@ export function refineProjectCopy(project: Project): Project {
         blocks: section.blocks.map((block, index) => ({
           ...block,
           ...revision.blocks[String(index)],
+          ...(sectionIndex === 0 && index === 0 && block.type === 'prose' && commonAppCommitments[project.slug]
+            ? { paragraphs: [...((revision.blocks[String(index)]?.paragraphs ?? block.paragraphs) as string[]), commonAppCommitments[project.slug]] }
+            : {}),
         })),
       };
     }),

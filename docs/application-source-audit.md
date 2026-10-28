@@ -1,3 +1,5 @@
+> Historical audit. The October 28, 2026 full-copy audit in `full-copy-common-app-audit.md` supersedes earlier decisions to omit activity hours, downloads/stars, search clicks, client results, or the Common App team size.
+
 # Application-grounded project copy
 
 This pass updates public copy only. Layout components, styles, routes, media, and content-block types remain unchanged. SpeakWise's personal origin from the previous pass is preserved.

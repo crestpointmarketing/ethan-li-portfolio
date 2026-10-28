@@ -20,10 +20,13 @@ export default function AboutSection() {
           status: 'ready',
           about: {
             ...data.about,
+            gradeText: 'Grade 12 · Expected graduation: May 2027',
             academicFocus: [
               'Latin I–V — Classical Languages: language structure and classical texts',
               'Academic interests: Linguistics, Informatics & Information Science',
-              ...(data.about.academicFocus ?? []).filter((item: string) => !/\blatin\b/i.test(item)),
+              'Grade 12: Latin V, Computer Science 3, AP English Literature, AP Psychology, AP U.S. Government, AP Macroeconomics & Theater Arts 1',
+              'Registered for UT Austin UEX M408D: Sequences, Series, and Multivariable Calculus (September 2026–March 2027)',
+              ...(data.about.academicFocus ?? []).filter((item: string) => !/\blatin\b|M408D|Multivariable/i.test(item)),
             ],
           },
         });

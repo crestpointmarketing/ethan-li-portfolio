@@ -20,7 +20,7 @@ export default function AchievementsSection() {
           return;
         }
         const data = await res.json();
-        setState({ status: 'ready', categories: orderAchievements(data.categories ?? []), meta: data.meta });
+        setState({ status: 'ready', categories: orderAchievements(data.categories ?? []), meta: data.meta ? { ...data.meta, stats: data.meta.stats.map((stat: { value: string; label: string }) => stat.label === 'Place Awards' ? { ...stat, label: 'HPHS SciTech Fair' } : stat) } : null });
       })
       .catch(() => {
         if (!cancelled) setState({ status: 'error' });
