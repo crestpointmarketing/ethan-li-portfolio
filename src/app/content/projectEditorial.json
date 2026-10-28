@@ -136,16 +136,16 @@
             ]
           },
           "1": {
-            "title": "Connections Across Fields",
-            "intro": "The project brings several kinds of inquiry together:",
+            "title": "Questions I Had to Think About",
+            "intro": "Building it raised a few related questions:",
             "items": [
               {
                 "label": "Speech processing",
-                "body": "Compare recognition errors and retention of surface disfluencies."
+                "body": "Check transcription errors and whether repetitions and fillers are kept."
               },
               {
-                "label": "Language representation",
-                "body": "Separate a verbatim record from an interpretation or edited rendering."
+                "label": "What the transcript keeps",
+                "body": "Keep a record of what was said separate from an edited version."
               },
               {
                 "label": "Information quality",
@@ -350,7 +350,7 @@
               "During development, I pushed back on an early scoring approach that emphasized positive signals. I thought a useful report needed to show where a business was falling short, even when the result was less encouraging.",
               "A brand being mentioned is only part of the picture. I wanted the evaluation to look at how it was described and give the person reading the report a clearer idea of what to do next."
             ],
-            "title": "Why Representation Matters"
+            "title": "What a Useful Report Should Show"
           }
         }
       },
@@ -405,7 +405,7 @@
                 "body": "Give each agent a clear job and the context it needs. Two agents sharing the same source do not count as two independent checks."
               },
               {
-                "label": "Continuity of information",
+                "label": "Keeping the background attached",
                 "body": "Keep the background information attached to the task so someone can understand why it was suggested."
               },
               {
@@ -500,15 +500,15 @@
             "items": [
               {
                 "label": "Uncertainty",
-                "body": "An interpretation needs an identifiable basis; fluent language should not authorize publication."
+                "body": "A clear-sounding explanation still needs evidence and a person’s review before publication."
               },
               {
                 "label": "External failures",
-                "body": "An unavailable integration or expired credential should produce a recoverable state, not an invented success."
+                "body": "If a connected service fails or a login expires, show the problem and give the user a way to try again."
               },
               {
                 "label": "Freshness and coverage",
-                "body": "Missing coverage is not the same as evidence of absence."
+                "body": "Make it clear when a source has not been checked or its information is out of date."
               },
               {
                 "label": "Resource use",
@@ -525,11 +525,11 @@
             "title": "What the Workflow Is Designed to Support",
             "items": [
               {
-                "label": "Orientation",
-                "body": "Help a user identify relevant context before starting a task."
+                "label": "Getting started",
+                "body": "Show the background information a user needs before starting a task."
               },
               {
-                "label": "Continuity",
+                "label": "Following the steps",
                 "body": "Connect observations, drafts, review, and publication."
               },
               {
@@ -538,7 +538,7 @@
               },
               {
                 "label": "Interpretation",
-                "body": "Explain why an observation might matter without presenting that interpretation as proven causation."
+                "body": "Explain why a result might matter and what still needs checking."
               },
               {
                 "label": "User control",
@@ -571,7 +571,7 @@
             "paragraphs": [
               "Businesses use PomeloLabs.ai through a subscription. That gave the development work a practical purpose: features needed to connect to an existing marketing process, rather than stop at a demo.",
               "I also had to explain technical decisions to someone approaching the product from the business side. We sometimes disagreed about what a result should show. Working through those differences helped me think about what a customer would actually learn from the report.",
-              "The scoring discussion stayed with me. A number can look reassuring without explaining much. I pushed for reports that show where a business is falling short and what it could work on next. This is what draws me to information science: the way evidence is organized changes what someone can understand from it.",
+              "The scoring discussion stayed with me. A number can look reassuring without explaining much. I wanted someone reading a report to see which answers led to the score, where a description was inaccurate, and what they could work on next.",
               "Following the work through integration, testing, and deployment gave me experience maintaining a usable product. Having users is an important milestone; measuring the results they get from it is work that continues."
             ],
             "title": "What I Learned From a Commercial Product"
@@ -791,11 +791,11 @@
           "0": {
             "items": [
               {
-                "label": "Representation",
+                "label": "The examples we collect",
                 "body": "Each demonstration records what the camera sees and how the arm moves. The examples we collect affect what the policy learns."
               },
               {
-                "label": "Grounding",
+                "label": "Words and objects",
                 "body": "The instruction refers to objects in a real scene. I found it interesting to see how words, images, and actions have to work together."
               },
               {
@@ -812,7 +812,7 @@
           "0": {
             "paragraphs": [
               "This was experience working through a research process with a team: collect demonstrations, train a policy, test it, and decide what to try next. I also had to help explain the work in a poster, a presentation, and a live demonstration.",
-              "Our tests showed why it mattered to change the environment instead of judging the policy only where it had trained. The mixed-condition experiments gave us another approach to compare. Working with instructions, camera images, and robot actions gave me another setting for thinking about context.",
+              "Our tests showed why it mattered to change the environment instead of judging the policy only where it had trained. The mixed-condition experiments gave us another approach to compare. I learned to pay attention to the background and lighting as well as the task we wanted the robot to complete.",
               "I learned to keep a result tied to the conditions we tested. Working with teammates and mentors also gave me practice explaining an approach, listening to suggestions, and revising it."
             ]
           }
@@ -910,7 +910,7 @@
             "title": "What I Built and Learned",
             "items": [
               "I built the VST3 audio effect and its panning controls in C++ with JUCE, then released it as open-source software.",
-              "I learned C++ and how to make a plugin work inside the tools music producers already use. Smoothing, panning, and the controls all affect what a person hears. Designing those controls helped me connect a technical mapping to the choices a musician makes.",
+              "I learned C++ and how to make a plugin work inside the tools music producers already use. Adjusting the smoothing, panning range, and controls changed what I heard. I had to think about how another musician would choose those settings too.",
               "Taking a personal music idea through to a working release gave me practice finishing software that other people could download and try. The standalone build also lets someone test the effect without a DAW."
             ]
           }
@@ -1048,7 +1048,7 @@
             "paragraphs": [
               "ActivityHub asked me to think about two different sides of the same process. Organizers need to check attendance and records. Volunteers need to submit their hours, fix missing information, and get a record of their service.",
               "I learned to work through the everyday details, including what happens when a submission is incomplete and how someone can correct it. Those steps matter just as much as getting a sign-up form to work.",
-              "The platform also supports separate organizations, each with its own members and records. Building that helped me practice keeping information organized and making sure the right people could access it. I also had to think about who could understand, check, and update a record."
+              "The platform also supports separate organizations, each with its own members and records. I had to think through who could see a record, who could change it, and how someone would know that their hours had been approved."
             ]
           }
         }
@@ -1121,8 +1121,8 @@
         "heading": "From Data to a Summary",
         "blocks": {
           "0": {
-            "title": "An Information-Processing Pipeline",
-            "intro": "Each stage changes the representation and introduces different failure modes:",
+            "title": "From Market Data to a Written Summary",
+            "intro": "I had to check different things at each step:",
             "items": [
               {
                 "title": "Collect observations",
@@ -1136,7 +1136,7 @@
               },
               {
                 "title": "Generate an explanation",
-                "body": "Use an LLM to describe the supplied information. Claims need checking against inputs; a stated probability is not a calibrated confidence estimate.",
+                "body": "Ask the model to explain the supplied data, then check its statements against the inputs.",
                 "marker": "3"
               },
               {
@@ -1284,7 +1284,7 @@
           "0": {
             "paragraphs": [
               "Zeitgeist gave me practice building a pipeline from external data to an AI-generated explanation. My work included data ingestion, the FastAPI backend, and the model integration.",
-              "Each step has different things to check: whether data arrived, whether a calculation used the right inputs, and whether the explanation matches those inputs. Getting the request to finish does not answer all three questions. I want to keep exploring how wording and evidence shape a reader’s understanding.",
+              "Each step has different things to check: whether data arrived, whether a calculation used the right inputs, and whether the explanation matches those inputs. A summary can read well even when one of those steps has gone wrong. I want a reader to be able to check an explanation against the numbers behind it.",
               "The project is for research and education. I have not established that its summaries predict market movements or support an investment strategy."
             ]
           }
@@ -1406,7 +1406,7 @@
           "0": {
             "paragraphs": [
               "Building Elocutionist gave me practice connecting several parts of an application: reading background documents, generating questions, transcribing an answer, and returning feedback. A problem in an early step can affect what comes after it.",
-              "I worked on turning the model’s response into suggestions about the answer’s content and structure. The transcript gives the model words to work with, but it does not capture every part of how someone speaks. I want to explore how feedback can help someone develop an answer while leaving room for their own expression.",
+              "I worked on turning the model’s response into suggestions about the answer’s content and structure. The transcript gives the model words to work with, but it leaves out parts of how someone speaks. I wanted the suggestions to give users something to consider while letting them decide how to revise their own answers.",
               "This was independent development. DreamCollege gave me a different setting, where I had to connect my work to other developers’ work and to an existing product. The two projects gave me practice with both ways of building software."
             ]
           }

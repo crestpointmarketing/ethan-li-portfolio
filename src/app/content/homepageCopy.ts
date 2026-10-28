@@ -25,7 +25,7 @@ export const homepageProjectCopy: Record<string, Partial<ProjectCard>> = {
     period: 'Grades 11–12 · Year-round',
     cardHighlights: [
       'PomeloLabs.ai is a subscription-based AI marketing platform used by businesses. I worked with a parent who brought business requirements and agency feedback.',
-      'I built the platform’s technical architecture, integrations, and evaluation tools, including workflows that connect results to tasks and drafts.',
+      'I built the software, connected its services, and developed tools for evaluating AI answers and turning the findings into tasks and drafts.',
       'I designed the GEO evaluation framework covered by a U.S. provisional patent application filed on July 27, 2026. I focused on how answers describe a business, not just whether they mention it.',
     ],
   },
@@ -36,7 +36,7 @@ export const homepageProjectCopy: Record<string, Partial<ProjectCard>> = {
     cardHighlights: [
       'At UT Dallas STEM Bridge, I led a five-person team researching vision-language-action models for robotic arms with graduate mentors and faculty.',
       'We compared how policies behaved on a tabletop and in a lightbox, including when we trained them with data from both.',
-      'We prepared a poster, presented the research, and demonstrated the robot live. The work helped me connect language instructions with visual context and physical actions.',
+      'We prepared a poster, presented the research, and demonstrated the robot live. I learned to explain what our tests showed and where the results might not apply.',
     ],
   },
   expressive: {
@@ -46,7 +46,7 @@ export const homepageProjectCopy: Record<string, Partial<ProjectCard>> = {
     cardHighlights: [
       'Expressive grew out of my own music production. I built a plugin that uses MIDI note velocity to move a sound across the stereo field.',
       'Using C++ and JUCE, I added controls for the mapping, width, and speed of the movement.',
-      'I released the plugin as open source. The project let me explore how a musician’s playing becomes input for software, and how controls affect the result.',
+      'I released the plugin as open source so others could try it and change it. Choosing how each control should work made me think about the musician using it.',
     ],
   },
   activityhub: {
@@ -74,7 +74,7 @@ export const homepageProjectCopy: Record<string, Partial<ProjectCard>> = {
     period: 'Grades 11–12 · Year-round',
     cardHighlights: [
       'I built a prototype that brings stock market data, calculated measures, and AI-written summaries into one place.',
-      'I worked on data ingestion, the FastAPI backend, and model integration, with a focus on helping readers tell data from AI-written interpretation.',
+      'I built the data collection, FastAPI backend, and AI integration. I wanted readers to be able to tell a reported number from the model’s explanation of it.',
       'For research and educational use, not personalized investment advice.',
     ],
   },

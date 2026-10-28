@@ -60,8 +60,8 @@ export default function HomePage() {
 
                 {/* Description */}
                 <p className="text-base sm:text-lg md:text-xl text-[var(--muted-foreground)] max-w-xl leading-relaxed">
-                  I'm Ethan, a high school student drawn to linguistics, informatics, and information science.
-                  I explore how people express meaning and build tools that help them find, understand, and use information.
+                  I'm Ethan, a high school student curious about how people use language and make sense of information.
+                  Those questions draw me to linguistics, informatics, and information science, and to building tools people can use.
                 </p>
               </div>
 
