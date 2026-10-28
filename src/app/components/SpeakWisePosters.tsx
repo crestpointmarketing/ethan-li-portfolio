@@ -1,11 +1,13 @@
 const posters = [
   {
     phase: 'Phase 1',
+    grades: 'Grades 10–11',
     title: 'Speech-Repair Prototype',
     description: 'Original science fair poster for the early speech-repair prototype.',
   },
   {
     phase: 'Phase 2',
+    grades: 'Grades 11–12',
     title: 'Child Speech Recognition Research',
     description: 'New summary poster based on the Phase 2 research manuscript, including reported results and their scope.',
   },
@@ -19,7 +21,7 @@ export function SpeakWisePosters({ phase1Url }: { phase1Url: string }) {
         return (
           <figure key={poster.phase} className="flex flex-col rounded-2xl overflow-hidden border border-[var(--border)] bg-[var(--card)]">
             <figcaption className="px-5 py-4">
-              <h2 className="text-xl font-semibold text-[#08874a] dark:text-[#16A34A]">{poster.phase}</h2>
+              <h2 className="text-xl font-semibold text-[#08874a] dark:text-[#16A34A]">{poster.phase} · {poster.grades}</h2>
               <p className="mt-1 text-sm text-[var(--muted-foreground)]">{poster.title}</p>
             </figcaption>
             <a href={url} target="_blank" rel="noopener noreferrer" aria-label={`Open ${poster.phase} poster at full size`}>
