@@ -33,9 +33,17 @@ export function ProjectDetailView({
 
         {/* Poster */}
         {project.posterUrl && (
-          <div className="mb-12 rounded-2xl overflow-hidden border border-[var(--border)]">
+          <figure className="mb-12 rounded-2xl overflow-hidden border border-[var(--border)]">
             <img src={project.posterUrl} alt={`${project.title} poster`} className="w-full h-auto block" />
-          </div>
+            {project.slug === 'speakwise' && project.posterUrl.includes('speakwise-original-science-fair-poster.png') && (
+              <figcaption className="px-5 py-4 text-sm text-[var(--muted-foreground)] bg-[var(--card)]">
+                Original science fair poster — early speech-repair prototype. The child-speech recognition study is described below.{' '}
+                <a href={project.posterUrl} target="_blank" rel="noopener noreferrer" className="text-[#08874a] dark:text-[#16A34A] underline underline-offset-4">
+                  Open full-size poster
+                </a>
+              </figcaption>
+            )}
+          </figure>
         )}
 
         {/* Project Header */}
