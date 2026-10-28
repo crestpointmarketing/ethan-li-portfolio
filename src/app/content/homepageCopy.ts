@@ -19,12 +19,12 @@ export const homepageProjectCopy: Record<string, Partial<ProjectCard>> = {
     },
   },
   'pomelo-labs': {
-    title: 'PomeloLabs.ai',
-    subtitles: ['A subscription-based AI marketing platform used by businesses', 'AI · Information Analysis · Intelligent Agents'],
+    title: 'PomeloLabs.ai — AI Search Analytics & Marketing Platform',
+    subtitles: ['A subscription-based AI marketing platform used by businesses', 'GEO Analytics · AI Agents · Patent Pending'],
     cardHighlights: [
       'PomeloLabs.ai is a subscription-based AI marketing platform used by businesses. I worked with a parent who brought business requirements and agency feedback.',
       'I built the platform’s technical architecture, integrations, and evaluation tools, including workflows that connect results to tasks and drafts.',
-      'An early discussion about scoring led me to push for reports that explain problems, rather than emphasize reassuring numbers.',
+      'I designed the GEO evaluation framework covered by a U.S. provisional patent application filed on July 27, 2026. Its goal is to make AI-search results clearer and more useful to businesses.',
     ],
   },
   'vla-robot-manipulation': {

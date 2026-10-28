@@ -263,10 +263,10 @@
     ]
   },
   "pomelo-labs": {
-    "title": "PomeloLabs.ai — Making Sense of AI Answers",
+    "title": "PomeloLabs.ai — AI Search Analytics & Marketing Platform",
     "subtitles": [
       "A subscription-based AI marketing platform used by businesses",
-      "AI search analytics · Marketing workflows · Product development"
+      "GEO analytics · AI agents · Patent Pending"
     ],
     "sections": {
       "Product Experience & Core User Journey": {
@@ -428,7 +428,7 @@
           "0": {
             "paragraphs": [
               "I started the evaluation work with a simple question: what should count as a useful mention in an AI answer? Asking a model the same question several times showed why one response is not enough to describe a pattern.",
-              "The project record includes a provisional application for the evaluation framework. The method still needs testing against real examples and human review."
+              "I designed the GEO evaluation framework covered by a U.S. provisional patent application filed on July 27, 2026. The application covers methods for measuring and scoring how a brand appears in AI-generated search answers. It is patent pending, rather than a granted patent."
             ]
           },
           "2": {
@@ -650,6 +650,10 @@
       {
         "text": "2026 - Now",
         "variant": "neutral"
+      },
+      {
+        "text": "Patent Pending",
+        "variant": "accent"
       }
     ]
   },
