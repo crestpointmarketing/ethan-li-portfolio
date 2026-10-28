@@ -263,10 +263,10 @@
     ]
   },
   "pomelo-labs": {
-    "title": "PomeloLabs.ai — AI Search Analytics & Marketing Platform",
+    "title": "PomeloLabs.ai — AI Search Analytics & Optimization Platform",
     "subtitles": [
       "A subscription-based AI marketing platform used by businesses",
-      "GEO analytics · AI agents · Patent Pending"
+      "AI visibility · Marketing workflows · Patent Pending"
     ],
     "sections": {
       "Product Experience & Core User Journey": {
@@ -274,7 +274,7 @@
         "blocks": {
           "0": {
             "paragraphs": [
-              "PomeloLabs.ai is a subscription-based AI marketing platform used by businesses. It brings together AI-search analytics, brand information, content workflows, and publishing tools to help businesses plan and carry out their marketing work.",
+              "PomeloLabs.ai is a subscription-based AI marketing platform used by businesses. It analyzes how brands appear in AI-generated answers and helps teams turn those findings into content, publishing tasks, and marketing improvements.",
               "I worked on it with a parent who uses the platform in their marketing agency. They brought the business requirements, marketing knowledge, and product feedback. I handled the technical architecture, development, integrations, testing, and deployment.",
               "Building for users meant the work continued after a feature first ran. The parts needed to fit together in a live product, from collecting data and generating drafts to permissions, review, and publishing."
             ]
