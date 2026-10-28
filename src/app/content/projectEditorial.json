@@ -3,7 +3,7 @@
     "title": "SpeakWise — Listening More Carefully to Children’s Speech",
     "subtitles": [
       "Building a speech recognizer that keeps the details of what a child says",
-      "Speech recognition · Language · Independent research"
+      "Researcher & Developer · Independent Speech Research · Patent Pending"
     ],
     "sections": {
       "Motivation & Societal Need": {
@@ -159,7 +159,7 @@
           },
           "2": {
             "paragraphs": [
-              "The earlier prototype received school and regional science fair recognition. That was encouraging, and it gave me more reasons to keep testing the parts of the system that still needed work."
+              "SpeakWise received Honorable Mention at the Dallas Regional Science & Engineering Fair and first place at the Highland Park High School SciTech Fair, with a $3,000 award. These recognized the earlier speech-repair prototype."
             ],
             "title": "Recognition and Its Limits"
           }
@@ -249,24 +249,25 @@
         "variant": "accent"
       },
       {
-        "text": "IEEE BigData 2026 — Accepted",
+        "text": "IEEE BigData 2026 — Accepted (Sole Author)",
         "variant": "accent"
       },
       {
-        "text": "2025 - Now",
+        "text": "Grades 10–12 · Year-round",
         "variant": "neutral"
       },
       {
         "text": "Patent Pending",
         "variant": "accent"
       }
-    ]
+    ],
+    "period": "Grades 10–12 · Year-round"
   },
   "pomelo-labs": {
     "title": "PomeloLabs.ai — AI Search Analytics & Optimization Platform",
     "subtitles": [
       "A subscription-based AI marketing platform used by businesses",
-      "AI visibility · Marketing workflows · Patent Pending"
+      "Founder & Lead Developer · GEO Analytics · Patent Pending"
     ],
     "sections": {
       "Product Experience & Core User Journey": {
@@ -648,20 +649,21 @@
         "variant": "accent"
       },
       {
-        "text": "2026 - Now",
+        "text": "Grades 11–12 · Year-round",
         "variant": "neutral"
       },
       {
         "text": "Patent Pending",
         "variant": "accent"
       }
-    ]
+    ],
+    "period": "Grades 11–12 · Year-round"
   },
   "vla-robot-manipulation": {
     "title": "VLA Robotics — Learning Robot Manipulation with Vision-Language-Action Models",
     "subtitles": [
       "Training and evaluating robot manipulation policies across tabletop and lightbox environments",
-      "Team research · Robotics · Machine learning"
+      "Research Team Leader · UT Dallas STEM Bridge Program · 3rd Place of 20+ Teams"
     ],
     "sections": {
       "Motivation & Research Value": {
@@ -669,7 +671,7 @@
         "blocks": {
           "0": {
             "paragraphs": [
-              "I joined the six-week UT Dallas STEM Bridge program and led a team studying vision-language-action models for robotic arms. We worked with graduate mentors and faculty at the Intelligent Robotics and Vision Lab.",
+              "I joined the six-week UT Dallas STEM Bridge program and led a five-person team studying vision-language-action models for robotic arms. We worked with graduate mentors and faculty at the Intelligent Robotics and Vision Lab.",
               "Our work included training and testing policies, preparing a research poster and presentation, and demonstrating the robot live. The project placed third among more than twenty teams. The hardware and experiments were shared team work."
             ],
             "title": "My Role in a Collaborative Study"
@@ -834,13 +836,14 @@
         "value": "OOD",
         "label": "Domain-shift evaluation"
       }
-    ]
+    ],
+    "period": "Summer 2026 · 6 weeks · Grade 12"
   },
   "expressive": {
     "title": "Expressive — Turning Playing Dynamics Into Stereo Movement",
     "subtitles": [
       "An open-source audio plugin I built with C++ and JUCE",
-      "Music · Audio programming · Creative tools"
+      "Independent Developer · C++ / JUCE · Open Source"
     ],
     "sections": {
       "Motivation": {
@@ -931,13 +934,14 @@
         "value": "C++",
         "label": "Implementation"
       }
-    ]
+    ],
+    "period": "Grades 11–12 · Year-round"
   },
   "activityhub": {
     "title": "ActivityHub — Keeping Volunteer Records Clear",
     "subtitles": [
       "Helping volunteers and organizers keep track of events and service hours",
-      "Independent project · Community software · Information systems"
+      "President of Computer Science Chapter · ACAESUSA · Independent Developer"
     ],
     "sections": {
       "Motivation": {
@@ -1067,13 +1071,14 @@
         "value": "Roles",
         "label": "Access boundaries"
       }
-    ]
+    ],
+    "period": "2026 · ACAESUSA: Grades 9–11"
   },
   "zeitgeist": {
     "title": "Zeitgeist — AI-Assisted Stock Market & Investment Research",
     "subtitles": [
       "Organizing stock market data for investment research",
-      "Independent prototype · Data · AI explanations"
+      "Founder & Developer · Stock Market & Investment Research"
     ],
     "sections": {
       "Motivation & Societal Need": {
@@ -1306,14 +1311,15 @@
     ],
     "badges": [
       {
-        "text": "Independent Developer",
+        "text": "Founder & Developer",
         "variant": "accent"
       },
       {
-        "text": "2025 - Now",
+        "text": "Grades 11–12 · Year-round",
         "variant": "neutral"
       }
-    ]
+    ],
+    "period": "Grades 11–12 · Year-round"
   },
   "elocutionist": {
     "title": "Elocutionist — A Place to Practice Speaking",

@@ -4,6 +4,9 @@ import type { Experience, ExperienceCard } from '@shared/siteContentSchema';
 // and existing project records. Keep layout, media, and technical fields intact.
 const experienceCopy: Record<string, Partial<Experience>> = {
   'dreamcollege-ai': {
+    company: 'DreamCollege.ai',
+    role: 'Lead Developer & Team Leader',
+    period: 'Summer 2025 · 6 weeks · Grade 11',
     companyTagline: 'A team-built interview practice module',
     summaryHighlights: [
       'Led a four-person team building DreamCollege.ai’s AI interview practice module during my internship.',
@@ -28,7 +31,9 @@ const experienceCopy: Record<string, Partial<Experience>> = {
     ],
   },
   'onesource-cloud': {
-    period: 'Summer 2025 — four-week internship',
+    company: 'OneSource Cloud',
+    role: 'Intern & Assistant Developer',
+    period: 'Summer 2025 · 4 weeks · Grade 11',
     companyTagline: 'An introduction to AI infrastructure and model testing',
     summaryHighlights: [
       'Tested model performance and API costs on an LLM development platform alongside a senior developer.',
@@ -60,7 +65,9 @@ const experienceCopy: Record<string, Partial<Experience>> = {
     ],
   },
   'ut-austin-power-electronics': {
-    period: 'July 2026 — one-week research visit',
+    company: 'UT Austin Semiconductor Power Electronics Center (SPEC)',
+    role: 'Student Research Assistant',
+    period: 'July 2026 · 1 week · Grade 12',
     companyTagline: 'Learning hardware assembly, measurement, and testing',
     summaryHighlights: [
       'Spent a week at UT Austin SPEC learning from two graduate students in Professor Alex Huang’s group.',
@@ -95,6 +102,8 @@ export function refineExperienceCard(experience: ExperienceCard): ExperienceCard
   if (!copy) return experience;
   return {
     ...experience,
+    company: copy.company ?? experience.company,
+    role: copy.role ?? experience.role,
     companyTagline: copy.companyTagline ?? experience.companyTagline,
     period: copy.period ?? experience.period,
     summaryHighlights: copy.summaryHighlights ?? experience.summaryHighlights,

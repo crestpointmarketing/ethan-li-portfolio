@@ -4,7 +4,8 @@ import type { ProjectCard } from '@shared/projectSchema';
 export const homepageProjectCopy: Record<string, Partial<ProjectCard>> = {
   speakwise: {
     title: 'SpeakWise — Child Speech Recognition Research',
-    subtitles: ['What does AI miss when a child speaks?', 'Language · Speech Recognition · Research · Patent Pending'],
+    subtitles: ['What does AI miss when a child speaks?', 'Researcher & Developer · Independent Speech Research · Patent Pending'],
+    period: 'Grades 10–12 · Year-round',
     cardHighlights: [
       'I started SpeakWise because a friend and my younger brother had faced speech difficulties since childhood. Their feedback taught me to ask what they wanted before deciding what to change.',
       'I adapted wav2vec 2.0 with CTC to children’s speech and checked both transcription errors and the details the model kept.',
@@ -14,13 +15,14 @@ export const homepageProjectCopy: Record<string, Partial<ProjectCard>> = {
       label: 'Research Focus',
       items: [
         'A cleaner transcript is not always a more faithful one. I want to understand how to improve accuracy while keeping what the child actually said.',
-        'Paper accepted for presentation at the IEEE BigData 2026 High School Symposium, scheduled for December 2026. SpeakWise is a research project, not a clinically tested therapy.',
+        'Sole-author paper accepted for presentation at the IEEE BigData 2026 High School Symposium, scheduled for December 2026. SpeakWise is a research project, not a clinically tested therapy.',
       ],
     },
   },
   'pomelo-labs': {
     title: 'PomeloLabs.ai — AI Search Analytics & Optimization Platform',
-    subtitles: ['A subscription-based AI marketing platform used by businesses', 'GEO Analytics · AI Agents · Patent Pending'],
+    subtitles: ['A subscription-based AI marketing platform used by businesses', 'Founder & Lead Developer · GEO Analytics · Patent Pending'],
+    period: 'Grades 11–12 · Year-round',
     cardHighlights: [
       'PomeloLabs.ai is a subscription-based AI marketing platform used by businesses. I worked with a parent who brought business requirements and agency feedback.',
       'I built the platform’s technical architecture, integrations, and evaluation tools, including workflows that connect results to tasks and drafts.',
@@ -29,16 +31,18 @@ export const homepageProjectCopy: Record<string, Partial<ProjectCard>> = {
   },
   'vla-robot-manipulation': {
     title: 'VLA Robotics — Learning Robot Manipulation with Vision-Language-Action Models',
-    subtitles: ['Studying how robot manipulation policies generalize across environments', 'Robotics · Machine Learning · Research'],
+    subtitles: ['Studying how robot manipulation policies generalize across environments', 'Research Team Leader · UT Dallas STEM Bridge Program · 3rd Place of 20+ Teams'],
+    period: 'Summer 2026 · 6 weeks · Grade 12',
     cardHighlights: [
-      'At UT Dallas STEM Bridge, I led a team researching vision-language-action models for robotic arms with graduate mentors and faculty.',
+      'At UT Dallas STEM Bridge, I led a five-person team researching vision-language-action models for robotic arms with graduate mentors and faculty.',
       'We compared how policies behaved on a tabletop and in a lightbox, including when we trained them with data from both.',
       'We also prepared a poster, presented the research, and demonstrated the robot live. I gained practice coordinating research and explaining our work.',
     ],
   },
   expressive: {
     title: 'Expressive — Open-Source Audio Plugin',
-    subtitles: ['Turning playing dynamics into stereo movement', 'Music · Audio Processing · Creative Computing'],
+    subtitles: ['Turning playing dynamics into stereo movement', 'Independent Developer · C++ / JUCE · Open Source'],
+    period: 'Grades 11–12 · Year-round',
     cardHighlights: [
       'Expressive grew out of my own music production. I built a plugin that uses MIDI note velocity to move a sound across the stereo field.',
       'Using C++ and JUCE, I added controls for the mapping, width, and speed of the movement.',
@@ -47,7 +51,8 @@ export const homepageProjectCopy: Record<string, Partial<ProjectCard>> = {
   },
   activityhub: {
     title: 'ActivityHub — Volunteer Coordination',
-    subtitles: ['Helping volunteers and organizers keep track', 'Community · Software · Service'],
+    subtitles: ['Helping volunteers and organizers keep track', 'President of Computer Science Chapter · ACAESUSA · Independent Developer'],
+    period: '2026 · ACAESUSA: Grades 9–11',
     cardHighlights: [
       'As president of ACAESUSA’s Computer Science Chapter, I built ActivityHub for the community I volunteer with and help teach.',
       'Organizers review hours before they are confirmed, and volunteers can see which records still need attention.',
@@ -65,7 +70,8 @@ export const homepageProjectCopy: Record<string, Partial<ProjectCard>> = {
   },
   zeitgeist: {
     title: 'Zeitgeist — AI-Assisted Stock Market & Investment Research',
-    subtitles: ['Exploring stock market data for investment research', 'Information Analysis · Data Systems · AI'],
+    subtitles: ['Exploring stock market data for investment research', 'Founder & Developer · Stock Market & Investment Research'],
+    period: 'Grades 11–12 · Year-round',
     cardHighlights: [
       'I built a prototype that brings stock market data, calculated measures, and AI-written summaries into one place.',
       'I worked on data ingestion, the FastAPI backend, and model integration, connecting external data to a written summary.',
