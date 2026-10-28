@@ -50,13 +50,29 @@ function project([x, y, z]: V3, ry: number, rx: number) {
   return { px: (x1 / d) * 44 + 55, py: (y2 / d) * 44 + 50, z: z2 };
 }
 
-// Official product marks, copied from the products' current public sites.
+// Product logos and owner-provided artwork, served locally.
 const productLogo = (file: string, size = 32) => (
   <img src={`/project-logos/${file}`} alt="" width={size} height={size} className="object-contain rounded-lg" />
 );
 // Ethan's actual reference logo (speaking head + sound waves), served from
 // /public rather than redrawn.
 const SpeakWiseIcon = <img src="/speakwise-icon.png" alt="" width={36} height={36} className="rounded-lg" />;
+
+// Show the central mark from the owner's supplied screenshot without redrawing
+// or modifying the original image. The surrounding screenshot frame is clipped.
+const VlaLogo = (
+  <div aria-hidden="true" className="relative w-full h-full overflow-hidden rounded-xl">
+    <img
+      src="/project-logos/vla-robotics-supplied.png"
+      alt=""
+      width={1297}
+      height={1212}
+      loading="lazy"
+      decoding="async"
+      style={{ position: 'absolute', width: '158.36%', maxWidth: 'none', height: 'auto', left: '-40.29%', top: '-24.42%' }}
+    />
+  </div>
+);
 
 // One floating card per project, in the same order as the Projects section.
 const CARDS = [
@@ -79,7 +95,7 @@ const CARDS = [
     href: '/projects/pomelo-labs',
   },
   {
-    icon: productLogo('vla-robotics.svg', 42),
+    icon: VlaLogo,
     iconBg: 'transparent',
     title: 'VLA Robotics',
     sub: 'Robot Arm · Vision + Language',
