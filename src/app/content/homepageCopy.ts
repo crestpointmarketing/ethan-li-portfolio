@@ -61,7 +61,7 @@ export const homepageProjectCopy: Record<string, Partial<ProjectCard>> = {
   },
   elocutionist: {
     title: 'Elocutionist — Speaking & Interview Practice',
-    subtitles: ['A place to practice answers and get feedback', 'Human-AI Interaction · Communication'],
+    subtitles: ['A place to practice answers and get feedback', 'Independent Developer · Communication · Human-AI Interaction'],
     cardHighlights: [
       'I independently built a tool for practicing spoken or typed interview answers with AI feedback.',
       'I built the application’s document processing, question generation, speech transcription, and feedback workflow.',

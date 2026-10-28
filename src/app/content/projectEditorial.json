@@ -1,6 +1,6 @@
 {
   "speakwise": {
-    "title": "SpeakWise — Listening More Carefully to Children’s Speech",
+    "title": "SpeakWise — Child Speech Recognition Research",
     "subtitles": [
       "Building a speech recognizer that keeps the details of what a child says",
       "Researcher & Developer · Independent Speech Research · Patent Pending"
@@ -840,7 +840,7 @@
     "period": "Summer 2026 · 6 weeks · Grade 12"
   },
   "expressive": {
-    "title": "Expressive — Turning Playing Dynamics Into Stereo Movement",
+    "title": "Expressive — Open-Source Audio Plugin",
     "subtitles": [
       "An open-source audio plugin I built with C++ and JUCE",
       "Independent Developer · C++ / JUCE · Open Source"
@@ -938,7 +938,7 @@
     "period": "Grades 11–12 · Year-round"
   },
   "activityhub": {
-    "title": "ActivityHub — Keeping Volunteer Records Clear",
+    "title": "ActivityHub — Volunteer Coordination",
     "subtitles": [
       "Helping volunteers and organizers keep track of events and service hours",
       "President of Computer Science Chapter · ACAESUSA · Independent Developer"
@@ -1322,10 +1322,10 @@
     "period": "Grades 11–12 · Year-round"
   },
   "elocutionist": {
-    "title": "Elocutionist — A Place to Practice Speaking",
+    "title": "Elocutionist — Speaking & Interview Practice",
     "subtitles": [
       "Interview practice with AI questions and feedback",
-      "Independent project · Communication · Human-AI interaction"
+      "Independent Developer · Communication · Human-AI Interaction"
     ],
     "sections": {
       "Motivation": {

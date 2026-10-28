@@ -20,6 +20,13 @@ export function refineProjectCopy(project: Project): Project {
   return projectSchema.parse({
     ...project,
     ...headerCopy,
+    // Keep the existing date badge in sync when public participation dates
+    // override the older CMS period, preserving its position and styling.
+    badges: (headerCopy.badges ?? project.badges).map(badge =>
+      badge.text === project.period && headerCopy.period
+        ? { ...badge, text: headerCopy.period }
+        : badge,
+    ),
     sections: project.sections.map(section => {
       const revision = sectionCopy[section.heading];
       if (!revision) return section;

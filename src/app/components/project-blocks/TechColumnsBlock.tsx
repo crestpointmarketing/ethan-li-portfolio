@@ -4,7 +4,7 @@ import { BlockCard } from './BlockCard';
 export function TechColumnsBlock({ block }: { block: Extract<Block, { type: 'tech_columns' }> }) {
   return (
     <BlockCard title={block.title} intro={block.intro} variant={block.variant}>
-      <div className="grid grid-cols-2 gap-6">
+      <div className="grid grid-cols-1 min-[360px]:grid-cols-2 gap-6">
         {block.columns.map((column, i) => (
           <div key={i}>
             <h4 className="font-medium mb-2 text-sm text-[var(--muted-foreground)]">{column.heading}</h4>

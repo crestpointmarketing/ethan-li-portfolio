@@ -18,7 +18,7 @@ export function ExperienceDetailView({ experience }: { experience: Experience })
       <div className="max-w-[1200px] mx-auto px-6 lg:px-16 py-16">
         {/* Back Button */}
         <Link
-          to="/"
+          to="/#experience"
           className="inline-flex items-center gap-2 text-[var(--muted-foreground)] hover:text-[#08874a] dark:hover:text-[#16A34A] transition-colors duration-300 mb-12 group"
         >
           <svg className="w-5 h-5 transition-transform group-hover:-translate-x-1 duration-300" fill="none" viewBox="0 0 24 24" stroke="currentColor">
@@ -53,9 +53,9 @@ export function ExperienceDetailView({ experience }: { experience: Experience })
           {experience.heroStats.length > 0 && (
             <div className="grid grid-cols-2 lg:grid-cols-4 gap-6 mt-12">
               {experience.heroStats.map((stat, i) => (
-                <div key={i} className="bg-[var(--card)] border border-[var(--border)] rounded-xl p-6">
-                  <div className="text-3xl font-bold text-[#08874a] dark:text-[#16A34A] mb-2">{stat.value}</div>
-                  <div className="text-sm text-[var(--muted-foreground)]">{stat.label}</div>
+                <div key={i} className="bg-[var(--card)] border border-[var(--border)] rounded-xl p-4 min-[360px]:p-6">
+                  <div className="text-xl min-[360px]:text-2xl sm:text-3xl font-bold text-[#08874a] dark:text-[#16A34A] mb-2">{stat.value}</div>
+                  <div className="text-xs min-[360px]:text-sm text-[var(--muted-foreground)]">{stat.label}</div>
                 </div>
               ))}
             </div>

@@ -92,7 +92,7 @@ export default function ProjectsSection() {
                     </div>
                   </div>
                   {project.period && (
-                    <span className="text-sm text-[var(--muted-foreground)] whitespace-nowrap">{project.period}</span>
+                    <span className="text-sm text-[var(--muted-foreground)] sm:whitespace-nowrap">{project.period}</span>
                   )}
                 </div>
 
@@ -134,7 +134,7 @@ export default function ProjectsSection() {
                     ))}
                   </div>
 
-                  <div className="flex items-center gap-3 flex-shrink-0">
+                  <div className="flex flex-wrap items-center gap-3 max-w-full">
                     <Link
                       to={`/projects/${project.slug}`}
                       className="px-6 py-2.5 bg-[#08874a] dark:bg-[#16A34A] text-white text-sm font-semibold rounded-lg hover:bg-[#0a9d56] dark:hover:bg-[#15803D] transition-colors duration-200"

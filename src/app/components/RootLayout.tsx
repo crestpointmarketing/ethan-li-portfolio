@@ -7,18 +7,41 @@ function ScrollToTop() {
   const { pathname, hash } = useLocation();
   useEffect(() => {
     if (hash) {
-      // Sections load async, so retry until the target exists (or give up).
+      // Async sections above the anchor can change its position after mounting.
+      // Keep it aligned briefly, stopping as soon as the visitor scrolls.
       let tries = 0;
-      const tick = () => {
-        const el = document.querySelector(hash);
+      let timer: ReturnType<typeof setTimeout>;
+      const align = () => {
+        const el = document.getElementById(hash.slice(1));
         if (el) {
-          el.scrollIntoView({ behavior: 'smooth' });
-          return;
+          window.scrollTo({
+            top: el.getBoundingClientRect().top + window.scrollY - 88,
+            behavior: window.matchMedia('(prefers-reduced-motion: reduce)').matches ? 'instant' : 'smooth',
+          });
+          return true;
         }
-        if (tries++ < 40) setTimeout(tick, 100);
+        return false;
       };
-      const t = setTimeout(tick, 80);
-      return () => clearTimeout(t);
+      const tick = () => {
+        if (!align() && tries++ < 40) timer = setTimeout(tick, 100);
+      };
+      const observer = new ResizeObserver(() => align());
+      const container = document.querySelector('#root > div');
+      if (container) observer.observe(container);
+      const stop = () => {
+        observer.disconnect();
+        clearTimeout(timer);
+        clearTimeout(settleTimer);
+        window.removeEventListener('wheel', stop);
+        window.removeEventListener('touchstart', stop);
+        window.removeEventListener('keydown', stop);
+      };
+      const settleTimer = setTimeout(stop, 4000);
+      window.addEventListener('wheel', stop, { passive: true });
+      window.addEventListener('touchstart', stop, { passive: true });
+      window.addEventListener('keydown', stop);
+      timer = setTimeout(tick, 80);
+      return stop;
     }
     window.scrollTo(0, 0);
   }, [pathname, hash]);

@@ -39,7 +39,7 @@ export default function AchievementsSection() {
             className="mb-4"
             style={{
               fontFamily: "'Sora', sans-serif",
-              fontSize: '48px',
+              fontSize: 'min(48px, calc((100vw - 48px) / 7.2))',
               fontWeight: 600,
               lineHeight: 1.1,
               letterSpacing: '-0.02em',
@@ -76,8 +76,8 @@ export default function AchievementsSection() {
                       <div key={i} className="group">
                         <div className="flex items-start gap-4">
                           <div className="w-2 h-2 rounded-full bg-[#08874a] dark:bg-[#16A34A] mt-2 flex-shrink-0 group-hover:scale-125 transition-transform duration-300" />
-                          <div className="flex-1">
-                            <div className="flex items-start justify-between gap-4">
+                          <div className="flex-1 min-w-0">
+                            <div className="flex flex-wrap sm:flex-nowrap items-start justify-between gap-x-4 gap-y-1">
                               <h4 className="font-medium text-[var(--foreground)] mb-1 group-hover:text-[#08874a] dark:group-hover:text-[#16A34A] transition-colors duration-300">
                                 {award.title}
                               </h4>
@@ -104,15 +104,15 @@ export default function AchievementsSection() {
                 {state.meta.stats.map((stat, i) => (
                   <div
                     key={i}
-                    className="bg-gradient-to-br from-[#08874a]/10 dark:from-[#16A34A]/10 to-transparent border border-[#08874a]/20 dark:border-[#16A34A]/20 rounded-xl p-6 text-center"
+                    className="bg-gradient-to-br from-[#08874a]/10 dark:from-[#16A34A]/10 to-transparent border border-[#08874a]/20 dark:border-[#16A34A]/20 rounded-xl p-4 min-[360px]:p-6 text-center"
                   >
                     <div
-                      className="text-4xl lg:text-5xl font-bold text-[#08874a] dark:text-[#16A34A] mb-2"
+                      className="text-3xl min-[360px]:text-4xl lg:text-5xl font-bold text-[#08874a] dark:text-[#16A34A] mb-2"
                       style={{ fontFamily: "'Syne', sans-serif" }}
                     >
                       {stat.value}
                     </div>
-                    <div className="text-sm text-[var(--muted-foreground)]">{stat.label}</div>
+                    <div className="text-xs min-[360px]:text-sm text-[var(--muted-foreground)]">{stat.label}</div>
                   </div>
                 ))}
               </div>
