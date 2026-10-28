@@ -26,7 +26,7 @@ const STAGES: StageData[] = [
     key: 'Information',
     projects: [
       { name: 'PomeloLabs.ai', purpose: 'How reliably do AI models represent information? Measuring brand visibility in AI answers and designing usable agent workflows.', to: '/projects/pomelo-labs' },
-      { name: 'Zeitgeist', purpose: 'How can complex market information become easier to explore and understand?', to: '/projects/zeitgeist' },
+      { name: 'Zeitgeist', purpose: 'How can stock market information become easier to explore and understand?', to: '/projects/zeitgeist' },
     ],
   },
   {

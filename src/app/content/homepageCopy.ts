@@ -64,10 +64,10 @@ export const homepageProjectCopy: Record<string, Partial<ProjectCard>> = {
     ],
   },
   zeitgeist: {
-    title: 'Zeitgeist — AI-Assisted Market Research Explorer',
-    subtitles: ['Exploring market data and how AI explains it', 'Information Analysis · Data Systems · AI'],
+    title: 'Zeitgeist — AI-Assisted Stock Market Research Explorer',
+    subtitles: ['Exploring stock market data and how AI explains it', 'Information Analysis · Data Systems · AI'],
     cardHighlights: [
-      'I built a prototype that brings market data, calculated measures, and AI-written summaries into one place.',
+      'I built a prototype that brings stock market data, calculated measures, and AI-written summaries into one place.',
       'I worked on data ingestion, the FastAPI backend, and model integration, connecting external data to a written summary.',
       'For research and educational use, not personalized investment advice.',
     ],

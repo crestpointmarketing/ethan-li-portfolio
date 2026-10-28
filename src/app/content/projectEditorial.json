@@ -1070,9 +1070,9 @@
     ]
   },
   "zeitgeist": {
-    "title": "Zeitgeist — Exploring Market Data With AI",
+    "title": "Zeitgeist — AI-Assisted Stock Market Research Explorer",
     "subtitles": [
-      "Organizing financial data and checking how AI explains it",
+      "Organizing stock market data and checking how AI explains it",
       "Independent prototype · Data · AI explanations"
     ],
     "sections": {
@@ -1081,7 +1081,7 @@
         "blocks": {
           "0": {
             "paragraphs": [
-              "Zeitgeist is an independent project combining market data with AI-assisted financial research. I built the data and backend workflow and the layer that turns the inputs into a written summary.",
+              "Zeitgeist is an independent project combining stock market data with AI-assisted financial research. I built the data and backend workflow and the layer that turns the inputs into a written summary.",
               "The application brings together API data, calculated market measures, and model-generated explanations. Those are different kinds of information, and the reader needs to be able to tell them apart."
             ]
           },
