@@ -120,7 +120,7 @@ const CARDS = [
     icon: '📈',
     iconBg: 'linear-gradient(145deg,#2563eb,#1e3a8a)',
     title: 'Zeitgeist',
-    sub: 'Stock Market Research',
+    sub: 'Investment Research',
     delay: '2.25s',
     pos: { left: '2%', bottom: '14%' },
     href: '/projects/zeitgeist',
