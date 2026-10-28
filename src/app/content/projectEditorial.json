@@ -58,11 +58,11 @@
         }
       },
       "U.S. Provisional Patent Filing": {
-        "heading": "Provisional Application",
+        "heading": "U.S. Provisional Patent Application",
         "blocks": {
           "1": {
             "paragraphs": [
-              "The provisional application describes the speech-repair approach, including control over edits, keeping the original utterance, and synthesizing a revised version. It records the proposed invention; it is not a granted patent or evidence of a medical benefit."
+              "I filed a U.S. provisional patent application for SpeakWise on August 23, 2026. It covers controllable speech repair, keeping the original utterance, and synthesizing a revised version while preserving the speaker’s voice. The application is patent pending; a provisional filing is not a granted patent."
             ],
             "title": "Scope and Status"
           }
@@ -257,7 +257,7 @@
         "variant": "neutral"
       },
       {
-        "text": "Provisional Filing",
+        "text": "Patent Pending",
         "variant": "accent"
       }
     ]

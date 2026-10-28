@@ -4,11 +4,11 @@ import type { ProjectCard } from '@shared/projectSchema';
 export const homepageProjectCopy: Record<string, Partial<ProjectCard>> = {
   speakwise: {
     title: 'SpeakWise — Child Speech Recognition Research',
-    subtitles: ['What does AI miss when a child speaks?', 'Language · Speech Recognition · Research'],
+    subtitles: ['What does AI miss when a child speaks?', 'Language · Speech Recognition · Research · Patent Pending'],
     cardHighlights: [
       'I started SpeakWise because a friend and my younger brother had faced speech difficulties since childhood. Their feedback taught me to ask what they wanted before deciding what to change.',
       'I adapted wav2vec 2.0 with CTC to children’s speech and checked both transcription errors and the details the model kept.',
-      'I tested on speakers kept separate from training. This recognition study grew out of an earlier speech-repair prototype.',
+      'I tested on speakers kept separate from training. I also filed a U.S. provisional patent application for SpeakWise on August 23, 2026.',
     ],
     cardTeaser: {
       label: 'Research Focus',
