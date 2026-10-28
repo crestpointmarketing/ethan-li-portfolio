@@ -1,6 +1,7 @@
 import type { VercelRequest, VercelResponse } from '@vercel/node';
 import { supabase } from '../_lib/supabase.js';
 import { projectRowToProject, type ProjectRow, type SectionRow } from '../_lib/mappers.js';
+import { orderByCommonApp } from '../../shared/activityOrder.js';
 
 export default async function handler(req: VercelRequest, res: VercelResponse) {
   if (req.method !== 'GET') {
@@ -12,7 +13,7 @@ export default async function handler(req: VercelRequest, res: VercelResponse) {
   if (!slug) return res.status(400).json({ error: 'Missing slug' });
 
   // Fetch the ordered list of published slugs first so prev/next can be
-  // computed from order_index without ever exposing a draft's slug.
+  // computed in Common App order without ever exposing a draft's slug.
   const { data: allRows, error: listError } = await supabase
     .from('projects')
     .select('id, slug, title, order_index')
@@ -24,7 +25,7 @@ export default async function handler(req: VercelRequest, res: VercelResponse) {
     return res.status(500).json({ error: 'Failed to load project' });
   }
 
-  const list = allRows ?? [];
+  const list = orderByCommonApp(allRows ?? []);
   const index = list.findIndex((r) => r.slug === slug);
   if (index === -1) {
     return res.status(404).json({ error: 'Not found' });

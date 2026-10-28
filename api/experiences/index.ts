@@ -1,6 +1,7 @@
 import type { VercelRequest, VercelResponse } from '@vercel/node';
 import { supabase } from '../_lib/supabase.js';
 import { experienceRowToCard, type ExperienceRow } from '../_lib/siteMappers.js';
+import { orderByCommonApp } from '../../shared/activityOrder.js';
 
 export default async function handler(req: VercelRequest, res: VercelResponse) {
   if (req.method !== 'GET') {
@@ -19,5 +20,5 @@ export default async function handler(req: VercelRequest, res: VercelResponse) {
     return res.status(500).json({ error: 'Failed to load experiences' });
   }
 
-  return res.status(200).json({ experiences: ((data ?? []) as ExperienceRow[]).map(experienceRowToCard) });
+  return res.status(200).json({ experiences: orderByCommonApp((data ?? []) as ExperienceRow[]).map(experienceRowToCard) });
 }

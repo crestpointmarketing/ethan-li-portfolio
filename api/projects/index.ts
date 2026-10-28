@@ -1,6 +1,7 @@
 import type { VercelRequest, VercelResponse } from '@vercel/node';
 import { supabase } from '../_lib/supabase.js';
 import { projectRowToCard, type ProjectRow } from '../_lib/mappers.js';
+import { orderByCommonApp } from '../../shared/activityOrder.js';
 
 export default async function handler(req: VercelRequest, res: VercelResponse) {
   if (req.method !== 'GET') {
@@ -19,5 +20,5 @@ export default async function handler(req: VercelRequest, res: VercelResponse) {
     return res.status(500).json({ error: 'Failed to load projects' });
   }
 
-  return res.status(200).json({ projects: ((data ?? []) as ProjectRow[]).map(projectRowToCard) });
+  return res.status(200).json({ projects: orderByCommonApp((data ?? []) as ProjectRow[]).map(projectRowToCard) });
 }
