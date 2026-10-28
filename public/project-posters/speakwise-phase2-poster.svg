@@ -1,0 +1,105 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 2400 1800" width="2400" height="1800" role="img" aria-labelledby="title description">
+<title id="title">SpeakWise Phase 2 — Child Speech Recognition Research</title><desc id="description">A newly prepared research summary of child-adapted wav2vec 2.0 CTC recognition, preservation of fillers and repetitions, and a small preschool adaptation study. Reported results come from the supplied research manuscript.</desc>
+<style>text{font-family:Arial,Helvetica,sans-serif}</style><rect width="2400" height="1800" fill="#F5F7FB"/>
+<rect x="30" y="26" width="2340" height="190" rx="12" fill="#06245B"/>
+<text x="70" y="102" font-size="59" font-weight="700" fill="#FFFFFF">SpeakWise: Keeping the Details of Children’s Speech</text>
+<text x="72" y="158" font-size="36" font-weight="700" fill="#D8E7FF">PHASE 2  |  Child-Adapted, Disfluency-Preserving Speech Recognition</text>
+<text x="72" y="194" font-size="27" font-weight="400" fill="#D8E7FF">Ethan Li · Highland Park High School, Dallas, Texas</text>
+<rect x="30" y="244" width="750" height="305" rx="14" fill="#FFFFFF" stroke="#C9D5E7" stroke-width="2"/>
+<path d="M44 244H766Q780 244 780 258V312H30V258Q30 244 44 244Z" fill="#5D7FB5"/>
+<text x="54" y="289" font-size="31" font-weight="700" fill="#FFFFFF">The Question</text>
+<text x="57" y="365" font-size="34" font-weight="700" fill="#12376D">What gets lost in a fluent transcript?</text>
+<text x="57" y="410" font-size="29" font-weight="400" fill="#27364C">A recognizer may leave out a child’s fillers</text>
+<text x="57" y="448" font-size="29" font-weight="400" fill="#27364C">or repeated words. Once those details</text>
+<text x="57" y="486" font-size="29" font-weight="400" fill="#27364C">disappear, a later editing tool cannot give</text>
+<text x="57" y="524" font-size="29" font-weight="400" fill="#27364C">the speaker a choice about keeping them.</text>
+<rect x="30" y="575" width="750" height="367" rx="14" fill="#FFFFFF" stroke="#C9D5E7" stroke-width="2"/>
+<path d="M44 575H766Q780 575 780 589V643H30V589Q30 575 44 575Z" fill="#5D7FB5"/>
+<text x="54" y="620" font-size="31" font-weight="700" fill="#FFFFFF">An Illustrative Example</text>
+<text x="57" y="696" font-size="29" font-weight="700" fill="#12376D">Original wording</text>
+<text x="57" y="745" font-size="36" font-weight="700" fill="#27364C">“I, um, I want the red one.”</text>
+<text x="57" y="804" font-size="29" font-weight="700" fill="#12376D">A possible smoothed transcript</text>
+<text x="57" y="851" font-size="36" font-weight="700" fill="#27364C">“I want the red one.”</text>
+<text x="57" y="894" font-size="24" font-weight="400" fill="#27364C">Constructed example: a smoother transcript can lose</text>
+<text x="57" y="925" font-size="24" font-weight="400" fill="#27364C">a filler and a repeated word.</text>
+<rect x="30" y="968" width="750" height="515" rx="14" fill="#FFFFFF" stroke="#C9D5E7" stroke-width="2"/>
+<path d="M44 968H766Q780 968 780 982V1036H30V982Q30 968 44 968Z" fill="#5D7FB5"/>
+<text x="54" y="1013" font-size="31" font-weight="700" fill="#FFFFFF">How I Set Up the Study</text>
+<text x="57" y="1092" font-size="27" font-weight="400" fill="#27364C">I fine-tuned wav2vec 2.0 with a character-level</text>
+<text x="57" y="1128" font-size="27" font-weight="400" fill="#27364C">CTC decoder and no external language model.</text>
+<text x="57" y="1184" font-size="27" font-weight="400" fill="#27364C">Training: DrivenData word track — 116 hours,</text>
+<text x="57" y="1220" font-size="27" font-weight="400" fill="#27364C">1,738 children.</text>
+<text x="57" y="1276" font-size="27" font-weight="400" fill="#27364C">Validation: 17,306 utterances from 434 children</text>
+<text x="57" y="1312" font-size="27" font-weight="400" fill="#27364C">kept separate from training.</text>
+<text x="57" y="1368" font-size="27" font-weight="400" fill="#27364C">I checked word errors and how many marked</text>
+<text x="57" y="1404" font-size="27" font-weight="400" fill="#27364C">fillers and repeated words were kept.</text>
+<rect x="810" y="244" width="780" height="813" rx="14" fill="#FFFFFF" stroke="#C9D5E7" stroke-width="2"/>
+<path d="M824 244H1576Q1590 244 1590 258V312H810V258Q810 244 824 244Z" fill="#5D7FB5"/>
+<text x="834" y="289" font-size="31" font-weight="700" fill="#FFFFFF">From Audio to Inspectable Text</text>
+<rect x="850" y="341" width="700" height="140" rx="16" fill="#EFF4FB" stroke="#BDCEE6" stroke-width="2"/>
+<circle cx="895" cy="384" r="24" fill="#12376D"/>
+<text x="887" y="394" font-size="28" font-weight="700" fill="#FFFFFF">1</text>
+<text x="935" y="394" font-size="32" font-weight="700" fill="#12376D">Child speech</text>
+<text x="883" y="436" font-size="27" font-weight="400" fill="#27364C">Use audio and reference transcripts from the</text>
+<text x="883" y="470" font-size="27" font-weight="400" fill="#27364C">research corpora.</text>
+<rect x="850" y="511" width="700" height="140" rx="16" fill="#EFF4FB" stroke="#BDCEE6" stroke-width="2"/>
+<circle cx="895" cy="554" r="24" fill="#12376D"/>
+<text x="887" y="564" font-size="28" font-weight="700" fill="#FFFFFF">2</text>
+<text x="935" y="564" font-size="32" font-weight="700" fill="#12376D">Child-adapted recognizer</text>
+<text x="883" y="606" font-size="27" font-weight="400" fill="#27364C">Fine-tune wav2vec 2.0 with character-level CTC.</text>
+<rect x="850" y="681" width="700" height="140" rx="16" fill="#EFF4FB" stroke="#BDCEE6" stroke-width="2"/>
+<circle cx="895" cy="724" r="24" fill="#12376D"/>
+<text x="887" y="734" font-size="28" font-weight="700" fill="#FFFFFF">3</text>
+<text x="935" y="734" font-size="32" font-weight="700" fill="#12376D">Keep the speech evidence</text>
+<text x="883" y="776" font-size="27" font-weight="400" fill="#27364C">Retain words, fillers, and repeated words in the</text>
+<text x="883" y="810" font-size="27" font-weight="400" fill="#27364C">transcript.</text>
+<path d="M1200 481v24m-8-8 8 8 8-8M1200 651v24m-8-8 8 8 8-8" stroke="#5D7FB5" stroke-width="4" fill="none"/>
+<text x="851" y="891" font-size="32" font-weight="700" fill="#12376D">Then evaluate two different things:</text>
+<text x="851" y="944" font-size="30" font-weight="400" fill="#27364C">How many words were wrong? How much of the</text>
+<text x="851" y="986" font-size="30" font-weight="400" fill="#27364C">marked disfluency evidence remained?</text>
+<rect x="810" y="1083" width="780" height="400" rx="14" fill="#FFFFFF" stroke="#C9D5E7" stroke-width="2"/>
+<path d="M824 1083H1576Q1590 1083 1590 1097V1151H810V1097Q810 1083 824 1083Z" fill="#5D7FB5"/>
+<text x="834" y="1128" font-size="31" font-weight="700" fill="#FFFFFF">Reported Validation Results</text>
+<rect x="847" y="1190" width="335" height="171" rx="12" fill="#E8F0FB"/><rect x="1213" y="1190" width="335" height="171" rx="12" fill="#E8F0FB"/>
+<text x="880" y="1276" font-size="66" font-weight="700" fill="#12376D">21.74%</text>
+<text x="1244" y="1276" font-size="66" font-weight="700" fill="#12376D">69.1%</text>
+<text x="880" y="1322" font-size="28" font-weight="700" fill="#27364C">Word error rate</text>
+<text x="1244" y="1322" font-size="28" font-weight="700" fill="#27364C">Marker recall</text>
+<text x="849" y="1396" font-size="26" font-weight="400" fill="#27364C">Validation set: 434 unseen children. Recall covers</text>
+<text x="849" y="1430" font-size="26" font-weight="400" fill="#27364C">marked fillers and immediate whole-word repetitions.</text>
+<rect x="1620" y="244" width="750" height="697" rx="14" fill="#FFFFFF" stroke="#C9D5E7" stroke-width="2"/>
+<path d="M1634 244H2356Q2370 244 2370 258V312H1620V258Q1620 244 1634 244Z" fill="#5D7FB5"/>
+<text x="1644" y="289" font-size="31" font-weight="700" fill="#FFFFFF">A Small Preschool Adaptation Study</text>
+<text x="1647" y="365" font-size="29" font-weight="400" fill="#27364C">I continued training on 3.88 hours of SPROUT</text>
+<text x="1647" y="405" font-size="29" font-weight="400" fill="#27364C">preschool speech, then compared the same</text>
+<text x="1647" y="445" font-size="29" font-weight="400" fill="#27364C">nine unseen four-year-olds before and after</text>
+<text x="1647" y="485" font-size="29" font-weight="400" fill="#27364C">adaptation.</text>
+<text x="1647" y="551" font-size="29" font-weight="700" fill="#12376D">Word error rate — lower is better</text>
+<text x="1647" y="605" font-size="27" font-weight="700" fill="#27364C">Before</text>
+<rect x="1647" y="624" width="650" height="40" rx="6" fill="#E5EAF2"/><rect x="1647" y="624" width="515.515" height="40" rx="6" fill="#8EA5C9"/>
+<text x="2176.515" y="655" font-size="27" font-weight="700" fill="#12376D">79.31%</text>
+<text x="1647" y="729" font-size="27" font-weight="700" fill="#27364C">After</text>
+<rect x="1647" y="748" width="650" height="40" rx="6" fill="#E5EAF2"/><rect x="1647" y="748" width="448.175" height="40" rx="6" fill="#275B9D"/>
+<text x="2109.175" y="779" font-size="27" font-weight="700" fill="#12376D">68.95%</text>
+<text x="1647" y="824" font-size="23" font-weight="400" fill="#52627A">Bar scale: 0–100% word error rate</text>
+<text x="1647" y="860" font-size="26" font-weight="400" fill="#27364C">Paired evaluation: 1,293 utterances, nine</text>
+<text x="1647" y="894" font-size="26" font-weight="400" fill="#27364C">children. The preschool error rate remains high.</text>
+<rect x="1620" y="968" width="750" height="515" rx="14" fill="#FFFFFF" stroke="#C9D5E7" stroke-width="2"/>
+<path d="M1634 968H2356Q2370 968 2370 982V1036H1620V982Q1620 968 1634 968Z" fill="#5D7FB5"/>
+<text x="1644" y="1013" font-size="31" font-weight="700" fill="#FFFFFF">What These Results Do and Do Not Show</text>
+<text x="1647" y="1089" font-size="29" font-weight="400" fill="#27364C">The study measures English transcription and</text>
+<text x="1647" y="1129" font-size="29" font-weight="400" fill="#27364C">surface markers, not a child’s diagnosis or</text>
+<text x="1647" y="1169" font-size="29" font-weight="400" fill="#27364C">a therapy outcome.</text>
+<text x="1647" y="1232" font-size="29" font-weight="400" fill="#27364C">The small preschool group needs broader</text>
+<text x="1647" y="1272" font-size="29" font-weight="400" fill="#27364C">testing. Block timing and partial-word</text>
+<text x="1647" y="1312" font-size="29" font-weight="400" fill="#27364C">repetitions are outside this marker measure.</text>
+<text x="1647" y="1375" font-size="29" font-weight="400" fill="#27364C">Controlled editing, voice synthesis, and the</text>
+<text x="1647" y="1415" font-size="29" font-weight="400" fill="#27364C">full application still need separate</text>
+<text x="1647" y="1455" font-size="29" font-weight="400" fill="#27364C">evaluation.</text>
+<rect x="30" y="1513" width="2340" height="163" rx="14" fill="#E5EEF9"/>
+<text x="65" y="1565" font-size="34" font-weight="700" fill="#12376D">What I Learned</text>
+<text x="65" y="1617" font-size="31" font-weight="400" fill="#27364C">I want the recognizer to keep what a child actually said. Preserving the original wording leaves room for the speaker to decide</text>
+<text x="65" y="1659" font-size="31" font-weight="400" fill="#27364C">what should change later.</text>
+<text x="35" y="1722" font-size="25" font-weight="400" fill="#52627A">Source: supplied Phase 2 research manuscript, methods and results, pp. 2–4. Figures are reported research results.</text>
+<text x="35" y="1760" font-size="25" font-weight="400" fill="#52627A">New project-summary poster · October 2026 · Recognition is the focus here; speech repair and synthesis are separate steps.</text>
+</svg>

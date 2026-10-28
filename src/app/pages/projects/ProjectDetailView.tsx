@@ -1,6 +1,7 @@
 import { Link } from 'react-router';
 import type { Project, ProjectRef } from '@shared/projectSchema';
 import { BlockRenderer } from '../../components/project-blocks/BlockRenderer';
+import { SpeakWisePosters } from '../../components/SpeakWisePosters';
 
 /**
  * Pure presentational project detail page. Takes fully-formed data as
@@ -32,19 +33,13 @@ export function ProjectDetailView({
         </Link>
 
         {/* Poster */}
-        {project.posterUrl && (
+        {project.posterUrl && (project.slug === 'speakwise' && project.posterUrl.includes('speakwise-original-science-fair-poster.png') ? (
+          <SpeakWisePosters phase1Url={project.posterUrl} />
+        ) : (
           <figure className="mb-12 rounded-2xl overflow-hidden border border-[var(--border)]">
             <img src={project.posterUrl} alt={`${project.title} poster`} className="w-full h-auto block" />
-            {project.slug === 'speakwise' && project.posterUrl.includes('speakwise-original-science-fair-poster.png') && (
-              <figcaption className="px-5 py-4 text-sm text-[var(--muted-foreground)] bg-[var(--card)]">
-                Phase 1 — Speech-Repair Prototype. Original science fair poster. The Phase 2 child-speech recognition study is described below.{' '}
-                <a href={project.posterUrl} target="_blank" rel="noopener noreferrer" className="text-[#08874a] dark:text-[#16A34A] underline underline-offset-4">
-                  Open full-size poster
-                </a>
-              </figcaption>
-            )}
           </figure>
-        )}
+        ))}
 
         {/* Project Header */}
         <div className="mb-16">
