@@ -45,9 +45,9 @@ const PATENTS: PatentRecord[] = [
     status: 'U.S. Provisional Application Filed',
     coversHeading: 'What It Covers',
     covers:
-      'The filing covers Pomelo Labs’ multi-model GEO (Generative Engine Optimization) evaluation system — a methodology and model framework for statistically measuring, scoring, and predictively optimizing how a brand or entity appears in AI-generated search answers. It reduces prompt and model bias through repeated sampling, evidence-based scoring, confidence measurement, and auditable cross-platform analysis.',
+      'The filing covers PomeloLabs.ai’s multi-model GEO (Generative Engine Optimization) evaluation system — a methodology and model framework for statistically measuring, scoring, and predictively optimizing how a brand or entity appears in AI-generated search answers. It reduces prompt and model bias through repeated sampling, evidence-based scoring, confidence measurement, and auditable cross-platform analysis.',
     projectTo: '/projects/pomelo-labs',
-    projectLabel: 'View the Pomelo Labs project',
+    projectLabel: 'View the PomeloLabs.ai project',
   },
 ];
 
