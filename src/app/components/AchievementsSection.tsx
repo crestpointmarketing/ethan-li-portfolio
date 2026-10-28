@@ -1,5 +1,6 @@
 import { useEffect, useState } from 'react';
 import type { AchievementCategory, AchievementsMeta } from '@shared/siteContentSchema';
+import { orderAchievements } from '../content/achievementOrder';
 
 type LoadState =
   | { status: 'loading' }
@@ -19,7 +20,7 @@ export default function AchievementsSection() {
           return;
         }
         const data = await res.json();
-        setState({ status: 'ready', categories: data.categories ?? [], meta: data.meta });
+        setState({ status: 'ready', categories: orderAchievements(data.categories ?? []), meta: data.meta });
       })
       .catch(() => {
         if (!cancelled) setState({ status: 'error' });
