@@ -42,7 +42,7 @@ export default function ContactSection() {
           return;
         }
         const data = await res.json();
-        setState({ status: 'ready', contact: { ...data.contact, headingLine1: "Let's", headingAccent: 'Connect', blurb: "I'm interested in exchanging ideas about language, AI, research, and creative technology.", phone: null } });
+        setState({ status: 'ready', contact: { ...data.contact, headingLine1: "Let's", headingAccent: 'Connect', blurb: "I'm interested in exchanging ideas about language, information, and how people use technology.", phone: null } });
       })
       .catch(() => {
         if (!cancelled) setState({ status: 'error' });

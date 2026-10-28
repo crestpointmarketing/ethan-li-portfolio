@@ -18,22 +18,22 @@ const STAGES: StageData[] = [
     key: 'Language',
     projects: [
       { name: 'SpeakWise', purpose: 'What gets lost when AI recognizes child speech? Exploring accurate transcription and disfluency preservation.', to: '/projects/speakwise' },
-      { name: 'Elocutionist', purpose: 'How can model-generated feedback help people practice speaking and interviewing?', to: '/projects/elocutionist' },
+      { name: 'Elocutionist', purpose: 'How can spoken answers become useful feedback while leaving room for a speaker’s own expression?', to: '/projects/elocutionist' },
     ],
   },
   {
     n: '02',
     key: 'Information',
     projects: [
-      { name: 'PomeloLabs.ai', purpose: 'How reliably do AI models represent information? Measuring brand visibility in AI answers and designing usable agent workflows.', to: '/projects/pomelo-labs' },
-      { name: 'Zeitgeist', purpose: 'How can stock market information become easier to explore and understand?', to: '/projects/zeitgeist' },
+      { name: 'PomeloLabs.ai', purpose: 'How do AI answers describe a business, and how can people check those descriptions and decide what to improve?', to: '/projects/pomelo-labs' },
+      { name: 'Zeitgeist', purpose: 'How can readers tell stock market data, calculations, and AI-written interpretations apart?', to: '/projects/zeitgeist' },
     ],
   },
   {
     n: '03',
     key: 'Intelligence',
     projects: [
-      { name: 'Vision-Language-Action Robotics', purpose: 'What happens when a robot encounters an environment different from its training conditions?', to: '/projects/vla-robot-manipulation' },
+      { name: 'Vision-Language-Action Robotics', purpose: 'How do instructions and visual information guide a robot’s actions when its surroundings change?', to: '/projects/vla-robot-manipulation' },
       { name: 'UT Austin SPEC', purpose: 'Exploring the power electronics, sensing, and control behind physical systems.', to: '/experience/ut-austin-power-electronics' },
     ],
   },
@@ -97,9 +97,9 @@ export default function ThroughlineSection() {
             Language, Information, and Intelligence
           </h2>
           <p className="tl-reveal tl-sub" style={{ transitionDelay: '100ms' }}>
-            From studying Latin I–V to exploring speech recognition, I’m curious about how people communicate
-            and how machines interpret language. I also investigate how information becomes understanding and
-            what makes intelligent systems reliable beyond a demo.
+            Studying Latin I–V and working on child speech recognition have drawn me to language structure,
+            meaning, and the details of a speaker’s voice. Across my projects, I explore how information is
+            organized, how people interpret AI-generated answers, and how they stay in control of the tools they use.
           </p>
 
           <div className="tl-map">

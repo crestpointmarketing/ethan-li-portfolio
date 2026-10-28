@@ -10,7 +10,7 @@ const experienceCopy: Record<string, Partial<Experience>> = {
     companyTagline: 'A team-built interview practice module',
     summaryHighlights: [
       'Led a four-person team building DreamCollege.ai’s AI interview practice module during my internship.',
-      'Focused on backend development, including the question bank, scheduling, and feedback integration.',
+      'Built backend features for organizing practice questions, scheduling sessions, and returning structured feedback.',
       'Worked with a senior developer to connect the module to the company’s live product.',
     ],
     overviewParagraphs: [
@@ -25,7 +25,7 @@ const experienceCopy: Record<string, Partial<Experience>> = {
       { title: 'Team Coordination', body: 'Coordinated the team’s development work and helped follow the module through implementation and integration.' },
     ],
     takeawayParagraphs: [
-      'This gave me experience building within a product that already existed. My backend work needed to fit the platform and the work of the other developers, so integration was part of the task from the start.',
+      'This gave me experience building within a product that already existed. My backend work needed to fit the platform and the work of the other developers, so integration was part of the task from the start. Organizing questions and structuring feedback also showed me how the way information is presented can shape a practice session.',
       'Leading the team meant keeping track of how the pieces connected, as well as finishing my own part. Working with a senior developer gave me practice taking a module beyond a standalone prototype.',
       'That was different from building Elocutionist independently. Both involved interview practice, but DreamCollege required a shared development process and a working connection to the company’s product.',
     ],
@@ -60,7 +60,7 @@ const experienceCopy: Record<string, Partial<Experience>> = {
       { title: 'Working Across Roles', body: 'Took part in both technical testing and explaining the company’s services.' },
     ],
     takeawayParagraphs: [
-      'The internship widened my view of AI beyond using a model in an application. Testing performance and API costs gave me a practical reason to look at how a service runs and what it takes to use it.',
+      'Testing performance and API costs helped me see that an information tool also depends on the system behind it. A feature has to be useful to someone and practical to run.',
       'It was an early learning experience under a senior developer’s guidance. I contributed to the testing while seeing parts of AI infrastructure I had not worked with before.',
     ],
   },

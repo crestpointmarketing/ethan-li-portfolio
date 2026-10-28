@@ -49,7 +49,7 @@ export default function HomePage() {
                     lineHeight: 1.2
                   }}
                 >
-                  Exploring Language, Information, and Intelligent Systems.
+                  Exploring Language, Meaning, and Information.
                 </h2>
                 <p
                   className="text-sm sm:text-base md:text-lg lg:text-xl text-[#08874a] dark:text-[#16A34A] font-semibold tracking-wide"
@@ -60,8 +60,8 @@ export default function HomePage() {
 
                 {/* Description */}
                 <p className="text-base sm:text-lg md:text-xl text-[var(--muted-foreground)] max-w-xl leading-relaxed">
-                  I'm Ethan, a high school student curious about how people communicate,
-                  how information becomes understanding, and how intelligent systems interact with the world.
+                  I'm Ethan, a high school student drawn to linguistics, informatics, and information science.
+                  I explore how people express meaning and build tools that help them find, understand, and use information.
                 </p>
               </div>
 

@@ -36,3 +36,9 @@ Authored project text is in `src/app/content/projectEditorial.json`, applied to 
 - Mobile text checked within the existing statistic tiles; wording shortened rather than changing styles.
 - Production build and diff whitespace check passed; existing bundle-size advisory remains.
 - No production deployment, live CMS mutation, or external message was performed.
+
+## 2026-10-27 academic focus update
+
+The owner clarified that Ethan's main intended fields are Linguistics, Informatics, and Information Science. Public copy now states these as interests, with language, meaning, information organization, evidence, and user choice as the connecting questions. Latin I–V and SpeakWise ground the language emphasis; the commercial PomeloLabs.ai product, ActivityHub, Zeitgeist, and interview-practice work ground the information and interaction emphasis. Music, robotics, and hardware retain their documented scopes.
+
+This is an editorial change to the homepage, project summaries/reflections, selected experience wording, and sharing metadata. It adds no new courses, user studies, research findings, origins, roles, dates, awards, or patent claims. Common App ordering and existing facts remain intact; all styles and layouts are unchanged. Production build and the 84 page/viewport browser checks pass locally.

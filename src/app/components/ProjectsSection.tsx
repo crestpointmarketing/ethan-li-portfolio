@@ -46,7 +46,7 @@ export default function ProjectsSection() {
             Projects
           </h2>
           <p className="text-[var(--muted-foreground)] text-lg max-w-2xl">
-            Exploring language, information, and intelligent systems through speech research, AI tools, robotics, and music software
+            Projects exploring how language is represented, how information is organized, and how people use technology
           </p>
           <div className="w-20 h-1 bg-[#08874a] dark:bg-[#16A34A] mt-6" />
         </div>

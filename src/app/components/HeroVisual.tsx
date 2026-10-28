@@ -84,7 +84,7 @@ const CARDS = [
     icon: PomeloIcon,
     iconBg: 'linear-gradient(145deg,#8B5CF6,#4C1D95)',
     title: 'PomeloLabs.ai',
-    sub: 'AI Visibility & Agents',
+    sub: 'AI Search Analytics',
     delay: '0.9s',
     pos: { right: '2%', top: '7%' },
     href: '/projects/pomelo-labs',

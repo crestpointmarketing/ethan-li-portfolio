@@ -219,7 +219,7 @@
               "The hardest lesson came from showing the early version to the people who inspired it. I thought smoother speech would be an obvious improvement. Their reactions made me see that I had not asked enough questions before building it.",
               "I began to separate what I could change technically from what someone actually wanted changed. Keeping their own voice and choosing how much help to use mattered in ways I had overlooked.",
               "That lesson also shaped the recognition study. If a model quietly removes a repetition, the speaker no longer gets to decide what happens to it. I want to make the transcript more accurate without assuming that every detail that sounds different is a mistake.",
-              "SpeakWise has taught me to listen before deciding what to build. The coding still interests me, but I now see understanding the person using it as part of the work from the beginning."
+              "SpeakWise has taught me to listen before deciding what to build. I want to study language itself alongside the systems that process it: how people express meaning, what a transcript preserves, and which choices belong to the speaker."
             ]
           }
         }
@@ -571,7 +571,7 @@
             "paragraphs": [
               "Businesses use PomeloLabs.ai through a subscription. That gave the development work a practical purpose: features needed to connect to an existing marketing process, rather than stop at a demo.",
               "I also had to explain technical decisions to someone approaching the product from the business side. We sometimes disagreed about what a result should show. Working through those differences helped me think about what a customer would actually learn from the report.",
-              "The scoring discussion stayed with me. A number can look reassuring without explaining much. I pushed for reports that show where a business is falling short and what it could work on next.",
+              "The scoring discussion stayed with me. A number can look reassuring without explaining much. I pushed for reports that show where a business is falling short and what it could work on next. This is what draws me to information science: the way evidence is organized changes what someone can understand from it.",
               "Following the work through integration, testing, and deployment gave me experience maintaining a usable product. Having users is an important milestone; measuring the results they get from it is work that continues."
             ],
             "title": "What I Learned From a Commercial Product"
@@ -812,7 +812,7 @@
           "0": {
             "paragraphs": [
               "This was experience working through a research process with a team: collect demonstrations, train a policy, test it, and decide what to try next. I also had to help explain the work in a poster, a presentation, and a live demonstration.",
-              "Our tests showed why it mattered to change the environment instead of judging the policy only where it had trained. The mixed-condition experiments gave us another approach to compare.",
+              "Our tests showed why it mattered to change the environment instead of judging the policy only where it had trained. The mixed-condition experiments gave us another approach to compare. Working with instructions, camera images, and robot actions gave me another setting for thinking about context.",
               "I learned to keep a result tied to the conditions we tested. Working with teammates and mentors also gave me practice explaining an approach, listening to suggestions, and revising it."
             ]
           }
@@ -910,7 +910,7 @@
             "title": "What I Built and Learned",
             "items": [
               "I built the VST3 audio effect and its panning controls in C++ with JUCE, then released it as open-source software.",
-              "I learned C++ and how to make a plugin work inside the tools music producers already use. Smoothing, panning, and the controls all affect what a person hears.",
+              "I learned C++ and how to make a plugin work inside the tools music producers already use. Smoothing, panning, and the controls all affect what a person hears. Designing those controls helped me connect a technical mapping to the choices a musician makes.",
               "Taking a personal music idea through to a working release gave me practice finishing software that other people could download and try. The standalone build also lets someone test the effect without a DAW."
             ]
           }
@@ -1048,7 +1048,7 @@
             "paragraphs": [
               "ActivityHub asked me to think about two different sides of the same process. Organizers need to check attendance and records. Volunteers need to submit their hours, fix missing information, and get a record of their service.",
               "I learned to work through the everyday details, including what happens when a submission is incomplete and how someone can correct it. Those steps matter just as much as getting a sign-up form to work.",
-              "The platform also supports separate organizations, each with its own members and records. Building that helped me practice keeping information organized and making sure the right people could access it."
+              "The platform also supports separate organizations, each with its own members and records. Building that helped me practice keeping information organized and making sure the right people could access it. I also had to think about who could understand, check, and update a record."
             ]
           }
         }
@@ -1284,7 +1284,7 @@
           "0": {
             "paragraphs": [
               "Zeitgeist gave me practice building a pipeline from external data to an AI-generated explanation. My work included data ingestion, the FastAPI backend, and the model integration.",
-              "Each step has different things to check: whether data arrived, whether a calculation used the right inputs, and whether the explanation matches those inputs. Getting the request to finish does not answer all three questions.",
+              "Each step has different things to check: whether data arrived, whether a calculation used the right inputs, and whether the explanation matches those inputs. Getting the request to finish does not answer all three questions. I want to keep exploring how wording and evidence shape a reader’s understanding.",
               "The project is for research and education. I have not established that its summaries predict market movements or support an investment strategy."
             ]
           }
@@ -1406,7 +1406,7 @@
           "0": {
             "paragraphs": [
               "Building Elocutionist gave me practice connecting several parts of an application: reading background documents, generating questions, transcribing an answer, and returning feedback. A problem in an early step can affect what comes after it.",
-              "I worked on turning the model’s response into suggestions about the answer’s content and structure. The transcript gives the model words to work with, but it does not capture every part of how someone speaks.",
+              "I worked on turning the model’s response into suggestions about the answer’s content and structure. The transcript gives the model words to work with, but it does not capture every part of how someone speaks. I want to explore how feedback can help someone develop an answer while leaving room for their own expression.",
               "This was independent development. DreamCollege gave me a different setting, where I had to connect my work to other developers’ work and to an existing product. The two projects gave me practice with both ways of building software."
             ]
           }

@@ -22,6 +22,7 @@ export default function AboutSection() {
             ...data.about,
             academicFocus: [
               'Latin I–V — Classical Languages: language structure and classical texts',
+              'Academic interests: Linguistics, Informatics & Information Science',
               ...(data.about.academicFocus ?? []).filter((item: string) => !/\blatin\b/i.test(item)),
             ],
           },
