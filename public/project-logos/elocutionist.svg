@@ -1,0 +1,8 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64">
+  <title>Elocutionist</title>
+  <rect width="64" height="64" rx="17" fill="#215747"/>
+  <path d="M16 45a20.5 20.5 0 1 1 33-3l2 8-8-2" fill="none" stroke="#bbd9c4" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"/>
+  <rect x="24" y="18" width="16" height="25" rx="8" fill="#faf9ef"/>
+  <path d="M28 28v5m4-8v11m4-8v5" stroke="#739e8a" stroke-width="2.4" stroke-linecap="round"/>
+  <path d="M20 34v1a12 12 0 0 0 24 0v-1M32 47v7M25 54h14" fill="none" stroke="#faf9ef" stroke-width="2.8" stroke-linecap="round"/>
+</svg>

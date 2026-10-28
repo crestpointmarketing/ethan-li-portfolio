@@ -50,21 +50,10 @@ function project([x, y, z]: V3, ry: number, rx: number) {
   return { px: (x1 / d) * 44 + 55, py: (y2 / d) * 44 + 50, z: z2 };
 }
 
-// Citrus-slice wheel — matches Pomelo Labs' actual logo mark (a sliced
-// pomelo with radiating segments), rather than a generic megaphone.
-const PomeloIcon = (
-  <svg width="26" height="26" viewBox="0 0 100 100" fill="none">
-    <circle cx="50" cy="50" r="40" stroke="white" strokeWidth="5" />
-    <circle cx="50" cy="50" r="5" fill="white" />
-    <line x1="50" y1="50" x2="50" y2="12" stroke="white" strokeWidth="4" strokeLinecap="round" />
-    <line x1="50" y1="50" x2="80" y2="30" stroke="white" strokeWidth="4" strokeLinecap="round" />
-    <line x1="50" y1="50" x2="80" y2="70" stroke="white" strokeWidth="4" strokeLinecap="round" />
-    <line x1="50" y1="50" x2="50" y2="88" stroke="white" strokeWidth="4" strokeLinecap="round" />
-    <line x1="50" y1="50" x2="20" y2="70" stroke="white" strokeWidth="4" strokeLinecap="round" />
-    <line x1="50" y1="50" x2="20" y2="30" stroke="white" strokeWidth="4" strokeLinecap="round" />
-  </svg>
+// Official product marks, copied from the products' current public sites.
+const productLogo = (file: string, size = 32) => (
+  <img src={`/project-logos/${file}`} alt="" width={size} height={size} className="object-contain rounded-lg" />
 );
-
 // Ethan's actual reference logo (speaking head + sound waves), served from
 // /public rather than redrawn.
 const SpeakWiseIcon = <img src="/speakwise-icon.png" alt="" width={36} height={36} className="rounded-lg" />;
@@ -81,8 +70,8 @@ const CARDS = [
     href: '/projects/speakwise',
   },
   {
-    icon: PomeloIcon,
-    iconBg: 'linear-gradient(145deg,#8B5CF6,#4C1D95)',
+    icon: productLogo('pomelolabs.png'),
+    iconBg: '#FFFFFF',
     title: 'PomeloLabs.ai',
     sub: 'AI Search Analytics',
     delay: '0.9s',
@@ -108,8 +97,8 @@ const CARDS = [
     href: '/projects/expressive',
   },
   {
-    icon: '🤝',
-    iconBg: 'linear-gradient(145deg,#f59e0b,#92400e)',
+    icon: productLogo('activityhub.svg'),
+    iconBg: '#FFFFFF',
     title: 'ActivityHub',
     sub: 'Volunteer Hours Platform',
     delay: '1.35s',
@@ -117,8 +106,8 @@ const CARDS = [
     href: '/projects/activityhub',
   },
   {
-    icon: '📈',
-    iconBg: 'linear-gradient(145deg,#2563eb,#1e3a8a)',
+    icon: productLogo('zeitgeist.svg', 36),
+    iconBg: 'transparent',
     title: 'Zeitgeist',
     sub: 'Investment Research',
     delay: '2.25s',
@@ -126,8 +115,8 @@ const CARDS = [
     href: '/projects/zeitgeist',
   },
   {
-    icon: '🎤',
-    iconBg: 'linear-gradient(145deg,#db2777,#831843)',
+    icon: productLogo('elocutionist.svg', 42),
+    iconBg: 'transparent',
     title: 'Elocutionist',
     sub: 'Speaking & Interview Practice',
     delay: '2.7s',
