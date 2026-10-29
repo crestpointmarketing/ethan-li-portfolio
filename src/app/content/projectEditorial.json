@@ -11,10 +11,9 @@
         "blocks": {
           "0": {
             "paragraphs": [
-              "SpeakWise started with people close to me. A friend and my younger brother had both faced speech difficulties since childhood. Seeing how those experiences affected their willingness to speak made me want to build something that could help.",
-              "My first idea was to make their speech sound smoother. I connected speech recognition, text correction, and voice synthesis, then showed them the prototype. Their reactions made me realize I had spent more time deciding what to change than asking what they wanted.",
-              "That changed the direction of the project. I began paying more attention to keeping the speaker’s own voice and giving them control over edits. It also led me to an earlier problem: a recognizer can leave out repetitions and fillers before anyone gets to decide whether to keep them.",
-              "My current research looks at recognizing children’s speech more accurately while preserving those details. SpeakWise remains a research project; any use as a therapy tool would need separate clinical testing."
+              "A friend and my younger brother had faced speech difficulties since childhood. I built a prototype combining recognition, adjustable correction, and voice cloning, hoping to help. Their feedback taught me that sounding smoother was not necessarily what they wanted.",
+              "That changed the question I was asking. Phase 1 explored giving speakers control over edits while keeping their own voice. In Phase 2, I focused on an earlier step: faithfully recognizing the words, repetitions, and fillers a child actually said.",
+              "I developed the system and adapted the recognizer independently. SpeakWise remains a research project; its results do not establish clinical effectiveness."
             ]
           }
         }
@@ -45,15 +44,15 @@
           },
           "1": {
             "paragraphs": [
-              "After getting feedback on the early prototype, I wanted the speaker to have more say in the result. The correction setting λ lets the amount of editing vary instead of applying the same level to every utterance. I wanted to explore how much a system could change while still leaving the speaker in control."
+              "I added a correction setting, λ, so the amount of editing could vary. The speaker can compare the proposed revision with the original rather than receive one fixed level of correction."
             ],
             "title": "A Control Over How Much Changes"
           },
           "2": {
             "paragraphs": [
-              "A quick response is useful, but speech arrives a little at a time. Waiting longer gives the system more context; responding sooner risks acting on an incomplete sentence. I want to test that trade-off alongside recognition and editing errors."
+              "Speech arrives a little at a time. Responding quickly leaves less context; waiting can interrupt a conversation. I still need to measure that trade-off alongside recognition and editing errors."
             ],
-            "title": "Timing, Context, and Error Propagation"
+            "title": "Responding Before the Sentence Is Finished"
           }
         }
       },
@@ -62,7 +61,7 @@
         "blocks": {
           "1": {
             "paragraphs": [
-              "I filed a U.S. provisional patent application for SpeakWise on August 23, 2026. It covers controllable speech repair, keeping the original utterance, and synthesizing a revised version while preserving the speaker’s voice. The application is patent pending; a provisional filing is not a granted patent."
+              "Filed August 23, 2026, with me as first-named inventor. The application covers controllable speech repair, preserving the original utterance, and synthesizing revisions in the speaker’s own voice. It is patent pending."
             ],
             "title": "Scope and Status"
           },
@@ -114,7 +113,7 @@
           },
           "1": {
             "paragraphs": [
-              "What interests me is how a technical choice can change the record of someone’s speech. Keeping a repeated word lets a person examine it later. Removing it takes that choice away. Understanding why the speaker repeated it is a different question."
+              "Keeping a repeated word leaves someone a choice about what to do with it. Understanding why it was repeated still needs context. That distinction drew me toward studying language as well as building speech tools."
             ]
           }
         }
@@ -262,10 +261,8 @@
         "blocks": {
           "0": {
             "paragraphs": [
-              "The hardest lesson came from showing the early version to the people who inspired it. I thought smoother speech would be an obvious improvement. Their reactions made me see that I had not asked enough questions before building it.",
-              "I began to separate what I could change technically from what someone actually wanted changed. Keeping their own voice and choosing how much help to use mattered in ways I had overlooked.",
-              "That lesson also shaped the recognition study. If a model quietly removes a repetition, the speaker no longer gets to decide what happens to it. I want to make the transcript more accurate without assuming that every detail that sounds different is a mistake.",
-              "SpeakWise has taught me to listen before deciding what to build. I want to study language itself alongside the systems that process it: how people express meaning, what a transcript preserves, and which choices belong to the speaker."
+              "I began by asking what I could change in someone’s speech. Showing the prototype to the people who inspired it taught me to ask what they wanted first.",
+              "That lesson shaped Phase 2: a recognizer should preserve a detail before anyone decides whether to edit it. I want to keep studying how language carries meaning and how technical choices affect the record we keep of someone’s voice."
             ]
           }
         }
@@ -321,10 +318,9 @@
         "blocks": {
           "0": {
             "paragraphs": [
-              "PomeloLabs.ai is a live commercial AI marketing platform with active business users on subscriptions. I built tools to measure how a brand appears across major AI search engines and help a team decide what content to improve.",
-              "For one B2B client, AI discovery rate increased from 21% to 63%, as reported in my October 2026 Common App. This is a result for that client, not an average across customers or a promise of the same result for another business.",
-              "I developed the software independently, including its architecture, integrations, testing, and deployment. My mother’s company, CrestPoint Marketing, handles marketing and deployed PomeloLabs.ai at OneSource Cloud, an existing CrestPoint client. Her business requirements and agency feedback helped guide the product.",
-              "With a live product, the work continues after a feature first runs. Data collection, drafts, permissions, review, and publishing have to work together for the business using them."
+              "I independently developed PomeloLabs.ai, a live commercial AI marketing platform with active business users on subscriptions. It measures brand visibility across major AI search engines and connects the findings to marketing tasks and content.",
+              "For one B2B client, AI discovery rate increased from 21% to 63% (reported October 2026). This is one client’s result, not an average across customers.",
+              "I built the architecture, integrations, testing, and deployment. My mother’s company, CrestPoint Marketing, handles marketing and deployed the platform at OneSource Cloud, an existing CrestPoint client. Her business requirements and agency feedback informed the product."
             ]
           },
           "1": {
@@ -405,36 +401,35 @@
         "heading": "Why I Wanted to Build It",
         "blocks": {
           "0": {
-            "title": "Problems I Worked On",
+            "title": "Problems Behind the Product",
             "items": [
               {
                 "label": "Scattered information",
-                "body": "Search results, website data, and drafts often sit in different tools. I wanted the relevant information together without losing where it came from."
+                "body": "Search results, website data, and drafts need a shared place without losing their sources."
               },
               {
                 "label": "Too much to review",
-                "body": "Generating more content does not tell a team which task matters most. The report needs to explain why a task is worth doing."
+                "body": "A report should help a team choose its next task, not just generate more content."
               },
               {
                 "label": "Missing background",
-                "body": "A useful recommendation needs the company’s audience, goals, and source material."
+                "body": "Recommendations need the company’s audience, goals, and evidence."
               },
               {
-                "label": "Different kinds of mentions",
-                "body": "A name in a list, a comparison, and a recommendation say different things about a brand."
+                "label": "Different mentions",
+                "body": "A name in a list and a clear recommendation mean different things."
               },
               {
                 "label": "Changing answers",
-                "body": "An AI model can answer the same question differently. I use repeated tests to look for patterns."
+                "body": "Repeated tests help show whether a result is a pattern or a one-off answer."
               }
             ]
           },
           "1": {
             "paragraphs": [
-              "During development, I pushed back on an early scoring approach that emphasized positive signals. I thought a useful report needed to show where a business was falling short, even when the result was less encouraging.",
-              "A brand being mentioned is only part of the picture. I wanted the evaluation to look at how it was described and give the person reading the report a clearer idea of what to do next."
+              "I pushed back on an early scoring approach that emphasized positive signals. I wanted reports to show inaccurate descriptions and weak results too, so a business could see what needed work."
             ],
-            "title": "What a Useful Report Should Show"
+            "title": "A Score That Shows What Needs Work"
           }
         }
       },
@@ -442,68 +437,67 @@
         "heading": "How the Workflow Works",
         "blocks": {
           "0": {
-            "title": "Keeping the Steps Connected",
-            "intro": "I built the workflow so a team can follow the information from its source to the action it suggests:",
+            "title": "What I Built Behind the Workflow",
+            "intro": "My technical work connected six parts of the product:",
             "items": [
               {
                 "marker": "1",
-                "title": "Save the background",
-                "body": "Keep the company’s audience, goals, and supporting material with its work."
+                "title": "Company context",
+                "body": "Store each brand’s audience, goals, and source material separately."
               },
               {
                 "marker": "2",
-                "title": "Collect results",
-                "body": "Bring in search data, website information, and AI answers, with their sources."
+                "title": "Data integrations",
+                "body": "Bring search, website, and AI-answer results into the workspace."
               },
               {
                 "marker": "3",
-                "title": "Explain a finding",
-                "body": "Ask the relevant agent to explain what the result may mean for that company."
+                "title": "AI agents",
+                "body": "Give each agent its task and the relevant company background."
               },
               {
                 "marker": "4",
-                "title": "Suggest a task",
-                "body": "Create a draft or task that someone can review."
+                "title": "Tasks and drafts",
+                "body": "Connect a finding to work the team can assign, edit, and review."
               },
               {
                 "marker": "5",
-                "title": "Get approval",
-                "body": "Use permissions and approval steps before publishing."
+                "title": "Permissions",
+                "body": "Control who can review, approve, and publish work."
               },
               {
                 "marker": "6",
-                "title": "Check again",
-                "body": "Keep the action history and later results so the team can revisit a decision."
+                "title": "Product operations",
+                "body": "Connect subscriptions, usage controls, and the history of actions."
               }
             ]
           },
           "1": {
-            "title": "My Design Priorities",
+            "title": "Decisions I Had to Make",
             "items": [
               {
-                "label": "Quality beyond presence",
-                "body": "Look at how a brand is described, including whether the answer is accurate and relevant to the question."
+                "label": "Scoring",
+                "body": "Count how a brand is described, not just whether its name appears."
               },
               {
-                "label": "Clear agent boundaries",
-                "body": "Give each agent a specific job and the company information it needs. I still need to check the answer against its source."
+                "label": "Agent context",
+                "body": "Pass the information needed for each task without mixing brands."
               },
               {
-                "label": "Keeping the background attached",
-                "body": "Keep the background information attached to the task so someone can understand why it was suggested."
+                "label": "Traceable tasks",
+                "body": "Keep the supporting finding attached to the proposed work."
               },
               {
-                "label": "Human review",
-                "body": "Let a person review work before the system takes an action such as publishing it."
+                "label": "Review",
+                "body": "Keep generated suggestions separate from approved publishing actions."
               }
             ]
           },
           "2": {
             "paragraphs": [
-              "Different teams use the platform, so keeping their information separate matters. Permissions also determine who can review a draft and who can publish it.",
-              "I learned to test these steps separately. A model can return an answer successfully while the answer itself is still wrong."
+              "I tested workspace separation, permissions, and the path from draft to publication. A successful API call is only one check; the content and the action it triggers need checking too."
             ],
-            "title": "Reliability Is More Than a Model Score"
+            "title": "Testing More Than the Model"
           }
         }
       },
@@ -512,16 +506,14 @@
         "blocks": {
           "0": {
             "paragraphs": [
-              "I started the evaluation work with a simple question: what should count as a useful mention in an AI answer? Asking a model the same question several times showed why one response is not enough to describe a pattern.",
-              "I designed the GEO evaluation framework covered by a U.S. provisional patent application filed on July 27, 2026. The application covers methods for measuring and scoring how a brand appears in AI-generated search answers. It is patent pending, rather than a granted patent."
+              "I designed the GEO evaluation framework covered by U.S. provisional application 64/119,527, filed July 27, 2026. I am the first-named inventor. It measures and scores how businesses appear in AI-generated search answers."
             ]
           },
           "2": {
             "paragraphs": [
-              "A product name near the end of a list is different from a clear, accurate recommendation. I wanted the evaluation to capture those differences instead of counting every mention the same way.",
-              "The categories need to be clear enough for another person to disagree with a score and explain why. That is more useful to me than a number that simply looks precise."
+              "I wanted to distinguish a passing mention from an accurate, relevant recommendation. Clear scoring categories let someone inspect the answer and explain why they disagree with the result."
             ],
-            "title": "A Mention Is Not the Same as a Recommendation"
+            "title": "Reading the Words Around a Brand"
           },
           "3": {
             "title": "How the Evaluation Question Developed",
@@ -545,11 +537,9 @@
           },
           "4": {
             "paragraphs": [
-              "I want an evaluation to help someone find a problem they can understand. If a score hides an inaccurate description, it is not doing its job.",
-              "The questions we ask and the rules we use to score answers shape the result. I try to keep those choices visible and use consistent conditions when comparing results.",
-              "Repeated tests help show how much answers vary. Explaining why a result changed takes more evidence."
+              "The questions and scoring rules shape the result. I keep those choices visible and compare repeated tests under consistent conditions. A change in the score needs an explanation, not just a better-looking number."
             ],
-            "title": "Measurement Should Remain Open to Question"
+            "title": "Keeping Comparisons Fair"
           },
           "1": {
             "type": "labeled_bullets",
@@ -582,14 +572,14 @@
         "blocks": {
           "0": {
             "paragraphs": [
-              "The platform works with many kinds of information: a company’s background, what its audience is searching for, drafts, and publishing records. I learned that each needs a clear place in the workflow so the next step has the right context."
+              "I organized company background, audience information, drafts, and publishing records so each stage could use the right context."
             ]
           },
           "2": {
             "paragraphs": [
-              "A useful workflow should let someone follow the path from a question to a draft and then to an approved action. Keeping context helps, but people also need a way to update it when it is wrong or out of date."
+              "Stored context can become outdated. The workflow needs a way to revise it and see which work depends on it."
             ],
-            "title": "Context Needs Structure and Revision"
+            "title": "Updating the Background"
           },
           "1": {
             "items": [
@@ -618,29 +608,28 @@
         "blocks": {
           "1": {
             "paragraphs": [
-              "My work helps connect AI-answer results to tasks and drafts that people can review. I keep generation, review, and publishing as separate steps so a model response does not automatically become a public action.",
-              "The challenge is carrying the right information between those steps without making the process confusing for the user."
+              "I connected AI-answer findings to tasks, drafts, review, and publishing. Keeping these states separate helped me make the workflow easier to follow and test."
             ],
-            "title": "What the Implementation Supports"
+            "title": "Following Work Through the Product"
           },
           "2": {
-            "title": "Failures Worth Making Visible",
+            "title": "Handling Failures",
             "items": [
               {
-                "label": "Uncertainty",
-                "body": "A clear-sounding explanation still needs evidence and a person’s review before publication."
+                "label": "Wrong answers",
+                "body": "Keep the evidence available for review."
               },
               {
-                "label": "External failures",
-                "body": "If a connected service fails or a login expires, show the problem and give the user a way to try again."
+                "label": "Disconnected services",
+                "body": "Show failed requests or expired connections and allow another attempt."
               },
               {
-                "label": "Freshness and coverage",
-                "body": "Make it clear when a source has not been checked or its information is out of date."
+                "label": "Old information",
+                "body": "Make missing checks and outdated sources visible."
               },
               {
-                "label": "Resource use",
-                "body": "Track sampling and generation so repeated requests remain understandable and controllable."
+                "label": "Usage",
+                "body": "Track repeated testing and generation requests."
               }
             ]
           }
@@ -650,56 +639,55 @@
         "heading": "What I Learned",
         "blocks": {
           "0": {
-            "title": "What the Workflow Is Designed to Support",
+            "title": "What a Business Can Follow",
             "items": [
               {
-                "label": "Getting started",
-                "body": "Show the background information a user needs before starting a task."
+                "label": "Starting point",
+                "body": "The company background behind a task."
               },
               {
-                "label": "Following the steps",
-                "body": "Connect observations, drafts, review, and publication."
+                "label": "Progress",
+                "body": "The path from finding to draft to publication."
               },
               {
-                "label": "Organization",
-                "body": "Keep context associated with the work that uses it."
+                "label": "Sources",
+                "body": "The information supporting the work."
               },
               {
-                "label": "Interpretation",
-                "body": "Explain why a result might matter and what still needs checking."
+                "label": "Meaning",
+                "body": "Why a finding may deserve attention."
               },
               {
-                "label": "User control",
-                "body": "Let people inspect and approve work that affects an external audience."
+                "label": "Control",
+                "body": "Who reviews and approves an action."
               }
             ]
           },
           "1": {
-            "title": "What I Learned",
+            "title": "What the Work Taught Me",
             "items": [
               {
-                "label": "Defining the score",
-                "body": "The way I define a category changes what a score tells the user. I need to explain those choices clearly."
+                "label": "Defining a score",
+                "body": "A category has to mean something the reader can understand."
               },
               {
-                "label": "Passing context between steps",
-                "body": "Passing work between agents also means passing information. I have to check what gets lost along the way."
+                "label": "Passing context",
+                "body": "Information can get lost between agents and tasks."
               },
               {
-                "label": "Understanding a change",
-                "body": "A history of actions helps show what happened. Finding out why a result changed takes more work."
+                "label": "Following a change",
+                "body": "An action history helps explain what happened."
               },
               {
-                "label": "Checking the summary",
-                "body": "A well-written summary should still let someone check the evidence behind it."
+                "label": "Writing clearly",
+                "body": "A readable summary should still point to its evidence."
               }
             ]
           },
           "2": {
             "paragraphs": [
-              "The 21% to 63% AI discovery result for one B2B client gave me a concrete outcome to report. I still need to keep each result tied to the client and the way it was measured.",
-              "Building a subscription product also meant explaining technical decisions to someone approaching it from the business side. We sometimes disagreed about what a report should show. Working through those differences helped me think about what a customer could actually learn from it.",
-              "I learned that defining a score is part of building the product. Someone should be able to see which answers produced the number, find an inaccurate description, and decide what to work on next."
+              "The 21% to 63% AI discovery result gave me a specific client outcome to report. Building a subscription product also meant making the whole workflow usable, from connected data to an approved action.",
+              "Explaining technical choices to someone with a marketing background made me question what each score actually told a customer. I learned that organizing information and explaining its meaning are part of the software, not finishing touches."
             ],
             "title": "Building for Paying Business Users"
           }
@@ -709,23 +697,23 @@
         "heading": "What Works So Far",
         "blocks": {
           "1": {
-            "title": "What Still Needs Work",
+            "title": "What Remains to Be Tested",
             "items": [
               {
-                "label": "API scope",
-                "body": "Separate available read and status-management interfaces from proposed automation."
+                "label": "Automation",
+                "body": "Keep proposed automation separate from working features."
               },
               {
                 "label": "Product scope",
-                "body": "Describe undelivered reporting and agency capabilities as future work."
+                "body": "Develop further reporting and agency capabilities."
               },
               {
-                "label": "Testing scope",
-                "body": "Use isolated test accounts for integrations and avoid customer data in public demonstrations."
+                "label": "Integrations",
+                "body": "Test connected services without exposing customer data."
               },
               {
-                "label": "Outcome scope",
-                "body": "The 21% to 63% AI discovery result is for one B2B client. I need consistent measurements across more clients before describing a broader pattern."
+                "label": "Outcomes",
+                "body": "Use consistent measurements across more clients before generalizing from one result."
               }
             ]
           },
@@ -745,13 +733,13 @@
         "heading": "Further Questions",
         "blocks": {
           "0": {
-            "intro": "The next questions concern evaluation quality and the handoff between model output and human judgment:",
+            "intro": "Next, I want to test how well the reports support decisions:",
             "items": [
-              "Compare scoring categories with reviewer judgments and examine disagreement.",
-              "Keep observations linked to the questions and conditions that produced them.",
-              "Make missing data, stale context, and failed actions clear.",
-              "Measure whether recommendations aid understanding, not only content volume.",
-              "Study which review steps preserve useful control."
+              "Compare scores with human reviewers and examine disagreements.",
+              "Keep each result linked to its test conditions.",
+              "Show missing data and failed actions clearly.",
+              "Measure whether recommendations help users understand the problem.",
+              "Find review steps that give users useful control."
             ],
             "statusLabel": "Questions for Further Development"
           }
@@ -808,8 +796,8 @@
         "blocks": {
           "0": {
             "paragraphs": [
-              "I joined the six-week UT Dallas STEM Bridge program and led a five-person team studying vision-language-action models for robotic arms. We worked with graduate mentors and faculty at the Intelligent Robotics and Vision Lab.",
-              "Our work included training and testing policies, preparing a research poster and presentation, and demonstrating the robot live. The project placed third among more than twenty teams. The hardware and experiments were shared team work."
+              "At the six-week UT Dallas STEM Bridge program, I led a five-person team researching vision-language-action models for robotic arms with graduate mentors and faculty at the Intelligent Robotics and Vision Lab.",
+              "I helped coordinate data collection, model training, and testing, then worked with the team on our poster, presentation, and live robot demonstration. We placed 3rd of 20+ teams. The experiments and hardware work were shared."
             ],
             "title": "My Role in a Collaborative Study"
           },
@@ -916,9 +904,9 @@
           },
           "1": {
             "paragraphs": [
-              "As research team leader, I helped coordinate the work from data collection through training and testing. I also worked with the team on the poster, presentation, and live demonstration. The results came from our combined work and the guidance of our mentors."
+              "I helped keep the work connected from demonstrations through training and testing, and helped the team present what we found. The results reflect our shared experiments and our mentors’ guidance."
             ],
-            "title": "My Contribution and the Team’s Work"
+            "title": "My Role as Team Leader"
           }
         }
       },
@@ -948,9 +936,8 @@
         "blocks": {
           "0": {
             "paragraphs": [
-              "This was experience working through a research process with a team: collect demonstrations, train a policy, test it, and decide what to try next. I also had to help explain the work in a poster, a presentation, and a live demonstration.",
-              "Our tests showed why it mattered to change the environment instead of judging the policy only where it had trained. The mixed-condition experiments gave us another approach to compare. I learned to pay attention to the background and lighting as well as the task we wanted the robot to complete.",
-              "I learned to keep a result tied to the conditions we tested. Working with teammates and mentors also gave me practice explaining an approach, listening to suggestions, and revising it."
+              "A robot could do well where it trained and struggle after the scene changed. Comparing tabletop and lightbox settings taught me to examine what the training examples contained, including lighting and background.",
+              "Leading the team meant coordinating experiments and explaining the results with my teammates. I learned to keep each conclusion tied to the task and conditions we actually tested."
             ]
           }
         }
@@ -1002,9 +989,8 @@
         "blocks": {
           "0": {
             "paragraphs": [
-              "Expressive grew out of my own music production. I have played piano and clarinet, and this project gave me a way to bring programming into that part of my life. I built an effect that uses MIDI note velocity to move a sound across the stereo field.",
-              "I developed the plugin independently with C++ and JUCE, learning how to make it work inside existing music-production software. I then released the code so other people could try it and change it.",
-              "By my October 2026 Common App, Expressive had reached 3,400+ downloads from producers and 40+ GitHub stars. Downloads and stars describe its reach; they are not counts of active users."
+              "I independently built Expressive in C++ with JUCE, inspired by my own music production and experience playing piano and clarinet. The VST3 effect maps MIDI note velocity to stereo movement.",
+              "Reported October 2026: 3,400+ downloads from producers and 40+ GitHub stars. I released the code as open source so others could use and change it."
             ]
           }
         }
@@ -1059,12 +1045,12 @@
         "heading": "Sharing the Plugin",
         "blocks": {
           "1": {
-            "title": "Release, Reach, and What I Learned",
+            "title": "From a Music Idea to a Release",
             "items": [
-              "I built the VST3 audio effect and its panning controls in C++ with JUCE, then released it as open-source software.",
-              "Reported in October 2026: 3,400+ downloads from producers and 40+ GitHub stars.",
-              "I learned C++ and how to make a plugin work inside the tools music producers already use. Adjusting the smoothing, panning range, and controls changed what I heard. I had to think about how another musician would choose those settings too.",
-              "Taking a personal music idea through to a working release gave me practice finishing software that other people could download and try. The standalone build also lets someone test the effect without a DAW."
+              "I built the effect and controls, packaged the plugin, and released the source code.",
+              "The October 2026 snapshot records 3,400+ downloads from producers and 40+ GitHub stars.",
+              "Listening while adjusting the smoothing, width, and curve helped me connect a control’s behavior to what another musician would hear.",
+              "I learned to build within existing music software. The standalone version also lets someone try the effect without a digital audio workstation."
             ]
           }
         }
@@ -1102,8 +1088,8 @@
         "blocks": {
           "0": {
             "paragraphs": [
-              "Through ACAESUSA (Asian Culture and Education Society USA), I volunteered at fundraisers and events, taught computer-science skills to members, and served as president of its Computer Science Chapter. I built ActivityHub in 2026 to help the organization manage events, volunteer registration, attendance, and service hours.",
-              "I designed and developed the platform myself. Volunteers can submit hours and supporting documents; administrators can approve them or return them for corrections. I wanted both groups to have a clear place to see what needed attention."
+              "At ACAESUSA (Asian Culture and Education Society USA), I served as Computer Science Chapter president, taught members CS skills, and volunteered at fundraisers and events.",
+              "I independently designed and built ActivityHub in 2026 for event management, volunteer registration, attendance, and service-hour tracking. Volunteers submit hours and documents; administrators approve them or return them for correction."
             ]
           }
         }
@@ -1199,9 +1185,8 @@
         "blocks": {
           "0": {
             "paragraphs": [
-              "ActivityHub asked me to think about two different sides of the same process. Organizers need to check attendance and records. Volunteers need to submit their hours, fix missing information, and get a record of their service.",
-              "I learned to work through the everyday details, including what happens when a submission is incomplete and how someone can correct it. Those steps matter just as much as getting a sign-up form to work.",
-              "The platform also supports separate organizations, each with its own members and records. I had to think through who could see a record, who could change it, and how someone would know that their hours had been approved."
+              "Building for volunteers and organizers meant giving both sides a clear view of a record: what was submitted, what needed correction, and what had been approved.",
+              "I learned that the steps after submission matter as much as the form itself. Duplicate checks, change history, and permissions help keep records understandable and protect private documents."
             ]
           }
         }
@@ -1239,9 +1224,8 @@
         "blocks": {
           "0": {
             "paragraphs": [
-              "I built Zeitgeist to bring stock-market research into one place: market data, deep-research stock analysis, and interactive CFO insight agents that let a reader ask follow-up financial questions.",
-              "As founder and developer, I built the data collection, FastAPI backend, and AI integration. I wanted readers to be able to tell a reported number from a calculation or the model’s explanation of it.",
-              "By my October 2026 Common App, the site had received 1,000+ clicks in Google Search Console. These are search clicks, not a count of users or a measure of investment performance. The platform is for research and education, not personalized investment advice."
+              "I built Zeitgeist’s data collection, FastAPI backend, and AI integration for stock-market research. The platform combines deep-research stock analysis with interactive CFO insight agents for follow-up financial questions.",
+              "By October 2026, it had received 1,000+ clicks in Google Search Console. That measures search traffic, not unique users or investment performance. The platform supports research and education, not personalized investment advice."
             ]
           },
           "1": {
@@ -1266,7 +1250,7 @@
           },
           "2": {
             "paragraphs": [
-              "I want readers to be able to tell which statements come from data, which come from calculations, and which are the model’s interpretation. This is a research and educational prototype, not personalized investment advice."
+              "I wanted a reader to see which statements came from source data, which came from calculations, and which were the model’s interpretation."
             ]
           }
         }
@@ -1302,15 +1286,15 @@
           },
           "1": {
             "paragraphs": [
-              "An AI model can sound careful without knowing how reliable its answer is. I try to keep that difference clear. A useful summary should say when information is missing and avoid giving a made-up sense of certainty."
+              "I check whether the wording claims more than the inputs support, especially when information is missing."
             ],
-            "title": "Uncertainty Without Invented Precision"
+            "title": "When a Summary Sounds Too Certain"
           },
           "3": {
             "paragraphs": [
-              "New data gives the model different material to work with, but it can still explain that material badly. I need to check both how fresh the inputs are and whether the summary matches them."
+              "A new API response can still be incomplete or delayed. I need to check the timestamp and coverage before reviewing the model’s explanation."
             ],
-            "title": "Fresh Inputs Do Not Guarantee Better Reasoning"
+            "title": "Checking the Inputs"
           },
           "2": {
             "title": "Building the Backend",
@@ -1454,7 +1438,7 @@
           },
           "2": {
             "paragraphs": [
-              "I built the path from external data to an AI-written explanation, including the backend and interactive CFO insight agents. Reaching 1,000+ Google Search Console clicks by October 2026 showed that people were finding the site through search. It did not tell me whether they understood every explanation; that needs a different kind of evaluation."
+              "I built the workflow from API data to an interactive explanation. The 1,000+ Google Search Console clicks reported by October 2026 show that people found the site through search; evaluating how well they understood it is a separate next step."
             ],
             "title": "My Contribution and the Site’s Reach"
           }
@@ -1465,9 +1449,8 @@
         "blocks": {
           "0": {
             "paragraphs": [
-              "Zeitgeist gave me practice building a pipeline from external data to an AI-generated explanation. My work included data ingestion, the FastAPI backend, and the model integration.",
-              "Each step has different things to check: whether data arrived, whether a calculation used the right inputs, and whether the explanation matches those inputs. A summary can read well even when one of those steps has gone wrong. I want a reader to be able to check an explanation against the numbers behind it.",
-              "The project made me more interested in how people read unfamiliar information. Writing an explanation is easy for a model; helping someone check it against its source is a harder problem I want to keep working on."
+              "Connecting external data, calculations, and AI responses taught me to check each stage separately. A clear sentence can still describe the wrong number.",
+              "I became more interested in how people read unfamiliar information. I want to build explanations that help a reader check the source and ask a better follow-up question."
             ]
           }
         }
@@ -1515,8 +1498,8 @@
         "blocks": {
           "0": {
             "paragraphs": [
-              "Elocutionist is an independent app I built for interview practice. It lets a user add background information, answer questions by typing or speaking, and review AI-generated feedback.",
-              "My work included the application, document processing, speech transcription, and feedback system. It was separate from the interview module I worked on with a team at DreamCollege.ai."
+              "I independently built Elocutionist to connect background documents, generated questions, typed or spoken answers, and AI feedback in one practice session. My work included document processing, Whisper transcription, and feedback about content and structure.",
+              "This is separate from the team-built module at DreamCollege.ai. Its feedback supports practice, not an admissions judgment."
             ]
           }
         }
@@ -1587,9 +1570,8 @@
         "blocks": {
           "0": {
             "paragraphs": [
-              "Building Elocutionist gave me practice connecting several parts of an application: reading background documents, generating questions, transcribing an answer, and returning feedback. A problem in an early step can affect what comes after it.",
-              "I worked on turning the model’s response into suggestions about the answer’s content and structure. The transcript gives the model words to work with, but it leaves out parts of how someone speaks. I wanted the suggestions to give users something to consider while letting them decide how to revise their own answers.",
-              "This was independent development. DreamCollege gave me a different setting, where I had to connect my work to other developers’ work and to an existing product. The two projects gave me practice with both ways of building software."
+              "Connecting document reading, question generation, transcription, and feedback taught me how an error in one step can affect the next. A transcript gives the model words to review, but it misses parts of the speaker’s delivery.",
+              "I wanted users to get specific suggestions while deciding how to revise their own answers. Building this independently, then working with a team at DreamCollege.ai, gave me practice in two different development settings."
             ]
           }
         }

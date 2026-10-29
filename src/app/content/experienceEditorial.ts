@@ -21,8 +21,8 @@ const experienceCopy: Record<string, Partial<Experience>> = {
       'Worked with a senior developer to integrate the module into the live product used by clients.',
     ],
     overviewParagraphs: [
-      'During my summer 2025 internship at DreamCollege.ai, I led a four-person team building an AI interview practice module. This was part of the company’s existing college and career-readiness platform.',
-      'I worked mainly on backend development and collaborated with a senior developer on integration. The module was added to the live product used by clients. I led the team while contributing backend code and working through integration with the senior developer.',
+      'During my six-week summer 2025 internship, I led a four-person team building an AI interview practice module for DreamCollege.ai’s college and career-readiness platform.',
+      'I built backend features for questions, sessions, and feedback, and worked with a senior developer to integrate the module into the live product used by clients.',
     ],
     responsibilities: [
       { title: 'Interview Feedback', body: 'Built backend logic to send practice answers for AI evaluation and return structured feedback. The model’s response is practice advice, not an admissions judgment.' },
@@ -32,9 +32,9 @@ const experienceCopy: Record<string, Partial<Experience>> = {
       { title: 'Team Coordination', body: 'Coordinated the team’s development work and helped follow the module through implementation and integration.' },
     ],
     takeawayParagraphs: [
-      'This gave me experience building within a product that already existed. My backend work needed to fit the platform and the work of the other developers, so integration was part of the task from the start. Organizing questions and structuring feedback also showed me how the way information is presented can shape a practice session.',
-      'Leading the team meant keeping track of how the pieces connected, as well as finishing my own part. Working with a senior developer gave me practice taking a module beyond a standalone prototype.',
-      'That was different from building Elocutionist independently. Both involved interview practice, but DreamCollege required a shared development process and a working connection to the company’s product.',
+      'Organizing questions and structuring feedback showed me how information shapes a practice session. My backend work also had to fit the existing platform and the other developers’ work.',
+      'Leading the team meant following the connections between features as well as finishing my own code.',
+      'Unlike my independent work on Elocutionist, this module needed a shared development process and integration into a client-facing product.',
     ],
   },
   'onesource-cloud': {
@@ -62,8 +62,8 @@ const experienceCopy: Record<string, Partial<Experience>> = {
       { value: '4', label: 'Weeks of internship' },
     ],
     overviewParagraphs: [
-      'OneSource Cloud is a Texas-based private AI infrastructure company. My internship there was an early introduction to the systems behind AI applications. I worked alongside a senior developer to test model performance and API costs on the company’s LLM development platform.',
-      'I also helped present its B2B compute services at GenAI Week in Santa Clara. My role was as an intern and assistant developer, learning from the team while contributing to testing and outreach.',
+      'At OneSource Cloud, a Texas-based private AI infrastructure company, I tested model performance and API costs on its LLM development platform with a senior developer.',
+      'During the four-week summer 2025 internship, I also helped market B2B compute services at GenAI Week in Santa Clara.',
     ],
     responsibilities: [
       { title: 'Model Testing', body: 'Helped test the LLM development platform with a senior developer.' },
@@ -75,8 +75,8 @@ const experienceCopy: Record<string, Partial<Experience>> = {
       { title: 'Working Across Roles', body: 'Took part in both technical testing and explaining the company’s services.' },
     ],
     takeawayParagraphs: [
-      'Testing performance and API costs helped me see that an information tool also depends on the system behind it. A feature has to be useful to someone and practical to run.',
-      'It was an early learning experience under a senior developer’s guidance. I contributed to the testing while seeing parts of AI infrastructure I had not worked with before.',
+      'Comparing performance with API costs helped me see the trade-offs behind an AI feature: it needs to be useful and practical to run.',
+      'Working with a senior developer introduced me to model testing and infrastructure decisions beyond my own applications.',
     ],
   },
   'ut-austin-power-electronics': {
@@ -101,8 +101,8 @@ const experienceCopy: Record<string, Partial<Experience>> = {
       { value: 'Solar', label: 'Voltage and current measurements' },
     ],
     overviewParagraphs: [
-      'I spent a week at UT Austin’s Semiconductor Power Electronics Center, learning from two graduate students in Professor Alex Huang’s group. It was a short research visit and a chance to try work outside my usual software projects.',
-      'I helped assemble and test power-electronics components for next-generation battery cells, soldered circuit components, checked signals with an oscilloscope, and wrote code to test hardware. I also measured how solar-panel output changed under different loads.',
+      'I spent one week as a student research assistant at UT Austin SPEC with two graduate mentors in Professor Alex Huang’s group.',
+      'I helped assemble and test power-electronics components for next-generation battery cells, soldered circuits, checked signals with an oscilloscope, and wrote hardware-test code. I also measured UT Austin solar-panel output under different loads.',
     ],
     responsibilities: [
       { title: 'Assembling Components', body: 'Helped assemble and test power-electronics components under the graduate students’ guidance.' },
@@ -112,7 +112,7 @@ const experienceCopy: Record<string, Partial<Experience>> = {
     ],
     takeawayParagraphs: [
       'Most of my projects had been in software. This visit gave me experience with code, circuits, and physical measurements in the same task.',
-      'I was a beginner in much of the lab work, and I learned from the graduate students while trying unfamiliar tools and procedures. Having two graduate mentors helped me connect the circuit I was building to the measurement I was trying to make.',
+      'My mentors helped me connect the circuit I was building to the measurement I was trying to make. I learned to check a physical result against what the code and schematic led me to expect.',
     ],
   },
 };

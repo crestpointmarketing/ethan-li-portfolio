@@ -8,15 +8,15 @@ export const homepageProjectCopy: Record<string, Partial<ProjectCard>> = {
     subtitles: ['What does AI miss when a child speaks?', 'Researcher & Developer · Independent Speech Research · Patent Pending'],
     period: 'Grades 10–12 · Year-round',
     cardHighlights: [
-      'I started SpeakWise because a friend and my younger brother had faced speech difficulties since childhood. Their feedback taught me to ask what they wanted before deciding what to change.',
-      'I adapted wav2vec 2.0 with CTC using 116.0 hours of audio from 1,738 children. On held-out children, the study reported 21.74% word error rate and 69.1% recall for marked repetitions and fillers.',
-      'I built adjustable speech correction and voice cloning for the first prototype, then focused Phase 2 on keeping what children actually say. I am first-named inventor on the U.S. provisional application filed August 23, 2026.',
+      'I built adjustable speech correction and voice cloning after seeing a friend and my younger brother face speech difficulties. Their feedback shifted my focus toward preserving what a child says.',
+      'I adapted wav2vec 2.0 with CTC using 116.0 hours of audio from 1,738 children. Held-out evaluation: 21.74% word error rate and 69.1% recall for marked repetitions and fillers.',
+      'First-named inventor on the U.S. provisional application filed August 23, 2026; sole-author paper accepted for the IEEE BigData 2026 High School Symposium.',
     ],
     cardTeaser: {
       label: 'Research Focus',
       items: [
-        'A cleaner transcript is not always a more faithful one. I want to understand how to improve accuracy while keeping what the child actually said.',
-        'Sole-author paper accepted for presentation at the IEEE BigData 2026 High School Symposium, scheduled for December 2026. SpeakWise is a research project, not a clinically tested therapy.',
+        'Phase 1 explored speech repair; Phase 2 asks whether a recognizer can keep the words, repetitions, and fillers a child actually used.',
+        'IEEE presentation scheduled for December 17, 2026, in Phoenix. Research results do not establish clinical effectiveness.',
       ],
     },
   },
@@ -25,9 +25,9 @@ export const homepageProjectCopy: Record<string, Partial<ProjectCard>> = {
     subtitles: ['A subscription-based AI marketing platform used by businesses', 'Founder & Lead Developer · GEO Analytics · Patent Pending'],
     period: 'Grades 11–12 · Year-round',
     cardHighlights: [
-      'I independently developed PomeloLabs.ai, a live subscription-based AI marketing platform with active business users. My mother’s company, CrestPoint Marketing, handles marketing and deployed it at OneSource Cloud.',
-      'For one B2B client, AI discovery rate increased from 21% to 63%, as reported in my October 2026 Common App. I built the tools for measuring brand visibility across AI search engines and turning findings into marketing tasks.',
-      'I designed the GEO evaluation framework covered by a U.S. provisional patent application filed on July 27, 2026. I focused on how answers describe a business, not just whether they mention it.',
+      'I independently built a live AI marketing platform with active business users on subscriptions. For one B2B client, AI discovery rate increased from 21% to 63% (reported October 2026).',
+      'I built AI-search analytics, content workflows, and integrations. My mother’s company, CrestPoint Marketing, handles marketing and deployed it at OneSource Cloud.',
+      'I designed the GEO evaluation framework covered by the U.S. provisional application filed July 27, 2026, measuring how AI answers describe a business.',
     ],
   },
   'vla-robot-manipulation': {
@@ -35,9 +35,9 @@ export const homepageProjectCopy: Record<string, Partial<ProjectCard>> = {
     subtitles: ['Studying how robot manipulation policies generalize across environments', 'Research Team Leader · UT Dallas STEM Bridge Program · 3rd Place of 20+ Teams'],
     period: 'Summer 2026 · 6 weeks · Grade 12',
     cardHighlights: [
-      'At UT Dallas STEM Bridge, I led a five-person team researching vision-language-action models for robotic arms with graduate mentors and faculty.',
-      'We compared how policies behaved on a tabletop and in a lightbox, including when we trained them with data from both.',
-      'We prepared a poster, presented the research, and demonstrated the robot live. I learned to explain what our tests showed and where the results might not apply.',
+      'I led a five-person team at UT Dallas STEM Bridge studying robotic arms that act on camera images and instructions. We placed 3rd of 20+ teams.',
+      'I helped coordinate data collection, model training, and testing with teammates and mentors. We compared tabletop, lightbox, and mixed training data.',
+      'I worked with the team on the poster, presentation, and live robot demonstration, keeping our conclusions tied to the conditions we tested.',
     ],
   },
   expressive: {
@@ -45,9 +45,9 @@ export const homepageProjectCopy: Record<string, Partial<ProjectCard>> = {
     subtitles: ['Turning playing dynamics into stereo movement', 'Independent Developer · C++ / JUCE · Open Source'],
     period: 'Grades 11–12 · Year-round',
     cardHighlights: [
-      'Expressive grew out of my own music production. I built a plugin that uses MIDI note velocity to move a sound across the stereo field.',
-      'Using C++ and JUCE, I added controls for the mapping, width, and speed of the movement.',
-      'Released as open-source VST3 effects and panning software: 3,400+ downloads from producers and 40+ GitHub stars, reported in October 2026. Building its controls made me think about the musician using them.',
+      'I independently built an open-source VST3 effects and panning plugin in C++ with JUCE, inspired by my own music production.',
+      '3,400+ downloads from producers and 40+ GitHub stars (reported October 2026).',
+      'I mapped MIDI note velocity to stereo movement and built controls for its width, speed, and curve so musicians could shape the effect.',
     ],
   },
   activityhub: {
@@ -55,18 +55,18 @@ export const homepageProjectCopy: Record<string, Partial<ProjectCard>> = {
     subtitles: ['Helping volunteers and organizers keep track', 'President of Computer Science Chapter · ACAESUSA · Independent Developer'],
     period: '2026 · ACAESUSA: Grades 9–11',
     cardHighlights: [
-      'At ACAESUSA, I served as president of the Computer Science Chapter, taught members CS skills, and volunteered at fundraisers and events. I built ActivityHub for this community in 2026.',
-      'Organizers review hours before they are confirmed, and volunteers can see which records still need attention.',
-      'I worked on preventing duplicate hours, keeping a history of changes, and limiting access to private documents, with a focus on records people can check and correct.',
+      'I independently built ActivityHub in 2026 for ACAESUSA’s events, volunteer registration, attendance, and service-hour tracking.',
+      'As Computer Science Chapter president, I taught members CS skills and volunteered at fundraisers and events.',
+      'I built administrator review, duplicate-hour checks, change history, and private-document access so volunteers and organizers could check and correct records.',
     ],
   },
   elocutionist: {
     title: 'Elocutionist — Speaking & Interview Practice',
     subtitles: ['A place to practice answers and get feedback', 'Independent Developer · Communication · Human-AI Interaction'],
     cardHighlights: [
-      'I independently built a tool for practicing spoken or typed interview answers with AI feedback.',
-      'I built the application’s document processing, question generation, speech transcription, and feedback workflow.',
-      'The project connects what someone says to a transcript and then to suggestions they can review. Its AI feedback is practice advice, not an admissions judgment.',
+      'I independently built an interview-practice app with spoken or typed answers and AI feedback.',
+      'My work connects background documents, question generation, Whisper transcription, and feedback about answer content and structure.',
+      'Users can revisit recordings and decide which suggestions fit. AI feedback supports practice; it is not an admissions judgment.',
     ],
   },
   zeitgeist: {
@@ -74,9 +74,9 @@ export const homepageProjectCopy: Record<string, Partial<ProjectCard>> = {
     subtitles: ['Exploring stock market data for investment research', 'Founder & Developer · Stock Market & Investment Research'],
     period: 'Grades 11–12 · Year-round',
     cardHighlights: [
-      'I built a financial research platform with deep-research stock analysis and interactive CFO insight agents for follow-up questions.',
-      'I built the data collection, FastAPI backend, and AI integration. I wanted readers to be able to tell a reported number from the model’s explanation of it.',
-      'The site reached 1,000+ clicks in Google Search Console by October 2026. These are search clicks, not user counts. For research and education, not personalized investment advice.',
+      'I built Zeitgeist’s data collection, FastAPI backend, and AI integration for stock-market research.',
+      '1,000+ clicks in Google Search Console by October 2026. Features include deep-research stock analysis and interactive CFO insight agents.',
+      'I keep source data, calculations, and AI explanations distinct. The platform supports research and education, not personalized investment advice.',
     ],
   },
 };

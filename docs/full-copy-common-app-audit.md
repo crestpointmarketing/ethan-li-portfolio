@@ -48,8 +48,22 @@ Pomelo's copy explicitly distinguishes Ethan's independent technical work from h
 - User-approved descriptive titles remain more readable than the application's shorthand: Zeitgeist is described as stock-market/investment research rather than promising individualized advice; Pomelo retains the approved AI-search analytics and optimization title. Organization, role, contribution and facts remain aligned.
 - Latin I–V, current grade-12 coursework, expected May 2027 graduation and registration for UT Austin UEX M408D are explicit. The page does not imply completed college calculus or enrollment in unavailable Linear Algebra.
 - Tone emphasizes concrete actions, choices and learning. No new conversations, customer counts, revenue, adoption rates, clinical outcomes, forecasts or personal origin stories are invented. Corporate-register wording and repeated scope disclaimers are simplified.
-- Asked separately whether to publish GPA/test scores. In the absence of a reply, this pass follows the stated default of activity/honor data; it does not newly publish GPA, SAT/AP scores or private family/contact fields from the application. Academic performance publication is a separate pending preference, not included in the claim that activity metrics are complete.
+- The owner explicitly selected activity/honor data only. Do not newly publish GPA, SAT/AP scores or private family/contact fields from the application.
 
 ## Verification
 
 Production build; browser assertions for all ten commitments and the cited impact figures on homepage/detail; 12 routes at 320, 375, 390, 768, 1024, 1280 and 1440 pixels; text clipping/overflow, images, first-party errors, navigation, return anchors and theme checks. Inspect representative desktop/mobile screenshots. Repeat on production after the authorized deployment. These are Chromium viewport checks, not physical-device tests. No contact-form messages are sent.
+
+
+## Follow-up concision pass — October 28, 2026
+
+Owner authorized a second copy-only polish and production publication. Lead homepage summaries with Ethan’s contribution and key outcome; shorten project and experience narration while preserving every Common App commitment and impact figure. Keep role, grade, date, honor, inventor status, legal filing titles, media, section/block types, item counts, and all styles unchanged.
+
+- Remove public-facing “my Common App” phrasing; retain October 2026 timestamps and the source record in this audit.
+- Pomelo: separate the user journey from the implementation, shorten repeated descriptions of context/review/scoring, and retain the one-client scope of 21% to 63%, subscriptions, business users, independent technical ownership, and family business disclosure.
+- SpeakWise: state the transition from adjustable speech repair/voice cloning in Phase 1 to faithful child-speech recognition in Phase 2. Keep reported study values, held-out cohorts, clinical scope, both posters, IEEE acceptance/scheduled presentation, and patent information.
+- VLA: emphasize the documented five-person team leadership and coordination of collection/training/testing, poster, presentation, and live demo. No new claim of owning a particular robot subsystem or developing the underlying models.
+- Expressive, ActivityHub, Zeitgeist, Elocutionist and the three internships/research visits: remove repeated narration while retaining the actual contribution, results and a specific reflection.
+- GPA and test-score publication remain excluded under the owner’s explicit preference.
+
+Verification repeats the fact-coverage and all-page responsive checks described above, followed by production checks. No design files or CSS changes are part of this pass.
