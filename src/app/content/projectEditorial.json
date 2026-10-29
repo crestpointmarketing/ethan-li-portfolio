@@ -318,8 +318,8 @@
         "blocks": {
           "0": {
             "paragraphs": [
-              "I independently developed PomeloLabs.ai, a live commercial AI marketing platform with active business users on subscriptions. It measures brand visibility across major AI search engines and connects the findings to marketing tasks and content.",
-              "For one B2B client, AI discovery rate increased from 21% to 63% (reported October 2026). This is one client’s result, not an average across customers.",
+              "I independently developed PomeloLabs.ai, a live commercial AI marketing platform with active business users on subscriptions. It measures brand visibility across major AI search engines and connects the findings to marketing tasks and content. The platform has published 200+ articles.",
+              "For one B2B client, AI visibility increased from 21% to 63% (reported October 2026). This is one client’s result, not an average across customers.",
               "I built the architecture, integrations, testing, and deployment. My mother’s company, CrestPoint Marketing, handles marketing and deployed the platform at OneSource Cloud, an existing CrestPoint client. Her business requirements and agency feedback informed the product."
             ]
           },
@@ -686,7 +686,7 @@
           },
           "2": {
             "paragraphs": [
-              "The 21% to 63% AI discovery result gave me a specific client outcome to report. Building a subscription product also meant making the whole workflow usable, from connected data to an approved action.",
+              "Publishing 200+ articles and the 21% to 63% AI visibility result for one B2B client gave me concrete outcomes to report. Building a subscription product also meant making the whole workflow usable, from connected data to an approved action.",
               "Explaining technical choices to someone with a marketing background made me question what each score actually told a customer. I learned that organizing information and explaining its meaning are part of the software, not finishing touches."
             ],
             "title": "Building for Paying Business Users"
@@ -749,19 +749,19 @@
     "stats": [
       {
         "value": "21%",
-        "label": "One B2B client: before"
+        "label": "Client AI visibility: before"
       },
       {
         "value": "63%",
-        "label": "Same client: after"
+        "label": "Same client AI visibility: after"
       },
       {
         "value": "SaaS",
         "label": "Business subscriptions"
       },
       {
-        "value": "2026",
-        "label": "Provisional application filed"
+        "value": "200+",
+        "label": "Articles published"
       }
     ],
     "badges": [

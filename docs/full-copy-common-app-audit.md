@@ -67,3 +67,8 @@ Owner authorized a second copy-only polish and production publication. Lead home
 - GPA and test-score publication remain excluded under the owner’s explicit preference.
 
 Verification repeats the fact-coverage and all-page responsive checks described above, followed by production checks. No design files or CSS changes are part of this pass.
+
+
+## Owner update — October 28, 2026
+
+The owner supplied “200+ articles published” and requested the public label “AI visibility” for the existing 21% to 63% metric. Added the article total to the homepage summary, detail introduction/reflection and existing statistic card. Kept the visibility change scoped to one B2B client. Article total is owner-supplied, not a figure from the October 14 Common App preview; no client count, revenue, reporting period for the article total, or causal attribution to those articles is inferred. Patent filing information remains in the existing filing block and patent page.

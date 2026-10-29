@@ -25,7 +25,7 @@ export const homepageProjectCopy: Record<string, Partial<ProjectCard>> = {
     subtitles: ['A subscription-based AI marketing platform used by businesses', 'Founder & Lead Developer · GEO Analytics · Patent Pending'],
     period: 'Grades 11–12 · Year-round',
     cardHighlights: [
-      'I independently built a live AI marketing platform with active business users on subscriptions. For one B2B client, AI discovery rate increased from 21% to 63% (reported October 2026).',
+      'I independently built a live AI marketing platform with active business users on subscriptions and 200+ articles published. For one B2B client, AI visibility increased from 21% to 63% (reported October 2026).',
       'I built AI-search analytics, content workflows, and integrations. My mother’s company, CrestPoint Marketing, handles marketing and deployed it at OneSource Cloud.',
       'I designed the GEO evaluation framework covered by the U.S. provisional application filed July 27, 2026, measuring how AI answers describe a business.',
     ],
