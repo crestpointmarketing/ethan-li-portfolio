@@ -24,6 +24,7 @@ export const statSchema = z.object({
   value: z.string().min(1),
   label: z.string().min(1),
   noWrap: z.boolean().optional(),
+  span: z.union([z.literal(1), z.literal(2)]).optional(),
 });
 export type Stat = z.infer<typeof statSchema>;
 

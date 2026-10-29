@@ -116,7 +116,7 @@ export function ProjectDetailView({
           {project.stats.length > 0 && (
             <div className="grid grid-cols-2 lg:grid-cols-4 gap-6 mt-12">
               {project.stats.map((stat, i) => (
-                <div key={i} className="bg-[var(--card)] border border-[var(--border)] rounded-xl p-4 min-[360px]:p-6">
+                <div key={i} className={`bg-[var(--card)] border border-[var(--border)] rounded-xl p-4 min-[360px]:p-6${stat.span === 2 ? ' col-span-2' : ''}`}>
                   <div className={`text-3xl min-[360px]:text-4xl font-bold text-[#08874a] dark:text-[#16A34A] mb-2${stat.noWrap ? ' whitespace-nowrap' : ''}`}>
                     {stat.value}
                   </div>

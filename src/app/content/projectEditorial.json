@@ -748,12 +748,10 @@
     },
     "stats": [
       {
-        "value": "21%",
-        "label": "Client AI visibility: before"
-      },
-      {
-        "value": "63%",
-        "label": "Same client AI visibility: after"
+        "value": "21% → 63%",
+        "label": "AI visibility for one B2B client · Before → after",
+        "span": 2,
+        "noWrap": true
       },
       {
         "value": "SaaS",
